@@ -5,3 +5,4 @@
 - Code js bỏ vào thư mục /js
 - Tương tự với hình ảnh
 - Mỗi thẻ đặt tên class theo quy tắc BEM, đặt tên tiếng Anh cho chắc cú hehe
+- Anh em có thể dùng fontawesome để lấy icon
