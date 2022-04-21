@@ -1,0 +1,32 @@
+:root {
+	--product__width: 180px;
+	--product__height: calc(var(--product__width) * 1.3);
+}
+.products__block {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(var(--product__width), 1fr));
+	grid-gap: 20px 10px;
+	padding: 10px;
+}
+
+.product {
+	border-radius: 10px;
+/*	display: flex;
+	flex-direction: column;*/
+}
+
+.product__avatar {
+	border-radius: inherit;
+}
+
+.product__avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: inherit;
+}
+
+.product__sale {
+	display: flex;
+	justify-content: space-between;
+}
