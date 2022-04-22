@@ -6,4 +6,3 @@
 - Tương tự với hình ảnh
 - Mỗi thẻ đặt tên class theo quy tắc BEM, đặt tên tiếng Anh cho chắc cú hehe
 - Anh em có thể dùng fontawesome để lấy icon
-- Trước khi làm hay push nhớ pull xuống, để tránh trường hợp làm xong push lên bị xung đột bay màu
