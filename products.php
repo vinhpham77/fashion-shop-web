@@ -18,10 +18,10 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/defmqyt-b3c03095-bf41-4d84-93ff-27d9348818b1.jpg/v1/fill/w_900,h_1254,q_75,strp/ava___from_my_room__personal_project__by_razaras_defmqyt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI1NCIsInBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGVmbXF5dC1iM2MwMzA5NS1iZjQxLTRkODQtOTNmZi0yN2Q5MzQ4ODE4YjEuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.TMrxlBYFDX7e6kXhynlOV4AHzT0hiZGyxgZJEH5fIEM" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value__original">100.000đ</span>
-				<span class="value--normal">300.000đ</span>
-				<span class="value--discount">-33%</span>
+			<div class="product__price">
+				<span class="price--original">100.000đ</span>
+				<span class="price--normal">300.000đ</span>
+				<span class="price--discount">-33%</span>
 			</div>
 		</div>
 		<div class="product">
@@ -30,10 +30,10 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/de2mw6i-ea057719-ae7a-4521-bfce-b21fe8aac7e5.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGUybXc2aS1lYTA1NzcxOS1hZTdhLTQ1MjEtYmZjZS1iMjFmZThhYWM3ZTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Q-kCgQBHqrxK2s-23Ss5KWSzcoK5a3dq55dD2ApjMNE" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value__original">100.000đ</span>
-				<span class="value--normal">300.000đ</span>
-				<span class="value--discount">-33%</span>
+			<div class="product__price">
+				<span class="price--original">100.000đ</span>
+				<span class="price--normal">300.000đ</span>
+				<span class="price--discount">-33%</span>
 			</div>
 		</div>
 		<div class="product">
@@ -42,10 +42,10 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/defmqyt-b3c03095-bf41-4d84-93ff-27d9348818b1.jpg/v1/fill/w_900,h_1254,q_75,strp/ava___from_my_room__personal_project__by_razaras_defmqyt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI1NCIsInBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGVmbXF5dC1iM2MwMzA5NS1iZjQxLTRkODQtOTNmZi0yN2Q5MzQ4ODE4YjEuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.TMrxlBYFDX7e6kXhynlOV4AHzT0hiZGyxgZJEH5fIEM" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value__original">100.000đ</span>
-				<span class="value--normal">300.000đ</span>
-				<span class="value--discount">-33%</span>
+			<div class="product__price">
+				<span class="price--original">100.000đ</span>
+				<span class="price--normal">300.000đ</span>
+				<span class="price--discount">-33%</span>
 			</div>
 		</div>
 		<div class="product">
@@ -54,10 +54,10 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/de2mw6i-ea057719-ae7a-4521-bfce-b21fe8aac7e5.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGUybXc2aS1lYTA1NzcxOS1hZTdhLTQ1MjEtYmZjZS1iMjFmZThhYWM3ZTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Q-kCgQBHqrxK2s-23Ss5KWSzcoK5a3dq55dD2ApjMNE" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value__original">100.000đ</span>
-				<span class="value--normal">300.000đ</span>
-				<span class="value--discount">-33%</span>
+			<div class="product__price">
+				<span class="price--original">100.000đ</span>
+				<span class="price--normal">300.000đ</span>
+				<span class="price--discount">-33%</span>
 			</div>
 		</div>
 		<div class="product">
@@ -66,10 +66,10 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/defmqyt-b3c03095-bf41-4d84-93ff-27d9348818b1.jpg/v1/fill/w_900,h_1254,q_75,strp/ava___from_my_room__personal_project__by_razaras_defmqyt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI1NCIsInBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGVmbXF5dC1iM2MwMzA5NS1iZjQxLTRkODQtOTNmZi0yN2Q5MzQ4ODE4YjEuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.TMrxlBYFDX7e6kXhynlOV4AHzT0hiZGyxgZJEH5fIEM" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value__original">100.000đ</span>
-				<span class="value--normal">300.000đ</span>
-				<span class="value--discount">-33%</span>
+			<div class="product__price">
+				<span class="price--original">100.000đ</span>
+				<span class="price--normal">300.000đ</span>
+				<span class="price--discount">-33%</span>
 			</div>
 		</div>
 		<div class="product">
@@ -78,8 +78,8 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/de2mw6i-ea057719-ae7a-4521-bfce-b21fe8aac7e5.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGUybXc2aS1lYTA1NzcxOS1hZTdhLTQ1MjEtYmZjZS1iMjFmZThhYWM3ZTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Q-kCgQBHqrxK2s-23Ss5KWSzcoK5a3dq55dD2ApjMNE" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value--original">400.000đ</span>
+			<div class="product__price">
+				<span class="price--original">400.000đ</span>
 			</div>
 		</div>
 		<div class="product">
@@ -88,8 +88,8 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/defmqyt-b3c03095-bf41-4d84-93ff-27d9348818b1.jpg/v1/fill/w_900,h_1254,q_75,strp/ava___from_my_room__personal_project__by_razaras_defmqyt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI1NCIsInBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGVmbXF5dC1iM2MwMzA5NS1iZjQxLTRkODQtOTNmZi0yN2Q5MzQ4ODE4YjEuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.TMrxlBYFDX7e6kXhynlOV4AHzT0hiZGyxgZJEH5fIEM" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value--original">400.000đ</span>
+			<div class="product__price">
+				<span class="price--original">400.000đ</span>
 			</div>
 		</div>
 		<div class="product">
@@ -98,8 +98,8 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/de2mw6i-ea057719-ae7a-4521-bfce-b21fe8aac7e5.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGUybXc2aS1lYTA1NzcxOS1hZTdhLTQ1MjEtYmZjZS1iMjFmZThhYWM3ZTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Q-kCgQBHqrxK2s-23Ss5KWSzcoK5a3dq55dD2ApjMNE" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value--original">400.000đ</span>
+			<div class="product__price">
+				<span class="price--original">400.000đ</span>
 			</div>
 		</div>
 		<div class="product">
@@ -108,8 +108,8 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/defmqyt-b3c03095-bf41-4d84-93ff-27d9348818b1.jpg/v1/fill/w_900,h_1254,q_75,strp/ava___from_my_room__personal_project__by_razaras_defmqyt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI1NCIsInBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGVmbXF5dC1iM2MwMzA5NS1iZjQxLTRkODQtOTNmZi0yN2Q5MzQ4ODE4YjEuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.TMrxlBYFDX7e6kXhynlOV4AHzT0hiZGyxgZJEH5fIEM" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value--original">400.000đ</span>
+			<div class="product__price">
+				<span class="price--original">400.000đ</span>
 			</div>
 		</div>
 		<div class="product">
@@ -118,8 +118,8 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/de2mw6i-ea057719-ae7a-4521-bfce-b21fe8aac7e5.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGUybXc2aS1lYTA1NzcxOS1hZTdhLTQ1MjEtYmZjZS1iMjFmZThhYWM3ZTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Q-kCgQBHqrxK2s-23Ss5KWSzcoK5a3dq55dD2ApjMNE" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value--original">400.000đ</span>
+			<div class="product__price">
+				<span class="price--original">400.000đ</span>
 			</div>
 		</div>
 		<div class="product">
@@ -128,8 +128,8 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/defmqyt-b3c03095-bf41-4d84-93ff-27d9348818b1.jpg/v1/fill/w_900,h_1254,q_75,strp/ava___from_my_room__personal_project__by_razaras_defmqyt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI1NCIsInBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGVmbXF5dC1iM2MwMzA5NS1iZjQxLTRkODQtOTNmZi0yN2Q5MzQ4ODE4YjEuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.TMrxlBYFDX7e6kXhynlOV4AHzT0hiZGyxgZJEH5fIEM" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value--original">400.000đ</span>
+			<div class="product__price">
+				<span class="price--original">400.000đ</span>
 			</div>
 		</div>
 		<div class="product">
@@ -138,8 +138,8 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/de2mw6i-ea057719-ae7a-4521-bfce-b21fe8aac7e5.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGUybXc2aS1lYTA1NzcxOS1hZTdhLTQ1MjEtYmZjZS1iMjFmZThhYWM3ZTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Q-kCgQBHqrxK2s-23Ss5KWSzcoK5a3dq55dD2ApjMNE" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value--original">400.000đ</span>
+			<div class="product__price">
+				<span class="price--original">400.000đ</span>
 			</div>
 		</div>
 		<div class="product">
@@ -148,8 +148,8 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/defmqyt-b3c03095-bf41-4d84-93ff-27d9348818b1.jpg/v1/fill/w_900,h_1254,q_75,strp/ava___from_my_room__personal_project__by_razaras_defmqyt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI1NCIsInBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGVmbXF5dC1iM2MwMzA5NS1iZjQxLTRkODQtOTNmZi0yN2Q5MzQ4ODE4YjEuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.TMrxlBYFDX7e6kXhynlOV4AHzT0hiZGyxgZJEH5fIEM" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value--original">400.000đ</span>
+			<div class="product__price">
+				<span class="price--original">400.000đ</span>
 			</div>
 		</div>
 		<div class="product">
@@ -158,10 +158,10 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/de2mw6i-ea057719-ae7a-4521-bfce-b21fe8aac7e5.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGUybXc2aS1lYTA1NzcxOS1hZTdhLTQ1MjEtYmZjZS1iMjFmZThhYWM3ZTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Q-kCgQBHqrxK2s-23Ss5KWSzcoK5a3dq55dD2ApjMNE" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value__original">100.000đ</span>
-				<span class="value--normal">300.000đ</span>
-				<span class="value--discount">-33%</span>
+			<div class="product__price">
+				<span class="price--original">100.000đ</span>
+				<span class="price--normal">300.000đ</span>
+				<span class="price--discount">-33%</span>
 			</div>
 		</div>
 		<div class="product">
@@ -170,10 +170,10 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/defmqyt-b3c03095-bf41-4d84-93ff-27d9348818b1.jpg/v1/fill/w_900,h_1254,q_75,strp/ava___from_my_room__personal_project__by_razaras_defmqyt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI1NCIsInBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGVmbXF5dC1iM2MwMzA5NS1iZjQxLTRkODQtOTNmZi0yN2Q5MzQ4ODE4YjEuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.TMrxlBYFDX7e6kXhynlOV4AHzT0hiZGyxgZJEH5fIEM" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value__original">100.000đ</span>
-				<span class="value--normal">300.000đ</span>
-				<span class="value--discount">-33%</span>
+			<div class="product__price">
+				<span class="price--original">100.000đ</span>
+				<span class="price--normal">300.000đ</span>
+				<span class="price--discount">-33%</span>
 			</div>
 		</div>
 		<div class="product">
@@ -182,10 +182,10 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/de2mw6i-ea057719-ae7a-4521-bfce-b21fe8aac7e5.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGUybXc2aS1lYTA1NzcxOS1hZTdhLTQ1MjEtYmZjZS1iMjFmZThhYWM3ZTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Q-kCgQBHqrxK2s-23Ss5KWSzcoK5a3dq55dD2ApjMNE" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value__original">100.000đ</span>
-				<span class="value--normal">300.000đ</span>
-				<span class="value--discount">-33%</span>
+			<div class="product__price">
+				<span class="price--original">100.000đ</span>
+				<span class="price--normal">300.000đ</span>
+				<span class="price--discount">-33%</span>
 			</div>
 		</div>
 		<div class="product">
@@ -194,10 +194,10 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/defmqyt-b3c03095-bf41-4d84-93ff-27d9348818b1.jpg/v1/fill/w_900,h_1254,q_75,strp/ava___from_my_room__personal_project__by_razaras_defmqyt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI1NCIsInBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGVmbXF5dC1iM2MwMzA5NS1iZjQxLTRkODQtOTNmZi0yN2Q5MzQ4ODE4YjEuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.TMrxlBYFDX7e6kXhynlOV4AHzT0hiZGyxgZJEH5fIEM" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value__original">100.000đ</span>
-				<span class="value--normal">300.000đ</span>
-				<span class="value--discount">-33%</span>
+			<div class="product__price">
+				<span class="price--original">100.000đ</span>
+				<span class="price--normal">300.000đ</span>
+				<span class="price--discount">-33%</span>
 			</div>
 		</div>
 		<div class="product">
@@ -206,10 +206,10 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/de2mw6i-ea057719-ae7a-4521-bfce-b21fe8aac7e5.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGUybXc2aS1lYTA1NzcxOS1hZTdhLTQ1MjEtYmZjZS1iMjFmZThhYWM3ZTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Q-kCgQBHqrxK2s-23Ss5KWSzcoK5a3dq55dD2ApjMNE" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value__original">100.000đ</span>
-				<span class="value--normal">300.000đ</span>
-				<span class="value--discount">-33%</span>
+			<div class="product__price">
+				<span class="price--original">100.000đ</span>
+				<span class="price--normal">300.000đ</span>
+				<span class="price--discount">-33%</span>
 			</div>
 		</div>
 		<div class="product">
@@ -218,10 +218,10 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/defmqyt-b3c03095-bf41-4d84-93ff-27d9348818b1.jpg/v1/fill/w_900,h_1254,q_75,strp/ava___from_my_room__personal_project__by_razaras_defmqyt-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI1NCIsInBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGVmbXF5dC1iM2MwMzA5NS1iZjQxLTRkODQtOTNmZi0yN2Q5MzQ4ODE4YjEuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.TMrxlBYFDX7e6kXhynlOV4AHzT0hiZGyxgZJEH5fIEM" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value__original">100.000đ</span>
-				<span class="value--normal">300.000đ</span>
-				<span class="value--discount">-33%</span>
+			<div class="product__price">
+				<span class="price--original">100.000đ</span>
+				<span class="price--normal">300.000đ</span>
+				<span class="price--discount">-33%</span>
 			</div>
 		</div>
 		<div class="product">
@@ -230,10 +230,10 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ac8c6ac4-f054-4bec-b48b-51c704ef85c0/de2mw6i-ea057719-ae7a-4521-bfce-b21fe8aac7e5.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FjOGM2YWM0LWYwNTQtNGJlYy1iNDhiLTUxYzcwNGVmODVjMFwvZGUybXc2aS1lYTA1NzcxOS1hZTdhLTQ1MjEtYmZjZS1iMjFmZThhYWM3ZTUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Q-kCgQBHqrxK2s-23Ss5KWSzcoK5a3dq55dD2ApjMNE" class="product__avatar--back" alt="Không ảnh">
 			</div>
 			<div class="product__name">Sản phẩm XYZ</div>
-			<div class="product__value">
-				<span class="value__original">100.000đ</span>
-				<span class="value--normal">300.000đ</span>
-				<span class="value--discount">-33%</span>
+			<div class="product__price">
+				<span class="price--original">100.000đ</span>
+				<span class="price--normal">300.000đ</span>
+				<span class="price--discount">-33%</span>
 			</div>
 		</div>
 	</div>
