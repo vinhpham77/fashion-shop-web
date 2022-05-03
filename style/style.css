@@ -1,0 +1,127 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.container::after {
+    display: block;
+    clear: both;
+}
+
+.payment{
+    padding: 100px 0;
+}
+.payment-top-warp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.payment-top{
+    height: 2px;
+    width: 7px;
+    background-color: #dddddddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0 100px;
+}
+.payment-top-item{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #dddddddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+.payment-top-item i {
+    color: #dddddddd;
+}
+.payment-top-payment{
+    border: 1px solid #044ce7dd;
+}
+.payment-top-payment i {
+    color: #044ce7dd;
+}
+.payment-content-left{
+    width: 60%;
+}
+.payment-content-right{
+    /* width: 40%; */
+    border-left: 2px solid #ddd;
+    padding-left: 12px;
+    float: right;
+    /* margin-bottom: 200px; */
+    position: relative;
+    bottom: 432px;
+    left: 266.1px;
+}
+.payment-content-right::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.payment-content-left p,label{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.payment-content-right-button{
+    display: flex;
+    padding: 12px 0;
+    border-bottom: 1px dashed #dddddddd;
+}
+.payment-content-right-button input{
+    height: 30px;
+    width: 200px;
+    margin-right: 100px;
+    margin-left: 12px;
+}
+.payment-content-right-button button{
+    height: 30px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    border: none   ;
+    cursor: pointer;
+}
+
+.payment-content.row {
+    width: 60%;
+}
+
+.payment-content-right-mnv{
+    margin-top: 20px
+}
+.payment-content-right-mnv select{
+    height: 30px;
+    width: 100%;
+    color: #75758A;
+    padding-left: 12px;
+}
+.payment-content-right-payment{
+    position: relative;
+    top: 100px;
+    margin-top: 50px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    left: 100px;
+    display: block;
+}
+.payment-content-right-payment button{
+    height: 35px;
+    padding: 0 20px;
+    font-size: 12px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid black;
+    margin-bottom: 20px;
+}
+.payment-content-right-payment button:hover{
+    background-color: black;
+    color: #fff;
+}
+
