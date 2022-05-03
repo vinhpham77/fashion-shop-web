@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
-.body {
-    
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+.body {
+    
+}
 .product__detail {
     display: flex;
 }
@@ -38,12 +35,16 @@
 .gallery--big>img,
 .gallery--small>img {
     width: 100%;
+
     object-fit: cover;
     border-radius: inherit;
     object-position: center;
 }
-
+.gallery--small>img{
+    height: 184px;
+}
 .gallery--small {
+
     flex: 20%;
     border-radius: inherit;
     /*display: flex;
@@ -143,10 +144,6 @@
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
 }
-.product-detail__colors {
-    
-}
-
 .product__price>span+span {
     margin-left: 4px;
 }
@@ -160,23 +157,13 @@
 .price--discount {
     color: red;
 }
-
-/*@media (max-width: 426px) {
-    .gallery--big {
-        width: 100%;
-        height: 80vh;
-    }
-
-    .gallery--small {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .gallery--small > img {
-        width: 20%;
-    }
-
-    .gallery--small > img + img {
-        margin-left: 1vw;
-    }
-}*/
+.product-detail__info{
+    font-family: 'PT Serif', serif;
+}
+.product-detail__name{
+    text-transform: uppercase;
+    font-size: x-large;
+}
+.product-detail__colors{
+    font-size: large;
+}

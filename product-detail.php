@@ -7,6 +7,11 @@
 	<!-- <link rel="stylesheet" href="style/reset.css"> -->
 	<link rel="stylesheet" href="style/product-detail.css">
 	<link rel="stylesheet" href="fontawesome/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
 	<script async type="text/javascript" src="js/product-detail.js"></script>
 </head>
 <body>
