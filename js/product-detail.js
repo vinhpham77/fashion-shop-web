@@ -1,19 +1,30 @@
-var bigImg = document.querySelector('.gallery--big img');
-var zoom = document.querySelector('.gallery--zoom');
-var innerImg = document.querySelector('.gallery__inner img');
-var images = document.querySelectorAll('.gallery--small img');
-var exit = document.querySelector('.controller__exit');
-var next = document.querySelector('.controller__next');
-var prev = document.querySelector('.controller__prev');
-var currentIndex = 0;
+let bigImg = document.querySelector('.gallery--big img');
+let zoom = document.querySelector('.gallery--zoom');
+let innerImg = document.querySelector('.gallery__inner img');
+let images = document.querySelectorAll('.gallery--small img');
+let sizes = document.querySelectorAll('.product-detail__size span');
+let exit = document.querySelector('.controller__exit');
+let next = document.querySelector('.controller__next');
+let prev = document.querySelector('.controller__prev');
+let currentIndex = 0;
 
 images.forEach((item, index) => {
     item.addEventListener('click', function() {
         currentIndex = index;
         bigImg.src = images[currentIndex].src;
         let checkedProduct = document.querySelector('.product--checked');
-        checkedProduct.classList.remove('product--checked');
-        images[currentIndex].classList.add('product--checked');
+        checkedProduct.classList = '';
+        images[currentIndex].classList = 'product--checked checked';
+    })
+})
+
+sizes.forEach((item, index) => {
+    item.addEventListener('click', function() {
+        let checkedSize = document.querySelector('.size--checked');
+        if (checkedSize !== null) {
+            checkedSize.classList = '';
+        }
+        sizes[index].classList = 'size--checked checked';
     })
 })
 

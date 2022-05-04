@@ -1,4 +1,4 @@
-var products = document.querySelectorAll('.product');
+let products = document.querySelectorAll('.product');
 
 products.forEach((item, index) => {
 	item.addEventListener('click', function() {
