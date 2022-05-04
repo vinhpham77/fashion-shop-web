@@ -8,6 +8,10 @@
     clear: both;
 }
 
+/*.container{
+	text-align:center;
+}*/
+
 .payment{
     padding: 100px 0;
 }
@@ -47,12 +51,12 @@
 .payment-content-left{
     width: 60%;
 }
-.payment-content-right{
-    /* width: 40%; */
+/*.payment-content-right{
+    
     border-left: 2px solid #ddd;
     padding-left: 12px;
     float: right;
-    /* margin-bottom: 200px; */
+    
     position: relative;
     bottom: 432px;
     left: 266.1px;
@@ -99,7 +103,7 @@
     width: 100%;
     color: #75758A;
     padding-left: 12px;
-}
+}*/
 .payment-content-right-payment{
     position: relative;
     top: 100px;
@@ -119,7 +123,10 @@
     transition: all 0.3s ease;
     border: 2px solid black;
     margin-bottom: 20px;
+	float: right;
+    margin-right: 1000px;
 }
+
 .payment-content-right-payment button:hover{
     background-color: black;
     color: #fff;
