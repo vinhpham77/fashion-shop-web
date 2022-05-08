@@ -1,32 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
-
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
 }
 
 * {
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
-.product__detail {
-    display: flex;
-}
-
-.product__detail>div:not(:last-child) {
-    flex: 50%;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
+.product__detail,
 .product-detail__gallery {
-    margin-left: 80px;
-    margin-right: 40px;
     display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 300px) {
+    body {
+        font-size: 1.1rem;
+    }
+
+    .product-detail__gallery,
+    .product-detail__info {
+        flex: 100%;
+    }
+
+    .product-detail__gallery {
+        padding: 3%;
+    }
+
+    .product-detail__info {
+        padding: 0 3% 3% 3%;
+    }
+
+    .product-detail__info>div+div {
+        padding-top: 2%;
+    }
+
+    .product-detail__description {
+        margin: 3% 3%;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    body {
+        font-size: 1.2rem;
+    }
+
+    .product-detail__gallery {
+        padding: 6%;
+    }
+
+    .product-detail__info {
+        padding: 0 6% 6% 6%;
+    }
+
+    .product-detail__description {
+        margin: 3% 6%;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        font-size: 1.6rem;
+    }
+
+    .gallery__inner {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 1.4rem;
+    }
+
+    .product-detail__gallery,
+    .product-detail__info {
+        flex: 50%;
+    }
+
+    .product-detail__gallery {
+        padding: 5% 2% 3% 5%;
+    }
+
+    .product-detail__info {
+        padding: 5% 5% 3% 2%;
+    }
+
+    .product-detail__info>div+div {
+        padding-top: 3%;
+    }
+
+    .gallery__inner {
+        width: 55%;
+    }
+
+    .product-detail__description {
+        margin: 3% 5%;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    body {
+        font-size: 2rem;
+    }
+
+    .product-detail__gallery {
+        padding: 6% 2% 3% 6%;
+    }
+
+    .product-detail__info {
+        padding: 6% 6% 3% 2%;
+    }
+
+    .product-detail__info>div+div {
+        padding-top: 5%;
+    }
+
+    .gallery__inner {
+        width: 40%;
+    }
+
+    .product-detail__description {
+        margin: 3% 6%;
+    }
 }
 
 .gallery--big {
     flex: 80%;
-    margin-right: 5px;
+}
+
+.gallery--small {
+    flex: 20%;
+    padding: 1px;
 }
 
 .product-detail__gallery>div>img {
@@ -34,19 +138,15 @@ body {
     cursor: pointer;
     object-fit: cover;
     object-position: center;
-}
-
-.gallery--small {
-    flex: 20%;
-    padding: 2px;
-}
-
-.gallery--small>img+img {
-    margin-top: 2px;
+    border: 2px solid transparent;
 }
 
 .gallery--zoom {
+    margin: 0;
+    padding: 0;
     position: fixed;
+    z-index: 99;
+    border-radius: 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -69,11 +169,7 @@ body {
     display: none;
 }
 
-.gallery__inner {
-    width: 32%;
-}
-
-.gallery__inner img {
+.gallery__inner>img {
     width: 100%;
 }
 
@@ -96,21 +192,17 @@ body {
     right: 2%;
 }
 
-.gallery__img>img {
-    width: 100%;
-}
-
 .checked {
     border: 2px solid darkcyan !important;
 }
 
-.product-detail__info {
-    margin-right: 80px;
-    font-size: 25px;
+.product-detail__info>div+div {
+    white-space: nowrap;
 }
 
-.product-detail__info>div+div {
-    margin-top: 30px;
+.product-detail__info>div>*:not(:last-child) {
+    margin-bottom: 2%;
+    margin-right: 3%;
 }
 
 .product-detail__name {
@@ -119,8 +211,30 @@ body {
     font-size: 140%;
 }
 
-.product-detail__price>span+span {
-    margin-left: 2%;
+/*.product-detail__rating {
+    display: flex;
+    font-size: 90%;
+}
+
+.rating__star {
+    background-size: cover;
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.star--filled {
+    background-image: url(https://pubcdn2.ivymoda.com/images/rating-filled.svg);
+}
+
+.star--empty {
+    background-image: url(https://pubcdn2.ivymoda.com/images/rating.svg);
+}*/
+
+.product-detail__price {
+    margin-bottom: 2%;
 }
 
 .price--normal {
@@ -143,36 +257,209 @@ body {
 }
 
 .product-detail__colors>a>img {
-    width: 100px;
-    height: 50px;
-    margin-top: 10px;
+    box-sizing: content-box;
+    padding: 2px;
+    width: 70px;
+    height: 40px;
     object-fit: cover;
+    border: 2px solid lightgrey;
 }
 
 .product-detail__size>span {
     display: inline-block;
     box-sizing: content-box;
     width: 70px;
+    max-width: 15%;
     height: 40px;
-    line-height: 40px;
+    padding: 2px;
+    line-height: 38px;
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
     border: 2px solid lightgrey;
+    user-select: none;
 }
 
-.product-detail__quantity > * {
+.product-detail__size>p>span {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.product-detail__quantity>div+div {
+    position: relative;
+    box-sizing: content-box;
+    width: 140px;
+    padding: 2px;
     height: 40px;
-    font-size: inherit;
+    border: 2px solid lightgray;
 }
 
-.product-detail__quantity > input[type=number] {
-    width: 70px;
+.product-detail__quantity>div>i {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 75%;
+}
+
+.fa-minus {
+    left: 10%;
+}
+
+.fa-plus {
+    right: 10%;
+}
+
+.product-detail__quantity>div>input {
+    position: absolute;
     text-align: center;
-    border: 2px solid lightgrey;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100%;
+    border-style: none;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none;
+.product-detail__quantity>div>input:focus {
+    outline: none;
+}
+
+.product-detail__quantity>div>input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.product-detail__purchasing>span {
+    text-align: center;
+    display: inline-block;
+    box-sizing: content-box;
+    height: 40px;
+    line-height: 36px;
+    padding: 2px 14px;
+    margin-top: 4%;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    user-select: none;
+}
+
+.buy-now__btn {
+    background-color: black;
+    color: white;
+    border: 2px solid transparent;
+}
+
+.buy-now__btn:hover {
+    background-color: #fff;
+    color: black;
+    border: 2px solid black;
+}
+
+.add-to-cart__btn {
+    background-color: white;
+    border: 2px solid black;
+}
+
+.add-to-cart__btn:hover {
+    background-color: black;
+    border: 2px solid transparent;
+    color: white;
+}
+
+.tab__header {
+    display: flex;
+    flex-wrap: nowrap;
+    border-bottom: 1px solid whitesmoke;
+    border-radius: 0;
+    width: 100%;
+}
+
+.tab__header>span {
+    padding-bottom: 1%;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.tab__header>span+span {
+    margin-left: 4%;
+}
+
+.tab__header--active {
+    border-bottom: 2px solid #000;
+    border-radius: 0;
+}
+
+.tab__body {
+    max-width: 100%;
+    height: 200px;
+    overflow: hidden;
+    color: #5D5656;
+    font-size: 90%;
+    white-space: normal;
+}
+
+.tab__body--inactive {
+    display: none;
+}
+
+.tab__body {
+    margin-top: 3%;
+}
+
+
+.tab__more-description {
+    position: relative;
+    margin-top: 4%;
+}
+
+.tab__more-description>i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 6px 10px;
+    border: 1px solid darkgray;
+    background-color: white;
+    color: darkgray;
+    z-index: 2;
+    font-size: 80%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.expand--more>.fa-angle-up {
+    display: none;
+}
+
+.expand--less>.fa-angle-down {
+    display: none;
+}
+
+.line {
+    border-bottom: 1px solid lightgray;
+    border-radius: 0;
+    width: 100%;
+}
+
+.toast {
+    display: flex;
+    position: fixed;
+    align-items: baseline;
+    background-color: skyblue;
+    padding: 10px 20px;
+    top: 2%;
+    right: 2%;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(calc(100% + 2%));
+}
+
+.toast--show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.toast>div+div {
+    margin-left: 12px;
 }
