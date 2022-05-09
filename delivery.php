@@ -11,7 +11,7 @@
         <div class="delivery-content">
             <div class="delivery-content-left">
                 <table>
-                    <p>Vui lòng chọn địa chỉ giao hàng</p>
+                    <h1>Vui lòng chọn địa chỉ giao hàng</h1>
                     <div class="delivery-content-login">
                         <i class="fa-solid fa-right-to-bracket"></i>
                         <p><button>Đăng nhập</button> (nếu bạn đã có tài khoản)</p>
