@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
 	<link rel="stylesheet" href="style/styledelivery.css">
 	<link rel="stylesheet" href="fontawesome/css/all.css">
-    <script async type="text/javascript" src="js/Delivery.js"></script>
 </head>
 <body>
     <section class="delivery">  
