@@ -90,7 +90,7 @@
 			<div class="toast__msg"></div>
 		</div>
 	</div>
-	<div class="product-detail__description">
+	<div class="product__description">
 			<div class="tab__header">
 				<span class="tab__header--active">Giới thiệu</span>
 				<span class="">Chi tiết sản phẩm</span>

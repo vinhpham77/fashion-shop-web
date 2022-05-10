@@ -111,7 +111,7 @@ btnExpand.addEventListener('click', function() {
     } else {
         btnExpand.classList.remove('expand--less');
         btnExpand.classList.add('expand--more');
-        tapBody.style.height = "100px";
+        tapBody.style.height = "150px";
     }
 })
 
