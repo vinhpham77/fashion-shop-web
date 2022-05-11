@@ -69,7 +69,7 @@
                     </tr>
                 </table>
                 <div class="cart-content-right-fee">
-                    <p>Phí ship 0<sup>đ</sup></p>
+                    <p>Phí ship đơn hàng 0<sup>đ</sup></p>
                 </div>
                 <div class="cart-content-right-button">
                     <input type="button" value="Đặt Hàng" onclick="lienketDatHang(this)">
