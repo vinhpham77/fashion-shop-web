@@ -18,7 +18,7 @@ function xoasp(x){
     tongtien.innerHTML = thanhtoanhientai.toLocaleString('de-DE');
     
     var thongbao = confirm("Bạn có chắc chắn muốn xóa không?")
-    console.log(thongbao);
+
     if(thongbao==true){
         tr.remove();
         alert("Bạn đã xóa thành công!")
@@ -34,7 +34,6 @@ number.forEach((item, index)=>{
         var giathanh;
 
         giathanh = gia * soluong;
-        console.log(giathanh);
         item.parentElement.nextElementSibling.children[0].innerHTML= giathanh.toLocaleString('de-DE')+' đ';
 
         var tongSLSP = tongsl(number);
