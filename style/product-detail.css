@@ -10,6 +10,7 @@ body {
 .product-detail__gallery {
     display: flex;
     flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
 }
 
 @media screen and (min-width: 300px) {
@@ -19,7 +20,9 @@ body {
 
     .product-detail__gallery,
     .product-detail__info {
+        -ms-flex: 100%;
         flex: 100%;
+        max-width: 100%;
     }
 
     .product-detail__gallery {
@@ -71,6 +74,8 @@ body {
     .product-detail__gallery,
     .product-detail__info {
         flex: 50%;
+        -ms-flex: 50%;
+        max-width: 50%;
     }
 
     .product-detail__gallery {
@@ -122,11 +127,15 @@ body {
 
 .gallery--big {
     flex: 80%;
+    -ms-flex: 80%;
+    max-width: 80%;
     padding-right: 2px;
 }
 
 .gallery--small {
     flex: 20%;
+    -ms-flex: 20%;
+    max-width: 20%;
     padding: 2px;
 }
 
@@ -190,7 +199,7 @@ body {
 }
 
 .checked {
-    border: 2px solid darkcyan !important;
+    border: 2px solid black !important;
 }
 
 .product-detail__info>div+div {
@@ -207,28 +216,6 @@ body {
     font-weight: bold;
     font-size: 140%;
 }
-
-/*.product-detail__rating {
-    display: flex;
-    font-size: 90%;
-}
-
-.rating__star {
-    background-size: cover;
-    display: inline-block;
-    background-repeat: no-repeat;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-}
-
-.star--filled {
-    background-image: url(https://pubcdn2.ivymoda.com/images/rating-filled.svg);
-}
-
-.star--empty {
-    background-image: url(https://pubcdn2.ivymoda.com/images/rating.svg);
-}*/
 
 .product-detail__price {
     margin-bottom: 2%;
@@ -275,6 +262,7 @@ body {
     text-transform: uppercase;
     border: 2px solid lightgrey;
     user-select: none;
+    -webkit-user-select: none;
 }
 
 .product-detail__size>p>span {
@@ -332,12 +320,13 @@ input::-webkit-outer-spin-button {
     display: inline-block;
     box-sizing: content-box;
     height: 40px;
-    line-height: 36px;
+    line-height: 38px;
     padding: 2px 14px;
     margin-top: 4%;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     user-select: none;
+    -webkit-user-select: none;
 }
 
 .buy-now__btn {
@@ -366,6 +355,7 @@ input::-webkit-outer-spin-button {
 .tab__header {
     display: flex;
     flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
     border-bottom: 1px solid whitesmoke;
     border-radius: 0;
     width: 100%;
@@ -441,10 +431,10 @@ input::-webkit-outer-spin-button {
 .toast {
     display: flex;
     position: fixed;
-    background-color: royalblue;
+    background-color: cadetblue;
     color: white;
     padding: 10px 20px;
-    font-size: 80%;
+    font-size: 70%;
     top: 2%;
     right: 2%;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);

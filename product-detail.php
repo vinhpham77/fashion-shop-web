@@ -24,16 +24,6 @@
 		</div>
 		<div class="product-detail__info">
 			<div class="product-detail__name">Áo phũ vàng cam óng ánh người đẹp</div>
-			<!-- <div class="product-detail__rating" data-href="#">
-				<div class="rating__bar">
-					<div class="rating__star star--filled"></div>
-					<div class="rating__star star--filled"></div>
-					<div class="rating__star star--filled"></div>
-					<div class="rating__star star--filled"></div>
-					<div class="rating__star star--empty"></div>
-				</div>
-				<div class="rating__text">(1 đánh giá)</div>
-			</div> -->
 			<div class="product-detail__price">
 				<span class="price--original">3.000.000đ</span>
 				<span class="price--normal">6.000.000đ</span>
