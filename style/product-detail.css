@@ -431,7 +431,7 @@ input::-webkit-outer-spin-button {
 .toast {
     display: flex;
     position: fixed;
-    border: 2px solid darkslategrey;
+    border: 2px solid #F4F4F4;
     background-color: #fff;
     padding: 10px 20px;
     font-size: 70%;
