@@ -21,7 +21,8 @@
 	  <form action="">
 	       Username: <input type = "text" class="form-control">
 		   Password: <input type ="text" class="form-control">
-		   <input type="submit" class="btn btn-block btn-info">
+		   <input type="submit" value="Đăng nhập" class="btn btn-block btn-info">
+                   <input type="submit" value="Đăng ký" class="btn btn-block btn-info">
 	  </form> 
 	</div>
  </body>
