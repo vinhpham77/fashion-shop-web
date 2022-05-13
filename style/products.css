@@ -1,12 +1,53 @@
 :root {
-	--product__width: 160px;
 	--product__scale: 1.6;
 	--product__height: calc(var(--product__width) * var(--product__scale));
 }
 
 html {
 	font-size: 62.5%;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+}
+
+@media screen and (min-width: 320px) {
+    :root {
+		--product__width: 100%;
+	}
+	.product {
+		font-size: 1.8rem;
+	}
+}
+
+@media screen and (min-width: 370px) {
+    :root {
+		--product__width: 100%;
+	}
+	.product {
+		font-size: 2rem;
+	}
+}
+
+@media screen and (min-width: 500px) {
+    :root {
+		--product__width: 200px;
+	}
+	.product {
+		font-size: 1.6rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+		--product__width: 180px;
+	}
+	.product {
+		font-size: 1.3rem;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+    :root {
+		--product__width: 180px;
+	}
 }
 
 .products__block {
@@ -16,16 +57,14 @@ html {
 	padding: 1rem;
 }
 
-.product {
-	font-size: 1.4rem;
-}
+
 
 .product__avatar {
 	cursor: pointer;
 }
 
 .product > div + div {
-	margin-top: 0.5rem;
+	margin-top: 2%;
 }
 
 .product__avatar > img {
@@ -52,8 +91,13 @@ html {
 	font-size: 120%;
 }
 
+.product__price {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
 .product__price > span + span {
-	margin-left: 0.4rem;
+	margin-left: 2%;
 }
 
 .price--normal {
