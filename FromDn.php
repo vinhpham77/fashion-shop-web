@@ -20,7 +20,7 @@
 	  <h3 class="text-uppercase">From Đăng Nhập</h3>
 	  <form action="">
 	       Username: <input type = "text" class="form-control">
-		   Password: <input type ="text" class="from-control">
+		   Password: <input type ="text" class="form-control">
 		   <input type="submit" class="btn btn-block btn-info">
 	  </form> 
 	</div>
