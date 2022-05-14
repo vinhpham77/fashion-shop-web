@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion_Shop</title>
-    <link rel="stylesheet" href="./style/trangchu.css">
+    <link rel="stylesheet" href="./style/home.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
 </head>
 <body>
     <header>
@@ -137,10 +138,10 @@
         </div>
 
         <div class="orthers">
-            <li><input id="input1" placeholder="Tìm kiếm" type="text"></li>
-            <li><a class="fa-paw" href=""><img width="30px" height="30px" src="./images/icon_paw.png" alt=""></a></li>
-            <li><a class="fa-user" href=""><img width="30px" height="30px" src="./images/icon_user.png" alt=""></a></li>
-            <li><a class="fa-shopping-bag" href=""><img width="30px" height="30px" src="./images/icon_cart.png" alt=""></a></li>
+            <li class="btn-search"><input id="input1" placeholder="Tìm kiếm" type="text"> <span ><i class="fa-solid fa-magnifying-glass"></i></span></li>
+            <li><a class="fa--paw" href=""><img width="30px" height="30px" src="./images/icon_paw.png" alt=""></a></li>
+            <li><a class="fa--user" href=""><img width="30px" height="30px" src="./images/icon_user.png" alt=""></a></li>
+            <li><a class="fa--shopping-bag" href=""><img width="30px" height="30px" src="./images/icon_cart.png" alt=""></a></li>
         </div>
     </header>
 
@@ -160,12 +161,12 @@
     </section>
     <!--apcontainer-->
     <section class="app-container">
-        <p>Tải ứng dụng IVY moda</p>
+        <p>Tải ứng dụng 6AESN</p>
         <div class="app-google">
             <img src="./images/appstore.png" alt="">
             <img src="./images/googleplay.png" alt="">
         </div>
-        <p>Nhận bản tin IVY moda</p>
+        <p>Nhận bản tin 6AESN</p>
         <input type="text" placeholder="Nhập email của bạn...">
     </section>    
     <!--footer-->
@@ -185,8 +186,8 @@
 </div>
 <div class="footer-center">
     <p>
-        Công ty Cổ phần Dự Kim với số đăng ký kinh doanh: 0105777650<br>
-        Địa chỉ đăng ký: Tổ dân phố Tháp, P.Đại Mỗ, Q.Nam Từ Liêm, TP.Hà Nội, Việt Nam <br>
+        Công ty Cổ phần Anh Đây Là Nhất với số đăng ký kinh doanh: 0105777650<br>
+        Địa chỉ đăng ký: Trường Đại Học Quy Nhơn ,T.Phố Quy Nhơn,Tỉnh Bình Định <br>
         Số điện thoại: <span>0243 205 2222</span> <br>
         </p>
 </div>
