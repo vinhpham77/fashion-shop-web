@@ -22,14 +22,19 @@ header{
     left: 0;
     width: 100%;
     z-index: 1;
-    background:
     
 }
 header:hover{
-    background: rgba(255, 255,255,1);
+    background: rgb(243, 153, 153);
 }
 .logo{
     flex:1;
+    /* height: 40px;  width: 50px;*/
+ 
+
+}
+.logo>img{
+   width: 70%;
 }
 .menu{
     flex:3;
