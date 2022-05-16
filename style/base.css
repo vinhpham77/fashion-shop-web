@@ -1,0 +1,24 @@
+:root {
+	--product__width:  180px;
+	--product__scale: 1.7;
+    --product__height: calc(var(--product__width) * var(--product__scale));
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+	font-size: 16px;
+}
+
+.bordered__object {
+	border-radius: 10px;
+}
