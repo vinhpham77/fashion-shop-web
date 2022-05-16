@@ -1,111 +1,57 @@
-:root {
-	--product__scale: 1.6;
-	--product__height: calc(var(--product__width) * var(--product__scale));
-}
-
-html {
-	font-size: 62.5%;
-	font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
-}
-
-@media screen and (min-width: 320px) {
-    :root {
-		--product__width: 100%;
-	}
-	.product {
-		font-size: 1.8rem;
-	}
-}
-
-@media screen and (min-width: 370px) {
-    :root {
-		--product__width: 100%;
-	}
-	.product {
-		font-size: 2rem;
-	}
-}
-
-@media screen and (min-width: 500px) {
-    :root {
-		--product__width: 200px;
-	}
-	.product {
-		font-size: 1.6rem;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-    :root {
-		--product__width: 180px;
-	}
-	.product {
-		font-size: 1.3rem;
-	}
-}
-
-@media screen and (min-width: 1400px) {
-    :root {
-		--product__width: 180px;
-	}
-}
-
 .products__block {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(var(--product__width), 1fr));
-	grid-gap: 1.6rem 1rem;
-	padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--product__width), 1fr));
+    grid-gap: 2rem;
+    padding: 1rem;
 }
-
-
 
 .product__avatar {
-	cursor: pointer;
+    cursor: pointer;
 }
 
-.product > div + div {
-	margin-top: 2%;
+.product>div+div {
+    margin-top: 2%;
 }
 
-.product__avatar > img {
-	width: 100%;
-	height: var(--product__height);
-	object-fit: cover;
-	border-radius: 1rem;
+.product__avatar>img {
+    width: 100%;
+    height: var(--product__height);
+    object-fit: cover;
+    object-position: center;
 }
 
 .product__avatar--back {
-	display: none;
+    display: none;
 }
 
 .product__avatar:hover .product__avatar--back {
-	display: inline-block;
+    display: inline-block;
 }
 
 .product__avatar:hover .product__avatar--front {
-	display: none;
+    display: none;
 }
 
 .product__name {
-	font-weight: bold;
-	font-size: 120%;
+    font-weight: bold;
+    font-size: 120%;
 }
 
 .product__price {
-	white-space: nowrap;
-	overflow: hidden;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.product__price > span + span {
-	margin-left: 2%;
+.product__price>span+span {
+    margin-left: 2%;
 }
 
 .price--normal {
-	text-decoration: line-through;
-	color: lightgrey;
-	font-style: italic;
+    text-decoration: line-through;
+    color: lightgrey;
+    font-style: italic;
 }
 
 .price--discount {
-	color: red;
+    color: red;
 }
