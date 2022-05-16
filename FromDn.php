@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
- <meta charset ="UTF-8">
-  <title>Đăng Nhập</title>
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
 
-<!-- jQuery library -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<form method="post" action="login.php" class="form">
 
-<!-- Popper JS -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<h2>Đăng Nhập</h2>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
- </head>
- <body>
-    <div class="container">
-	  <h3 class="text-uppercase">From Đăng Nhập</h3>
-	  <form action="">
-	       Username: <input type = "text" class="form-control">
-		   Password: <input type ="text" class="form-control">
-		   <input type="submit" value="Đăng nhập" class="btn btn-block btn-info">
-                   <input type="submit" value="Đăng ký" class="btn btn-block btn-info">
-	  </form> 
-	</div>
- </body>
+Username: <input type="text" name="username" value="" required>
+
+Password: <input type="password" name="password" value="" required/>
+
+<input type="submit" name="dangky" class="login" value="Đăng Nhập	"/>
+ </form>
+</body>
+</html>
