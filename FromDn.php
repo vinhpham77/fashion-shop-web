@@ -15,6 +15,7 @@ Username: <input type="text" name="username" value="" required>
 Password: <input type="password" name="password" value="" required/>
 
 <input type="submit" name="dangky" class="login" value="Đăng Nhập	"/>
+ <input type="submit" name="dangky" class="register" value="Đăng Ký" style="margin-top: 5px;">
  </form>
 </body>
 </html>
