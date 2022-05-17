@@ -15,11 +15,11 @@
                     <h1>Vui lòng chọn địa chỉ giao hàng</h1>
                     <div class="delivery-content-login">
                         <i class="fa-solid fa-right-to-bracket"></i>
-                        <p><button type="button" onclick="Trang_dang_nhap()">Đăng nhập</button> (nếu bạn đã có tài khoản)</p>
+                        <p><button type="button" onclick="trangdangnhap()">Đăng nhập</button> (nếu bạn đã có tài khoản)</p>
                     </div>
                     <div class="delivery-conten-above-registration">
                         <i class="fa-solid fa-right-to-bracket"></i>
-                        <p><button type="button" onclick="Trang_dang_ky()">Đăng ký tài khoản</button> (Nếu bạn chưa có tài khoản)</p>
+                        <p><button type="button" onclick="trangdangky()">Đăng ký tài khoản</button> (Nếu bạn chưa có tài khoản)</p>
                     </div>
                     <div class="delivery-conten-above-guest">
                         <i class="fa-solid fa-bell-concierge"></i>
@@ -60,7 +60,7 @@
                     </div>
                 </table>
                 <div class="delivery-content-left-button">
-                    <p><button style="font-weight: bold" type="button" onclick="quay_lai_gio_hang()">&#8678; Quay lại giỏ hàng</button></p>
+                    <p><button style="font-weight: bold" type="button" onclick="quaylaigiohang()">&#8678; Quay lại giỏ hàng</button></p>
                 </div>
                 <div class="delivery-content-right-button">
                     <p><button style="font-weight: bold" type="button" onclick="trangthanhtoan()">THANH TOÁN VÀ GIAO HÀNG</button></p>
