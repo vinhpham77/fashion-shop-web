@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 17, 2022 at 10:58 AM
+-- Generation Time: May 17, 2022 at 01:37 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -158,13 +158,13 @@ INSERT INTO `product` (`prod_id`, `cate_id`, `prod_name`, `price`, `discount`, `
 DROP TABLE IF EXISTS `size`;
 CREATE TABLE IF NOT EXISTS `size` (
   `prod_id` int NOT NULL COMMENT 'mã sản phẩm',
-  `S` int NOT NULL DEFAULT '0' COMMENT 'size S',
-  `M` int NOT NULL DEFAULT '0' COMMENT 'size M',
-  `X` int NOT NULL DEFAULT '0' COMMENT 'size X',
-  `L` int NOT NULL DEFAULT '0' COMMENT 'size L',
-  `XXL` int NOT NULL DEFAULT '0' COMMENT 'size XXL',
+  `s` int NOT NULL DEFAULT '0' COMMENT 'size S',
+  `m` int NOT NULL DEFAULT '0' COMMENT 'size M',
+  `x` int NOT NULL DEFAULT '0' COMMENT 'size X',
+  `l` int NOT NULL DEFAULT '0' COMMENT 'size L',
+  `xxl` int NOT NULL DEFAULT '0' COMMENT 'size XXL',
   UNIQUE KEY `UN_size-prodID` (`prod_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=ascii COLLATE=ascii_bin;
 
 --
 -- Constraints for dumped tables
