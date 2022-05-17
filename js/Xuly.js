@@ -57,7 +57,7 @@ function validate()
     if (!mailformat.test(email)){
         flag = false;
         
-        showError('phone', 'Vui lòng kiểm tra lại Email');
+        showError('email', 'Vui lòng kiểm tra lại Email');
     }
     
     return flag;
