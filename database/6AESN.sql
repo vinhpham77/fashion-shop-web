@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 17, 2022 at 10:49 AM
+-- Generation Time: May 17, 2022 at 10:58 AM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `description` (
   `introduction` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'giới thiệu',
   `detail` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'chi tiết',
   `maintenance` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'bảo quản',
-  UNIQUE KEY `UN_prodID` (`prod_id`)
+  UNIQUE KEY `UN_des-prodID` (`prod_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- --------------------------------------------------------
