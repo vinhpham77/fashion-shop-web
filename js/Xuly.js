@@ -21,12 +21,12 @@ var phone = document.querySelector('phone')
 // // Validator.isrequired = function(){
 
 // // }
-// Lấy giá trị của một input
-function getValue(id){
-    return document.getElementById(id).value.trim();
+
+function getValue(input){
+    return document.getElementById(input).value.trim();
 }
 
-// Hiển thị lỗi
+
 function showError(input, mess){
     document.getElementById(input + '_error').innerHTML = mess;
 }
@@ -37,7 +37,7 @@ function validate()
 {
     var flag = true;
     
-    // 1 username
+   
     var username = getValue('username');
     if (username == '' || username.length < 20 || !/^[a-zA-Z0-9]+$/.test(username)){
         flag = false;
@@ -45,14 +45,13 @@ function validate()
     }
     
     
-    // 3. Phone
+   
     var phone = getValue('phone');
     if (phone != '' &&  !/^[0-9]{10}$/.test(phone)){
         flag = false;
         showError('phone', 'Vui lòng kiểm tra lại Phone');
     }
     
-    // 4. Email
     var email = getValue('email');
     var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/;
     if (!mailformat.test(email)){
