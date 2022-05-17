@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 17, 2022 at 01:37 PM
+-- Generation Time: May 17, 2022 at 03:40 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -195,6 +195,12 @@ ALTER TABLE `order`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `FK_cate_id` FOREIGN KEY (`cate_id`) REFERENCES `category` (`cate_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `size`
+--
+ALTER TABLE `size`
+  ADD CONSTRAINT `FK_size-prodID` FOREIGN KEY (`prod_id`) REFERENCES `product` (`prod_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
