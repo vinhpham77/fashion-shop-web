@@ -2,10 +2,6 @@
     display: flex;
     flex-wrap: wrap;
 }
-
-.category{
-   padding: 100px 0 0; 
-}
 .category-top{
     margin-bottom: 50px;
 }
@@ -87,7 +83,7 @@
     color: #333333;
 }
 .category-right-content-item img{
-    width: 100%;
+    width: 70%;
 }
 .category-right-content-item p{
     font-size: 14px;

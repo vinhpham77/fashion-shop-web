@@ -47,9 +47,17 @@
                     <div class="category-right-top-item">
                         <p>Hàng nữ mới về</p>
                     </div>
-                    <div class="category-right-top-item">
-                        <button><span>Bộ lọc</span><i class="fa-solid fa-sort-down"></i></button>
-                    </div>
+					
+					<div class="category-right-top-item">
+						<select name="" id="">
+                            <option value="">Size</option>
+                            <option value="">S</option>
+                            <option value="">M</option>
+							<option value="">L</option>
+							<option value="">XL</option>
+							<option value="">XXL</option>
+                        </select>
+					</div>					              
                     <div class="category-right-top-item">
                         <select name="" id="">
                             <option value="">Sắp xếp</option>
@@ -59,48 +67,43 @@
                     </div>
                     <div class="category-right-content row">
                         <div class="category-right-content-item">
-                            <img src="image/sp1.jpg" alt="">
+                            <img src="images/sp1.jpg" alt="">
                             <h1>Sản phẩm 1</h1>
                             <p>50.000<sup>đ</sup></p>
                         </div>
                         <div class="category-right-content-item">
-                            <img src="image/sp2.jpg" alt="">
+                            <img src="images/sp2.jpg" alt="">
                             <h1>Sản phẩm 2</h1>
                             <p>600.000<sup>đ</sup></p>
                         </div>
                         <div class="category-right-content-item">
-                            <img src="image/sp3.jpg" alt="">
+                            <img src="images/sp3.jpg" alt="">
                             <h1>Sản phẩm 3</h1>
                             <p>600.000<sup>đ</sup></p>
                         </div>
                         <div class="category-right-content-item">
-                            <img src="image/sp4.jpg" alt="">
+                            <img src="images/sp4.jpg" alt="">
                             <h1>Sản phẩm 4</h1>
                             <p>600.000<sup>đ</sup></p>
                         </div>
                         <div class="category-right-content-item">
-                            <img src="image/sp5.jpg" alt="">
+                            <img src="images/sp5.jpg" alt="">
                             <h1>Sản phẩm 5</h1>
                             <p>600.000<sup>đ</sup></p>
                         </div>
                         <div class="category-right-content-item">
-                            <img src="image/sp6.jpg" alt="">
+                            <img src="images/sp6.jpg" alt="">
                             <h1>Sản phẩm 6</h1>
                             <p>600.000<sup>đ</sup></p>
                         </div>
                         <div class="category-right-content-item">
-                            <img src="image/sp7.jpg" alt="">
+                            <img src="images/sp7.jpg" alt="">
                             <h1>Sản phẩm 7</h1>
                             <p>600.000<sup>đ</sup></p>
                         </div>
                         <div class="category-right-content-item">
-                            <img src="image/sp8.jpg" alt="">
+                            <img src="images/sp8.jpg" alt="">
                             <h1>Sản phẩm 8</h1>
-                            <p>600.000<sup>đ</sup></p>
-                        </div>
-                        <div class="category-right-content-item">
-                            <img src="image/sp9.jpg" alt="">
-                            <h1>Sản phẩm 9</h1>
                             <p>600.000<sup>đ</sup></p>
                         </div>
                     </div>
