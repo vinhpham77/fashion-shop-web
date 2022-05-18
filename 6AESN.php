@@ -17,7 +17,7 @@
 
         <div class="menu">
             
-            <li><a href="">Nữ</a>
+            <li><a href="">NỮ</a>
                 <ul class="sub-menu">
                     <li><a href="">Hàng mới về</a></li>    
                     <li><a href="">Deal Hot giảm 20%</a></li>  
@@ -26,21 +26,17 @@
                             <li><a href="">Áo sơ mi</a></li>
                             <li><a href="">Áo thun</a></li>
                             <li><a href="">Áo croptop</a></li>
-                            <li><a href="">Áo peplum</a></li>
-                            <li><a href="">Áo len</a></li>
                         </ul>
                     </li>   
 
                     <li><a href="">Chân váy</a>
-                        <ul>
-                            <li><a href="">Chân váy</a></li>
+                        <ul>     
                             <li><a href="">Chân váy xếp li </a></li>
                             <li><a href="">Chân váy chữ A</a></li>    
                         </ul>
                     </li> 
                     <li><a href="">Đầm</a>
                         <ul>
-                            <li><a href="">Đầm</a></li>
                             <li><a href="">Đầm maxi/voan</a></li>
                             <li><a href="">Đầm thun</a></li>
                         </ul>
@@ -50,20 +46,18 @@
             <li><a href="">NAM</a>
                 <ul class="sub-menu">
                     <li><a href="">Hàng mới về</a></li>    
-                    <li><a href="">Deal Hot giảm 15%</a></li>  
+                    <li><a href="">Deal Hot giảm 10%</a></li>  
                     <li><a href="">Áo</a>
                         <ul>
                             <li><a href="">Áo sơ mi</a></li>
                             <li><a href="">Áo thun</a></li>
                             <li><a href="">Áo polo</a></li>
-                            <li><a href="">Áo len</a></li>
                         </ul>
                     </li>   
 
                     <li><a href="">Quần</a>
                         <ul>
                             <li><a href="">Quần short</a></li>
-                            <li><a href="">Quần tây âu </a></li>
                             <li><a href="">Quần kaki</a></li>   
                             <li><a href="">Quần jean</a></li>    
                         </ul>
@@ -90,43 +84,8 @@
             </li>
             <li><a href="">SALE</a>
                 <ul class="sub-menu">
-                    <li><a href="">Sale 90%</a></li>
-                    <li><a href="">Sale 80% </a></li>
-                </ul>
-            </li>
-            <li><a href="">KHẨU TRANG</a>
-                <ul class="sub-menu">
-                    <li><a href="">Khẩu trang em bé</a>
-                        <ul>
-                            <li><a href="">Loại 10k-15k</a></li>
-                            <li><a href="">Loại 20-30k</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">Khẩu trang người lớn  </a>
-                        <ul>
-                            <li><a href="">Loại 50k-75k</a></li>
-                            <li><a href="">Loại 100-120k</a></li>
-                        </ul>
-                    </li>
-                </ul>
-               
-            </li>
-            <li><a href="">BỘ SƯU TẬP</a>
-                <ul class="sub-menu">
-                    <li><a href="">Nữ</a>
-                        <ul>
-                            <li><a href="">Elevated Simplicity</a></li>
-                            <li><a href="">Spring Love</a></li>
-                            <li><a href="">Art Station</a></li>
-                            <li><a href="">Getting Cozy</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">Nam</a>
-                        <ul>
-                            <li><a href="">New Polo for Men</a></li>
-                            <li><a href="">Nature Soft</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="">Sale 10%</a></li>
+                    <li><a href="">Sale 20% </a></li>
                 </ul>
             </li>
             <li><a href="">THÔNG TIN<a>
@@ -137,7 +96,7 @@
                 </ul>
             </li>
         </div>
-
+    <img src="./images/aosomiluadui.png" alt="">
         <div class="orthers">
             <li class="btn-search"><input id="input1" placeholder="Tìm kiếm" type="text"> <span ><i class="fa-solid fa-magnifying-glass"></i></span></li>
             <li><a class="fa--paw" href=""><img width="30px" height="30px" src="./images/icon_paw.png" alt=""></a></li>
