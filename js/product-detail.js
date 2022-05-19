@@ -61,16 +61,16 @@ prev.onclick = function() {
 let sizes = document.querySelectorAll('.product-detail__size > span');
 let sizeName = document.querySelector('.product-detail__size > p > span');
 
-sizes.forEach((item, index) => {
+sizes.forEach(function(item) {
     item.onclick = function() {
         let checkedSize = document.querySelector('.size--checked');
         if (checkedSize !== null) {
             checkedSize.classList.remove('size--checked');
             checkedSize.classList.remove('checked');
         }
-        sizes[index].classList.add('size--checked');
-        sizes[index].classList.add('checked');
-        sizeName.innerHTML = sizes[index].innerHTML;
+        item.classList.add('size--checked');
+        item.classList.add('checked');
+        sizeName.innerHTML = item.innerHTML;
     }
 })
 
