@@ -99,8 +99,7 @@
     <img src="./images/aosomiluadui.png" alt="">
         <div class="orthers">
             <li class="btn-search"><input id="input1" placeholder="Tìm kiếm" type="text"> <span ><i class="fa-solid fa-magnifying-glass"></i></span></li>
-            <li><a class="fa--paw" href=""><img width="30px" height="30px" src="./images/icon_paw.png" alt=""></a></li>
-            <li><a class="fa--user" href=""><img width="30px" height="30px" src="./images/icon_user.png" alt=""></a></li>
+            <li><a class="fa--user" href=""><i class="fa-solid fa-user"></i></a></li>
             <li><a class="fa--shopping-bag" href="giohang.php"><img width="30px" height="30px" src="./images/icon_cart.png" alt=""></a></li>
         </div>
     </header>
