@@ -75,6 +75,9 @@ header:hover{
 .fa-magnifying-glass{
     font-size: 25px;
 }
+.fa-user{
+    font-size: 25px;
+}
 .orthers{
     flex:2;
     display: flex;
