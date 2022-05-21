@@ -1,14 +1,60 @@
-.form {
- width: 300px;
- border: 1px solid green;
- padding: 20px;
- margin: 0 auto;
- font-weight: 700px;
+.dangnhap {
+	width: 350px;
+	/* border: 1px solid green; */
+	box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	border-radius: 10px;
 }
-.form input {
- width: 100%;
- padding: 10px 0;
+h2{
+	text-transform: uppercase;
+	color: #b300b3;
+	font-weight: 500;
+}
+.dangnhap input {
+	padding: 10px 0;
+	width: 100%;
+	border-radius: 5px;
 }
 .login{
 	margin-top:10px;
+}
+.user {
+	margin-top: 40px;
+}
+.pass {
+	margin-top: 20px;
+}
+.btdangnhap {
+	margin-top: 30px;
+}
+.btdangnhap>input{
+	background-color: #1a1a1a;
+	color: #ffffff;
+}
+.btdangnhap>input:hover{
+	background-color: #a3c2c2;
+	color: #1a1a1a;
+	border: 2px solid #001a00;
+}
+.btdangky {
+	margin-top: 10px;
+}
+.btdangky>input{
+	background-color: #1a1a1a;
+	color: #ffffff;
+}
+.btdangky>input:hover{
+	background-color: #a3c2c2;
+	color: #1a1a1a;
+	border: 2px solid #001a00;
+}
+.dangnhap{
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top:50%;
+	background-color: white;
+}
+body{
+	background-color: #D3D3D3;
 }

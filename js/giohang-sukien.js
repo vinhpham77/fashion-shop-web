@@ -22,7 +22,7 @@ function xoasp(x){
     if(thongbao==true){
         tr.remove();
         alert("Bạn đã xóa thành công!")
-    } 
+    }
     number = document.querySelectorAll(".soluong");
     price_money = document.querySelectorAll(".thanhtien span")
 }
