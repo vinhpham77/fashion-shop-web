@@ -12,14 +12,14 @@
 <body>
 	<div class="product__detail">
 		<div class="product-detail__gallery">
-			<div class="gallery--big bordered__object" id="gallery--big">
-				<img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/04/21/0419924ccc06d6fbd9c5eae7e8a0afe6.JPG" alt="Ảnh sản phẩm" class="bordered__object"> 
+			<div class="gallery--big object--bordered" id="gallery--big">
+				<img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/04/21/0419924ccc06d6fbd9c5eae7e8a0afe6.JPG" alt="Ảnh sản phẩm" class="object--bordered">
 			</div>
 			<div class="gallery--small">
-				<img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/04/21/0419924ccc06d6fbd9c5eae7e8a0afe6.JPG" alt="Ảnh sản phẩm" class="option product--checked checked bordered__object">
-				<img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/04/21/21c048c5d895eeb3856cdafe789b20f9.JPG" alt="Ảnh sản phẩm" class="option bordered__object">
-				<img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/04/21/5e0379dbf1c0dcb54b8bd8e20d96cdb6.JPG" alt="Ảnh sản phẩm" class="option bordered__object">
-				<img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/04/21/6a5a99013687159b6466c995820a23bb.JPG" alt="Ảnh sản phẩm" class="option bordered__object">
+				<img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/04/21/0419924ccc06d6fbd9c5eae7e8a0afe6.JPG" alt="Ảnh sản phẩm" class="option product--checked checked object--bordered">
+				<img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/04/21/21c048c5d895eeb3856cdafe789b20f9.JPG" alt="Ảnh sản phẩm" class="option object--bordered">
+				<img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/04/21/5e0379dbf1c0dcb54b8bd8e20d96cdb6.JPG" alt="Ảnh sản phẩm" class="option object--bordered">
+				<img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/04/21/6a5a99013687159b6466c995820a23bb.JPG" alt="Ảnh sản phẩm" class="option object--bordered">
 			</div>
 		</div>
 		<div class="product-detail__info">
@@ -31,29 +31,29 @@
 			</div>
 			<div class="product-detail__size">
 				<p>Size: <span></span></p>
-				<span class="bordered__object option">s</span>
-				<span class="bordered__object option">m</span>
-				<span class="bordered__object option">l</span>
-				<span class="bordered__object option">xl</span>
+				<span class="object--bordered option">s</span>
+				<span class="object--bordered option">m</span>
+				<span class="object--bordered option">l</span>
+				<span class="object--bordered option">xl</span>
 			</div>
 			<div class="product-detail__quantity">
 				<div>Số lượng: </div>
-				<div class="bordered__object">
+				<div class="object--bordered">
 					<i class="fa-solid fa-minus"></i>
 					<input type="number" name="quantity" id="quantity" min="1" value="1" readonly>
 					<i class="fa-solid fa-plus"></i>
 				</div>
 			</div>
 			<div class="product-detail__purchasing">
-				<span class="btn--buy-now bordered__object">Mua ngay</span>
-				<span class="btn--add-to-cart bordered__object">Thêm vào giỏ hàng</span>
+				<span class="btn--buy-now object--bordered">Mua ngay</span>
+				<span class="btn--add-to-cart object--bordered">Thêm vào giỏ hàng</span>
 			</div>
 		</div>
 		<div class="gallery--zoom">
 			<div class="controller controller__exit">
 				<i class="fa-solid fa-x"></i>
 			</div>
-			<div class="gallery__inner bordered__object">
+			<div class="gallery__inner object--bordered">
 				<img src="https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/04/21/0419924ccc06d6fbd9c5eae7e8a0afe6.JPG" alt="Ảnh sản phẩm" alt="">
 			</div>
 			<div class="controller controller__prev">
