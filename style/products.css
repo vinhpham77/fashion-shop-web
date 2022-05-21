@@ -17,6 +17,7 @@
     width: 100%;
     height: var(--product__height);
     object-fit: cover;
+    border-radius: var(--border);
     object-position: center;
 }
 

@@ -2,6 +2,8 @@
 	--product__width:  180px;
 	--product__scale: 1.7;
     --product__height: calc(var(--product__width) * var(--product__scale));
+    --border: 10px;
+    --small-border: 5px;
 }
 
 * {
@@ -17,8 +19,4 @@ html {
 
 body {
 	font-size: 16px;
-}
-
-.object--bordered {
-	border-radius: 10px;
 }
