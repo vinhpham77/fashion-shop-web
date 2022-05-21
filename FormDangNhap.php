@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="style/base.css">
-<link rel="stylesheet" href="style/xuly.css"/>
+<link rel="stylesheet" href="style/formlogin.css"/>
 </head>
 <body>
     <form method="post" action="" class="object--bordered dangnhap">
