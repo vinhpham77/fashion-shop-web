@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="style/formlogin.css"/>
 </head>
 <body>
-    <form method="post" action="" class="object--bordered dangnhap">
+    <form method="post" action="" class="dangnhap">
         <h2>Đăng Nhập</h2>
         <div class="user">Username: <input type="text" name="username" value="" required></div>
         <div class="pass">Password: <input type="password" name="password" value="" required/></div>
