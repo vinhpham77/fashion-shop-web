@@ -4,22 +4,21 @@ var SumNumber = document.querySelector(".sizing-right-number span");
 var tongtien = document.querySelector(".sizing-right-money span")
 
 function xoasp(x){
-    var tr = x.parentElement.parentElement;
-    var numberone = x.parentElement.parentElement.children[3].children[0].value;
-    var tongtienmacdinh = x.parentElement.parentElement.children[4].children[0].innerHTML.replaceAll('.', '');
-    var tinhtong = tongtienmacdinh.replaceAll('đ', '');
-
-    var soluongcu = SumNumber.innerHTML;
-    var soluonghientai = soluongcu - numberone;
-
-    SumNumber.innerHTML = soluonghientai;
-    var thanhtoancu = tongtien.innerHTML.replaceAll('.', '');
-    var thanhtoanhientai = thanhtoancu - tinhtong;
-    tongtien.innerHTML = thanhtoanhientai.toLocaleString('de-DE');
-    
+    var tr = x.parentElement.parentElement;      
     var thongbao = confirm("Bạn có chắc chắn muốn xóa không?")
 
     if(thongbao==true){
+        var numberone = x.parentElement.parentElement.children[3].children[0].value;
+        var tongtienmacdinh = x.parentElement.parentElement.children[4].children[0].innerHTML.replaceAll('.', '');
+        var tinhtong = tongtienmacdinh.replaceAll('đ', '');
+
+        var soluongcu = SumNumber.innerHTML;
+        var soluonghientai = soluongcu - numberone;
+
+        SumNumber.innerHTML = soluonghientai;
+        var thanhtoancu = tongtien.innerHTML.replaceAll('.', '');
+        var thanhtoanhientai = thanhtoancu - tinhtong;
+        tongtien.innerHTML = thanhtoanhientai.toLocaleString('de-DE');
         tr.remove();
         alert("Bạn đã xóa thành công!")
     }
