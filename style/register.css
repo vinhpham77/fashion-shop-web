@@ -1,0 +1,72 @@
+.register {
+    border: 1px solid black;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    border-radius: var(--border);
+    box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.6);
+    background: white;
+}
+
+.account__detail {
+    flex: 45%;
+    width: 45%;
+}
+
+.user__detail {
+    flex: 55%;
+    width: 55%;
+}
+
+.register>div>* {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.register input, .register textarea, .register button {
+    border-radius: var(--small-border);
+    padding: 5px;
+}
+
+.register input, .register textarea {
+    border: 1px solid #D0C8C8;
+    margin-top: 2px;
+    margin-bottom: 20px;
+}
+
+#btn-register {
+    background-color: black;
+    color: whitesmoke;
+    border-color: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding-bottom: 7px;
+    text-align: center;
+}
+
+#btn-register:hover {
+    background-color: #a9a9a9;
+    color: white;
+    border-color: black;
+}
+
+.register>div>h2 {
+    color: #b300b3;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.account__detail {
+
+    margin-right: 60px;
+}
+
+body {
+    background: lightgrey;
+}
