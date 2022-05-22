@@ -26,17 +26,8 @@
                     </div>
                     <div class="delivery-conten-above-input-2 row">
                         <div class="delivery-conten-above-input-2-item">
-                            <label for="">Tỉnh/TP: </label>
+                            <label for="">Địa chỉ giao hàng: </label>
                             <input type="text">
-                        </div>
-                        <div class="delivery-conten-above-input-2-item">
-                            <label for="">Quận/Huyện: </label>
-                            <input type="text">
-                        </div>
-                        <div class="delivery-conten-above-input-2-item">
-                            <label for="">Phường xã: </label>
-                            <input type="text">
-                        </div>
                     </div>
                 </table>
             </div>
