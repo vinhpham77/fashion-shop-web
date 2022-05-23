@@ -1,9 +1,10 @@
 .register {
     border: 1px solid black;
-    padding: 20px;
+    padding: 30px;
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 500px;
     transform: translate(-50%, -50%);
     display: flex;
     border-radius: var(--border);
@@ -21,21 +22,42 @@
     width: 55%;
 }
 
-.register>div>* {
+.form-group>*:not(.form-message) {
     display: block;
     width: 100%;
-    max-width: 100%;
 }
 
-.register input, .register textarea, .register button {
+.register .form-group {
+    margin-top: 20px;
+}
+
+.register input, .register textarea, #btn-register {
     border-radius: var(--small-border);
-    padding: 5px;
+    padding: 6px 6px 9px 6px;
 }
 
 .register input, .register textarea {
     border: 1px solid #D0C8C8;
     margin-top: 2px;
-    margin-bottom: 20px;
+}
+
+input.invalid, textarea.invalid {
+    border-color: red;
+}
+
+.form-group .form-message {
+    color: red;
+    font-size: 80%;
+
+}
+
+input.invalid, textarea.invalid {
+    outline: none;
+}
+
+.register textarea {
+    max-width: 100%;
+    min-width: 100%;
 }
 
 #btn-register {
@@ -44,7 +66,6 @@
     border-color: transparent;
     cursor: pointer;
     text-transform: uppercase;
-    padding-bottom: 7px;
     text-align: center;
 }
 
@@ -57,13 +78,11 @@
 .register>div>h2 {
     color: #b300b3;
     text-transform: uppercase;
-    margin-bottom: 20px;
     font-weight: 500;
     white-space: nowrap;
 }
 
 .account__detail {
-
     margin-right: 60px;
 }
 
