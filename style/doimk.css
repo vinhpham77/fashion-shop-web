@@ -1,0 +1,53 @@
+.doimk{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    width: 350px;
+    box-shadow: 4px 4px 4px 2px rgb(0 0 0 / 40%);
+    padding: 20px;
+    border-radius: 10px;
+}
+.ten{
+    text-transform: uppercase;
+    color: #b300b3;
+    font-weight: 500;
+}
+.doimk input{
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+}
+.btndangnhap input {
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 5px
+}
+.btdangnhap>input{
+	background-color: #1a1a1a;
+	color: #ffffff;
+}
+.btdangnhap>input:hover {
+    background-color: #a3c2c2;
+    color: #1a1a1a;
+    border: 2px solid #001a00;
+}
+.btdangky>input{
+	background-color: #1a1a1a;
+	color: #ffffff;
+}
+.btdangky>input:hover {
+    background-color: #a3c2c2;
+    color: #1a1a1a;
+    border: 2px solid #001a00;
+}
+.btluuthaydoi>input{
+	background-color: #1a1a1a;
+	color: #ffffff;
+}
+.btluuthaydoi>input:hover {
+    background-color: #a3c2c2;
+    color: #1a1a1a;
+    border: 2px solid #001a00;
+}
