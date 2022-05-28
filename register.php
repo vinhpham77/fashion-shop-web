@@ -5,6 +5,35 @@
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/register.css"/>
     <script defer src="js/register.js"></script>
+    
+<?php
+    if(isset($_POST['btn-register']))
+    {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $repassword = $_POST['re-password'];
+        $fullname = $_POST['fullname'];
+        $currentaddress = $_POST['current-address'];
+        $email = $_POST['email'];
+        $phonenumber = $_POST['phone-number'];
+        $shippingaddress  = $_POST['shipping-address'];
+        require 'widget/connect_db.php';
+
+        $sql = "SELECT * FROM account WHERE username = '$username' OR email = '$email' OR phone_number = '$phonenumber'";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0)
+        {
+        echo '<script>alert("Tên đăng ký, email hoặc số điện thoại đã được sử dụng!"); history.back();</script>';
+        }
+        else
+        {
+            $sql =  "INSERT INTO account VALUES ('$username','$password','$repassword','$fullname','$currentaddress','$email','$phonenumber','$shippingaddress')";
+            mysqli_query($conn, $sql);
+            echo '<script>alert("Đăng ký thành công!");</script>';
+        }
+    }
+?>
 </head>
 <body>
     <form method="post" action="" class="register" onsubmit="return validateForm();">
