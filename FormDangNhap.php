@@ -3,10 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="style/base.css">
-<link rel="stylesheet" href="style/formlogin.css"/>
+<link defer rel="stylesheet" href="style/formlogin.css"/>
 <?php
     $username = $password = '';
     if (!empty($_POST)) {
+        if(isset($_COOKIE['username'])) {
+            unset($_COOKIE['username']);
+            setcookie('username', null, -1);
+        }
+
         $username = $_POST['username'];
         $password = $_POST['password'];
         require 'widget/connect_db.php';
@@ -14,11 +19,11 @@
         $result = $conn->query($sql);
         if ($result->num_rows > 0)
         {
-            session_start();
-            $_SESSION['username'] = $username;
+            setcookie('username', $username, time() + (60 * 60 * 24 * 365));
             header('location: index.php');
+            print_r($_COOKIE);
         } else {
-            echo 'TB';
+            echo "<script>alert('Sai tên đăng nhập hoặc mật khẩu!'); history.back();</script>";
         }
     }
 ?>
@@ -27,7 +32,7 @@
     <form method="post" action="" class="dangnhap">
         <h2>Đăng Nhập</h2>
         <div class="user">Username: <input type="text" name="username" value="<?php echo $username; ?>" required></div>
-        <div class="pass">Password: <input type="password" name="password" value="<?php echo $password; ?>" required/></div>
+        <div class="pass">Password: <input type="password" name="password" required/></div>
         <div class="btdangnhap"><input type="submit" name="dangky" class="login" value="Đăng Nhập"/></div>
         <div class="btdangky"><input type="button" name="dangky" class="register" value="Đăng Ký" onclick="window.location.href='register.php';"></div>
     </form>
