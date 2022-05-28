@@ -21,7 +21,6 @@
         {
             setcookie('username', $username, time() + (60 * 60 * 24 * 365));
             header('location: index.php');
-            print_r($_COOKIE);
         } else {
             echo "<script>alert('Sai tên đăng nhập hoặc mật khẩu!'); history.back();</script>";
         }
