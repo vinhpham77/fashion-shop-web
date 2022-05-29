@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="style/base.css">
 <link defer rel="stylesheet" href="style/formlogin.css"/>
 <?php
-    $username = $password = '';
     if (!empty($_POST)) {
         if(isset($_COOKIE['username'])) {
             unset($_COOKIE['username']);
@@ -22,7 +21,11 @@
             setcookie('username', $username, time() + (60 * 60 * 24 * 365));
             header('location: index.php');
         } else {
-            echo "<script>alert('Sai tên đăng nhập hoặc mật khẩu!');</script>";
+            echo "<script>
+                    alert('Sai tên đăng nhập hoặc mật khẩu!');
+                    history.back();
+                </script>";
+            unset($_POST);
         }
     }
 ?>
@@ -30,7 +33,7 @@
 <body>
     <form method="post" action="" class="dangnhap">
         <h2>Đăng Nhập</h2>
-        <div class="user">Username: <input type="text" name="username" value="<?php echo $username; ?>" required></div>
+        <div class="user">Username: <input type="text" name="username" required></div>
         <div class="pass">Password: <input type="password" name="password" required/></div>
         <div class="btdangnhap"><input type="submit" name="dangky" class="login" value="Đăng Nhập"/></div>
         <div class="btdangky"><input type="button" name="dangky" class="register" value="Đăng Ký" onclick="window.location.href='register.php';"></div>
