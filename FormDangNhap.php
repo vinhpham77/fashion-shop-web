@@ -13,7 +13,7 @@
         }
 
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
         require 'widget/connect_db.php';
         $sql = "SELECT * FROM account WHERE username='$username' AND password='$password'";
         $result = $conn->query($sql);
@@ -22,7 +22,7 @@
             setcookie('username', $username, time() + (60 * 60 * 24 * 365));
             header('location: index.php');
         } else {
-            echo "<script>alert('Sai tên đăng nhập hoặc mật khẩu!'); history.back();</script>";
+            echo "<script>alert('Sai tên đăng nhập hoặc mật khẩu!');</script>";
         }
     }
 ?>
