@@ -9,6 +9,7 @@
     <title>Giỏ Hàng</title>
 </head>
 <body>
+
     <section class="cart-content">
             <div class="cart-content-left">
                 <table>
@@ -19,38 +20,33 @@
                         <th>Số lượng</th>
                         <th>Tổng Tiền</th>
                     </tr>
-                    <tr>
-                        <td><img src="images/Aothun.jpg" alt="Áo Thun"></td>
-                        <td><p>Áo thun Tropical <br>Màu sắc: Nâu Cà Phê <br/>Size: L</p></td>
-                        <td class="price-dollar"><p>650.000</p></td>
-                        <td><input class="soluong" type="number" value="1" min="1" oninput="validity.valid||(value='');"></td>
-                        <td class="thanhtien"><span>650.000 đ</span><sup></sup></td>
-                        <td><input type="button" value="X" class="close-X" onclick="xoasp(this)"></td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/dam.jpg" alt="Đầm Trắng"></td>
-                        <td><p>Đầm dạ hội phối hoa hồng <br>Màu sắc: Trắng <br/>Size: M</p></td>
-                        <td class="price-dollar"><p>2.990.000</p></td>
-                        <td><input class="soluong" type="number" value="1" min="1" oninput="validity.valid||(value='');"></td>
-                        <td class="thanhtien"><span>2.990.000 đ</span><sup></sup></td>
-                        <td><input type="button" value="X" class="close-X" onclick="xoasp(this)"></td>
-		     		</tr>
-                    <tr>
-                        <td><img src="images/vay.jpg" alt="Váy Jeans"></td>
-                        <td><p>Zuýp jean phối túi giả <br>Màu sắc: Xanh Lơ <br/>Size: L</p></td>
-                        <td class="price-dollar"><p>1.190.000</p></td>
-                        <td><input class="soluong" type="number" value="1" min="1" oninput="validity.valid||(value='');"></td>
-                        <td class="thanhtien"><span>1.190.000 đ</span><sup></sup></td>
-                        <td><input type="button" value="X" class="close-X" onclick="xoasp(this)"></td>
-                    </tr>
-					<tr>
-                        <td><img src="images/aotaydai.jpg" alt="Áo sơ mi"></td>
-                        <td><p>Áo sơ mi nam dáng Slim fit <br>Màu sắc: Trắng <br/>Size: L</p></td>
-                        <td class="price-dollar"><p>1.090.000</p></td>
-                        <td><input class="soluong" type="number" value="1" min="1" oninput="validity.valid||(value='');"></td>
-                        <td class="thanhtien"><span>1.090.000 đ</span><sup></sup></td>
-                        <td><input type="button" value="X" class="close-X" onclick="xoasp(this)"></td>
-					</tr>
+                    <?php
+						
+                        require_once("config.php");
+                        $kh="johnweak"; 
+						$sql="select cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,price from cart,product where cart.prod_id=product.prod_id AND cart.username='".$kh."'";
+						$kq=mysqli_query($conn,$sql);
+						while($row=mysqli_fetch_array($kq))
+                        {
+							$sqlmax="SELECT * from size where prod_id='".$row['prod_id']."'";
+							$slmax=mysqli_query($conn,$sqlmax);
+							$rowslmax=mysqli_fetch_array($slmax);
+							$directory = "images/products/".$row['prod_id'];
+							$hinh=array_diff(scandir($directory), array('..', '.'));
+						echo'
+						 <tr product_id='.$row['prod_id'].'>
+                         <td><img src="'.$directory.'/'.$hinh[2].'" alt=""></td>
+                         <td product_size='.$row['size'].'><p>'.$row['prod_name'].'<br/>size: '.$row['size'].'</p></td>
+                         <td class="price-dollar"><p>'.$row['price'].'</p></td>
+                         <td><input class="soluong" type="number" value="'.$row['quantity'].'" max="'.$rowslmax[$row['size']].'" min="1" oninput="validity.valid||(value='.');"></td>
+                         <td class="thanhtien"><span>'.$row['quantity']*$row['price'].'</span><sup>đ</sup></td>
+                         <td><input type="button" value="x" class="close-x" onclick="xoasp(this)"></td>
+						 </tr>';
+						}
+                       
+						
+                    ?>
+                   
                 </table>
                 <div class="cart-content-left-button">
                     <input type="submit" value="<---  Tiếp tục mua hàng" onclick="lienketMuaSam(this)">
