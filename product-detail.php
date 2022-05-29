@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="style/base.css">
 	<link rel="stylesheet" href="style/product-detail.css">
 	<link rel="stylesheet" href="fontawesome/css/all.min.css">
-	<script async type="text/javascript" src="js/product-detail.js"></script>
+	<script defer type="text/javascript" src="js/product-detail.js"></script>
 </head>
 <body>
 	<div class="product__detail">

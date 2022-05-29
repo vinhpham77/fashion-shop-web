@@ -8,6 +8,7 @@ function xoasp(x){
     var thongbao = confirm("Bạn có chắc chắn muốn xóa không?");
     if(thongbao==true){
         var numberone = x.parentElement.parentElement.children[3].children[0].value;
+        console.log(numberone);
         var tongtienmacdinh = x.parentElement.parentElement.children[4].children[0].innerHTML.replaceAll('.', '');
         var tinhtong = tongtienmacdinh.replaceAll('đ', '');
 
