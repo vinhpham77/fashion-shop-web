@@ -1,3 +1,8 @@
+<?php 
+    require_once "connection.php";
+    echo 'Đăng nhập thành công';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

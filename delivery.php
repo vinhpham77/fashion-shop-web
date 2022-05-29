@@ -1,10 +1,40 @@
+<?php 
+    require_once "widget/connect_db.php";
+    $username = $_COOKIE['username'];
+    $sql = "SELECT `fullname`,`phone_number`,`shipping_address` FROM `account` where username = '".$username."' ";
+    $result = $conn->query($sql);
+    if($result->num_rows > 0){
+        if($rows = $result->fetch_array()){
+            $fullname = $rows[0];
+            $SDT = $rows[1];
+            $Address = $rows[2];
+        }
+    }
+    if(isset($_POST['tienvang'])){
+        $sql = "SELECT product.prod_id, cart.quantity, cart.size, product.price * (100 - product.discount)*0.01  * cart.quantity as price FROM product JOIN cart ON product.prod_id = cart.prod_id where username = '".$_COOKIE['username']."' ";
+        $result = $conn->query($sql);
+        if($result->num_rows > 0){
+            while ($rows = $result->fetch_array()) {
+                $sql = "INSERT INTO `order` (`username`, `prod_id`, `size`, `price`, `quantity`, `pay_date`) VALUES ('$username', '$rows[0]', '$rows[2]', '$rows[3]', '$rows[1]', CURRENT_TIMESTAMP)";
+                $conn->query($sql);
+            }
+            $sql = "Delete from cart where username = '$username'";
+            $conn->query($sql);
+        }   
+        echo '<script>
+        alert("Đã thanh toán thành công!");
+        location.href = "index.php";
+        </script>';
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
 	<link rel="stylesheet" href="style/styledelivery.css">
 	<link rel="stylesheet" href="fontawesome/css/all.css">
-    <script async src="js/delivery.js"></script>
+    <script defer src="js/delivery.js"></script>
 </head>
 <body>
     <section class="delivery">  
@@ -15,19 +45,19 @@
                 <table>
                     <div class="delivery-conten-above-input-1 row">
                         <div class="delivery-conten-above-input-item">
-                            <label for="">Họ tên: </label>
-                            <input type="text">
+                            <label class = "itemsthongtin1">Họ tên </label>
+                            <input name="hoten" value="<?php echo "$fullname" ?>" type="text" readonly>
                         </div>
                         <div class="delivery-conten-above-input-item">
-                            <label for="">Số điện thoại: </label>
-                            <input type="text">
+                            <label class = "itemsthongtin2">Số điện thoại </label>
+                            <input class="thongtinsdt" name="sodienthoai" value="<?php echo "$SDT" ?>" type="text" readonly>
                         </div>
                         
                     </div>
                     <div class="delivery-conten-above-input-2 row">
                         <div class="delivery-conten-above-input-2-item">
-                            <label for="">Địa chỉ giao hàng: </label>
-                            <input type="text">
+                            <label class="diachigiaohang" for="">Địa chỉ giao hàng </label>
+                            <input name="diachi" value="<?php echo "$Address" ?>" type="text" readonly>
                     </div>
                 </table>
             </div>
@@ -37,38 +67,37 @@
                         <tr>
                             <th>Tên sản phẩm</th>
                             <th>Số lượng</th>
+                            <th>Size</th>
                             <th>Thành tiền</th>
                         </tr>
+                        <?php 
+                            require_once "widget/connect_db.php";
+                            $sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price * (100 - product.discount)*0.01  * cart.quantity as price FROM product JOIN cart ON product.prod_id = cart.prod_id where username = '".$_COOKIE['username']."' ";
+                            $result = $conn->query($sql);
+                            if($result->num_rows > 0){
+                                while ($rows = $result->fetch_array()) {
+                                    $nombre_format_francais = number_format($rows[3], 0, ',', '.');
+                                    echo "<tr>
+                                        <td>$rows[0]</td>
+                                        <td>$rows[1]</td>
+                                        <td>$rows[2]</td>
+                                        <td class='thanhtien'><p>$nombre_format_francais<sup>đ</sup></p></td>
+                                    </tr>";
+                                }
+                            }
+                        ?>
                         <tr>
-                            <td>Áo polo</td>
-                            <td>1</td>
-                            <td><p>500.000 <sup>đ</sup></p></td>
-                        </tr>
-                        <tr>
-                            <td>Áo nam</td>
-                            <td>1</td>
-                            <td><p>600.000 <sup>đ</sup></p></td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: bold;" colspan="2">Tổng</td>
-                            <td class = "sum" style="font-weight: bold;" ><span>1.100.000</span><sup>đ</sup></td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: bold;" colspan="2">Thuế VAT</td>
-                            <td style="font-weight: bold;" ><span>110.000</span><sup>đ</sup></td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight: bold;" colspan="2">Tổng tiền hàng</td>
-                            <td style="font-weight: bold;" ><span>1.210.000</span><sup>đ</sup></td>
+                            <td style="font-weight: bold;" colspan="3">Tổng tiền hàng</td>
+                            <td class="thanhtoan" style="font-weight: bold;" ><span>1.210.000</span><sup>đ</sup></td>
                         </tr>
                     </div>
                 </table>
                 <div class="delivery-content-left-button">
                     <p><button style="font-weight: bold" type="button" onclick="quaylaigiohang()">&#8678; Quay lại giỏ hàng</button></p>
                 </div>
-                <div class="delivery-content-right-button">
-                    <p><button style="font-weight: bold" type="button" onclick="trangthanhtoan()">THANH TOÁN VÀ GIAO HÀNG</button></p>
-                </div>
+                <form method="POST" class="delivery-content-right-button">
+                    <p><button name="tienvang" style="font-weight: bold" type="submit">THANH TOÁN</button></p>
+                </form>
             </div>
         </div>
     </div>
