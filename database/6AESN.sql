@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 30, 2022 at 03:33 PM
+-- Generation Time: May 30, 2022 at 03:41 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -313,12 +313,12 @@ DROP TABLE IF EXISTS `order-detail`;
 CREATE TABLE IF NOT EXISTS `order-detail` (
   `order_id` int NOT NULL COMMENT 'mã hoá đơn',
   `prod_id` int NOT NULL COMMENT 'mã sản phẩm',
-  `size` varchar(5) NOT NULL COMMENT 'size',
+  `size` varchar(5) CHARACTER SET ascii COLLATE ascii_bin NOT NULL COMMENT 'size',
   `price` int NOT NULL COMMENT 'giá',
   `quantity` int NOT NULL COMMENT 'số lượng',
   KEY `FK_order-id` (`order_id`),
   KEY `FK_orderDetail-prodID` (`prod_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='chi tiết hoá đơn';
+) ENGINE=InnoDB DEFAULT CHARSET=ascii COLLATE=ascii_bin COMMENT='chi tiết hoá đơn';
 
 --
 -- Dumping data for table `order-detail`
