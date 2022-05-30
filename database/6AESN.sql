@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 29, 2022 at 04:50 AM
+-- Generation Time: May 30, 2022 at 03:33 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `account` (
   PRIMARY KEY (`username`),
   UNIQUE KEY `UN_email` (`email`),
   UNIQUE KEY `UN_phone_number` (`phone_number`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin COMMENT='tài khoản';
 
 --
 -- Dumping data for table `account`
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `quantity` int NOT NULL COMMENT 'số lượng',
   KEY `FK_cart-prodID` (`prod_id`),
   KEY `FK_cart-username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=ascii COLLATE=ascii_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=ascii COLLATE=ascii_bin COMMENT='giỏ hàng';
 
 --
 -- Dumping data for table `cart`
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `cate_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'tên danh mục',
   `parent_cate_id` tinyint NOT NULL DEFAULT '0' COMMENT 'mã danh mục cha',
   PRIMARY KEY (`cate_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin COMMENT='danh mục';
 
 --
 -- Dumping data for table `category`
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `description` (
   `detail` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'chi tiết',
   `maintenance` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'bảo quản',
   UNIQUE KEY `UN_des-prodID` (`prod_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin COMMENT='mô tả';
 
 --
 -- Dumping data for table `description`
@@ -283,30 +283,57 @@ INSERT INTO `description` (`prod_id`, `introduction`, `detail`, `maintenance`) V
 
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
-  `username` varchar(20) CHARACTER SET ascii COLLATE ascii_bin NOT NULL COMMENT 'tên tài khoản',
-  `prod_id` int NOT NULL COMMENT 'mã sản phẩm',
-  `size` varchar(3) CHARACTER SET ascii COLLATE ascii_bin NOT NULL COMMENT 'size',
-  `price` int NOT NULL COMMENT 'giá',
-  `quantity` int NOT NULL COMMENT 'số lượng',
+  `order_id` int NOT NULL AUTO_INCREMENT COMMENT 'mã hoá đơn',
+  `username` varchar(20) COLLATE ascii_bin NOT NULL COMMENT 'tên tài khoản',
+  `fullname` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'họ tên',
+  `phone_number` char(10) CHARACTER SET ascii COLLATE ascii_bin NOT NULL COMMENT 'số điện thoại',
+  `shipping_address` varchar(250) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'địa chỉ nhận hàng',
   `pay_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'ngày thanh toán',
-  KEY `FK_order-username` (`username`),
-  KEY `FK_order-prodID` (`prod_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=ascii COLLATE=ascii_bin;
+  PRIMARY KEY (`order_id`),
+  KEY `FK_order-username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=ascii COLLATE=ascii_bin COMMENT='hoá đơn';
 
 --
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`username`, `prod_id`, `size`, `price`, `quantity`, `pay_date`) VALUES
-('johnweak', 24, 'xl', 801000, 2, '2022-05-21 23:21:02'),
-('johnweak', 30, 'l', 464500, 1, '2022-05-21 23:21:02'),
-('AliceMr', 3, 'm', 952000, 2, '2022-05-21 23:21:02'),
-('AliceMr', 65, 's', 499000, 1, '2022-05-21 23:21:02'),
-('AliceMr', 65, 's', 499000, 1, '2022-05-21 23:21:02'),
-('ThompsonRobert', 69, 'xl', 599000, 2, '2022-05-21 23:21:02'),
-('ThompsonRobert', 51, 'x', 280000, 3, '2022-05-21 23:21:02'),
-('ThompsonRobert', 90, 'xl', 600000, 4, '2022-05-21 23:21:02'),
-('Henlee', 88, 'xl', 635000, 2, '2022-05-21 23:38:48');
+INSERT INTO `order` (`order_id`, `username`, `fullname`, `phone_number`, `shipping_address`, `pay_date`) VALUES
+(1, 'johnweak', 'John Wick', '0398166111', '123 Chợ đầu mối', '2022-05-30 22:20:06'),
+(2, 'AliceMr', 'Alice Han', '0563238915', '46-Phan Đình Phùng-Phạm Kim Đồng-Đà Lạt', '2022-05-30 22:24:01'),
+(3, 'ThompsonRobert', ' Robert Thompson ', '0394778001', '53-Nguyễn Đình Thụ-Nguyễn Văn Cừ-Hồ Chí Minh', '2022-05-30 22:24:01'),
+(4, 'Henlee', 'Helenka', '0834554432', 'KBang-Chư Pưng-Gia Lai', '2022-05-30 22:24:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order-detail`
+--
+
+DROP TABLE IF EXISTS `order-detail`;
+CREATE TABLE IF NOT EXISTS `order-detail` (
+  `order_id` int NOT NULL COMMENT 'mã hoá đơn',
+  `prod_id` int NOT NULL COMMENT 'mã sản phẩm',
+  `size` varchar(5) NOT NULL COMMENT 'size',
+  `price` int NOT NULL COMMENT 'giá',
+  `quantity` int NOT NULL COMMENT 'số lượng',
+  KEY `FK_order-id` (`order_id`),
+  KEY `FK_orderDetail-prodID` (`prod_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='chi tiết hoá đơn';
+
+--
+-- Dumping data for table `order-detail`
+--
+
+INSERT INTO `order-detail` (`order_id`, `prod_id`, `size`, `price`, `quantity`) VALUES
+(1, 24, 'xl', 801000, 2),
+(1, 30, 'l', 464500, 1),
+(2, 3, 'm', 952000, 2),
+(2, 65, 's', 499000, 1),
+(2, 65, 'm', 499000, 1),
+(3, 69, 'xl', 599000, 2),
+(3, 51, 'x', 280000, 3),
+(3, 90, 'xl', 600000, 4),
+(4, 88, 'xl', 635000, 2);
 
 -- --------------------------------------------------------
 
@@ -325,7 +352,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'ngày nhập sản phẩm',
   PRIMARY KEY (`prod_id`),
   KEY `FK_cate_id` (`cate_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin COMMENT='sản phẩm';
 
 --
 -- Dumping data for table `product`
@@ -453,7 +480,7 @@ CREATE TABLE IF NOT EXISTS `size` (
   `l` int NOT NULL DEFAULT '0' COMMENT 'size L',
   `xl` int NOT NULL DEFAULT '0' COMMENT 'size XL',
   UNIQUE KEY `UN_size-prodID` (`prod_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=ascii COLLATE=ascii_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=ascii COLLATE=ascii_bin COMMENT='size';
 
 --
 -- Dumping data for table `size`
@@ -587,8 +614,14 @@ ALTER TABLE `description`
 -- Constraints for table `order`
 --
 ALTER TABLE `order`
-  ADD CONSTRAINT `FK_order-prodID` FOREIGN KEY (`prod_id`) REFERENCES `product` (`prod_id`),
-  ADD CONSTRAINT `FK_order-username` FOREIGN KEY (`username`) REFERENCES `account` (`username`);
+  ADD CONSTRAINT `FK_order-username` FOREIGN KEY (`username`) REFERENCES `account` (`username`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `order-detail`
+--
+ALTER TABLE `order-detail`
+  ADD CONSTRAINT `FK_order-id` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `FK_orderDetail-prodID` FOREIGN KEY (`prod_id`) REFERENCES `product` (`prod_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `product`
