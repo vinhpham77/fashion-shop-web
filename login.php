@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="style/base.css">
-<link defer rel="stylesheet" href="style/formlogin.css"/>
+<link defer rel="stylesheet" href="style/login.css"/>
 <?php
     if (!empty($_POST)) {
         if(isset($_COOKIE['username'])) {
@@ -22,8 +22,8 @@
             header('location: index.php');
         } else {
             echo "<script>
-                    alert('Sai tên đăng nhập hoặc mật khẩu!');
                     history.back();
+                    alert('Sai tên đăng nhập hoặc mật khẩu!');
                 </script>";
             unset($_POST);
         }
