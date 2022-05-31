@@ -22,7 +22,7 @@
                     </tr>
                     <?php
 						
-                        require_once("config.php");
+                        require_once "connect_db.php";
                         $kh="johnweak"; 
 						$sql="select cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,price from cart,product where cart.prod_id=product.prod_id AND cart.username='".$kh."'";
 						$kq=mysqli_query($conn,$sql);

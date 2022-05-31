@@ -13,7 +13,7 @@
 
         $username = $_POST['username'];
         $password = md5($_POST['password']);
-        require 'widget/connect_db.php';
+        require 'connect_db.php';
         $sql = "SELECT * FROM account WHERE username='$username' AND password='$password'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0)

@@ -1,7 +1,7 @@
 <?php 
-    require_once "widget/connect_db.php";
+    require_once "connect_db.php";
     $username = $_COOKIE['username'];
-    $sql = "SELECT `fullname`,`phone_number`,`shipping_address` FROM `account` where username = '".$username."' ";
+    $sql = "SELECT `username`, `phone_number`, `shipping_address` FROM `account` where username = '".$username."' ";
     $result = $conn->query($sql);
     if($result->num_rows > 0){
         if($rows = $result->fetch_array()){
@@ -71,7 +71,7 @@
                             <th>Thành tiền</th>
                         </tr>
                         <?php 
-                            require_once "widget/connect_db.php";
+                            require_once "connect_db.php";
                             $sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price * (100 - product.discount)*0.01  * cart.quantity as price FROM product JOIN cart ON product.prod_id = cart.prod_id where username = '".$_COOKIE['username']."' ";
                             $result = $conn->query($sql);
                             if($result->num_rows > 0){
