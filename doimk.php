@@ -18,20 +18,16 @@
         } else {
             echo '<p stylle="color="red">Tài khoản hoặc mật Khẩu không đúng , vui lòng nhập lại.</p>';
         }
+    }
 ?>
 </head>
 <body>
-<form method="post" action="" class="doimk">
+    <form method="post" action="" class="doimk">
         <h2 class="ten">Đổi Mật Khẩu</h2>
         <div class="user">Username: <input type="text" name="username" value="" required> </div>
         <div class="pass">Password: <input type="password" name="password" value="" required/></div>
         <div class="pass">A new password: <input type="password" name="password-1" value="" required/></div>
         </div><div class="btluuthaydoi"><input type="button" id="tollbar" name="doimk" class="password"style="margin-top: 19px;" value="Lưu Thay Đổi" ></div>
-
-        <div class="btdangnhap"><input type="button" id="tollbar" name="dangnhap" class="login"style="margin-top: 7px;margin-bottom:5px" value="Đăng Nhập" onclick="window.location.href='FormDangNhap.php';"></div>
-        
-        <div class="btdangky"><input type="button" id="tollbar" name="dangnhap" class="register"style="margin-top: 5x;" value="Đăng Ký" onclick="window.location.href='register.php';">
-        
     </form>
 </body>
 </html>
