@@ -8,8 +8,8 @@
       session_start();
       if(isset($_POST['doimk'])){
           $username = $_POST['username'];
-          $password_cu = md5($_POST['password_cu']);
-          $password_moi = md5($_POST['password_moi']);
+          $password_cu = md5($_POST['password']);
+          $password_moi = md5($_POST['password-1']);
           $sql = "SELECT * FROM account WHERE username ='".$username."' AND password ='".$password_cu."'";
           $row = mysqli_query($mysqli,$sql);
           $count = mysqli_num_rows($row);
