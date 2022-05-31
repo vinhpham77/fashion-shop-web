@@ -1,6 +1,6 @@
 <?php
-    require_once('widget/header.php');
-    require_once('widget/menu.php');
+    require_once('user/header.php');
+    require_once('user/menu.php');
 ?>
     <section id="Slider">
         <div class="aspect-ratio-169">
@@ -27,5 +27,5 @@
         <input type="text" placeholder="Nhập email của bạn...">
     </section>    
 <?php
-    include_once('widget/footer.php');
+    include_once('user/footer.php');
 ?>

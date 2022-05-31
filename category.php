@@ -1,11 +1,11 @@
 <?php 
-    require_once('widget/header.php');
+    require_once('user/header.php');
 ?>
 	<link rel="stylesheet" href="style/categorystyle.css">
 	<link rel="stylesheet" href="fontawesome/css/all.css">
     <script defer type="text/javascript" src="js/category.js"></script>
 <?php
-    require_once('widget/menu.php');
+    require_once('user/menu.php');
 ?>
     <section class="category">
         <div class="container">
@@ -119,4 +119,6 @@
             </div>
         </div>
     </section>
-</body>
+<?php
+    include_once('user/footer.php');
+?>
