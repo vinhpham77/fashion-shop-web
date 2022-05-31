@@ -22,10 +22,12 @@ header{
     left: 0;
     width: 100%;
     z-index: 1;
+    margin-bottom: 70px;
     
 }
 header:hover{
-    background: rgb(243, 153, 153);
+    background: rgba(255, 255, 255, 0.2);
+    
 }
 .logo{
     flex:1;

@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head >
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion_Shop</title> 
-    <link rel="stylesheet" href="./style/home.css">
-    <script async src="./js/home1.js"></script>
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-</head>
-<body>
-    <header>
+<header>
         <div class="logo">
-            <a href="index.php"><img  src="./images/logo.png" alt="ảnh lỗi rùi" ></a>
+        <a href="index.php"><img  src="./images/logo.png" alt="ảnh lỗi rùi" ></a>
         </div>
 
         <div class="menu">
@@ -111,55 +99,3 @@
             <li><a class="fa--shopping-bag" href="giohang.php"><img width="30px" height="30px" src="./images/icon_cart.png" alt=""></a></li>
         </div>
     </header>
-
-    <section id="Slider">
-        <div class="aspect-ratio-169">
-            <img src="./images/sliders/slider1.jpg" alt="">
-            <img src="./images/sliders/slider2.jpg" alt="">
-            <img src="./images/sliders/slider3.jpg" alt="">
-            <img src="./images/sliders/slider4.jpg" alt="">
-        </div>
-        <div class="dot-container">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-    </section>
-    <!--apcontainer-->
-    <section class="app-container">
-        <p>Tải ứng dụng 6AESN</p>
-        <div class="app-google">
-            <img src="./images/appstore.png" alt="">
-            <img src="./images/googleplay.png" alt="">
-        </div>
-        <p>Nhận bản tin 6AESN</p>
-        <input type="text" placeholder="Nhập email của bạn...">
-    </section>    
-    <!--footer-->
-<div class="footer-top">
-    <li><a href=""><img src="./images/thongbao.png" alt="">  </a></li>
-    <li><a href="">Liên hệ</a></li>
-    <li><a href="">Tuyển dụng</a></li>
-    <li><a href="">Giới thiệu</a></li>
-    <li>
-        <a href=""><img src="./images/icon_fb.png" alt=""></a>
-        <a href=""><img src="./images/icon_instagram.jpg" alt=""></a>
-        <a href=""><img src="./images/icon_yt.png" alt=""></a>
-    </li>
-</div>
-<div class="lk">
-                
-</div>
-<div class="footer-center">
-    <p>
-        Công ty Cổ phần Anh Đây Là Nhất với số đăng ký kinh doanh: 0105777650<br>
-        Địa chỉ đăng ký: Trường Đại Học Quy Nhơn ,T.Phố Quy Nhơn,Tỉnh Bình Định <br>
-        Số điện thoại: <span>0243 205 2222</span> <br>
-        </p>
-</div>
-<div class="footer-bottom">
-    @Ivymoda All right reserved
-</div>
-</body>
-</html>

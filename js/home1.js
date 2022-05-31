@@ -1,5 +1,12 @@
+var sp_timkiem=document.querySelector(".sp_timkiem");
+var check_timkiem=document.getElementById("input1");
+sp_timkiem.addEventListener("click",ftimkiem);
+function ftimkiem(){
+            window.location.href = "trangtimkiem.php?prod_name=" +check_timkiem.value ;
+            window.open();
+}
+
 const imgPosition=document.querySelectorAll(".aspect-ratio-169 img")
-    console.log(imgPosition)
     const imgContainer=document.querySelector('.aspect-ratio-169')
    const dotItem=document.querySelectorAll('.dot')
     let imgNumber=imgPosition.length;
