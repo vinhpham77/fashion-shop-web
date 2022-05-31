@@ -5,20 +5,29 @@
 <link rel="stylesheet" href="style/base.css">
 <link rel="stylesheet" href="style/doimk.css"/>
 <?php 
-
+      session_start();
       if(isset($_POST['doimk'])){
           $username = $_POST['username'];
           $password_cu = md5($_POST['password_cu']);
           $password_moi = md5($_POST['password_moi']);
           $sql = "SELECT * FROM account WHERE username ='".$username."' AND password ='".$password_cu."'";
           $row = mysqli_query($mysqli,$sql);
-          $count = $mysqli_num_row($row);
+          $count = mysqli_num_rows($row);
           if($count>0){
+<<<<<<< HEAD
              $sql_update= $mysqli_query($mysqli,"UPDATE account SET username='".$username."'AND password ='".$password_moi."'");
               header("Location:index.php");
           }else{
               echo'<p stylle="color="red">(""Tài khoản hoặc Mật Khẩu không đúng , vui lòng nhập lại .")</p>';
               header("Location:");
+=======
+             $sql_update= mysqli_query($mysqli,"UPDATE account SET username='".$username."'AND password ='".$password_moi."'");
+              echo '<p style="color:green">Mật Khẩu Đã Thay Đổi ");</p>';
+          }
+          else{
+              echo'<p stylle="color="red">(""Tài khoản hoặc Mật Khẩu không đúng , vui lòng nhập lại .")</p>';
+             
+>>>>>>> d1ba98b1bbb9721975f827739c319b0b09bdef28
           }
       }
 ?>

@@ -1,19 +1,8 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head >
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion_Shop</title> 
-    <link rel="stylesheet" href="./style/home.css">
-    <script async src="./js/home1.js"></script>
-    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="index.php"><img  src="./images/logo.png" alt="ảnh lỗi rùi" ></a>
+            <img  src="./images/logo.png" alt="ảnh lỗi rùi" >
         </div>
 
         <div class="menu">
@@ -99,51 +88,8 @@
         </div>
     <img src="./images/aosomiluadui.png" alt="">
         <div class="orthers">
-            <li class="btn-search">
-
-		            <input id="input1" placeholder="Tìm kiếm" type="text" name="tim">
-                    <label for="input1">
-                        <span input="mot" class="sp_timkiem">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </span>
-                    </label>
-            </li>
+            <li class="btn-search"><input id="input1" placeholder="Tìm kiếm" type="text"> <span ><i class="fa-solid fa-magnifying-glass"></i></span></li>
             <li><a class="fa--user" href="login.php"><i class="fa-solid fa-user"></i></a></li>
             <li><a class="fa--shopping-bag" href="giohang.php"><img width="30px" height="30px" src="./images/icon_cart.png" alt=""></a></li>
         </div>
     </header>
-=======
-<?php
-    require_once('widget/header.php');
-    require_once('widget/menu.php');
-?>
->>>>>>> d1ba98b1bbb9721975f827739c319b0b09bdef28
-
-    <section id="Slider">
-        <div class="aspect-ratio-169">
-            <img src="./images/sliders/slider1.jpg" alt="">
-            <img src="./images/sliders/slider2.jpg" alt="">
-            <img src="./images/sliders/slider3.jpg" alt="">
-            <img src="./images/sliders/slider4.jpg" alt="">
-        </div>
-        <div class="dot-container">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-    </section>
-
-    <!--apcontainer-->
-    <section class="app-container">
-        <p>Tải ứng dụng 6AESN</p>
-        <div class="app-google">
-            <img src="./images/appstore.png" alt="">
-            <img src="./images/googleplay.png" alt="">
-        </div>
-        <p>Nhận bản tin 6AESN</p>
-        <input type="text" placeholder="Nhập email của bạn...">
-    </section>    
-<?php
-    include_once('widget/footer.php');
-?>

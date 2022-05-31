@@ -1,16 +1,16 @@
 <?php 
+<<<<<<< HEAD
     require_once "config.php";
     echo 'Đăng nhập thành công';
+=======
+    require_once('widget/header.php');
+>>>>>>> d1ba98b1bbb9721975f827739c319b0b09bdef28
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
 	<link rel="stylesheet" href="style/categorystyle.css">
-	<link rel="stylesheet" href="fontawesome/css/all.css">
-    <script async type="text/javascript" src="js/category.js"></script>
-</head>
+    <script defer type="text/javascript" src="js/category.js"></script>
+<?php
+    require_once('widget/menu.php');
+?>
 <body>
     <section class="category">
         <div class="container">
@@ -125,3 +125,6 @@
         </div>
     </section>
 </body>
+<?php
+    include_once('widget/footer.php');
+?>
