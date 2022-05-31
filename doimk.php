@@ -16,7 +16,7 @@
             $sql_update = $mysqli_query($mysqli,"UPDATE account SET username='".$username."'AND password ='".$password_moi."'");
             echo '<p style="color:green">Mật khẩu đã được thay đổi</p>';
         } else {
-            echo '<p stylle="color="red">Tài khoản hoặc mật Khẩu không đúng , vui lòng nhập lại.</p>';
+            echo '<p style="color="red">Tài khoản hoặc mật khẩu không đúng , vui lòng nhập lại.</p>';
         }
     }
 ?>
