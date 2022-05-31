@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head >
@@ -112,12 +111,6 @@
             <li><a class="fa--shopping-bag" href="giohang.php"><img width="30px" height="30px" src="./images/icon_cart.png" alt=""></a></li>
         </div>
     </header>
-=======
-<?php
-    require_once('widget/header.php');
-    require_once('widget/menu.php');
-?>
->>>>>>> d1ba98b1bbb9721975f827739c319b0b09bdef28
 
     <section id="Slider">
         <div class="aspect-ratio-169">
@@ -133,7 +126,6 @@
             <div class="dot"></div>
         </div>
     </section>
-
     <!--apcontainer-->
     <section class="app-container">
         <p>Tải ứng dụng 6AESN</p>
@@ -144,6 +136,30 @@
         <p>Nhận bản tin 6AESN</p>
         <input type="text" placeholder="Nhập email của bạn...">
     </section>    
-<?php
-    include_once('widget/footer.php');
-?>
+    <!--footer-->
+<div class="footer-top">
+    <li><a href=""><img src="./images/thongbao.png" alt="">  </a></li>
+    <li><a href="">Liên hệ</a></li>
+    <li><a href="">Tuyển dụng</a></li>
+    <li><a href="">Giới thiệu</a></li>
+    <li>
+        <a href=""><img src="./images/icon_fb.png" alt=""></a>
+        <a href=""><img src="./images/icon_instagram.jpg" alt=""></a>
+        <a href=""><img src="./images/icon_yt.png" alt=""></a>
+    </li>
+</div>
+<div class="lk">
+                
+</div>
+<div class="footer-center">
+    <p>
+        Công ty Cổ phần Anh Đây Là Nhất với số đăng ký kinh doanh: 0105777650<br>
+        Địa chỉ đăng ký: Trường Đại Học Quy Nhơn ,T.Phố Quy Nhơn,Tỉnh Bình Định <br>
+        Số điện thoại: <span>0243 205 2222</span> <br>
+        </p>
+</div>
+<div class="footer-bottom">
+    @Ivymoda All right reserved
+</div>
+</body>
+</html>
