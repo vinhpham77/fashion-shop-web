@@ -2,10 +2,6 @@
     require_once('user/header.php');
     require_once('user/menu.php');
 ?>
-<<<<<<< HEAD
-
-=======
->>>>>>> 8c03641276fa02256778f92057d8ecc6f87d0609
     <section id="Slider">
         <div class="aspect-ratio-169">
             <img src="./images/sliders/slider1.jpg" alt="">
