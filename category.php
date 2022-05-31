@@ -1,17 +1,12 @@
 <?php 
-<<<<<<< HEAD
-    require_once "config.php";
-    echo 'Đăng nhập thành công';
-=======
-    require_once('widget/header.php');
->>>>>>> d1ba98b1bbb9721975f827739c319b0b09bdef28
+    require_once('user/header.php');
 ?>
 	<link rel="stylesheet" href="style/categorystyle.css">
+	<link rel="stylesheet" href="fontawesome/css/all.css">
     <script defer type="text/javascript" src="js/category.js"></script>
 <?php
-    require_once('widget/menu.php');
+    require_once('user/menu.php');
 ?>
-<body>
     <section class="category">
         <div class="container">
             <div class="category-top row">
@@ -124,7 +119,6 @@
             </div>
         </div>
     </section>
-</body>
 <?php
-    include_once('widget/footer.php');
+    include_once('user/footer.php');
 ?>

@@ -1,8 +1,11 @@
 <?php
-    require_once('widget/header.php');
-    require_once('widget/menu.php');
+    require_once('user/header.php');
+    require_once('user/menu.php');
 ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8c03641276fa02256778f92057d8ecc6f87d0609
     <section id="Slider">
         <div class="aspect-ratio-169">
             <img src="./images/sliders/slider1.jpg" alt="">
@@ -17,7 +20,6 @@
             <div class="dot"></div>
         </div>
     </section>
-
     <!--apcontainer-->
     <section class="app-container">
         <p>Tải ứng dụng 6AESN</p>
@@ -29,5 +31,5 @@
         <input type="text" placeholder="Nhập email của bạn...">
     </section>    
 <?php
-    include_once('widget/footer.php');
+    include_once('user/footer.php');
 ?>

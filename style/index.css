@@ -11,7 +11,6 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 12px 50px;
-    /* trên dưới 0 tr-ph: 50 */
     height: 70px;
     align-items: center;
     position: fixed;
@@ -19,6 +18,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1;
+
 }
 
 header:hover {
@@ -27,7 +27,6 @@ header:hover {
 
 .logo {
     flex: 1;
-    /* height: 40px;  width: 50px;*/
 }
 
 .logo>img {
@@ -138,7 +137,6 @@ header:hover {
     border-bottom: 1px solid #000;
     background: transparent;
     outline: none;
-
 }
 
 .btn-search {
@@ -181,7 +179,6 @@ header:hover {
     display: flex;
     align-items: center;
     text-align: center;
-    /*xem lai */
     justify-content: center;
 }
 
@@ -192,7 +189,6 @@ header:hover {
     border-radius: 50%;
     margin-right: 12px;
     cursor: pointer;
-    /*xem lai*/
 }
 
 .dot.active {
@@ -235,6 +231,7 @@ header:hover {
 /* -------------footer------------------------*/
 footer {
     text-align: center;
+
 }
 
 .footer-top {

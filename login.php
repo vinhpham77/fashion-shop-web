@@ -1,6 +1,8 @@
-<?php
-    require_once('widget/header.php');
-?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="style/base.css">
 <link defer rel="stylesheet" href="style/login.css"/>
 <?php
     if (!empty($_POST)) {
@@ -11,7 +13,7 @@
 
         $username = $_POST['username'];
         $password = md5($_POST['password']);
-        require_once 'widget/connect_db.php';
+        require 'widget/connect_db.php';
         $sql = "SELECT * FROM account WHERE username='$username' AND password='$password'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0)
@@ -26,8 +28,9 @@
             unset($_POST);
         }
     }
-    require_once('widget/menu.php');
 ?>
+</head>
+<body>
     <form method="post" action="" class="dangnhap">
         <h2>Đăng Nhập</h2>
         <div class="user">Username: <input type="text" name="username" required></div>
@@ -35,6 +38,5 @@
         <div class="btdangnhap"><input type="submit" name="dangky" class="login" value="Đăng Nhập"/></div>
         <div class="btdangky"><input type="button" name="dangky" class="register" value="Đăng Ký" onclick="window.location.href='register.php';"></div>
     </form>
-<?php
-    require_once('widget/footer.php');
-?>
+</body>
+</html>

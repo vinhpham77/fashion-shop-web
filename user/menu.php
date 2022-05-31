@@ -2,7 +2,7 @@
 <body>
     <header>
         <div class="logo">
-            <img  src="./images/logo.png" alt="ảnh lỗi rùi" >
+            <a href="index.php"><img  src="./images/logo.png" alt="ảnh lỗi rùi" ></a>
         </div>
 
         <div class="menu">
@@ -88,7 +88,15 @@
         </div>
     <img src="./images/aosomiluadui.png" alt="">
         <div class="orthers">
-            <li class="btn-search"><input id="input1" placeholder="Tìm kiếm" type="text"> <span ><i class="fa-solid fa-magnifying-glass"></i></span></li>
+            <li class="btn-search">
+
+                    <input id="input1" placeholder="Tìm kiếm" type="text" name="tim">
+                    <label for="input1">
+                        <span input="mot" class="sp_timkiem">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                    </label>
+            </li>
             <li><a class="fa--user" href="login.php"><i class="fa-solid fa-user"></i></a></li>
             <li><a class="fa--shopping-bag" href="giohang.php"><img width="30px" height="30px" src="./images/icon_cart.png" alt=""></a></li>
         </div>
