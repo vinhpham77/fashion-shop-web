@@ -10,8 +10,8 @@
     if(isset($_POST['btn-register']))
     {
         $username = $_POST['username'];
-        $password = $_POST['password'];
-        $repassword = $_POST['re-password'];
+        $password = md5($_POST['password']);
+        $repassword = md5($_POST['re-password']);
         $fullname = $_POST['fullname'];
         $currentaddress = $_POST['current-address'];
         $email = $_POST['email'];
