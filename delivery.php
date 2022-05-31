@@ -1,7 +1,7 @@
 <?php 
     require_once "connect_db.php";
     $username = $_COOKIE['username'];
-    $sql = "SELECT `username`, `phone_number`, `shipping_address` FROM `account` where username = '".$username."' ";
+    $sql = "SELECT `fullname`,`phone_number`,`shipping_address` FROM `account` where username = '".$username."' ";
     $result = $conn->query($sql);
     if($result->num_rows > 0){
         if($rows = $result->fetch_array()){
@@ -11,11 +11,11 @@
         }
     }
     if(isset($_POST['tienvang'])){
-        $sql = "SELECT product.prod_id, cart.quantity, cart.size, product.price * (100 - product.discount)*0.01  * cart.quantity as price FROM product JOIN cart ON product.prod_id = cart.prod_id where username = '".$_COOKIE['username']."' ";
+        $sql = "SELECT product.prod_name, product.quantity, cart.size, product.price*(100 - product.discount)*0.01 * cart.quantity as Price FROM `product` JOIN cart ON product.prod_id = cart.prod_id where username = '".$_COOKIE['username']."' ";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
             while ($rows = $result->fetch_array()) {
-                $sql = "INSERT INTO `order` (`username`, `prod_id`, `size`, `price`, `quantity`, `pay_date`) VALUES ('$username', '$rows[0]', '$rows[2]', '$rows[3]', '$rows[1]', CURRENT_TIMESTAMP)";
+                $sql = "INSERT INTO `order`(`order_id`, `username`, `fullname`, `phone_number`, `shipping_address`, `pay_date`) VALUES ('$rows[0]', '$username', '$rows[2]', '$rows[3]', '$rows[1]', CURRENT_TIMESTAMP)";
                 $conn->query($sql);
             }
             $sql = "Delete from cart where username = '$username'";
@@ -72,7 +72,7 @@
                         </tr>
                         <?php 
                             require_once "connect_db.php";
-                            $sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price * (100 - product.discount)*0.01  * cart.quantity as price FROM product JOIN cart ON product.prod_id = cart.prod_id where username = '".$_COOKIE['username']."' ";
+                            $sql = "SELECT product.prod_name, product.quantity, cart.size, product.price*(100 - product.discount)*0.01 * cart.quantity as Price FROM `product` JOIN cart ON product.prod_id = cart.prod_id where username = '".$_COOKIE['username']."' ";
                             $result = $conn->query($sql);
                             if($result->num_rows > 0){
                                 while ($rows = $result->fetch_array()) {
