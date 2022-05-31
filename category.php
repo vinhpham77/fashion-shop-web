@@ -1,16 +1,12 @@
 <?php 
     require_once('widget/header.php');
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
 	<link rel="stylesheet" href="style/categorystyle.css">
 	<link rel="stylesheet" href="fontawesome/css/all.css">
-    <script async type="text/javascript" src="js/category.js"></script>
-</head>
-<body>
+    <script defer type="text/javascript" src="js/category.js"></script>
+<?php
+    require_once('widget/menu.php');
+?>
     <section class="category">
         <div class="container">
             <div class="category-top row">

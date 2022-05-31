@@ -1,6 +1,8 @@
-<header>
+</head>
+<body>
+    <header>
         <div class="logo">
-        <a href="index.php"><img  src="./images/logo.png" alt="ảnh lỗi rùi" ></a>
+            <a href="index.php"><img  src="./images/logo.png" alt="ảnh lỗi rùi" ></a>
         </div>
 
         <div class="menu">
@@ -88,7 +90,7 @@
         <div class="orthers">
             <li class="btn-search">
 
-		            <input id="input1" placeholder="Tìm kiếm" type="text" name="tim">
+                    <input id="input1" placeholder="Tìm kiếm" type="text" name="tim">
                     <label for="input1">
                         <span input="mot" class="sp_timkiem">
                             <i class="fa-solid fa-magnifying-glass"></i>
