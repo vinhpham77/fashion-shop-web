@@ -33,8 +33,8 @@
 <body>
     <form method="post" action="" class="dangnhap">
         <h2>Đăng Nhập</h2>
-        <div class="user">Username: <input type="text" name="username" required></div>
-        <div class="pass">Password: <input type="password" name="password" required/></div>
+        <div class="user">Tên tài khoản: <input type="text" name="username" required></div>
+        <div class="pass">Mật khẩu: <input type="password" name="password" required/></div>
         <div class="btdangnhap"><input type="submit" name="dangky" class="login" value="Đăng Nhập"/></div>
         <div class="btdangky"><input type="button" name="dangky" class="register" value="Đăng Ký" onclick="window.location.href='register.php';"></div>
     </form>
