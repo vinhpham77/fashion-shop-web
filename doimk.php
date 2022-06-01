@@ -5,40 +5,29 @@
 <link rel="stylesheet" href="style/base.css">
 <link rel="stylesheet" href="style/doimk.css"/>
 <?php 
-      session_start();
-      if(isset($_POST['doimatkhau'])){
-          $username = $_POST['username'];
-          $password_cu = md5($_POST['password_cu']);
-          $password_moi = md5($_POST['password_moi']);
-          $sql = "SELECT * FROM account WHERE username ='".$username."' AND password ='".$password_cu."'LIMIT 1";
-          $row = mysqli_query($mysqli,$sql);
-          $count = mysqli_num_rows($row);
-          if($count>0){
-             $sql_update= mysqli_query($mysqli,"UPDATE account SET pasword='".$password_moi."'");
-              echo '<p style="color:green">Mật Khẩu Đã Thay Đổi ");</p>';
-          }
-          else{
-              echo'<p stylle="color="red">  (""Tài khoản hoặc Mật Khẩu không đúng , vui lòng nhập lại .")</p>';
-             
-          }
-      }
+    if (isset($_POST['doimk'])) {
+        $username = $_POST['username'];
+        $password_cu = md5($_POST['password']);
+        $password_moi = md5($_POST['password-1']);
+        $sql = "SELECT * FROM account WHERE username ='".$username."' AND password ='".$password_cu."'";
+        $row = mysqli_query($mysqli,$sql);
+        $count = mysqli_num_rows($row);
+        if ($count > 0) {
+            $sql_update = $mysqli_query($mysqli,"UPDATE account SET username='".$username."'AND password ='".$password_moi."'");
+            echo '<p style="color:green">Mật khẩu đã được thay đổi</p>';
+        } else {
+            echo '<p style="color="red">Tài khoản hoặc mật khẩu không đúng , vui lòng nhập lại.</p>';
+        }
+    }
 ?>
-<head>
-
-    <title>Quên Mật Khẩu</title>
 </head>
 <body>
-<form method="post" action="" class="doimk">
+    <form method="post" action="" class="doimk">
         <h2 class="ten">Đổi Mật Khẩu</h2>
         <div class="user">Username: <input type="text" name="username" value="" required> </div>
-        <div class="pass">Password: <input type="password" name="password_cu" value="" required/></div>
-        <div class="pass">A new password: <input type="password" name="password_moi" value="" required/></div>
-        </div><div class="btluuthaydoi"><input type="button" id="tollbar" name="doimatkhau" class="password"style="margin-top: 19px;" value="Lưu Thay Đổi" ></div>
-
-        <div class="btdangnhap"><input type="button" id="tollbar" name="dangnhap" class="login"style="margin-top: 7px;margin-bottom:5px" value="Đăng Nhập" onclick="window.location.href='FormDangNhap.php';"></div>
-        
-        <div class="btdangky"><input type="button" id="tollbar" name="dangnhap" class="register"style="margin-top: 5x;" value="Đăng Ký" onclick="window.location.href='register.php';">
-        
+        <div class="pass">Password: <input type="password" name="password" value="" required/></div>
+        <div class="pass">A new password: <input type="password" name="password-1" value="" required/></div>
+        </div><div class="btluuthaydoi"><input type="button" id="tollbar" name="doimk" class="password"style="margin-top: 19px;" value="Lưu Thay Đổi" ></div>
     </form>
 </body>
 </html>
