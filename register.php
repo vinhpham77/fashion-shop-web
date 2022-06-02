@@ -17,7 +17,7 @@
         $email = $_POST['email'];
         $phonenumber = $_POST['phone-number'];
         $shippingaddress  = $_POST['shipping-address'];
-        require 'widget/connect_db.php';
+        require 'connect_db.php';
 
         $sql = "SELECT * FROM account WHERE username = '$username' OR email = '$email' OR phone_number = '$phonenumber'";
         $result = mysqli_query($conn, $sql);
