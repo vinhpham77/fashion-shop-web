@@ -1,6 +1,6 @@
 :root {
-	--product__width:  180px;
-	--product__scale: 1.7;
+	--product__width: 180px;
+	--product__scale: 2;
     --product__height: calc(var(--product__width) * var(--product__scale));
     --border: 10px;
     --small-border: 5px;

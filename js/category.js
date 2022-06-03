@@ -1,6 +1,8 @@
-const itemsliderbar = document.querySelectorAll(".cartegory-left-li")
-itemsliderbar.forEach(function(menu,index){
-    menu.addEventListener("click",function(){
-        menu.classList.toggle("block")
-    })
-})
+let products = document.querySelectorAll('.product');
+
+products.forEach(function(item) {
+    item.onclick = function() {
+        window.location.href = "product-detail.php?product-id=" + item.id;
+    };
+});
+
