@@ -18,11 +18,8 @@ header {
     left: 0;
     width: 100%;
     z-index: 1;
-
-}
-
-header:hover {
-    background: rgb(243, 153, 153);
+    background: white;
+    border-bottom: 1px solid gray;
 }
 
 .logo {

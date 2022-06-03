@@ -117,7 +117,9 @@
 .delivery-conten-below table tr td:first-child{
     text-align: left;
 }
-
+.size{
+    text-transform: uppercase;
+}
 
 
 /*----------------------------------delivery-content-left-buttom------------------------------*/

@@ -3,30 +3,44 @@
     $username = $_COOKIE['username'];
     $sql = "SELECT `fullname`,`phone_number`,`shipping_address` FROM `account` where username = '".$username."' ";
     $result = $conn->query($sql);
-    if($result->num_rows > 0){
-        if($rows = $result->fetch_array()){
-            $fullname = $rows[0];
-            $SDT = $rows[1];
-            $Address = $rows[2];
+    if($rows = $result->fetch_array()){          
+        $fullname = $rows[0];
+        $SDT = $rows[1];
+        $Address = $rows[2];
+        if(!empty($_POST)){
+            $hoten = $_POST['fullname'];
+            $sodt = $_POST['SDT'];
+            $diachi = $_POST['Address'];
+            $sql = "UPDATE `account` SET `fullname`='$hoten', `phone_number`='$sodt',`shipping_address`='$diachi' WHERE username = '".$username."'";
+            $conn->query($sql);
+
+            
+            $sql = "SELECT product.prod_id, cart.size, product.price*(100 - product.discount)*0.01 as Price, product.quantity FROM `product` JOIN cart ON product.prod_id = cart.prod_id where username = '".$_COOKIE['username']."' ";
+            $result = $conn->query($sql);
+            if($result->num_rows > 0){
+                $sql = "INSERT INTO `order`(`username`, `fullname`, `phone_number`, `shipping_address`, `pay_date`) VALUES ('$username', '$hoten', '$sodt', '$diachi', CURRENT_TIMESTAMP)";
+                $conn->query($sql);
+                while ($rows = $result->fetch_array()) {
+                    $sql = "SELECT `order_id` FROM `order` ORDER by `order_id` DESC  LIMIT 1";
+                    $ketqua = $conn->query($sql)->fetch_array();
+                    $sql = "INSERT INTO `order-detail`(`order_id`, `prod_id`, `size`, `price`, `quantity`) VALUES ('$ketqua[0]','$rows[0]','$rows[1]','$rows[2]','$rows[3]')";
+                    $conn->query($sql);
+                }
+                    $sql = "Delete from cart where username = '$username'";
+                    $conn->query($sql);
+                    echo '<script>
+                    alert("Đã thanh toán thành công!");
+                    location.href = "index.php";
+                    </script>';
+            }else{
+                echo '<script>
+                    alert("Thanh toán thất bại, không có sản phẩm trong giỏ hàng!");
+                    location.href = "index.php";
+                    </script>';
+            }
+           
         }
     }
-    if(isset($_POST['tienvang'])){
-        $sql = "SELECT product.prod_name, product.quantity, cart.size, product.price*(100 - product.discount)*0.01 * cart.quantity as Price FROM `product` JOIN cart ON product.prod_id = cart.prod_id where username = '".$_COOKIE['username']."' ";
-        $result = $conn->query($sql);
-        if($result->num_rows > 0){
-            while ($rows = $result->fetch_array()) {
-                $sql = "INSERT INTO `order`(`order_id`, `username`, `fullname`, `phone_number`, `shipping_address`, `pay_date`) VALUES ('$rows[0]', '$username', '$rows[2]', '$rows[3]', '$rows[1]', CURRENT_TIMESTAMP)";
-                $conn->query($sql);
-            }
-            $sql = "Delete from cart where username = '$username'";
-            $conn->query($sql);
-        }   
-        echo '<script>
-        alert("Đã thanh toán thành công!");
-        location.href = "index.php";
-        </script>';
-    }
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +51,7 @@
     <script defer src="js/delivery.js"></script>
 </head>
 <body>
-    <section class="delivery">  
+    <form class="delivery" method="POST">  
     <div class="container">
         <div class="delivery-content">
             <h1>Địa Chỉ Giao Hàng</h1>
@@ -46,18 +60,18 @@
                     <div class="delivery-conten-above-input-1 row">
                         <div class="delivery-conten-above-input-item">
                             <label class = "itemsthongtin1">Họ tên </label>
-                            <input name="hoten" value="<?php echo "$fullname" ?>" type="text" readonly>
+                            <input name="fullname" value="<?php echo "$fullname" ?>" type="text" >
                         </div>
                         <div class="delivery-conten-above-input-item">
                             <label class = "itemsthongtin2">Số điện thoại </label>
-                            <input class="thongtinsdt" name="sodienthoai" value="<?php echo "$SDT" ?>" type="text" readonly>
+                            <input class="thongtinsdt" name="SDT" value="<?php echo "$SDT" ?>" type="text" >
                         </div>
                         
                     </div>
                     <div class="delivery-conten-above-input-2 row">
                         <div class="delivery-conten-above-input-2-item">
                             <label class="diachigiaohang" for="">Địa chỉ giao hàng </label>
-                            <input name="diachi" value="<?php echo "$Address" ?>" type="text" readonly>
+                            <input name="Address" value="<?php echo "$Address" ?>" type="text" >
                     </div>
                 </table>
             </div>
@@ -80,7 +94,7 @@
                                     echo "<tr>
                                         <td>$rows[0]</td>
                                         <td>$rows[1]</td>
-                                        <td>$rows[2]</td>
+                                        <td class='size'>$rows[2]</td>
                                         <td class='thanhtien'><p>$nombre_format_francais<sup>đ</sup></p></td>
                                     </tr>";
                                 }
@@ -95,13 +109,13 @@
                 <div class="delivery-content-left-button">
                     <p><button style="font-weight: bold" type="button" onclick="quaylaigiohang()">&#8678; Quay lại giỏ hàng</button></p>
                 </div>
-                <form method="POST" class="delivery-content-right-button">
+                <div method="POST" class="delivery-content-right-button">
                     <p><button name="tienvang" style="font-weight: bold" type="submit">THANH TOÁN</button></p>
-                </form>
+                </div>
             </div>
         </div>
     </div>
     </div>
-    </section>
+    </form>
 </body>
 </html>
