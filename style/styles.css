@@ -86,17 +86,17 @@ html{
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
 }
-#header .search-btn{
+.search-btn{
     float: right;
     padding: 0 21px;
    
 }
-#header .search-btn:hover{
+.search-btn:hover{
     color: #FFF;
    background-color:  #f44336!important;
    
 }
-#header .search-btn .search-icon{
+.search-btn .search-icon{
     font-size: 30px;
     color: #FFF;
     line-height: 46px;
@@ -143,6 +143,7 @@ html{
 }
 .container{
     margin-top: 46px;
+    background-color: #F5F5F5;
 }
 .table{
     display: flex;
@@ -150,7 +151,7 @@ html{
 }
 
 .text-infor1{
-    color: red;
+    color:green
 }
 .text-info{
    padding: 20px;
@@ -166,4 +167,18 @@ html{
     right: 0;
     bottom: 0;
     z-index: 1;
+}
+.div-text{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    background-color: #FFF;
+}
+.text-khachhang{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+.text{
+    background-color: #FFF;
 }

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="../fontawesome/css/all.min.css">
         <link rel="stylesheet" href="../style/styles.css">
         <link rel="stylesheet" href="../style/index.css">
         <title>Admin</title>
@@ -33,15 +33,20 @@
         
        </div>
        <div class="container">
+                   <div class="div-text"><p class="text-khachhang">Thông tin khách hàng</p></div> 
+                
         <table class="table">
         <div>
-                <tr class="text">
+            <div class="div-text1">
+                 <tr class="text">
                     <td class="text-info text-infor1">Full Name</td>
                     <td class="text-info text-infor1">Address</td>
                     <td class="text-info text-infor1">Email</td>
                     <td class="text-info text-infor1">Phone Number</td>
                     <td class="text-info text-infor1">Shipping address</td>
                 </tr>
+            </div>
+               
                 <?php   
                       require_once ('../connect_db.php');     
                       $sql="SELECT *FROM account";

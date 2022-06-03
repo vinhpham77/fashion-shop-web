@@ -34,7 +34,31 @@
        </div>
        <div class="container">
         <table class="table">
-                     
+            <div>
+                <tr class="text">
+                    <td class="text-info">Full Name</td>
+                    <td class="text-info">Address</td>
+                    <td class="text-info">Email</td>
+                    <td class="text-info">Phone Number</td>
+                    <td class="text-info">Shipping address</td>
+                </tr>
+                <tr class="text">
+                    <td class="text-info">Nguyễn Thành Quốc</td>
+                    <td class="text-info">Hoài Hảo ,Hoài Nhơn ,Bình Định</td>
+                    <td class="text-info">thanhquocnguyen1907@gmail.com</td>
+                    <td class="text-info">0394778003</td>
+                    <td class="text-info">Hoài Hảo ,Hoài Nhơn ,Bình Định</td>
+                </tr>
+                <tr class="text">
+                    <td class="text-info">Nguyễn Thị Ngô</td>
+                    <td class="text-info">Nha Trang ,Quang ,Quy Nhơn</td>
+                    <td class="text-info">ngonguyenthi1907@gmail.com</td>
+                    <td class="text-info">092323291</td>
+                    <td class="text-info">Thị Nại ,Nhơn Hòa, Bình Định</td>
+                </tr>
+                
+
+            </div>                             
         </table>   
     </div>
 <!-- kmdksdsd -->
