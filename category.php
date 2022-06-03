@@ -1,5 +1,10 @@
 <?php 
     require_once('user/header.php');
+    echo '<link rel="stylesheet" href="style/category.css">
+        <link rel="stylesheet" href="fontawesome/css/all.css">
+        <script defer type="text/javascript" src="js/category.js"></script>';
+    require_once('user/menu.php');
+
     require_once('connect_db.php');
     $prod_name = $size = $sort = '';
     if (!empty($_GET['prod_name'])) {
@@ -13,12 +18,6 @@
     {
         $sort = $_GET['sort'];
     }
-?>
-	<link rel="stylesheet" href="style/category.css">
-	<link rel="stylesheet" href="fontawesome/css/all.css">
-    <script defer type="text/javascript" src="js/category.js"></script>
-<?php
-    require_once('user/menu.php');
 ?>
     <section class="category row">
 			<div class="category-top row">

@@ -13,6 +13,15 @@
 	font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
 html {
     font-size: 62.5%;
 }

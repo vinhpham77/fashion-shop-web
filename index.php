@@ -1,5 +1,7 @@
 <?php
     require_once('user/header.php');
+    echo '<link rel="stylesheet" href="style/index.css">
+        <script defer src="js/index.js"></script>';
     require_once('user/menu.php');
 ?>
     <section id="Slider">
@@ -25,8 +27,7 @@
         </div>
         <p>Nhận bản tin 6AESN</p>
         <input type="text" placeholder="Nhập email của bạn...">
-    </section>    
-    <script src="js/main-slider.js"></script>
+    </section>
 <?php
     include_once('user/footer.php');
 ?>

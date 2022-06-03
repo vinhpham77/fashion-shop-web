@@ -7,5 +7,6 @@
     <title>Fashion_Shop</title>
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="./style/index.css">
-    <script defer src="./js/index.js"></script>
+    <link rel="stylesheet" href="./style/menu.css">
+    <link rel="stylesheet" href="./style/footer.css">
+    <script defer src="./js/menu.js"></script>

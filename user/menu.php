@@ -6,7 +6,6 @@
         </div>
 
         <div class="menu">
-            
             <li><a href="">NỮ</a>
                 <ul class="sub-menu">
                     <li><a href="">Hàng mới về</a></li>    
@@ -88,15 +87,14 @@
         </div>
         <div class="orthers">
             <li class="btn-search">
-
-                    <input id="input1" placeholder="Tìm kiếm" type="text" name="tim">
-                    <label for="input1">
-                        <span input="mot" class="sp_timkiem">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </span>
-                    </label>
+                <input id="input1" placeholder="Tìm kiếm" type="text" name="tim">
+                <label for="input1">
+                    <span input="mot" class="sp_timkiem">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                </label>
             </li>
             <li><a class="fa--user" href="login.php"><i class="fa-solid fa-user"></i></a></li>
-            <li><a class="fa--shopping-bag" href="giohang.php"><img width="30px" height="30px" src="./images/icon_cart.png" alt=""></a></li>
+            <li><a class="fa--shopping-bag" href="giohang.php"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </div>
     </header>

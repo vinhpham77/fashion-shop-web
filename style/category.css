@@ -25,24 +25,21 @@
 }
 
 .category-top-right>* {
-    border-radius: var(--border);
+    border-radius: var(--small-border);
     font-size: 90%;
     padding: 6px 14px;
     cursor: pointer;
 }
 
-.category-top-right>select:first-child {
-    margin-right: 10px;
-}
-
-.category-top-right>*+* {
+#btn-filter {
+    margin-left: 10px;
     margin-right: 28px;
 }
 
 #btn-filter {
     color: white;
     background-color: black;
-
+    border: 2px solid transparent;
 }
 
 #btn-filter:hover {

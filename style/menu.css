@@ -1,0 +1,116 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 20px;
+    height: 70px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background: white;
+    border-bottom: 1px solid lightgray;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo img {
+    width: 60%;
+}
+
+.menu {
+    flex: 3;
+    display: flex;
+}
+
+.menu>li {
+    padding: 0 12px;
+    position: relative;
+}
+
+.menu li a {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    line-height: 20px;
+
+}
+
+.menu>li:hover .sub-menu {
+    visibility: visible;
+    top: 65px;
+}
+
+.sub-menu {
+    position: absolute;
+    width: 150px;
+    border: 1px solid #ccc;
+    visibility: hidden;
+    padding: 10px 0 10px 20px;
+    top: 70px;
+    transition: 0.1s;
+    z-index: 1;
+    background-color: #FFF;
+}
+
+.sub-menu ul {
+    padding-left: 20px;
+}
+
+.sub-menu ul a {
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.orthers {
+    flex: 2;
+    display: flex;
+}
+
+.orthers i {
+    font-size: 25px;
+}
+
+.orthers>li {
+    padding: 0 12px;
+    position: relative;
+}
+
+.orthers>li:not(:last-child)::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 80%;
+    background: #cccccc;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.orthers>li:first-child {
+    position: relative;
+    flex: 1;
+}
+
+#input1 {
+    width: 100%;
+    border: none;
+    margin-left: 120px;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    outline: none;
+}
+
+.btn-search {
+    display: flex;
+}
+
+body>section:nth-child(2) {
+    margin-top: 70px;
+    border-bottom: 1px solid lightgray;
+    overflow: hidden;
+}

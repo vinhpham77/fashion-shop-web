@@ -1,16 +1,27 @@
-var sp_timkiem = document.querySelector(".sp_timkiem");
-let keyword_input = document.getElementById("input1");
+const imgPosition = document.querySelectorAll(".aspect-ratio-169 img");
+const imgContainer = document.querySelector('.aspect-ratio-169');
+const dotItem = document.querySelectorAll('.dot');
+let imgNumber = imgPosition.length;
+let index = 0;
+imgPosition.forEach(function(image, index) {
+    image.style.left = index * 100 + "%";
+    dotItem[index].addEventListener("click", function() {
+        slider(index);
+    })
+})
 
-function search() {
-    keyword = keyword_input.value.trim();
-    if (keyword) {
-        window.location.href = "category.php?prod_name=" + keyword;
-    }
+function imgSlide() {
+    index++;
+    if (index >= imgNumber)
+        index = 0;
+    slider(index);
+
 }
 
-sp_timkiem.onclick = search;
-keyword_input.onkeydown = function(event) {
-    if (event.keyCode === 13) {
-        search();
-    }
+function slider(index) {
+    imgContainer.style.left = "-" + index * 100 + "%"
+    const dotActive = document.querySelector(".active");
+    dotActive.classList.remove("active");
+    dotItem[index].classList.add("active");
 }
+setInterval(imgSlide, 3000);
