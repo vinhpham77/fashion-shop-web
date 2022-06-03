@@ -26,6 +26,7 @@
         <p>Nhận bản tin 6AESN</p>
         <input type="text" placeholder="Nhập email của bạn...">
     </section>    
+    <script src="js/main-slider.js"></script>
 <?php
     include_once('user/footer.php');
 ?>

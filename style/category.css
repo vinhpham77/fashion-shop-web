@@ -19,8 +19,8 @@
     justify-content: space-between;
 }
 
-.category-name {
-    font-size: 140%;
+.keywords {
+    font-size: 120%;
     font-weight: 500;
 }
 
@@ -44,6 +44,7 @@
     background-color: black;
 
 }
+
 #btn-filter:hover {
     background-color: darkgray;
     color: white;
@@ -63,7 +64,6 @@
 .category-bottom {
     justify-content: space-between;
     margin-top: 30px;
-    width: 100%;
 }
 
 .product__avatar {
@@ -96,7 +96,9 @@
 
 .product__name {
     font-weight: bold;
-    font-size: 120%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .product__price {

@@ -86,7 +86,6 @@
                 </ul>
             </li>
         </div>
-    <img src="./images/aosomiluadui.png" alt="">
         <div class="orthers">
             <li class="btn-search">
 
