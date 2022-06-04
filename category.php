@@ -22,7 +22,7 @@
     <section class="category row">
 			<div class="category-top row">
 				<div class="category-top-left">
-                    <span class="search-phrase disabled">Kết quả tìm kiếm: </span><span class="keywords"></span>
+                    <span class="search-phrase disabled">Kết quả tìm kiếm </span><span class="keywords"></span><span class="quantity"></span>
                 </div>
                 <form class="category-top-right" method="GET">
                     <input type="hidden" name="prod_name" value=<?php echo $prod_name; ?>>
@@ -59,8 +59,10 @@
                             <script>
                                 let phrase = document.querySelector('.search-phrase');
                                 let keywords = document.querySelector('.keywords');
+                                let quantity = document.querySelector('.quantity');
                                 phrase.classList.remove('disabled');
-                                keywords.innerHTML = "$keywords";
+                                keywords.innerHTML = "'$keywords'";
+                                quantity.innerHTML = ": $result->num_rows sản phẩm";
                             </script>
                         SEARCH_RESULT;
                         if ($result->num_rows > 0) {
