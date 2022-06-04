@@ -1,19 +1,22 @@
-const buyBtns=document.querySelectorAll('.js-buy-ticket');
-        const modal=document.querySelector('.js-modal');
-        const modalClose=document.querySelector('.js-modal-close');
-        const modalContainer=document.querySelector('.js-modal-container');
-        function showBuyTickets(){
-            modal.classList.add("open");
-        }
-        function hiddenBuyTickets(){
-            modal.classList.remove('open');
-        }
-        for(const buyBtn of buyBtns){
-          buyBtn.addEventListener('click',showBuyTickets)  
-        }
-       
-        modalClose.addEventListener('click',hiddenBuyTickets);
-        modal.addEventListener('click',hiddenBuyTickets); 
-        modalContainer.addEventListener('click',function(event){
-                event.stopPropagation();
-        })
+ dong=document.querySelectorAll(".text2");
+ header=document.querySelector('.heder-cthd');
+ table = document.querySelector('.table-3');
+dong.forEach((item,index)=>{
+  item.addEventListener("click",function(){
+    id=item.getAttribute('id_order');
+    lay_id(id);
+  })
+})
+function lay_id(id){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+      text=this.responseText;
+      console.log(text);
+      header.innerHTML=text;
+     }
+  };
+  xhttp.open("POST", "../bang_hoadon.php", true);
+  xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhttp.send('prod_id='+id);
+}
