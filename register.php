@@ -30,7 +30,7 @@
         {
             $sql =  "INSERT INTO account VALUES ('$username','$password','$repassword','$fullname','$currentaddress','$email','$phonenumber','$shippingaddress')";
             mysqli_query($conn, $sql);
-            echo '<script>alert("Đăng ký thành công!");</script>';
+            echo '<script>alert("Đăng ký thành công!"); window.location="register.php";</script>';
         }
     }
 ?>
