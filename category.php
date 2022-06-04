@@ -5,19 +5,10 @@
         <script defer type="text/javascript" src="js/category.js"></script>';
     require_once('user/menu.php');
 
-    require_once('connect_db.php');
-    $prod_name = $size = $sort = '';
-    if (!empty($_GET['prod_name'])) {
-        $prod_name = $_GET['prod_name'];
-    }
-    if(!empty($_GET['size']))
-    {
-        $size = $_GET['size'];
-    }
-    if(!empty($_GET['size']))
-    {
-        $sort = $_GET['sort'];
-    }
+    $prod_name = !empty($_GET['prod_name']) ? $_GET['prod_name'] : '';
+    $size = !empty($_GET['size']) ? $_GET['size'] : '';
+    $sort = !empty($_GET['sort']) ? $_GET['sort'] : '';
+    $current_page = !empty($_GET['page']) && $_GET['page'] > 0 ? $_GET['page'] - 1 : 0;
 ?>
     <section class="category row">
 			<div class="category-top row">
@@ -26,6 +17,7 @@
                 </div>
                 <form class="category-top-right" method="GET">
                     <input type="hidden" name="prod_name" value=<?php echo $prod_name; ?>>
+                    <input type="hidden" name="page" value=<?php echo $current_page; ?>>
                     <select name="size" id="size">
                         <option value="">Size</option>
                         <option value="s" <?php if ($size === 's') echo 'selected'; ?>>S</option>
@@ -49,12 +41,19 @@
                         if (!empty($size)) {
                             $sql .= " AND size.$size > 0";
                         }
-                        if (!empty($sort)) {
-                            $sql .= " ORDER BY original_price $sort";
-                        }
-                        $result = $conn->query($sql);
-                        $keywords = $_GET['prod_name'];
 
+                        $result = $conn->query($sql);
+                        $num_rows = $result->num_rows;
+                        $prods_per_page = 20;
+                        $num_pages = ceil($num_rows / $prods_per_page);
+                        $beginning_prod = $current_page * $prods_per_page;
+
+                        if (empty($sort)) {
+                            $sql .= " ORDER BY product.prod_id LIMIT $prods_per_page OFFSET $beginning_prod";
+                        } else {
+                            $sql .= " ORDER BY original_price $sort LIMIT $prods_per_page OFFSET $beginning_prod";
+                        }
+                        $keywords = $_GET['prod_name'];
                         echo <<<SEARCH_RESULT
                             <script>
                                 let phrase = document.querySelector('.search-phrase');
@@ -62,10 +61,11 @@
                                 let quantity = document.querySelector('.quantity');
                                 phrase.classList.remove('disabled');
                                 keywords.innerHTML = "'$keywords'";
-                                quantity.innerHTML = ": $result->num_rows sản phẩm";
+                                quantity.innerHTML = ": $num_rows sản phẩm";
                             </script>
                         SEARCH_RESULT;
-                        if ($result->num_rows > 0) {
+                        $result = $conn->query($sql);
+                        if ($num_rows > 0) {
                             while($row = $result->fetch_array()) {
                                 $img_path = "images/products/".$row['prod_id'];
                                 $images = array_slice(scandir($img_path), 2);
@@ -103,14 +103,30 @@
                     }
                 ?>
         </div>
-        <div class="category-bottom">
-            <span><<</span>
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>5</span>
-            <span>>></span>
+        <div class="category-bottom row">
+            <span data-value="1"><i class="fa-solid fa-angles-left"></i></span>
+            <?php
+                $range = 2;
+                $current_page++;
+                $min = $current_page - $range;
+                $max = $current_page + $range;
+                $i = $min > 1 ? $min : 1;
+                if ($max > $num_pages) {
+                    $max = $num_pages;
+                }
+
+                while ($i < $current_page) {
+                    echo "<span data-value='$i'>$i</span>";
+                    $i++;
+                }
+                echo "<span class='current-page'>$i</span>";
+                $i++;
+                while ($i <= $max) {
+                    echo "<span data-value='$i'>$i</span>";
+                    $i++;
+                }
+            ?>
+            <span data-value="<?php echo $num_pages; ?>"><i class="fa-solid fa-angles-right"></i></span>
         </div>
     </section>
 <?php
