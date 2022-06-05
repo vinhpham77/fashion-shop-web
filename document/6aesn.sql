@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 30, 2022 at 03:41 PM
+-- Generation Time: Jun 05, 2022 at 01:01 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -47,11 +47,11 @@ CREATE TABLE IF NOT EXISTS `account` (
 --
 
 INSERT INTO `account` (`username`, `password`, `account_type`, `fullname`, `current_address`, `email`, `phone_number`, `shipping_address`) VALUES
-('AliceMr', 'e7fa1ddf432061c6a5f76929a2864304', b'0', 'AliceHan', '46-Phan Đình Phùng-Phạm Kim Đồng-Đà Lạt', 'Alice1111@gmail.com', '0563238915', '46-Phan Đình Phùng-Phạm Kim Đồng-Đà Lạt'),
-('Henlee', 'ada3d9c6301016a630c44fa731a65022', b'0', 'Helenka', '02-Định Văn Của-Xuân Vinh-Rạch Giá', 'Henlee123@gmail.com', '0834554432', 'KBang-Chư Pưng-Gia Lai'),
-('JamesJon', 'd0b68aad25845831798a12d58599f002', b'0', 'Jon Văn James', '61-Lý Thái Tổ-Xuân Diệu-Quy Nhơn', 'James222@gmail.com', '0905232261', '61-Lý Thái Tổ-Xuân Diệu-Quy Nhơn'),
-('ThompsonRobert', 'd6f38295491c9c9e60d5b6914d76f04c', b'0', ' Robert Thompson', ' Phụng Hoài Hảo-Hoài Nhơn-Bình Định', ' RobertThompson000@gmail.com', '0394778001', '53-Nguyễn Đình Thụ-Nguyễn Văn Cừ-Hồ Chí Minh'),
-('admin', 'd829b843a6550a947e82f2f38ed6b7a7', b'1', 'Nguyễn Văn Admin', '77-Nguyễn Huệ-Quang Trung-Bình Định-\r\nFashion-shop', 'admin123@gmail.com', '0920392389', ''),
+('AliceMr', 'e323066cbbc32189ca6da109cab50e39', b'0', 'AliceHan', '46-Phan Đình Phùng-Phạm Kim Đồng-Đà Lạt', 'Alice1111@gmail.com', '0563238915', '46-Phan Đình Phùng-Phạm Kim Đồng-Đà Lạt'),
+('Henlee', 'e323066cbbc32189ca6da109cab50e39', b'0', 'Helenka', '02-Định Văn Của-Xuân Vinh-Rạch Giá', 'Henlee123@gmail.com', '0834554432', 'KBang-Chư Pưng-Gia Lai'),
+('JamesJon', 'e323066cbbc32189ca6da109cab50e39', b'0', 'Jon Văn James', '61-Lý Thái Tổ-Xuân Diệu-Quy Nhơn', 'James222@gmail.com', '0905232261', '61-Lý Thái Tổ-Xuân Diệu-Quy Nhơn'),
+('ThompsonRobert', 'e323066cbbc32189ca6da109cab50e39', b'0', ' Robert Thompson', ' Phụng Hoài Hảo-Hoài Nhơn-Bình Định', ' RobertThompson000@gmail.com', '0394778001', '53-Nguyễn Đình Thụ-Nguyễn Văn Cừ-Hồ Chí Minh'),
+('admin', 'e323066cbbc32189ca6da109cab50e39', b'1', 'Nguyễn Văn Admin', '77-Nguyễn Huệ-Quang Trung-Bình Định-\r\nFashion-shop', 'admin123@gmail.com', '0920392389', ''),
 ('johnweak', 'e323066cbbc32189ca6da109cab50e39', b'0', 'John Wick', '123 Wall Sred, New York', 'johnweak@gg.com', '0398166111', '123 Chợ đầu mối');
 
 -- --------------------------------------------------------
@@ -79,12 +79,11 @@ INSERT INTO `cart` (`username`, `prod_id`, `size`, `quantity`) VALUES
 ('johnweak', 13, 'x', 1),
 ('johnweak', 22, 'm', 3),
 ('AliceMr', 1, 'xl', 1),
-('AliceMr', 35, 's', 2),
+('AliceMr', 33, 's', 2),
 ('AliceMr', 56, 's', 3),
 ('AliceMr', 33, 's', 2),
-('AliceMr', 33, 'm', 2),
+('AliceMr', 33, 's', 2),
 ('JamesJon', 70, 's', 3),
-('JamesJon', 72, 'm', 2),
 ('JamesJon', 80, 's', 2),
 ('JamesJon', 69, 's', 1),
 ('Henlee', 33, 'l', 1),
@@ -110,8 +109,6 @@ CREATE TABLE IF NOT EXISTS `category` (
 
 INSERT INTO `category` (`cate_id`, `cate_name`, `parent_cate_id`) VALUES
 (1, 'Nữ', 0),
-(2, 'Hàng mới về', 1),
-(3, 'Deal hot giảm 20%', 1),
 (4, 'Áo', 1),
 (5, 'Áo sơ mi', 4),
 (6, 'Áo thun', 4),
@@ -123,8 +120,6 @@ INSERT INTO `category` (`cate_id`, `cate_name`, `parent_cate_id`) VALUES
 (12, 'Đầm maxi/voan', 11),
 (13, 'Đầm thun', 11),
 (14, 'Nam', 0),
-(15, 'Hàng mới về', 14),
-(16, 'Deal Hot giảm 10%', 14),
 (17, 'Áo', 14),
 (18, 'Áo sơ mi', 17),
 (19, 'Áo thun', 17),
@@ -140,13 +135,7 @@ INSERT INTO `category` (`cate_id`, `cate_name`, `parent_cate_id`) VALUES
 (29, 'Váy bé gái', 26),
 (30, 'Bé trai', 25),
 (31, 'Áo bé trai', 30),
-(32, 'Quần bé trai', 30),
-(33, 'Sale ', 0),
-(34, 'Sale 10%', 33),
-(35, 'Sale 20%', 33),
-(36, 'Thông tin', 0),
-(37, 'Giới thiệu về 6AESN', 36),
-(38, 'Chính sách hoàn trả', 36);
+(32, 'Quần bé trai', 30);
 
 -- --------------------------------------------------------
 
@@ -238,8 +227,6 @@ INSERT INTO `description` (`prod_id`, `introduction`, `detail`, `maintenance`) V
 (68, 'Quần sooc thun cạp chun co giãn có dây kéo rút. 2 túi chéo và túi vuông có nắp trên ống.', 'Dòng sản phẩm	Boy<br> Nhóm sản phẩm	Quần<br> Kiểu dáng	Regular', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (69, 'Quần sooc cạp chun co giãn. 2 túi chéo. Vải kẻ kiểu caro màu xanh dương. ', 'Dòng sản phẩm	Boy<br> Nhóm sản phẩm	Quần<br> Kiểu dáng	Regular', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (70, 'Quần dài khaki cạp chun co giãn, 2 túi chéo 2 bên - 2 viền túi giả phía sau. Gấu bo chun co giãn.', 'Dòng sản phẩm	Boy<br> Nhóm sản phẩm	Quần<br> Kiểu dáng	Regular fit', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
-(71, 'Jumpsuit trơn dáng suông. Dáng áo không tay, vạt đổ từ đằng trước xuống đằng sau. Dáng quần ống đứng, rộng, độ dài chạm gót. 2 bên có 2 túi chéo. Chất liệu chính là lụa.', '\r\nDòng sản phẩm	Ladies\r\nNhóm sản phẩm	Jumpsuit\r\nCổ áo	Cổ tròn', 'Chi tiết bảo quản sản phẩm : \r\n\r\n* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
-(72, 'Quần dáng suông, độ dài ngang mắt cá chân. Chất liệu chính là Tuysi dày dặn. Trên đai quần có khuy cài ẩn. Phía trước có 2 túi hộp, phần viền cách điệu được đính ngọc nhỏ.', '\r\nDòng sản phẩm	You\r\nNhóm sản phẩm	Quần\r\nKiểu dáng	Ống suông', ' * Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (73, 'Áo sơ mi dáng suông, tay lửng, bo gấu đầu ống. Chất liệu chính là lụa. Trên ống tay được thêu nổi họa tiết hoa. Phần cổ áo cách điệu với dây buộc dài, tạo hình nơ.', 'Dòng sản phẩm	Ladies\r\nNhóm sản phẩm	Áo\r\nCổ áo	Cổ khác', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (74, 'Đầm dáng xòe, không tay, đai vai to bản. Đầm bao gồm 2 lớp, lớp trong là lụa mềm, lớp ngoài là vải dập nổi họa tiết ô trám. Lớp ngoài được xếp nếp ngẫu nhiên tạo bề mặt không bằng phẳng. Trên đai vai được đính kèm phụ kiện hoa.\r\n\r\nĐể trở thành tâm điểm của bữa tiệc, nàng không cần lựa chọn quá nhiều chi tiết cầu kỳ. Đôi khi chính sự đơn giản lại khiến diện mạo nàng lộng lẫy hơn. Và chiếc đầm dạ hội này sẽ đáp ứng đầy đủ yêu cầu về vẻ ngoài của những quý cô tinh tế. Dáng váy xòe cổ điển \"cân\" tốt mọi vóc người. Điểm nhấn phụ kiện hoa thêm phần nổi bật cho chiếc đầm.\r\n\r\nMàu sắc: Trắng - Đen\r\n\r\nMẫu mặc size S:\r\n\r\nChiều cao: 1m68\r\nCân nặng: 52kg\r\nSố đo 3 vòng: 83-62-95cm', 'Dòng sản phẩm	Senora\r\nNhóm sản phẩm	Đầm\r\nCổ áo	Cổ vuông', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (75, 'Đầm dáng maxi với độ dài ngang bắp chân. Thiết kế thân trên ôm nhẹ, thân dưới xòe rộng tự nhiên. Đầm không có tay áo, thay vào đó là 2 dây đai to bản nối đến phần vặn xoắn trước ngực. Eo đầm được nhấn cao nhẹ nhàng. Phần dưới vạt được nhấn xòe.\r\n\r\nThiết kế tràn ngập hương sắc mùa hè này sẽ là sự lựa chọn hoàn hảo cho chuyến du lịch của nàng. Đường nét của thiết kế hướng đến sự tối giản nhưng không làm mất đi vẻ cuốn hút nơi diện mạo nàng. Ngược lại, những đường nét đơn giản nhưng thú vị này sẽ khiến mọi cô nàng sở hữu một loại khí chất đặc biệt, rực rỡ và lung linh như những tia nắng ngày hè.\r\n\r\nMàu sắc: Đỏ mận - Hồng tím\r\n\r\nMẫu mặc size S:\r\n\r\nChiều cao: 1m68\r\nCân nặng: 52kg\r\nSố đo 3 vòng: 83-62-95cm', '\r\nDòng sản phẩm	Ladies\r\nNhóm sản phẩm	Đầm\r\nCổ áo	Cổ khác', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
@@ -252,9 +239,9 @@ INSERT INTO `description` (`prod_id`, `introduction`, `detail`, `maintenance`) V
 (82, 'Áo thun dáng croptop, cổ V, tay ngắn, phong cách mongtoghi. Dáng áo ôm, phía trước có khuy vân mini.\r\n\r\nMẫu áo thun trẻ trung này sẽ là item không thể thiếu trong tủ đồ mùa hè của nàng. Dáng áo ôm nhẹ cùng chất liệu co dãn tôn lên triệt để vẻ đẹp hình thể của nàng. Để diện được mẫu áo này đẹp nhất, nàng hãy phối cùng các item cạp cao nhé.\r\n\r\nMàu sắc: Xanh lime - Cam đào\r\n\r\nMẫu mặc size S:\r\n\r\nChiều cao: 1m68\r\nCân nặng: 52kg\r\nSố đo 3 vòng: 83-62-95cm', 'Dòng sản phẩm	You\r\nNhóm sản phẩm	Áo\r\nCổ áo	Cổ chữ V\r\nTay áo	Tay ngắn\r\nKiểu dáng	Ôm\r\nĐộ dài	Croptop\r\nHọa tiết	Trơn\r\nChất liệu	Thun', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.\r\n\r\n* Vải voan , lụa , chiffon nên giặt bằng tay.\r\n\r\n* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.\r\n\r\n* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.\r\n\r\n* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. '),
 (83, 'Áo thun dáng suông, form basic với tay ngắn và cổ tròn. Phía trước áo được in nổi một bài thơ bằng tiếng Anh.\r\n\r\nThiết kế tối giản nhưng vẫn sang trọng này phù hợp với mọi cô nàng trong mọi dịp khác nhau. Nàng có thể mix-match item này với quần Tây, quần jean hay chân váy đều rất đẹp.\r\n\r\nMàu sắc: Trắng - Đen\r\n\r\nMẫu mặc size S:\r\n\r\nChiều cao: 1m68\r\nCân nặng: 52kg\r\nSố đo 3 vòng: 83-62-95cm', 'Dòng sản phẩm	Ladies\r\nNhóm sản phẩm	Áo\r\nCổ áo	Cổ tròn\r\nTay áo	Tay ngắn\r\nKiểu dáng	Xuông\r\nĐộ dài	Dài thường\r\nHọa tiết	Trơn\r\nChất liệu	Thun', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.\r\n\r\n* Vải voan , lụa , chiffon nên giặt bằng tay.\r\n\r\n* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.\r\n\r\n* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.\r\n\r\n* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. \r\n\r\n* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.'),
 (84, 'Áo thun cơ bản với nền trơn và chữ in màu ở giữa. Áo ngắn tay, cổ tròn, dáng suông.\r\n\r\nLựa chọn một chiếc áo thun basic sẽ khiến phong cách của nàng trở nên năng động và trẻ trung hơn. Thiết kế áo thun với câu nói cổ vũ sẽ giúp vẻ ngoài nàng sáng bừng rực rỡ. Đơn giản phối cùng quần jean là đã hoàn thành ngay một set đồ tiêu chuẩn.\r\n\r\nMàu sắc: Trắng - Xanh lá\r\n\r\nMẫu mặc size S:\r\n\r\nChiều cao: 1m69\r\n\r\nCân nặng: 48kg\r\n\r\nSố đo: 80-60-90cm', '\r\nDòng sản phẩm	You\r\nNhóm sản phẩm	Áo\r\nCổ áo	Cổ tròn\r\nTay áo	Tay ngắn\r\nKiểu dáng	Xuông\r\nĐộ dài	Dài thường\r\nHọa tiết	Trơn\r\nChất liệu	Thun', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.\r\n\r\n* Vải voan , lụa , chiffon nên giặt bằng tay.\r\n\r\n* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.\r\n\r\n* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.\r\n\r\n* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. \r\n\r\n* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.\r\n\r\n* Các sản phẩm có thể giặt bằng máy thì chỉ nên để chế độ giặt nhẹ , vắt mức trung bình và nên phân các loại sản phẩm cùng màu và cùng loại vải khi giặt.\r\n\r\n* Nên phơi sản phẩm tại chỗ thoáng mát , tránh ánh nắng trực tiếp sẽ dễ bị phai bạc màu , nên làm khô quần áo bằng cách phơi ở những điểm gió sẽ giữ màu vải tốt hơn.\r\n\r\n* Những chất vải 100% cotton , không nên phơi sản phẩm bằng mắc áo mà nên vắt ngang sản phẩm lên dây phơi để tránh tình trạng rạn vải.\r\n\r\n* Khi ủi sản phẩm bằng bàn là và sử dụng chế độ hơi nước sẽ làm cho sản phẩm dễ ủi phẳng , mát và không bị cháy , giữ màu sản phẩm được đẹp và bền lâu hơn. Nhiệt độ của bàn là tùy theo từng loại vải. '),
-(85, 'Áo thun dáng suông, độ dài vừa phải, không có ống tay, vai nối dài, cổ tròn. Phía trước áo được in câu quote với phối màu ombre.\r\n\r\nMột mẫu áo thun cơ bản dành cho nàng diện trong những ngày hè nắng nóng. Dáng áo không tay kết hợp cùng phần vai nối dài đem đến cảm giác mát mẻ mà vẫn giữ nguyên tính chỉn chu, lịch sự. Sáng áo suông với độ dài vừa phải mang đến nhiều cách mix-match khác nhau cho nàng thoải mái lựa chọn.\r\n\r\nMàu sắc: Trắng - Nude\r\n\r\nMẫu mặc size S:\r\n\r\nChiều cao: 1m69\r\n\r\nCân nặng: 48kg\r\n\r\nSố đo: 80-60-90cm', 'Dòng sản phẩm	You\r\nNhóm sản phẩm	Áo\r\nCổ áo	Cổ tròn\r\nTay áo	Sát nách\r\nKiểu dáng	Xuông\r\nĐộ dài	Dài thường\r\nHọa tiết	Trơn\r\nChất liệu	Thun', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.\r\n\r\n* Vải voan , lụa , chiffon nên giặt bằng tay.\r\n\r\n* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.\r\n\r\n* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.\r\n\r\n* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. \r\n\r\n* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.');
+(85, 'Áo thun dáng suông, độ dài vừa phải, không có ống tay, vai nối dài, cổ tròn. Phía trước áo được in câu quote với phối màu ombre.\r\n\r\nMột mẫu áo thun cơ bản dành cho nàng diện trong những ngày hè nắng nóng. Dáng áo không tay kết hợp cùng phần vai nối dài đem đến cảm giác mát mẻ mà vẫn giữ nguyên tính chỉn chu, lịch sự. Sáng áo suông với độ dài vừa phải mang đến nhiều cách mix-match khác nhau cho nàng thoải mái lựa chọn.\r\n\r\nMàu sắc: Trắng - Nude\r\n\r\nMẫu mặc size S:\r\n\r\nChiều cao: 1m69\r\n\r\nCân nặng: 48kg\r\n\r\nSố đo: 80-60-90cm', 'Dòng sản phẩm	You\r\nNhóm sản phẩm	Áo\r\nCổ áo	Cổ tròn\r\nTay áo	Sát nách\r\nKiểu dáng	Xuông\r\nĐộ dài	Dài thường\r\nHọa tiết	Trơn\r\nChất liệu	Thun', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.\r\n\r\n* Vải voan , lụa , chiffon nên giặt bằng tay.\r\n\r\n* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.\r\n\r\n* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.\r\n\r\n* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. \r\n\r\n* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.'),
+(86, 'Áo dáng croptop cạp ngắn, ống tay dài, cổ tròn. Thân áo được thiết kế dựa trên các đường xếp ly nhỏ cố định. Tay áo phồng và được bo chun ở đầu ống. Phần eo có dây dài cùng màu để buộc, thắt theo ý thích. Cổ áo phía sau có khuy cài kim loại. Thân áo được may 2 lớp, tay áo được may 1 lớp có độ xuyên thấu nhẹ.\r\n\r\nMàu sắc: Đỏ mận\r\n\r\nMẫu mặc size S:\r\n\r\nChiều cao: 1m68\r\nCân nặng: 52kg\r\nSố đo 3 vòng: 83-62-95cm', 'Dòng sản phẩm	You\r\nNhóm sản phẩm	Áo\r\nCổ áo	Cổ tròn\r\nTay áo	Tay lỡ\r\nKiểu dáng	Ôm\r\nĐộ dài	Croptop\r\nHọa tiết	Trơn\r\nChất liệu	Lụa', ' Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.\r\n\r\n* Vải voan , lụa , chiffon nên giặt bằng tay.\r\n\r\n* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.\r\n\r\n* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.\r\n\r\n* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. \r\n\r\n* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.');
 INSERT INTO `description` (`prod_id`, `introduction`, `detail`, `maintenance`) VALUES
-(86, 'Áo dáng croptop cạp ngắn, ống tay dài, cổ tròn. Thân áo được thiết kế dựa trên các đường xếp ly nhỏ cố định. Tay áo phồng và được bo chun ở đầu ống. Phần eo có dây dài cùng màu để buộc, thắt theo ý thích. Cổ áo phía sau có khuy cài kim loại. Thân áo được may 2 lớp, tay áo được may 1 lớp có độ xuyên thấu nhẹ.\r\n\r\nMàu sắc: Đỏ mận\r\n\r\nMẫu mặc size S:\r\n\r\nChiều cao: 1m68\r\nCân nặng: 52kg\r\nSố đo 3 vòng: 83-62-95cm', 'Dòng sản phẩm	You\r\nNhóm sản phẩm	Áo\r\nCổ áo	Cổ tròn\r\nTay áo	Tay lỡ\r\nKiểu dáng	Ôm\r\nĐộ dài	Croptop\r\nHọa tiết	Trơn\r\nChất liệu	Lụa', ' Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.\r\n\r\n* Vải voan , lụa , chiffon nên giặt bằng tay.\r\n\r\n* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.\r\n\r\n* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.\r\n\r\n* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. \r\n\r\n* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.'),
 (87, 'Áo croptop cổ kiểu, vạt chéo . Tay ngắn. Dáng croptop ngang eo - chần chun co giãn. Cài bằng khuy giọt lệ phía sau.\r\n\r\nĐơn giản, nhỏ gọn lại được may bằng chất liệu lụa mỏng, không nhăn, mang theo bên mình trong những chuyến đi chơi là lựa chọn thông minh cho cô nàng hiện đại. Mix cùng quần jean, zuýp các loại hoặc quần short cũng đủ nàng biến hóa nhiều phong cách mong muốn. \r\n\r\nMàu sắc: Hồng san hô - Nude\r\n\r\nMẫu mặc size S:\r\n\r\nChiều cao: 1m65\r\nCân nặng: 47kg\r\nSố đo 3 vòng: 82-61-89 cm', 'Dòng sản phẩm	Ladies\r\nNhóm sản phẩm	Áo\r\nCổ áo	Cổ khác\r\nTay áo	Tay ngắn\r\nKiểu dáng	Bo gấu\r\nĐộ dài	Croptop\r\nHọa tiết	Trơn\r\nChất liệu	Lụa', ' Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.\r\n\r\n* Vải voan , lụa , chiffon nên giặt bằng tay.\r\n\r\n* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.\r\n\r\n* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.\r\n\r\n* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. \r\n\r\n* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.\r\n\r\n* Các sản phẩm có thể giặt bằng máy thì chỉ nên để chế độ giặt nhẹ , vắt mức trung bình và nên phân các loại sản phẩm cùng màu và cùng loại vải khi giặt.'),
 (88, 'Áo croptop cổ đức có thêu chữ 1 bên. Có 3 khuy tạo kiểu phía trước phần cổ V cách điệu. Dáng áo croptop. \r\n\r\nSử dụng chất vải Tuysi với những ưu điểm vượt trội như: Thoáng mát, thấm nước tốt, độ bền cao giúp thiết kế trở nên nổi bật. Đừng quên mix cùng quần sooc, jeans,... và phụ kiện nhé\r\n\r\nMàu sắc: Đen - Cam\r\n\r\nMẫu mặc size S:\r\n\r\nChiều cao: 1m68\r\nCân nặng: 52kg\r\nSố đo 3 vòng: 83-62-95cm', 'Dòng sản phẩm	Ladies\r\nNhóm sản phẩm	Áo\r\nCổ áo	Cổ đức\r\nTay áo	Tay ngắn\r\nKiểu dáng	Ôm\r\nĐộ dài	Croptop\r\nHọa tiết	Trơn\r\nChất liệu	Tuysi', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.\r\n\r\n* Vải voan , lụa , chiffon nên giặt bằng tay.\r\n\r\n* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.\r\n\r\n* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.\r\n\r\n* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. \r\n\r\n* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.'),
 (89, 'Áo croptop cổ chữ V xếp nếp. Tay áo liền. Dáng áo croptop bo gấu. Phía sau có dây thắt nơ tạo điểm nhấn. Cài bằng khóa kéo sau lưng.\r\n\r\nSử dụng vải thô lụa thoáng khí, nhẹ nhàng tạo cảm giác dễ chịu cho người mặc. Nàng có thể mix cùng quần âu công sở, quần jeans hay zuýp các loại.\r\n\r\nMàu sắc: Họa tiết Nude - Đen - Nude\r\n\r\nMẫu mặc size S:\r\n\r\nChiều cao: 1m68\r\nCân nặng: 52kg\r\nSố đo 3 vòng: 83-62-95cm', 'Dòng sản phẩm	Ladies\r\nNhóm sản phẩm	Áo\r\nCổ áo	Cổ chữ V\r\nTay áo	Tay liền\r\nKiểu dáng	Bo gấu\r\nĐộ dài	Croptop\r\nHọa tiết	Hoa,Trơn\r\nChất liệu	Lụa,Thô', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.\r\n\r\n* Vải voan , lụa , chiffon nên giặt bằng tay.\r\n\r\n* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.\r\n\r\n* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.\r\n\r\n* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. \r\n\r\n* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.'),
@@ -347,123 +334,146 @@ CREATE TABLE IF NOT EXISTS `product` (
   `cate_id` tinyint NOT NULL COMMENT 'mã danh mục',
   `prod_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'tên sản phẩm',
   `price` int NOT NULL COMMENT 'giá',
-  `discount` decimal(5,2) NOT NULL DEFAULT '0.00' COMMENT 'giảm giá(%)',
+  `promo_code` varchar(20) CHARACTER SET ascii COLLATE ascii_bin DEFAULT NULL COMMENT 'mã khuyến mãi',
   `quantity` int NOT NULL COMMENT 'số lượng',
   `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'ngày nhập sản phẩm',
   PRIMARY KEY (`prod_id`),
-  KEY `FK_cate_id` (`cate_id`)
+  KEY `FK_cate_id` (`cate_id`),
+  KEY `FK_promo_code` (`promo_code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin COMMENT='sản phẩm';
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`prod_id`, `cate_id`, `prod_name`, `price`, `discount`, `quantity`, `date_added`) VALUES
-(1, 5, 'ÁO SƠ MI DENIM', 890000, '10.00', 200, '2022-05-17 13:19:02'),
-(2, 5, 'ÁO SƠ MI NAM HỌA TIẾT', 1090000, '20.00', 90, '2022-05-18 11:33:39'),
-(3, 5, 'ÁO SƠ MI KẺ MỜ', 1190000, '0.00', 199, '2022-05-18 01:26:14'),
-(4, 5, 'ÁO SƠ MI CỔ PHỐI MÀU', 1099000, '10.00', 70, '2022-05-18 01:27:09'),
-(5, 5, 'ÁO SƠ MI TAY DÀI TÚI VUÔNG', 990000, '30.00', 30, '2022-05-18 01:32:01'),
-(6, 10, 'CHÂN VÁY CHỮ A 2 LỚP', 1090000, '30.00', 120, '2022-05-18 10:35:20'),
-(7, 10, 'CHÂN VÁY CHỮ A HOA NỔI', 990000, '0.00', 20, '2022-05-18 11:05:09'),
-(8, 10, 'CHÂN VÁY CHỮ A PHỐI NÚT', 790000, '30.00', 50, '2022-05-18 11:09:05'),
-(9, 10, 'CHÂN VÁY CHỮ A CHẦN CHỈ NỔI', 890000, '0.00', 110, '2022-05-18 11:12:20'),
-(10, 10, 'CHÂN VÁY CHỮ A DÁNG DÀI', 990000, '10.00', 160, '2022-05-18 11:20:59'),
-(11, 19, 'ÁO THUN SYMPHONY', 650000, '10.00', 100, '2022-05-19 17:15:51'),
-(12, 19, 'ÁO THUN ANTI-HAVEN', 650000, '0.00', 100, '2022-05-18 17:20:53'),
-(13, 19, 'ÁO THUN TROPICAL', 650000, '20.00', 100, '2022-05-18 17:21:28'),
-(14, 19, 'ÁO THUN IN QUOTE', 650000, '10.00', 100, '2022-05-18 17:21:28'),
-(15, 19, 'ÁO THUN SUSTAINABLE', 650000, '10.00', 100, '2022-05-18 17:23:10'),
-(16, 20, 'ÁO POLO NAM MÀU ĐEN', 790000, '10.00', 100, '2022-05-18 17:28:27'),
-(17, 20, 'ÁO POLO PHỐI KẺ', 790000, '0.00', 100, '2022-05-18 17:28:27'),
-(18, 20, 'ÁO POLO NAM VẢI KẺ', 790000, '10.00', 100, '2022-05-18 17:30:08'),
-(19, 20, 'ÁO POLO NAM KẺ NGANG', 790000, '10.00', 100, '2022-05-18 17:30:08'),
-(20, 20, 'ÁO POLO KẺ DỌC', 790000, '10.00', 100, '2022-05-18 17:30:08'),
-(21, 22, 'QUẦN SOOC THUN CẠP DÂY KÉO RÚT', 890000, '10.00', 100, '2022-05-18 17:36:09'),
-(22, 22, 'QUẦN LỬNG KHAKI', 890000, '20.00', 100, '2022-05-18 17:36:09'),
-(23, 22, 'QUẦN LỬNG VẢI PHỐI SỢI TENCEL', 890000, '10.00', 100, '2022-05-18 17:36:09'),
-(24, 22, 'QUẦN LỬNG KẺ KHUY LỆCH', 890000, '10.00', 100, '2022-05-18 17:36:09'),
-(25, 22, 'QUẦN LỬNG KẺ', 890000, '10.00', 100, '2022-05-18 17:36:09'),
-(26, 23, 'QUẦN TÂY NAM KHAIKI GẤU BO', 1090000, '30.00', 100, '2022-05-18 17:43:36'),
-(27, 23, 'QUẦN TÂY NAM KHAKI DÂY KÉO RÚT', 1090000, '30.00', 100, '2022-05-18 17:43:36'),
-(28, 23, 'QUẦN TÂY NAM KHAKI DÁNG SLIM', 1090000, '30.00', 100, '2022-05-18 17:43:36'),
-(29, 23, 'QUẦN TÂY NAM KHAKI TÚI VIỀN ĐÔI', 1090000, '30.00', 100, '2022-05-18 17:43:36'),
-(30, 23, 'QUẦN KHAKI TÚI 2 BÊN', 405000, '10.00', 100, '2022-05-18 17:43:36'),
-(31, 24, 'QUẦN SOOC JEANS NAM', 800000, '10.00', 50, '2022-05-20 09:57:01'),
-(32, 24, 'QUẦN BÒ SLIM FIT', 100000, '10.00', 50, '2022-05-20 09:57:01'),
-(33, 24, 'QUẦN JEANS NAM SLIM FIT', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(34, 24, 'QUẦN JEANS NAM SLIM FIT', 500000, '10.00', 50, '2022-05-20 09:57:01'),
-(35, 24, 'QUẦN JEANS SLIM FIT', 300000, '10.00', 50, '2022-05-20 09:57:01'),
-(36, 27, 'BỘ ÁO THUN VÀ QUẦN GIẢ VÁY', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(37, 27, 'BỘ ÁO THUN VÀ QUẦN GIẢ VÁY', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(38, 27, 'SET 2 DÂY COOL', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(39, 27, 'SET ÁO THUN VÀ QUẦN LỬNG CÙNG MÀU', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(40, 27, 'SET THUN HỌA TIẾT NHÍ', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(41, 28, 'QUẦN SOOC NƠ', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(42, 28, 'QUẦN SOOC GIẢ VÁY', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(43, 28, 'QUẦN SOOC THÊU HOA', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(44, 28, 'QUẦN SOOC THÊU HOA', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(45, 28, 'JUMPSUIT BÉ GÁI', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(46, 29, 'ĐẦM SUÔNG CHÚ CÚN ĐÁNG YÊU', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(47, 29, 'ĐẦM SUÔNG CHÚ CÚN ĐÁNG YÊU', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(48, 29, 'ĐẦM BABYDOLL PHỐI HOA', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(49, 29, 'ĐẦM LỤA NHẤN CHUN', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(50, 29, 'ĐẦM BABYDOLL TAY BỒNG', 200000, '10.00', 50, '2022-05-20 09:57:01'),
-(51, 30, 'ÁO THUN SƯ TỬ', 280000, '20.00', 50, '2022-05-20 12:54:00'),
-(52, 30, 'ÁO THUN KHỦNG LONG JUST CHILL', 320000, '10.00', 150, '2022-05-20 12:54:00'),
-(53, 30, 'ÁO THUN PHỐI TÚI NẮP', 319000, '0.00', 150, '2022-05-20 12:54:00'),
-(54, 30, 'ÁO SƠ MI REGULAR FIT', 399000, '10.00', 200, '2022-05-20 12:54:00'),
-(55, 30, 'ÁO SƠ MI PHỐI TÚI GIẢ', 399000, '10.00', 150, '2022-05-20 12:54:00'),
-(56, 30, 'ÁO THUN SLEEP EAT SKATE', 239000, '10.00', 300, '2022-05-20 12:54:00'),
-(57, 30, 'ÁO THUN BÉ TRAI SYMPHONY', 500000, '10.00', 150, '2022-05-20 12:54:00'),
-(58, 30, 'ÁO THUN CON VẬT (KÈM QUẦN)', 900000, '20.00', 150, '2022-05-20 12:54:00'),
-(59, 30, 'ÁO THUN NEVER STOP', 152000, '0.00', 50, '2022-05-20 12:54:00'),
-(60, 30, 'ÁO THUN AWESOME', 200000, '10.00', 50, '2022-05-20 12:54:00'),
-(61, 31, 'QUẦN SOOC REGULAR', 239000, '10.00', 50, '2022-05-20 12:54:00'),
-(62, 31, 'QUẦN SOOC RẰN RI', 200000, '10.00', 250, '2022-05-20 12:54:00'),
-(63, 31, 'QUẦN SHORT PHỐI ĐAI CHUN', 599000, '10.00', 100, '2022-05-20 12:54:00'),
-(64, 31, 'QUẦN SOOC PHỐI TÚI NẮP', 450000, '10.00', 50, '2022-05-20 12:54:00'),
-(65, 31, 'QUẦN KHAKI KHỦNG LONG NHÍ', 499000, '0.00', 350, '2022-05-20 12:54:00'),
-(66, 31, 'QUẦN DENIM BO ỐNG', 390000, '10.00', 150, '2022-05-20 12:54:00'),
-(67, 31, 'QUẦN JEAN SLIM FIT', 579000, '10.00', 100, '2022-05-20 12:54:00'),
-(68, 31, 'QUẦN SOOC THUN 2 TÚI', 350000, '10.00', 150, '2022-05-20 12:54:00'),
-(69, 31, 'QUẦN SOOC KẺ CARO NGANG ĐÙI', 599000, '0.00', 250, '2022-05-20 12:54:00'),
-(70, 31, 'QUẦN DÀI KHAKI BÉ TRAI', 200000, '10.00', 50, '2022-05-20 12:54:00'),
-(71, 3, 'JUMPSUIT LỤA SUÔNG TRƠN', 1112000, '20.00', 150, '2022-05-20 14:16:56'),
-(72, 3, 'QUẦN SUÔNG PHỐI TÚI VIỀN', 872000, '20.00', 130, '2022-05-20 14:20:59'),
-(73, 3, 'ÁO SƠ MI THÊU NỐI PHỐI NƠ', 952000, '20.00', 60, '2022-05-20 14:20:59'),
-(74, 3, 'ĐẦM XÒE PHỐI HOA', 2792000, '20.00', 10, '2022-05-20 14:20:59'),
-(75, 3, 'ĐẦM MAXI KHÔNG TAY', 1352000, '20.00', 170, '2022-05-20 14:20:59'),
-(76, 5, 'ÁO SƠ MI CỔ ĐẮP REN', 712000, '0.00', 200, '2022-05-20 14:27:37'),
-(77, 5, 'ÁO SƠ MI CROPTOP PHỐI TÚI TRƯỚC', 872000, '0.00', 300, '2022-05-20 14:27:37'),
-(78, 5, 'ÁO LỤA DẬP NỔI NHẤN BÈO', 715000, '2.00', 150, '2022-05-20 14:27:37'),
-(79, 5, 'SƠ MI LỤA THÊU NỔI', 1192000, '0.00', 400, '2022-05-20 14:27:37'),
-(80, 5, 'ÁO SƠ MI KẺ CHẤT LỤA', 1192000, '5.00', 100, '2022-05-20 14:27:37'),
-(81, 6, 'ÁO THUN JOIE DE VIVRE', 472000, '0.00', 500, '2022-05-20 14:31:36'),
-(82, 6, 'ÁO THUN MONGTOGHI', 600000, '0.00', 200, '2022-05-20 14:31:36'),
-(83, 6, 'ÁO THUN POEM', 742000, '0.00', 500, '2022-05-20 14:31:36'),
-(84, 6, 'ÁO THUN DO WHAT MAKE YOU HAPPY', 600000, '0.00', 300, '2022-05-20 14:31:36'),
-(85, 6, 'ÁO THUN I QUOTE OMBRE', 750000, '0.00', 190, '2022-05-20 14:31:36'),
-(86, 7, 'ÁO CROPTOP NHẤN DÂY', 1490000, '0.00', 300, '2022-05-20 14:49:16'),
-(87, 7, 'ÁO CROPTOP CỔ KIỂU', 632000, '0.00', 200, '2022-05-20 14:49:16'),
-(88, 7, 'ÁO CROPTOP CỔ ĐỨC', 635000, '0.00', 230, '2022-05-20 14:49:16'),
-(89, 7, 'ÁO CROPTOP CỔ XẾP NẾP', 874000, '0.00', 400, '2022-05-20 14:49:16'),
-(90, 7, 'ÁO CROPTOP BO CHUN GẤU', 600000, '0.00', 300, '2022-05-20 14:49:16'),
-(91, 9, 'CHÂN VÁY XẾP LI SOLE', 1090000, '2.00', 120, '2022-05-20 15:04:27'),
-(92, 9, 'CHÂN VÁY MIDI THẮT EO', 1032000, '0.00', 190, '2022-05-20 15:04:27'),
-(93, 9, 'CHÂN VÁY CHIFFON MIDI', 650000, '0.00', 130, '2022-05-20 15:04:27'),
-(94, 9, 'CHÂN VÁY XẾP LY GẤU LỆCH', 553000, '0.00', 80, '2022-05-20 15:04:27'),
-(95, 9, 'CHÂN VÁY XẾP LY NGANG GỐI', 700000, '6.00', 100, '2022-05-20 15:04:27'),
-(96, 12, 'ĐẦM MAXI CỔ YẾM', 1290000, '30.00', 120, '2022-05-21 07:49:12'),
-(97, 12, 'ĐẦM MAXI KHÔNG TAY', 1690000, '20.00', 100, '2022-05-21 08:04:09'),
-(98, 12, 'ĐẦM MAXI LỤA CỔ TIM', 1490000, '30.00', 170, '2022-05-21 09:15:22'),
-(99, 12, 'ĐẦM MAXI XẾP NẾP', 1390000, '10.00', 80, '2022-05-21 09:23:04'),
-(100, 12, 'ĐẦM MAXI TRỄ VAI', 1390000, '10.00', 150, '2022-05-21 09:32:30'),
-(101, 13, 'ĐẦM THUN XẺ TÀ', 1490000, '20.00', 60, '2022-05-21 09:46:39'),
-(102, 13, 'ĐẦM THUN DÁNG SUÔNG', 990000, '10.00', 140, '2022-05-21 09:53:01'),
-(103, 13, 'ĐẦM THUN LỆCH VAI', 1590000, '10.00', 90, '2022-05-21 10:00:00'),
-(104, 13, 'ĐẦM THUN CỔ LỌ BLACK', 1290000, '20.00', 200, '2022-05-21 10:05:22'),
-(105, 13, 'ĐẦM THUN CUT-OUT', 1590000, '10.00', 100, '2022-05-21 10:09:06');
+INSERT INTO `product` (`prod_id`, `cate_id`, `prod_name`, `price`, `promo_code`, `quantity`, `date_added`) VALUES
+(1, 5, 'ÁO SƠ MI DENIM', 890000, 'ANNI5', 200, '2022-05-17 13:19:02'),
+(2, 5, 'ÁO SƠ MI NAM HỌA TIẾT', 1090000, 'SUMMER2022', 90, '2022-05-18 11:33:39'),
+(3, 5, 'ÁO SƠ MI KẺ MỜ', 1190000, 'SUMMER2022', 199, '2022-05-18 01:26:14'),
+(4, 5, 'ÁO SƠ MI CỔ PHỐI MÀU', 1099000, 'ANNI5', 70, '2022-05-18 01:27:09'),
+(5, 5, 'ÁO SƠ MI TAY DÀI TÚI VUÔNG', 990000, 'ANNI5', 30, '2022-05-18 01:32:01'),
+(6, 10, 'CHÂN VÁY CHỮ A 2 LỚP', 1090000, 'ANNI5', 120, '2022-05-18 10:35:20'),
+(7, 10, 'CHÂN VÁY CHỮ A HOA NỔI', 990000, 'SUMMER2022', 20, '2022-05-18 11:05:09'),
+(8, 10, 'CHÂN VÁY CHỮ A PHỐI NÚT', 790000, 'SUMMER2022', 50, '2022-05-18 11:09:05'),
+(9, 10, 'CHÂN VÁY CHỮ A CHẦN CHỈ NỔI', 890000, 'SUMMER2022', 110, '2022-05-18 11:12:20'),
+(10, 10, 'CHÂN VÁY CHỮ A DÁNG DÀI', 990000, 'ANNI5', 160, '2022-05-18 11:20:59'),
+(11, 19, 'ÁO THUN SYMPHONY', 650000, 'ANNI5', 100, '2022-05-19 17:15:51'),
+(12, 19, 'ÁO THUN ANTI-HAVEN', 650000, 'SUMMER2022', 100, '2022-05-18 17:20:53'),
+(13, 19, 'ÁO THUN TROPICAL', 650000, 'ANNI5', 100, '2022-05-18 17:21:28'),
+(14, 19, 'ÁO THUN IN QUOTE', 650000, NULL, 100, '2022-05-18 17:21:28'),
+(15, 19, 'ÁO THUN SUSTAINABLE', 650000, 'SUMMER2022', 100, '2022-05-18 17:23:10'),
+(16, 20, 'ÁO POLO NAM MÀU ĐEN', 790000, 'ANNI5', 100, '2022-05-18 17:28:27'),
+(17, 20, 'ÁO POLO PHỐI KẺ', 790000, 'ANNI5', 100, '2022-05-18 17:28:27'),
+(18, 20, 'ÁO POLO NAM VẢI KẺ', 790000, 'SUMMER2022', 100, '2022-05-18 17:30:08'),
+(19, 20, 'ÁO POLO NAM KẺ NGANG', 790000, 'ANNI5', 100, '2022-05-18 17:30:08'),
+(20, 20, 'ÁO POLO KẺ DỌC', 790000, 'ANNI5', 100, '2022-05-18 17:30:08'),
+(21, 22, 'QUẦN SOOC THUN CẠP DÂY KÉO RÚT', 890000, 'ANNI5', 100, '2022-05-18 17:36:09'),
+(22, 22, 'QUẦN LỬNG KHAKI', 890000, 'ANNI5', 100, '2022-05-18 17:36:09'),
+(23, 22, 'QUẦN LỬNG VẢI PHỐI SỢI TENCEL', 890000, 'SUMMER2022', 100, '2022-05-18 17:36:09'),
+(24, 22, 'QUẦN LỬNG KẺ KHUY LỆCH', 890000, 'ANNI5', 100, '2022-05-18 17:36:09'),
+(25, 22, 'QUẦN LỬNG KẺ', 890000, 'SUMMER2022', 100, '2022-05-18 17:36:09'),
+(26, 23, 'QUẦN TÂY NAM KHAIKI GẤU BO', 1090000, 'SUMMER2022', 100, '2022-05-18 17:43:36'),
+(27, 23, 'QUẦN TÂY NAM KHAKI DÂY KÉO RÚT', 1090000, 'ANNI5', 100, '2022-05-18 17:43:36'),
+(28, 23, 'QUẦN TÂY NAM KHAKI DÁNG SLIM', 1090000, 'ANNI5', 100, '2022-05-18 17:43:36'),
+(29, 23, 'QUẦN TÂY NAM KHAKI TÚI VIỀN ĐÔI', 1090000, 'SUMMER2022', 100, '2022-05-18 17:43:36'),
+(30, 23, 'QUẦN KHAKI TÚI 2 BÊN', 405000, NULL, 100, '2022-05-18 17:43:36'),
+(31, 24, 'QUẦN SOOC JEANS NAM', 800000, 'SUMMER2022', 50, '2022-05-20 09:57:01'),
+(32, 24, 'QUẦN BÒ SLIM FIT', 100000, NULL, 50, '2022-05-20 09:57:01'),
+(33, 24, 'QUẦN JEANS NAM SLIM FIT', 200000, NULL, 50, '2022-05-20 09:57:01'),
+(34, 24, 'QUẦN JEANS NAM SLIM FIT', 500000, 'ANNI5', 50, '2022-05-20 09:57:01'),
+(35, 24, 'QUẦN JEANS SLIM FIT', 300000, NULL, 50, '2022-05-20 09:57:01'),
+(36, 27, 'BỘ ÁO THUN VÀ QUẦN GIẢ VÁY', 200000, NULL, 50, '2022-05-20 09:57:01'),
+(37, 27, 'BỘ ÁO THUN VÀ QUẦN GIẢ VÁY', 200000, 'SUMMER2022', 50, '2022-05-20 09:57:01'),
+(38, 27, 'SET 2 DÂY COOL', 200000, 'SUMMER2022', 50, '2022-05-20 09:57:01'),
+(39, 27, 'SET ÁO THUN VÀ QUẦN LỬNG CÙNG MÀU', 200000, 'KIDS2022', 50, '2022-05-20 09:57:01'),
+(40, 27, 'SET THUN HỌA TIẾT NHÍ', 200000, NULL, 50, '2022-05-20 09:57:01'),
+(41, 28, 'QUẦN SOOC NƠ', 200000, 'SUMMER2022', 50, '2022-05-20 09:57:01'),
+(42, 28, 'QUẦN SOOC GIẢ VÁY', 200000, 'KIDS2022', 50, '2022-05-20 09:57:01'),
+(43, 28, 'QUẦN SOOC THÊU HOA', 200000, 'KIDS2022', 50, '2022-05-20 09:57:01'),
+(44, 28, 'QUẦN SOOC THÊU HOA', 200000, NULL, 50, '2022-05-20 09:57:01'),
+(45, 28, 'JUMPSUIT BÉ GÁI', 200000, 'KIDS2022', 50, '2022-05-20 09:57:01'),
+(46, 29, 'ĐẦM SUÔNG CHÚ CÚN ĐÁNG YÊU', 200000, NULL, 50, '2022-05-20 09:57:01'),
+(47, 29, 'ĐẦM SUÔNG CHÚ CÚN ĐÁNG YÊU', 200000, 'SUMMER2022', 50, '2022-05-20 09:57:01'),
+(48, 29, 'ĐẦM BABYDOLL PHỐI HOA', 200000, 'KIDS2022', 50, '2022-05-20 09:57:01'),
+(49, 29, 'ĐẦM LỤA NHẤN CHUN', 200000, 'SUMMER2022', 50, '2022-05-20 09:57:01'),
+(50, 29, 'ĐẦM BABYDOLL TAY BỒNG', 200000, 'KIDS2022', 50, '2022-05-20 09:57:01'),
+(51, 30, 'ÁO THUN SƯ TỬ', 280000, 'KIDS2022', 50, '2022-05-20 12:54:00'),
+(52, 30, 'ÁO THUN KHỦNG LONG JUST CHILL', 320000, 'KIDS2022', 150, '2022-05-20 12:54:00'),
+(53, 30, 'ÁO THUN PHỐI TÚI NẮP', 319000, 'SUMMER2022', 150, '2022-05-20 12:54:00'),
+(54, 30, 'ÁO SƠ MI REGULAR FIT', 399000, 'KIDS2022', 200, '2022-05-20 12:54:00'),
+(55, 30, 'ÁO SƠ MI PHỐI TÚI GIẢ', 399000, 'KIDS2022', 150, '2022-05-20 12:54:00'),
+(56, 30, 'ÁO THUN SLEEP EAT SKATE', 239000, 'SUMMER2022', 300, '2022-05-20 12:54:00'),
+(57, 30, 'ÁO THUN BÉ TRAI SYMPHONY', 500000, 'KIDS2022', 150, '2022-05-20 12:54:00'),
+(58, 30, 'ÁO THUN CON VẬT (KÈM QUẦN)', 900000, 'KIDS2022', 150, '2022-05-20 12:54:00'),
+(59, 30, 'ÁO THUN NEVER STOP', 152000, 'SUMMER2022', 50, '2022-05-20 12:54:00'),
+(60, 30, 'ÁO THUN AWESOME', 200000, 'SUMMER2022', 50, '2022-05-20 12:54:00'),
+(61, 31, 'QUẦN SOOC REGULAR', 239000, 'SUMMER2022', 50, '2022-05-20 12:54:00'),
+(62, 31, 'QUẦN SOOC RẰN RI', 200000, NULL, 250, '2022-05-20 12:54:00'),
+(63, 31, 'QUẦN SHORT PHỐI ĐAI CHUN', 599000, 'KIDS2022', 100, '2022-05-20 12:54:00'),
+(64, 31, 'QUẦN SOOC PHỐI TÚI NẮP', 450000, 'KIDS2022', 50, '2022-05-20 12:54:00'),
+(65, 31, 'QUẦN KHAKI KHỦNG LONG NHÍ', 499000, 'KIDS2022', 350, '2022-05-20 12:54:00'),
+(66, 31, 'QUẦN DENIM BO ỐNG', 390000, 'KIDS2022', 150, '2022-05-20 12:54:00'),
+(67, 31, 'QUẦN JEAN SLIM FIT', 579000, 'KIDS2022', 100, '2022-05-20 12:54:00'),
+(68, 31, 'QUẦN SOOC THUN 2 TÚI', 350000, 'KIDS2022', 150, '2022-05-20 12:54:00'),
+(69, 31, 'QUẦN SOOC KẺ CARO NGANG ĐÙI', 599000, 'KIDS2022', 250, '2022-05-20 12:54:00'),
+(70, 31, 'QUẦN DÀI KHAKI BÉ TRAI', 200000, NULL, 50, '2022-05-20 12:54:00'),
+(73, 5, 'ÁO SƠ MI THÊU NỐI PHỐI NƠ', 952000, 'SUMMER2022', 60, '2022-05-20 14:20:59'),
+(74, 12, 'ĐẦM XÒE PHỐI HOA', 2792000, 'ANNI5', 10, '2022-05-20 14:20:59'),
+(75, 12, 'ĐẦM MAXI KHÔNG TAY', 1352000, 'ANNI5', 170, '2022-05-20 14:20:59'),
+(76, 5, 'ÁO SƠ MI CỔ ĐẮP REN', 712000, NULL, 200, '2022-05-20 14:27:37'),
+(77, 5, 'ÁO SƠ MI CROPTOP PHỐI TÚI TRƯỚC', 872000, 'ANNI5', 300, '2022-05-20 14:27:37'),
+(78, 5, 'ÁO LỤA DẬP NỔI NHẤN BÈO', 715000, 'SUMMER2022', 150, '2022-05-20 14:27:37'),
+(79, 5, 'SƠ MI LỤA THÊU NỔI', 1192000, 'ANNI5', 400, '2022-05-20 14:27:37'),
+(80, 5, 'ÁO SƠ MI KẺ CHẤT LỤA', 1192000, 'ANNI5', 100, '2022-05-20 14:27:37'),
+(81, 6, 'ÁO THUN JOIE DE VIVRE', 472000, NULL, 500, '2022-05-20 14:31:36'),
+(82, 6, 'ÁO THUN MONGTOGHI', 600000, NULL, 200, '2022-05-20 14:31:36'),
+(83, 6, 'ÁO THUN POEM', 742000, 'ANNI5', 500, '2022-05-20 14:31:36'),
+(84, 6, 'ÁO THUN DO WHAT MAKE YOU HAPPY', 600000, 'SUMMER2022', 300, '2022-05-20 14:31:36'),
+(85, 6, 'ÁO THUN I QUOTE OMBRE', 750000, 'ANNI5', 190, '2022-05-20 14:31:36'),
+(86, 7, 'ÁO CROPTOP NHẤN DÂY', 1490000, 'ANNI5', 300, '2022-05-20 14:49:16'),
+(87, 7, 'ÁO CROPTOP CỔ KIỂU', 632000, NULL, 200, '2022-05-20 14:49:16'),
+(88, 7, 'ÁO CROPTOP CỔ ĐỨC', 635000, NULL, 230, '2022-05-20 14:49:16'),
+(89, 7, 'ÁO CROPTOP CỔ XẾP NẾP', 874000, 'SUMMER2022', 400, '2022-05-20 14:49:16'),
+(90, 7, 'ÁO CROPTOP BO CHUN GẤU', 600000, 'ANNI5', 300, '2022-05-20 14:49:16'),
+(91, 9, 'CHÂN VÁY XẾP LI SOLE', 1090000, 'ANNI5', 120, '2022-05-20 15:04:27'),
+(92, 9, 'CHÂN VÁY MIDI THẮT EO', 1032000, 'SUMMER2022', 190, '2022-05-20 15:04:27'),
+(93, 9, 'CHÂN VÁY CHIFFON MIDI', 650000, NULL, 130, '2022-05-20 15:04:27'),
+(94, 9, 'CHÂN VÁY XẾP LY GẤU LỆCH', 553000, NULL, 80, '2022-05-20 15:04:27'),
+(95, 9, 'CHÂN VÁY XẾP LY NGANG GỐI', 700000, 'SUMMER2022', 100, '2022-05-20 15:04:27'),
+(96, 12, 'ĐẦM MAXI CỔ YẾM', 1290000, 'ANNI5', 120, '2022-05-21 07:49:12'),
+(97, 12, 'ĐẦM MAXI KHÔNG TAY', 1690000, NULL, 100, '2022-05-21 08:04:09'),
+(98, 12, 'ĐẦM MAXI LỤA CỔ TIM', 1490000, 'ANNI5', 170, '2022-05-21 09:15:22'),
+(99, 12, 'ĐẦM MAXI XẾP NẾP', 1390000, 'ANNI5', 80, '2022-05-21 09:23:04'),
+(100, 12, 'ĐẦM MAXI TRỄ VAI', 1390000, 'SUMMER2022', 150, '2022-05-21 09:32:30'),
+(101, 13, 'ĐẦM THUN XẺ TÀ', 1490000, 'ANNI5', 60, '2022-05-21 09:46:39'),
+(102, 13, 'ĐẦM THUN DÁNG SUÔNG', 990000, NULL, 140, '2022-05-21 09:53:01'),
+(103, 13, 'ĐẦM THUN LỆCH VAI', 1590000, 'ANNI5', 90, '2022-05-21 10:00:00'),
+(104, 13, 'ĐẦM THUN CỔ LỌ BLACK', 1290000, NULL, 200, '2022-05-21 10:05:22'),
+(105, 13, 'ĐẦM THUN CUT-OUT', 1590000, 'ANNI5', 100, '2022-05-21 10:09:06');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `promotion`
+--
+
+DROP TABLE IF EXISTS `promotion`;
+CREATE TABLE IF NOT EXISTS `promotion` (
+  `promo_code` varchar(20) CHARACTER SET ascii COLLATE ascii_bin NOT NULL COMMENT 'mã khuyến mãi',
+  `promo_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_bin NOT NULL COMMENT 'tên khuyến mãi',
+  `promo_price` float NOT NULL COMMENT 'giá khuyến mãi',
+  `calc_unit` tinyint(1) NOT NULL COMMENT 'đơn vị tính(0 - đồng, 1 - phần trăm)',
+  PRIMARY KEY (`promo_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='khuyến mãi';
+
+--
+-- Dumping data for table `promotion`
+--
+
+INSERT INTO `promotion` (`promo_code`, `promo_name`, `promo_price`, `calc_unit`) VALUES
+('ANNI5', 'Kỷ niệm 5 năm thành lập', 30, 1),
+('KIDS2022', 'Mừng lễ quốc tế thiếu nhi 2022', 100000, 0),
+('SUMMER2022', 'Siêu sale mùa hè 2022', 20, 1);
 
 -- --------------------------------------------------------
 
@@ -627,7 +637,8 @@ ALTER TABLE `order-detail`
 -- Constraints for table `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `FK_cate_id` FOREIGN KEY (`cate_id`) REFERENCES `category` (`cate_id`);
+  ADD CONSTRAINT `FK_cate_id` FOREIGN KEY (`cate_id`) REFERENCES `category` (`cate_id`),
+  ADD CONSTRAINT `FK_promo_code` FOREIGN KEY (`promo_code`) REFERENCES `promotion` (`promo_code`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

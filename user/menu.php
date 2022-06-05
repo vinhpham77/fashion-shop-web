@@ -6,10 +6,8 @@
         </div>
 
         <div class="menu">
-            <li><a href="">NỮ</a>
+            <li><a href="1">NỮ</a>
                 <ul class="sub-menu">
-                    <li><a href="">Hàng mới về</a></li>    
-                    <li><a href="">Deal Hot giảm 20%</a></li>  
                     <li><a href="">Áo</a>
                         <ul>
                             <li><a href="">Áo sơ mi</a></li>
@@ -34,8 +32,6 @@
             </li>
             <li><a href="">NAM</a>
                 <ul class="sub-menu">
-                    <li><a href="">Hàng mới về</a></li>    
-                    <li><a href="">Deal Hot giảm 10%</a></li>  
                     <li><a href="">Áo</a>
                         <ul>
                             <li><a href="">Áo sơ mi</a></li>
