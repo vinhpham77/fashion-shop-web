@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 05, 2022 at 01:01 PM
+-- Generation Time: Jun 05, 2022 at 02:04 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -460,11 +460,11 @@ INSERT INTO `product` (`prod_id`, `cate_id`, `prod_name`, `price`, `promo_code`,
 DROP TABLE IF EXISTS `promotion`;
 CREATE TABLE IF NOT EXISTS `promotion` (
   `promo_code` varchar(20) CHARACTER SET ascii COLLATE ascii_bin NOT NULL COMMENT 'mã khuyến mãi',
-  `promo_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_bin NOT NULL COMMENT 'tên khuyến mãi',
+  `promo_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'tên khuyến mãi',
   `promo_price` float NOT NULL COMMENT 'giá khuyến mãi',
   `calc_unit` tinyint(1) NOT NULL COMMENT 'đơn vị tính(0 - đồng, 1 - phần trăm)',
   PRIMARY KEY (`promo_code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='khuyến mãi';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin COMMENT='khuyến mãi';
 
 --
 -- Dumping data for table `promotion`

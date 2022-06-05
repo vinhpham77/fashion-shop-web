@@ -67,10 +67,12 @@
                     </li>
                 </ul>
             </li>
+            <!-- Echo <li><a href="category?cate_id=$row['cate_id']">$row['cate_name']</a></li> -->
             <li><a href="">SALE</a>
                 <ul class="sub-menu">
                     <li><a href="">Sale 10%</a></li>
                     <li><a href="">Sale 20% </a></li>
+                    <!-- Echo <li><a href="category?promo_id=$row['promo_id']">$row['promo_name']</a></li> -->
                 </ul>
             </li>
             <li><a href="">THÔNG TIN<a>

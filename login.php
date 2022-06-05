@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="style/base.css">
-<link defer rel="stylesheet" href="style/login.css"/>
 <?php
+    require_once('user/header.php');
+    echo '<link rel="stylesheet" href="style/login.css">';
+    require_once('user/menu.php');
     if (!empty($_POST)) {
         if(isset($_COOKIE['username'])) {
             unset($_COOKIE['username']);
@@ -29,8 +26,9 @@
         }
     }
 ?>
-</head>
-<body>
+
+
+<section>
     <form method="post" action="" class="dangnhap">
         <h2>Đăng Nhập</h2>
         <div class="user">Tên tài khoản: <input type="text" name="username" required></div>
@@ -38,5 +36,7 @@
         <div class="btdangnhap"><input type="submit" name="dangky" class="login" value="Đăng Nhập"/></div>
         <div class="btdangky"><input type="button" name="dangky" class="register" value="Đăng Ký" onclick="window.location.href='register.php';"></div>
     </form>
-</body>
-</html>
+</section>
+<?php
+    include_once('user/footer.php');
+?>
