@@ -1,7 +1,6 @@
 <?php 
     require_once('user/header.php');
     echo '<link rel="stylesheet" href="style/category.css">
-        <link rel="stylesheet" href="fontawesome/css/all.css">
         <script defer type="text/javascript" src="js/category.js"></script>';
     require_once('user/menu.php');
 
@@ -17,7 +16,6 @@
                 </div>
                 <form class="category-top-right" method="GET">
                     <input type="hidden" name="prod_name" value=<?php echo $prod_name; ?>>
-                    <input type="hidden" name="page" value=<?php echo $current_page; ?>>
                     <select name="size" id="size">
                         <option value="">Size</option>
                         <option value="s" <?php if ($size === 's') echo 'selected'; ?>>S</option>
@@ -31,6 +29,7 @@
                         <option value="desc" <?php if ($sort === 'desc') echo 'selected'; ?>>Giá cao đến thấp</option>
                     </select>
                     <button type="submit" id="btn-filter">Lọc</button>
+                    <input type="hidden" name="page" value=<?php echo $current_page; ?>>
                 </form>
 			</div>
             <div class="category-content">
