@@ -1,4 +1,4 @@
-var sp_timkiem = document.querySelector(".sp_timkiem");
+let sp_timkiem = document.querySelector(".sp_timkiem");
 let keyword_input = document.getElementById("input1");
 
 function search() {
@@ -14,3 +14,8 @@ keyword_input.onkeydown = function(event) {
         search();
     }
 }
+
+// let footer = document.querySelector('footer');
+// let prevSibFooter = footer.previousElementSibling;
+// console.log(prevSibFooter);
+// prevSibFooter.style.marginBottom = '40px';
