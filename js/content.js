@@ -14,8 +14,3 @@ keyword_input.onkeydown = function(event) {
         search();
     }
 }
-
-// let footer = document.querySelector('footer');
-// let prevSibFooter = footer.previousElementSibling;
-// console.log(prevSibFooter);
-// prevSibFooter.style.marginBottom = '40px';
