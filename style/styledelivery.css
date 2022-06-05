@@ -6,12 +6,17 @@
 .container{
     width: 100%;
 }
+.delivery{
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 100px;
+}
 .delivery-content h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #000066;
-    padding-left: 86vh;
     padding-bottom: 15px;
     font-size: xx-large;
+    margin-bottom: 30px;
 }
 .delivery-conten-above{
     margin-left: 19%;
@@ -94,6 +99,7 @@
     margin-right: auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
+    min-height: 150px;
 }
 .delivery-conten-below table tr th:first-child{
     text-align: left;

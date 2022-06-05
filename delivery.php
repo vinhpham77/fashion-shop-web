@@ -1,4 +1,10 @@
 <?php 
+    require_once('user/header.php');
+    echo '	<link rel="stylesheet" href="style/styledelivery.css">
+    <script defer src="js/delivery.js"></script>">';
+    require_once('user/menu.php');
+?>
+<?php 
     require_once "connect_db.php";
     $username = $_COOKIE['username'];
     $sql = "SELECT `fullname`,`phone_number`,`shipping_address` FROM `account` where username = '".$username."' ";
@@ -20,12 +26,19 @@
             if($result->num_rows > 0){
                 $sql = "INSERT INTO `order`(`username`, `fullname`, `phone_number`, `shipping_address`, `pay_date`) VALUES ('$username', '$hoten', '$sodt', '$diachi', CURRENT_TIMESTAMP)";
                 $conn->query($sql);
-                while ($rows = $result->fetch_array()) {
-                    $sql = "SELECT `order_id` FROM `order` ORDER by `order_id` DESC  LIMIT 1";
-                    $ketqua = $conn->query($sql)->fetch_array();
+                $sql = "SELECT `order_id` FROM `order` ORDER by `order_id` DESC  LIMIT 1";
+                $ketqua = $conn->query($sql)->fetch_array();
+                while ($rows = $result->fetch_array()) {                 
                     $sql = "INSERT INTO `order-detail`(`order_id`, `prod_id`, `size`, `price`, `quantity`) VALUES ('$ketqua[0]','$rows[0]','$rows[1]','$rows[2]','$rows[3]')";
                     $conn->query($sql);
+                    $sql = "UPDATE `product` INNER JOIN `cart` ON `product`.`prod_id` = `cart`.`prod_id` 
+                                SET `product`.`quantity`= `product`.`quantity`-`cart`.`quantity`  WHERE `product`.`prod_id`= '$rows[0]' AND `username` = '$username'";
+                    $conn->query($sql);
+                    $sql = "UPDATE `size` INNER JOIN `cart` ON `size`.`prod_id` = `cart`.`prod_id` SET `size`.`$rows[1]` = `size`.`$rows[1]`-`cart`.`quantity` 
+                                WHERE `cart`.`prod_id` = '$rows[0]' AND `cart`.username = '$username'";
+                    $conn->query($sql);
                 }
+
                     $sql = "Delete from cart where username = '$username'";
                     $conn->query($sql);
                     echo '<script>
@@ -42,15 +55,7 @@
         }
     }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-	<link rel="stylesheet" href="style/styledelivery.css">
-	<link rel="stylesheet" href="fontawesome/css/all.css">
-    <script defer src="js/delivery.js"></script>
-</head>
-<body>
+<section>
     <form class="delivery" method="POST">  
     <div class="container">
         <div class="delivery-content">
@@ -90,12 +95,12 @@
                             $result = $conn->query($sql);
                             if($result->num_rows > 0){
                                 while ($rows = $result->fetch_array()) {
-                                    $nombre_format_francais = number_format($rows[3], 0, ',', '.');
+                                    $numberformat = number_format($rows[3], 0, ',', '.');
                                     echo "<tr>
                                         <td>$rows[0]</td>
                                         <td>$rows[1]</td>
                                         <td class='size'>$rows[2]</td>
-                                        <td class='thanhtien'><p>$nombre_format_francais<sup>đ</sup></p></td>
+                                        <td class='thanhtien'><p>$numberformat<sup>đ</sup></p></td>
                                     </tr>";
                                 }
                             }
@@ -117,5 +122,7 @@
     </div>
     </div>
     </form>
-</body>
-</html>
+</section>
+<?php
+    include_once('user/footer.php');
+?>

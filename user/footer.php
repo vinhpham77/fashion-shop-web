@@ -10,18 +10,15 @@
             <a href=""><img src="./images/icon_yt.png" alt=""></a>
         </li>
     </div>
-    <div class="lk">
-
-    </div>
     <div class="footer-center">
         <p>
-            Công ty Cổ phần Anh Đây Là Nhất với số đăng ký kinh doanh: 0105777650<br>
-            Địa chỉ đăng ký: Trường Đại Học Quy Nhơn ,T.Phố Quy Nhơn,Tỉnh Bình Định <br>
-            Số điện thoại: <span>0243 205 2222</span> <br>
+            Công ty Cổ phần 6AESN với số đăng ký kinh doanh: 0105777650<br>
+            Địa chỉ đăng ký: Trường Đại Học Quy Nhơn ,T.P Quy Nhơn,Tỉnh Bình Định <br>
+            Số điện thoại: <span>9999 8888 77</span> <br>
             </p>
     </div>
     <div class="footer-bottom">
-        @Ivymoda All right reserved
+        @All right reserved
     </div>
 </footer>
 </body>
