@@ -34,13 +34,15 @@
         
        </div>
        <div class="container">
-        <table class="table">
+        <table class="table table_sp">
             <div>
                 <tr class="text">
+                    <td class="text-info">Chọn</td>
                     <td class="text-info">Mã danh mục</td>
                     <td class="text-info">Tên danh mục</td>
                     <td class="text-info">Mã sản phẩm</td>
                     <td class="text-info">Tên sản phẩm</td>
+                    <td class="text-info">Hình ảnh</td>
                     <td class="text-info">Đơn giá</td>
                     <td class="text-info">Giảm giá</td>
                     <td class="text-info">Số lượng</td>
@@ -49,15 +51,21 @@
                 </tr>
                 <?php   
                     require_once ('../connect_db.php');                                
-                    $sql="SELECT `prod_id`,`product`.`cate_id`,`prod_name`, `price`,`discount`,`quantity`,`date_added`,`category`.`cate_name`FROM `product` , `category`WHERE `product`.`cate_id`=`category`.`cate_id`;";
+                    $sql="SELECT `prod_id`,`product`.`cate_id`,`prod_name`, `price`,`discount`,`quantity`,`date_added`,`category`.`cate_name`FROM `product` , `category`WHERE `product`.`cate_id`=`category`.`cate_id`";
                     $query=mysqli_query($conn,$sql);
-                    while($row=mysqli_fetch_array($query)){                     
+                    while($row=mysqli_fetch_array($query)){   
+                        $directory = "../images/products/".$row['prod_id'];
+						$hinh=array_diff(scandir($directory), array('..', '.'));                 
                         echo ' 
                         <tr class="text text1 text2">
+                           <td class="squaredcheck">
+                            <input type="checkbox"  id="squaredcheck2" class="checkbox2" name="check"  />
+                            </td>
                             <td class="text-info">'.$row['cate_id'].'</td>
                             <td class="text-info">'.$row['cate_name'].'</td>
                             <td class="text-info">'.$row['prod_id'].'</td>
                             <td class="text-info">'.$row['prod_name'].'</td>
+                            <td class="text-info"><img class="hinhanh_sp" src="'.$directory.'/'.$hinh[2].'" alt=""></td>
                             <td class="text-info">'.$row['price'].'</td>
                             <td class="text-info">'.$row['discount'].'</td>
                             <td class="text-info">'.$row['quantity'].'</td>
@@ -65,23 +73,6 @@
                         </tr>'; 
                     }
                 ?>
-                <tr class="text">
-                    <td class="text-info">Nguyễn Thành Quốc</td>
-                    <td class="text-info">Hoài Hảo ,Hoài Nhơn ,Bình Định</td>
-                    <td class="text-info">thanhquocnguyen1907@gmail.com</td>
-                    <td class="text-info">0394778003</td>
-                    <td class="text-info">Hoài Hảo ,Hoài Nhơn ,Bình Định</td>
-                </tr>
-
-                <tr class="text">
-                    <td class="text-info">Nguyễn Thị Ngô</td>
-                    <td class="text-info">Nha Trang ,Quang ,Quy Nhơn</td>
-                    <td class="text-info">ngonguyenthi1907@gmail.com</td>
-                    <td class="text-info">092323291</td>
-                    <td class="text-info">Thị Nại ,Nhơn Hòa, Bình Định</td>
-                </tr>
-                
-
             </div>                             
         </table>   
     </div>

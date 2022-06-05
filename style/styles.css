@@ -1,14 +1,16 @@
 /* reset css*/
 /* reset css*/
-*{
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-html{
+
+html {
     scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /*
 1. từ ngoài vào trong
 2. từ trên xuống dưới
@@ -21,155 +23,179 @@ html{
 3.màu sắc
 4.kiểu dáng
 */
-.row{
+.row {
     margin-left: -8px;
     margin-right: -8px;
 }
-.col{
-    float:left;
+
+.col {
+    float: left;
     padding-left: 8px;
     padding-right: 8px;
 }
-.row::after{
+
+.row::after {
     content: "";
     display: block;
     clear: both;
 }
-.col-third{
+
+.col-third {
     width: 33.3333%;
 }
-.col-half{
+
+.col-half {
     width: 50%;
 }
-.col-full{
+
+.col-full {
     width: 100%;
 }
-.text-center{
-    text-align: center;  
-}
-.mt-8{
-    margin-top: 8px!important;
-}
-.mt-16{
-    margin-top: 16px!important;
-}
-#main  {
-    
 
+.text-center {
+    text-align: center;
 }
-.mainsp{
+
+.mt-8 {
+    margin-top: 8px !important;
+}
+
+.mt-16 {
+    margin-top: 16px !important;
+}
+
+#main {}
+
+.mainsp {
     background-color: #000;
 }
-html{
-    font-family: Helvetica,Arial,sans-serif;
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
 }
-#header{
+
+#header {
     height: 46px;
     background-color: #000;
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 1;
 }
 
-#nav{
+#nav {
     display: inline-block;
 }
-#nav>li{
+
+#nav>li {
     display: inline-block;
 }
-#nav,.subnav{
+
+#nav,
+.subnav {
     list-style-type: none;
 }
 
-#nav .subnav{
-   display: none;
-   position: absolute;
-   background-color: #fff;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+#nav .subnav {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
 }
-.search-btn{
+
+.search-btn {
     float: right;
     padding: 0 21px;
-   
+
 }
-.search-btn:hover{
+
+.search-btn:hover {
     color: #FFF;
-   background-color:  #f44336!important;
-   
+    background-color: #f44336 !important;
+
 }
-.search-btn .search-icon{
+
+.search-btn .search-icon {
     font-size: 30px;
     color: #FFF;
     line-height: 46px;
 
 }
-#nav>li:hover >a,
-#nav .subnav li:hover a{
+
+#nav>li:hover>a,
+#nav .subnav li:hover a {
     color: #000;
-   background-color: #ccc;
+    background-color: #ccc;
 }
 
-#nav>li:hover >.subnav{
+#nav>li:hover>.subnav {
     display: block;
 }
-#nav>li>a{
+
+#nav>li>a {
     color: #fff;
     text-transform: uppercase;
 }
-#nav li a{
+
+#nav li a {
     text-decoration: none;
     line-height: 46px;
     padding: 0 24px;
     font-size: 20px;
     display: inline-block;
 }
-#nav .subnav a{
+
+#nav .subnav a {
     color: #000;
     padding: 0 12px;
     display: block;
     font-size: 16px;
 }
+
 /*#nav li:hover a{
     color: #000;
     background-color: #ccc;
 }*/
-.canhan{
+.canhan {
     text-align: right;
     display: block;
     position: absolute;
     right: 1px;
 }
-.subnav-li{
+
+.subnav-li {
     font-size: 15px;
 }
-.container{
+
+.container {
     margin-top: 46px;
     background-color: #F5F5F5;
     position: relative;
 }
-.table{
+
+.table {
     display: flex;
     justify-content: center;
-    border: 5px ;
+    border: 5px;
 }
 
-.text-infor1{
-    color:#ee4d2d;
+.text-infor1 {
+    color: #ee4d2d;
     font-weight: 700;
     text-align: center;
 }
-.text-info{
-   padding: 20px;
-   font-weight: 20px;
-   font: optional;
-   text-align: center;
-   font-size: 13px;
+
+.text-info {
+    padding: 20px;
+    font-weight: 20px;
+    font: optional;
+    text-align: center;
+    font-size: 13px;
 }
 
-#footer{
+#footer {
     height: 50px;
     background-color: #000;
     position: fixed;
@@ -178,49 +204,58 @@ html{
     bottom: 0;
     z-index: 1;
 }
-#footer-hoadon{
+
+#footer-hoadon {
     position: relative;
 
 
 }
-.div-text{
+
+.div-text {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 30px;
     background-color: #FFF;
 }
-.text-khachhang{
+
+.text-khachhang {
     text-align: center;
     font-size: 25px;
     font-weight: 700;
 }
-.text{
+
+.text {
     background-color: #FFF;
 }
-.div-table{
+
+.div-table {
     padding-left: 10px;
     padding-right: 10px;
     width: 50%;
 }
-.text1:hover{
+
+.text1:hover {
     color: rgb(0, 0, 0);
     background-color: rgb(204, 204, 204);
     font-weight: 500;
     cursor: pointer;
 }
-.container-cthd{
-    background-color: rgba(204, 204, 204,0.6);
+
+.container-cthd {
+    background-color: rgba(204, 204, 204, 0.6);
     width: 50%;
     margin-right: 10px;
     z-index: 0;
- 
-    
-  
+
+
+
 }
-.haithang{
+
+.haithang {
     display: flex;
 }
-.text-cthd{
+
+.text-cthd {
     text-align: center;
     padding: 10px;
     font-size: 20px;
@@ -228,10 +263,87 @@ html{
     font-style: italic;
 
 }
-.header-text-cthd{
-    padding-left:50px ;
+
+.header-text-cthd {
+    padding-left: 50px;
     margin-left: 50px;
 }
-.container0{
+
+.container0 {
     background-color: #000;
 }
+
+.hinhanh_sp {
+    width: 70px;
+    height: 70px;
+}
+
+.table_sp {}
+
+/* ntu xoa */
+.squaredcheck label:after {
+    content: '';
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    transform: rotate(-45deg);
+}
+
+.squaredcheck label:hover::after {
+    opacity: 0.3;
+}
+
+.squaredcheck label {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    background: lighten(#0096FF, 20%);
+    border-radius: 4px;
+
+
+}
+
+
+/* .squaredcheck {
+    width: 210px;
+    position: relative;
+    margin: 20px auto;
+}
+
+.squaredcheck input[type=checkbox]:checked+label {
+    background: #0096FF;
+}
+
+.squaredcheck input[type=checkbox]:checked+label:after {
+    opacity: 1;
+}
+
+.squaredcheck input[type=checkbox].checkbox2+label {
+    background: lighten(#329d7b, 20%);
+}
+
+.squaredcheck input[type=checkbox].checkbox2:checked+label {
+    background: #329d7b;
+}
+
+.squaredcheck input[type=checkbox].checkbox3+label {
+    background: lighten(#CC66FF, 20%);
+}
+
+.squaredcheck input[type=checkbox].checkbox3:checked+label {
+    background: #CC66FF;
+}
+
+.squaredcheck input[type=checkbox] {
+    visibility: hidden;
+} */
