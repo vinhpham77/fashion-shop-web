@@ -1,5 +1,6 @@
-let products = document.querySelectorAll('.product');
+let products = document.querySelectorAll('.product>.product__avatar');
 products.forEach(function(item) {
+    item.title = "Nhấn để xem chi tiết";
     item.onclick = function() {
         window.location.href = "product-detail.php?product-id=" + item.id;
     };

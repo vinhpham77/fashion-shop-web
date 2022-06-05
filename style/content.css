@@ -113,4 +113,5 @@ body>section:nth-child(2) {
     margin-top: 70px;
     border-bottom: 1px solid lightgray;
     overflow: hidden;
+    padding-bottom: 20px;
 }

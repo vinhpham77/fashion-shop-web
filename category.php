@@ -70,7 +70,7 @@
                                 $images = array_slice(scandir($img_path), 2);
                                 echo <<<PROD_AVATAR_NAME
                                     <div class="product" id="$row[0]">
-                                        <div class="product__avatar" title="Nhấn để xem chi tiết">
+                                        <div class="product__avatar">
                                             <img src="$img_path/$images[0]" class="product__avatar--front">
                                             <img src="$img_path/$images[1]" class="product__avatar--back">
                                         </div>
