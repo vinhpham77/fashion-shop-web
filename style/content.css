@@ -109,7 +109,8 @@ header {
     display: flex;
 }
 
-body>section:nth-child(2) {
+body>section {
     margin-top: 70px;
     overflow: hidden;
+    border-bottom: 1px solid lightgray;
 }

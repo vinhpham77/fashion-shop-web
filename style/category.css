@@ -117,6 +117,7 @@
 
 .category-bottom {
     margin-top: 20px;
+    margin-bottom: 30px;
     flex: 1;
     justify-content: flex-end;
 }

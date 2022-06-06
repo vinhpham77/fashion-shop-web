@@ -10,7 +10,7 @@
     background-color: white;
 }
 
-h2 {
+form>h2 {
     text-transform: uppercase;
     color: #b300b3;
     font-weight: 500;
@@ -55,6 +55,11 @@ h2 {
     margin-top: 10px;
 }
 
-body {
+section>div {
+    position: relative;
+    height: 80vh;
+}
+
+section {
     background-color: #D3D3D3;
 }

@@ -96,3 +96,4 @@
             <li><a class="fa--shopping-bag" href="giohang.php"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </div>
     </header>
+    <section>
