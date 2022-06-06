@@ -83,18 +83,19 @@
                             PROD_AVATAR_NAME;
 
                             $normal_price = number_format($row['price'], 0, '', '.');
+                            require_once('user/function/price.php');
                             if ($row['promo_price'] !== null) {
-                                $e = $row['calc_unit'];
-                                if ($row['calc_unit'] === '1') {
-                                    $discount = $row['price'] * $row['promo_price'] * 0.01;
-                                    $calc_unit = '%';
-                                } else {
-                                    $discount = $row['promo_price'];
-                                    $calc_unit = 'đ';
-                                }
-                                $original_price = $row['price'] - $discount;
-                                $original_price = number_format($original_price, 0, '', '.');
+                                // if ($row['calc_unit'] === '1') {
+                                //     $discount = $row['price'] * $row['promo_price'] * 0.01;
+                                //     $calc_unit = '%';
+                                // } else {
+                                //     $discount = $row['promo_price'];
+                                //     $calc_unit = 'đ';
+                                // }
                                 $promo_price = $row['promo_price'];
+                                $original_price = getPrice($row['price'], $promo_price, $row['calc_unit']);
+                                $original_price = number_format($original_price, 0, '', '.');
+                                $calc_unit = $row['calc_unit'] == 1 ? '%' : 'đ' ;
                                 echo <<<PROD_PRICE
                                     <div class="product__price">
                                         <span class="price--original">$original_price<span>đ</span></span>
