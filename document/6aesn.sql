@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 05, 2022 at 07:05 PM
+-- Generation Time: Jun 06, 2022 at 03:54 AM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -567,8 +567,6 @@ INSERT INTO `size` (`prod_id`, `s`, `m`, `x`, `l`, `xl`) VALUES
 (68, 20, 30, 30, 90, 20),
 (69, 20, 50, 40, 50, 20),
 (70, 28, 2, 30, 140, 0),
-(71, 50, 50, 20, 20, 10),
-(72, 30, 40, 30, 15, 15),
 (73, 10, 10, 10, 15, 10),
 (74, 2, 2, 2, 2, 2),
 (75, 48, 22, 30, 30, 40),
@@ -639,6 +637,12 @@ ALTER TABLE `order-detail`
 ALTER TABLE `product`
   ADD CONSTRAINT `FK_cate_id` FOREIGN KEY (`cate_id`) REFERENCES `category` (`cate_id`),
   ADD CONSTRAINT `FK_promo_code` FOREIGN KEY (`promo_code`) REFERENCES `promotion` (`promo_code`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `size`
+--
+ALTER TABLE `size`
+  ADD CONSTRAINT `FK_size-prodID` FOREIGN KEY (`prod_id`) REFERENCES `product` (`prod_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
