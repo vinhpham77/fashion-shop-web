@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 06, 2022 at 03:54 AM
+-- Generation Time: Jun 06, 2022 at 03:14 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `cate_id` tinyint NOT NULL AUTO_INCREMENT COMMENT 'mã danh mục',
   `cate_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'tên danh mục',
   `parent_cate_id` tinyint NOT NULL DEFAULT '0' COMMENT 'mã danh mục cha',
+  `position` int NOT NULL COMMENT 'vị trí',
   PRIMARY KEY (`cate_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin COMMENT='danh mục';
 
@@ -107,35 +108,35 @@ CREATE TABLE IF NOT EXISTS `category` (
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`cate_id`, `cate_name`, `parent_cate_id`) VALUES
-(1, 'Nữ', 0),
-(4, 'Áo', 1),
-(5, 'Áo sơ mi', 4),
-(6, 'Áo thun', 4),
-(7, 'Áo croptop', 4),
-(8, 'Chân váy', 1),
-(9, 'Chân váy xếp li', 8),
-(10, 'Chân váy chữ A', 8),
-(11, 'Đầm', 1),
-(12, 'Đầm maxi/voan', 11),
-(13, 'Đầm thun', 11),
-(14, 'Nam', 0),
-(17, 'Áo', 14),
-(18, 'Áo sơ mi', 17),
-(19, 'Áo thun', 17),
-(20, 'Áo polo', 17),
-(21, 'Quần', 14),
-(22, 'Quần short', 21),
-(23, 'Quần kaki', 21),
-(24, 'Quần Jean', 21),
-(25, 'Trẻ em', 0),
-(26, 'Bé gái', 25),
-(27, 'Áo bé gái', 26),
-(28, 'Quần bé gái', 26),
-(29, 'Váy bé gái', 26),
-(30, 'Bé trai', 25),
-(31, 'Áo bé trai', 30),
-(32, 'Quần bé trai', 30);
+INSERT INTO `category` (`cate_id`, `cate_name`, `parent_cate_id`, `position`) VALUES
+(1, 'Nữ', 0, 0),
+(4, 'Áo', 1, 0),
+(5, 'Áo sơ mi', 4, 0),
+(6, 'Áo thun', 4, 1),
+(7, 'Áo croptop', 4, 2),
+(8, 'Chân váy', 1, 1),
+(9, 'Chân váy xếp li', 8, 0),
+(10, 'Chân váy chữ A', 8, 1),
+(11, 'Đầm', 1, 2),
+(12, 'Đầm maxi/voan', 11, 0),
+(13, 'Đầm thun', 11, 1),
+(14, 'Nam', 0, 1),
+(17, 'Áo', 14, 0),
+(18, 'Áo sơ mi', 17, 0),
+(19, 'Áo thun', 17, 1),
+(20, 'Áo polo', 17, 2),
+(21, 'Quần', 14, 0),
+(22, 'Quần short', 21, 0),
+(23, 'Quần kaki', 21, 1),
+(24, 'Quần Jean', 21, 2),
+(25, 'Trẻ em', 0, 2),
+(26, 'Bé gái', 25, 0),
+(27, 'Áo bé gái', 26, 0),
+(28, 'Quần bé gái', 26, 1),
+(29, 'Váy bé gái', 26, 2),
+(30, 'Bé trai', 25, 1),
+(31, 'Áo bé trai', 30, 0),
+(32, 'Quần bé trai', 30, 1);
 
 -- --------------------------------------------------------
 
