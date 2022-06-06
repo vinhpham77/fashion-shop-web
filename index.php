@@ -4,7 +4,7 @@
         <script defer src="js/index.js"></script>';
     require_once('user/menu.php');
 ?>
-<div id="Slider">
+<section id="Slider">
     <div class="aspect-ratio-169">
         <img src="./images/sliders/slider1.jpg" alt="">
         <img src="./images/sliders/slider2.jpg" alt="">
@@ -17,7 +17,7 @@
         <div class="dot"></div>
         <div class="dot"></div>
     </div>
-</div>
+</section>
 <div class="app-container">
     <p>Tải ứng dụng 6AESN</p>
     <div class="app-google">

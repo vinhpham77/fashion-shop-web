@@ -10,7 +10,7 @@
     $by = !empty($_GET['by']) ? $_GET['by'] : '';
     $current_page = !empty($_GET['page']) && $_GET['page'] > 0 ? $_GET['page'] : 1;
 ?>
-<div class="category row">
+<section class="category row">
         <div class="category-top row">
             <div class="category-top-left">
                 <span class="search-phrase disabled">Kết quả tìm kiếm </span><span class="keywords"></span><span class="quantity"></span>
@@ -142,7 +142,7 @@
             }
         ?>
     </div>
-</div>
+</section>
 <?php
     include_once('user/footer.php');
 ?>
