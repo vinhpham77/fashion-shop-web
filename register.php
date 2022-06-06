@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="style/base.css">
-    <link rel="stylesheet" href="style/register.css"/>
-    <script defer src="js/register.js"></script>
-    
-<?php
+<?php 
+    require_once('user/header.php');
+    echo '<link rel="stylesheet" href="style/base.css">
+        <link rel="stylesheet" href="style/register.css"/>
+        <script defer src="js/register.js"></script>">';
+    require_once('user/menu.php');
+
     if(isset($_POST['btn-register']))
     {
         $username = $_POST['username'];
@@ -34,8 +32,8 @@
         }
     }
 ?>
-</head>
-<body>
+
+<section>
     <form method="post" action="" class="register" onsubmit="return validateForm();">
         <div class="account__detail">
             <h2>Tài khoản</h2>
@@ -89,5 +87,4 @@
             </div>
         </div>
     </form>
-</body>
-</html>
+</section>
