@@ -3,6 +3,7 @@
     echo '<link rel="stylesheet" href="style/category.css">
         <script defer type="text/javascript" src="js/category.js"></script>';
     require_once('user/menu.php');
+    require_once('user/function/price.php');
 
     $prod_name = !empty($_GET['prod_name']) ? $_GET['prod_name'] : '';
     $size = !empty($_GET['size']) ? $_GET['size'] : '';
@@ -82,20 +83,12 @@
                                     <div class="product__name" title="$row[2]">$row[2]</div>
                             PROD_AVATAR_NAME;
 
-                            $normal_price = number_format($row['price'], 0, '', '.');
-                            require_once('user/function/price.php');
+                            $normal_price = formatNumber($row['price']);
                             if ($row['promo_price'] !== null) {
-                                // if ($row['calc_unit'] === '1') {
-                                //     $discount = $row['price'] * $row['promo_price'] * 0.01;
-                                //     $calc_unit = '%';
-                                // } else {
-                                //     $discount = $row['promo_price'];
-                                //     $calc_unit = 'đ';
-                                // }
                                 $promo_price = $row['promo_price'];
                                 $original_price = getPrice($row['price'], $promo_price, $row['calc_unit']);
-                                $original_price = number_format($original_price, 0, '', '.');
-                                $calc_unit = $row['calc_unit'] == 1 ? '%' : 'đ' ;
+                                $original_price = formatNumber($original_price);
+                                $calc_unit = getCalcUnit($row['calc_unit']);
                                 echo <<<PROD_PRICE
                                     <div class="product__price">
                                         <span class="price--original">$original_price<span>đ</span></span>
