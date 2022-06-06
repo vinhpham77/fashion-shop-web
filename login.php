@@ -1,16 +1,12 @@
 <?php
-    require_once('user/header.php');
-    echo '<link rel="stylesheet" href="style/login.css">';
-    require_once('user/menu.php');
     if (!empty($_POST)) {
         if(isset($_COOKIE['username'])) {
-            unset($_COOKIE['username']);
             setcookie('username', null, -1);
         }
 
         $username = $_POST['username'];
         $password = md5($_POST['password']);
-        require 'connect_db.php';
+        require_once('connect_db.php');
         $sql = "SELECT * FROM account WHERE username='$username' AND password='$password'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0)
@@ -25,10 +21,13 @@
             unset($_POST);
         }
     }
+    require_once('user/header.php');
+    echo '<link rel="stylesheet" href="style/login.css">';
+    require_once('user/menu.php');
 ?>
 <section>
     <div>
-        <form method="post" action="" class="dangnhap">
+        <form method="POST" class="dangnhap">
             <h2>Đăng Nhập</h2>
             <div class="user">Tên tài khoản: <input type="text" name="username" required></div>
             <div class="pass">Mật khẩu: <input type="password" name="password" required/></div>
