@@ -4,7 +4,7 @@
         <script defer type="text/javascript" src="js/category.js"></script>';
     require_once('user/menu.php');
     require_once('user/function/price.php');
-
+    require_once('user/function/image.php');
     $prod_name = !empty($_GET['prod_name']) ? $_GET['prod_name'] : '';
     $size = !empty($_GET['size']) ? $_GET['size'] : '';
     $field = !empty($_GET['field']) ? $_GET['field'] : '';
@@ -72,8 +72,8 @@
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_array()) {
-                            $img_path = "images/products/".$row['prod_id'];
-                            $images = array_slice(scandir($img_path), 2);
+                            $img_path = 'images/products/'.$row['prod_id'];
+                            $images = getImages($img_path);
                             echo <<<PROD_AVATAR_NAME
                                 <div class="product">
                                     <div class="product__avatar" id="$row[0]">
@@ -83,11 +83,11 @@
                                     <div class="product__name" title="$row[2]">$row[2]</div>
                             PROD_AVATAR_NAME;
 
-                            $normal_price = formatNumber($row['price']);
+                            $normal_price = formatPrice($row['price']);
                             if ($row['promo_price'] !== null) {
                                 $promo_price = $row['promo_price'];
                                 $original_price = getPrice($row['price'], $promo_price, $row['calc_unit']);
-                                $original_price = formatNumber($original_price);
+                                $original_price = formatPrice($original_price);
                                 $calc_unit = getCalcUnit($row['calc_unit']);
                                 echo <<<PROD_PRICE
                                     <div class="product__price">

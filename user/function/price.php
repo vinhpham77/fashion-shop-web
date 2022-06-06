@@ -12,13 +12,8 @@
         }
     }
 
-    function formatNumber($number) {
+    function formatPrice($number) {
         return number_format($number, 0, '', '.');
-    }
-
-    function convertToNumber($string) {
-        $pattern = array ('/\./', '/đ/', '/<sup>đ<\\sup>/');
-        return preg_replace($pattern, '', $string);
     }
 
     function getCalcUnit($string) {
