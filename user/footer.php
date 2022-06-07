@@ -1,4 +1,3 @@
-</section>
 <footer>
     <div class="footer-top">
         <li><a href=""><img src="./images/thongbao.png" alt="">  </a></li>
