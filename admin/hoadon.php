@@ -17,6 +17,8 @@
                     <li><a href="khachhang.php">Khách hàng</a></li>
                     <li><a href="sanpham.php">Sản phẩm</a></li>
                     <li><a href="hoadon.php">Hóa đơn</a></li>
+                    <li><a href="magiamgia.php">Mã giảm giá</a></li>
+                    
                         <li class="canhan">
                             <a href="#">
                                 Cá nhân

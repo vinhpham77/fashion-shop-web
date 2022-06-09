@@ -16,7 +16,8 @@
                         <div>
                             <tr><p class="text-fuction">Khách hàng </p></tr>
                             <tr><p class="text-fuction">Sản phẩm </p></tr>
-                            <tr><p class="text-fuction">Hóa đơn </p></tr>         
+                            <tr><p class="text-fuction">Hóa đơn </p></tr> 
+                            <tr><p class="text-fuction">Mã giảm giá</p></tr>        
                         </div>
                     </div>
                 </div> 
