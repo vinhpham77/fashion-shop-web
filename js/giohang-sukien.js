@@ -34,13 +34,13 @@ number.forEach((item, index)=>{
     item.onchange=function(){
         var soluong = item.value;
         var sluongmax=item.max;
-
+        console.log(sluongmax);
+        console.log(soluong);
         var gia = item.parentElement.previousElementSibling.children[0].innerHTML.replaceAll('.', '');
         var giathanh;
          
         giathanh = gia * soluong;
         item.parentElement.nextElementSibling.children[0].innerHTML= giathanh.toLocaleString('de-DE')+' đ';
-        console.log(giathanh);
         var tongSLSP = tongsl(number);
         SumNumber.innerHTML = tongSLSP;
 
@@ -53,7 +53,7 @@ number.forEach((item, index)=>{
         tongtien.innerHTML = tongtienmathang.toLocaleString('de-DE');
         id=item.parentElement.parentElement.getAttribute('product_id');
         size1=item.parentElement.previousElementSibling.previousElementSibling.getAttribute('product_size');
-        if(soluong>sluongmax){
+        while(soluong<sluongmax){
             alert("Số lượng tối đa có thể mua là: "+sluongmax);
             item.value=1;
             item.onchange();
