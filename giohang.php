@@ -24,14 +24,19 @@
 						
                         require_once "connect_db.php";
                         $kh=$_POST['username'];
+<<<<<<< HEAD
 						$sql="select cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,product.price from cart,product where cart.prod_id=product.prod_id AND cart.username='".$kh."'";
 						$kq=mysqli_query($conn, $sql);
+=======
+						$sql="select cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,price from cart,product where cart.prod_id=product.prod_id AND cart.username='".$kh."'";
+						$kq=mysqli_query($conn,$sql);
+>>>>>>> 33b833c0b92c106887a09321fdb38496f6ef6f21
 						while($row=mysqli_fetch_array($kq))
                         {
 							$sqlmax="SELECT * from size where prod_id='".$row['prod_id']."'";
 							$slmax=mysqli_query($conn,$sqlmax);
 							$rowslmax=mysqli_fetch_array($slmax);
-							$directory = "images/products/".$row['prod_id'];
+							$directory ="images/products/".$row['prod_id'];
 							$hinh=array_diff(scandir($directory), array('..', '.'));
 						echo'
 						 <tr product_id='.$row['prod_id'].'>

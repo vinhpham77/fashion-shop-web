@@ -57,7 +57,7 @@
                 </tr>
                 <?php   
                     require_once ('../connect_db.php');                                
-                    $sql="SELECT `promotion`.`promo_code`,`promotion`.`promo_price`, `prod_id`,`product`.`cate_id`,`prod_name`, `price`,`quantity`,`date_added`,`category`.`cate_name`FROM `product` , `category`, `promotion` WHERE `product`.`cate_id`=`category`.`cate_id` AND `product`.`promo_code`=`promotion`.`promo_code`";
+                    $sql="SELECT `promotion`.`promo_code`,`promotion`.`promo_price`, `prod_id`,`product`.`cate_id`,`prod_name`, `price`,`quantity`,`date_added`,`category`.`cate_name`FROM `product` JOIN `category` on `product`.`cate_id`=`category`.`cate_id` LEFT JOIN `promotion`  on `product`.`promo_code`=`promotion`.`promo_code`";
                     $query=mysqli_query($conn,$sql);
                     
                     while($row=mysqli_fetch_array($query)){   
