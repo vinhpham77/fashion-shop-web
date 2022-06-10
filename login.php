@@ -1,18 +1,33 @@
 <?php
+    session_start();
     if (!empty($_POST)) {
         if(isset($_COOKIE['username'])) {
             setcookie('username', null, -1);
+        }
+        if(isset($_SESSION['username'])) {
+            unset($_SESSION['username']);
         }
 
         $username = $_POST['username'];
         $password = md5($_POST['password']);
         require_once('connect_db.php');
-        $sql = "SELECT * FROM account WHERE username='$username' AND password='$password'";
+        $sql = "SELECT password, account_type FROM account WHERE username='$username'";
         $result = $conn->query($sql);
-        if ($result->num_rows > 0)
+        if ($row = $result->fetch_assoc())
         {
-            setcookie('username', $username, time() + (60 * 60 * 24 * 365));
-            header('location: index.php');
+            if ($row['password'] !== $password) {
+                echo "<script>
+                    history.back();
+                    alert('Sai mật khẩu!');
+                </script>";
+                unset($_POST);
+            } else if ($row['account_type'] == 0) {
+                setcookie('username', $username, time() + (60 * 60 * 24 * 365));
+                header('location: index.php');
+            } else {
+                $_SESSION['username'] = $username;
+                header('location: admin/index_admin.php');
+            }
         } else {
             echo "<script>
                     history.back();
