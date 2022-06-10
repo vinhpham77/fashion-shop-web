@@ -8,7 +8,6 @@ function xoasp(x){
     var thongbao = confirm("Bạn có chắc chắn muốn xóa không?");
     if(thongbao==true){
         var numberone = x.parentElement.parentElement.children[3].children[0].value;
-        console.log(numberone);
         var tongtienmacdinh = x.parentElement.parentElement.children[4].children[0].innerHTML.replaceAll('.', '');
         var tinhtong = tongtienmacdinh.replaceAll('đ', '');
 
@@ -32,10 +31,8 @@ function xoasp(x){
 
 number.forEach((item, index)=>{
     item.onchange=function(){
-        var soluong = item.value;
-        var sluongmax=item.max;
-        console.log(sluongmax);
-        console.log(soluong);
+        var soluong = parseInt(item.value);
+        var sluongmax= parseInt(item.max);
         var gia = item.parentElement.previousElementSibling.children[0].innerHTML.replaceAll('.', '');
         var giathanh;
          
@@ -53,8 +50,8 @@ number.forEach((item, index)=>{
         tongtien.innerHTML = tongtienmathang.toLocaleString('de-DE');
         id=item.parentElement.parentElement.getAttribute('product_id');
         size1=item.parentElement.previousElementSibling.previousElementSibling.getAttribute('product_size');
-        while(soluong<sluongmax){
-            alert("Số lượng tối đa có thể mua là: "+sluongmax);
+        if(sluongmax<soluong){
+            alert("Số lượng tối đa có thể mua là: "+sluongmax + " " +soluong);
             item.value=1;
             item.onchange();
         }   

@@ -23,14 +23,9 @@
                     <?php
 						
                         require_once "connect_db.php";
-                        $kh=$_POST['username'];
-<<<<<<< HEAD
+                        $kh=$_COOKIE['username'];
 						$sql="select cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,product.price from cart,product where cart.prod_id=product.prod_id AND cart.username='".$kh."'";
 						$kq=mysqli_query($conn, $sql);
-=======
-						$sql="select cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,price from cart,product where cart.prod_id=product.prod_id AND cart.username='".$kh."'";
-						$kq=mysqli_query($conn,$sql);
->>>>>>> 33b833c0b92c106887a09321fdb38496f6ef6f21
 						while($row=mysqli_fetch_array($kq))
                         {
 							$sqlmax="SELECT * from size where prod_id='".$row['prod_id']."'";
@@ -38,18 +33,20 @@
 							$rowslmax=mysqli_fetch_array($slmax);
 							$directory ="images/products/".$row['prod_id'];
 							$hinh=array_diff(scandir($directory), array('..', '.'));
+                            $dongia = $row['price'];
+                            $dongiaformat = number_format($dongia, 0, '', '.');
+                            $thanhtoan = $row['quantity']*$row['price'];
+                            $thanhtoanformat = number_format($thanhtoan, 0, '', '.');
 						echo'
-						 <tr product_id='.$row['prod_id'].'>
-                         <td><img src="'.$directory.'/'.$hinh[2].'" alt=""></td>
-                         <td product_size='.$row['size'].'><p>'.$row['prod_name'].'<br/>size: '.$row['size'].'</p></td>
-                         <td class="price-dollar"><p>'.$row['price'].'</p></td>
-                         <td><input class="soluong" type="number" value="'.$row['quantity'].'" max="'.$rowslmax[$row['size']].'" min="1" oninput="validity.valid||(value='.');"></td>
-                         <td class="thanhtien"><span>'.$row['quantity']*$row['price'].'</span><sup>đ</sup></td>
-                         <td><input type="button" value="x" class="close-x" onclick="xoasp(this)"></td>
-						 </tr>';
+                            <tr product_id='.$row['prod_id'].'>
+                                <td><img src="'.$directory.'/'.$hinh[2].'" alt=""></td>
+                                <td class="kichcoSP" product_size='.$row['size'].'><p>'.$row['prod_name'].'<br/>size: '.$row['size'].'</p></td>
+                                <td class="price-dollar"><p>'.$dongiaformat.'</p></td>
+                                <td><input class="soluong" type="number" value="'.$row['quantity'].'" max="'.$rowslmax[$row['size']].'" min="1" ></td>
+                                <td class="thanhtien"><span>'.$thanhtoanformat.' '."đ".'</span></td>
+                                <td><input class="close-x" type="button" value="x" onclick="xoasp(this)"></td>
+                            </tr>';
 						}
-                       
-						
                     ?>
                    
                 </table>
@@ -62,11 +59,25 @@
                     <tr><th colspan="2">Tổng Tiền Giỏ Hàng</th></tr>
                     <tr>
                         <td>Tổng sản phẩm</td>
-                        <td class="sizing-right-number"><span>4</span></td>
+                        <?php 
+                            $kh=$_COOKIE['username'];
+                            $sql1 = "SELECT SUM(`quantity`) FROM `cart` WHERE `username` = '$kh'";
+                            $results = $conn->query($sql1);
+                            $rows = $results->fetch_array();
+                            $soluong = $rows[0];
+                            echo'<td class="sizing-right-number"><span>'.$soluong.'</span></td>';?>
                     </tr>
                     <tr>
                         <td>Tổng tiền hàng</td>
-                        <td class="sizing-right-money"><span>5.920.000</span><sup>đ</sup></td>
+                        <?php 
+                            $kh = $_COOKIE['username'];
+                            $sql1 = "SELECT cart.username, cart.quantity, cart.prod_id, SUM(cart.quantity * product.price) FROM `cart` LEFT JOIN `product` ON cart.prod_id = product.prod_id WHERE cart.username = '$kh'";
+                            $results = $conn->query($sql1);
+                            $rows = $results->fetch_array();
+                            $tongtien = $rows[3];
+                            $sumsanpham = number_format($tongtien, 0, '', '.');
+                            echo '<td class="sizing-right-money"><span>'.$sumsanpham.'</span><sup>đ</sup></td>';
+                        ?>
                     </tr>
                 </table>
                 <div class="cart-content-right-button">
