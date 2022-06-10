@@ -24,7 +24,7 @@
                             <i class="nav-arow-down ti-angle-down"></i>
                         </a>
                         <ul class="subnav">
-                            <li><a href="#">Đăng xuất</a></li>
+                            <li><a href="dangxuat.php">Đăng xuất</a></li>
                             <li><a href="doimk.php">Đổi mật khẩu</a></li>
                         </ul>
                     </li>
