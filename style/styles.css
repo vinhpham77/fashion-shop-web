@@ -11,6 +11,11 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /*
 1. từ ngoài vào trong
 2. từ trên xuống dưới
@@ -64,8 +69,6 @@ html {
     margin-top: 16px !important;
 }
 
-#main {}
-
 .mainsp {
     background-color: #000;
 }
@@ -81,92 +84,110 @@ html {
     top: 0;
     left: 0;
     right: 0;
+    display: flex;
+    justify-content: space-between;
     z-index: 1;
 }
 
-#nav {
+.nav {
     display: inline-block;
 }
 
-#nav>li {
+.nav>li {
     display: inline-block;
 }
 
-#nav,
+.nav,
 .subnav {
     list-style-type: none;
 }
 
-#nav .subnav {
+.nav .subnav {
     display: none;
     position: absolute;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
 }
 
-.search-btn {
+/*.search-btn {
     float: right;
     padding: 0 21px;
-
 }
 
 .search-btn:hover {
     color: #FFF;
     background-color: #f44336 !important;
 
-}
+}*/
 
-.search-btn .search-icon {
+/*.search-btn .search-icon {
     font-size: 30px;
     color: #FFF;
     line-height: 46px;
+}*/
 
-}
-
-#nav>li:hover>a,
-#nav .subnav li:hover a {
+.nav>li:hover>a {
     color: #000;
     background-color: #ccc;
 }
 
-#nav>li:hover>.subnav {
+.nav-right .subnav li:hover a {
+    color: black;
+    background: lightgrey;
+}
+
+.nav>li:hover>.subnav {
     display: block;
 }
 
-#nav>li>a {
-    color: #fff;
+.nav>li>a {
     text-transform: uppercase;
+    color: #fff;
 }
 
-#nav li a {
-    text-decoration: none;
+.search {
+    display: flex;
+    justify-content: space-around;
+}
+
+#input-search {
+    border: none;
+    margin: 0;
+    font-size: inherit;
+    width: 80%;
+}
+
+.search-icon {
+    color: white;
+    padding: 11px;
+    cursor: pointer;
+    border: 2px solid lightgrey;
+    font-size: inherit;
+}
+
+.search-icon:hover {
+    background-color: darkgrey;
+    color: black;
+}
+
+.nav li a {
     line-height: 46px;
     padding: 0 24px;
     font-size: 20px;
     display: inline-block;
 }
 
-#nav .subnav a {
+.nav .subnav a {
     color: #000;
     padding: 0 12px;
     display: block;
+    text-align: left;
     font-size: 16px;
 }
 
-/*#nav li:hover a{
-    color: #000;
-    background-color: #ccc;
-}*/
-.canhan {
-    text-align: right;
-    display: block;
-    position: absolute;
-    right: 1px;
-}
-
-.subnav-li {
-    font-size: 15px;
+.canhan:hover {
+    background-color: black;
+    color: white;
 }
 
 .container {
@@ -207,8 +228,6 @@ html {
 
 #footer-hoadon {
     position: relative;
-
-
 }
 
 .div-text {
@@ -246,9 +265,6 @@ html {
     width: 50%;
     margin-right: 10px;
     z-index: 0;
-
-
-
 }
 
 .haithang {
@@ -278,18 +294,22 @@ html {
     height: 70px;
 }
 
-.btn-mgg:hover{
+.btn-mgg:hover {
     color: #000;
-    background-color:#cccccc;
+    background-color: #cccccc;
     padding-bottom: 10px;
 }
-.btn-mgg{
+
+.btn-mgg {
     display: flex;
     z-index: 1;
 }
+
 .table_sp {}
 
-.btn_sp, .btn-mgg, .btn_them_insert{
+.btn_sp,
+.btn-mgg,
+.btn_them_insert {
     border: none;
     display: inline-block;
     padding: 8px 16px;
@@ -304,29 +324,35 @@ html {
     color: white;
     background: #000;
 }
-.btn_sp:hover{
+
+.btn_sp:hover {
     color: #000;
-    background-color:#cccccc;
+    background-color: #cccccc;
     padding-bottom: 10px;
 }
-.btn-mgg:hover{
+
+.btn-mgg:hover {
     color: #000;
-    background-color:#cccccc;
+    background-color: #cccccc;
     padding-bottom: 10px;
 }
-.header-sp{
+
+.header-sp {
     text-align: center;
     padding-bottom: 10px;
 }
-.header-text-sp{
+
+.header-text-sp {
     font-size: 30px;
     padding-bottom: 10px;
 }
-.btn-mgg{
+
+.btn-mgg {
     text-align: center;
 }
+
 /*---------*/
-.div-insert-mgg{
+.div-insert-mgg {
     position: fixed;
     left: 0;
     top: 0;
@@ -337,8 +363,8 @@ html {
     justify-content: center;
     align-items: center;
     display: none;
-    
 }
+
 input[type=text] {
     width: 100%;
     padding: 12px 20px;
@@ -348,15 +374,17 @@ input[type=text] {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
-  }
-  
-  input[type=text]:focus {
-  border: 3px solid #58257b;
-  }
-  .lb-insert{
-      font-size: 15px;
-  }
-  .table_mgg{
+}
+
+input[type=text]:focus {
+    border: 3px solid #58257b;
+}
+
+.lb-insert {
+    font-size: 15px;
+}
+
+.table_mgg {
     width: 600px;
     height: 10px;
     background-color: red;
@@ -364,13 +392,15 @@ input[type=text] {
     bottom: 70px;
     z-index: 0;
 
-  }
-  .btn_them_insert:hover{
+}
+
+.btn_them_insert:hover {
     color: #000;
-    background-color:#cccccc;
+    background-color: #cccccc;
     padding-bottom: 10px;
-  }
-  .div-delete-0{
+}
+
+.div-delete-0 {
     position: relative;
     width: 100%;
     height: 200px;
@@ -380,41 +410,46 @@ input[type=text] {
     justify-content: center;
     margin-top: 40px;
     z-index: 0;
-    
-  }
-  .div-button-them{
-      position: absolute;
-      text-align: center;
-      right: 30px;
-      margin-top: 50px;
-  }
-.div-text{
+
+}
+
+.div-button-them {
+    position: absolute;
+    text-align: center;
+    right: 30px;
+    margin-top: 50px;
+}
+
+.div-text {
     text-align: center;
     margin: 20px;
     line-height: 44px;
 }
-.div-button-close{
+
+.div-button-close {
     font-size: 15px;
     padding: 10px;
     right: 400px;
     position: absolute;
     top: 10px
 }
-.div-button-close:hover{
-    background-color: #ccccccc9;
 
+.div-button-close:hover {
+    background-color: #ccccccc9;
 }
+
 /*
  thong bao -xoa
 */
-.div-delete{
+.div-delete {
     width: 500px;
     height: 96px;
     position: absolute;
     display: none;
 
 }
-.thongbao{
+
+.thongbao {
     background-color: white;
     padding: 25px;
     display: flex;
@@ -422,17 +457,21 @@ input[type=text] {
     padding: 25px;
 
 }
-.table_thongbao{
+
+.table_thongbao {
     display: none;
 }
-.text-thongbao{
+
+.text-thongbao {
     font-weight: 700;
 }
-.btn-message-delete{
+
+.btn-message-delete {
     display: flex;
     justify-content: center;
 }
-.btn-message{
+
+.btn-message {
     width: 100%;
     height: 100%;
     padding: 5px;
@@ -441,27 +480,33 @@ input[type=text] {
     font-weight: 700;
     cursor: pointer;
 }
-.btn-mesage-agree{
-    padding-right: 50px; 
-    background-color: #ee4d2d; 
+
+.btn-mesage-agree {
+    padding-right: 50px;
+    background-color: #ee4d2d;
     padding-left: 50px;
-    
+
 }
-.btn-mesage-cancel{
+
+.btn-mesage-cancel {
     padding-left: 50px;
-    background-color:#ccccccc9;
+    background-color: #ccccccc9;
     padding-left: 0px;
 }
-.btn-mesage-agree:hover{
-    background-color: #ee4d2de0; 
+
+.btn-mesage-agree:hover {
+    background-color: #ee4d2de0;
 }
-.btn-mesage-cancel:hover{
-    background-color:#cccccce8;
+
+.btn-mesage-cancel:hover {
+    background-color: #cccccce8;
 }
-.close-xoa-mgg{
+
+.close-xoa-mgg {
     bottom: 50px;
 }
-.close-x{
+
+.close-x {
     background-color: LightSalmon;
     border: none;
     color: white;
