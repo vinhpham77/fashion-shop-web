@@ -10,12 +10,32 @@
         <img src="./images/sliders/slider2.jpg" alt="">
         <img src="./images/sliders/slider3.jpg" alt="">
         <img src="./images/sliders/slider4.jpg" alt=""> -->
+        <?php
+            require 'user/function/image.php';
+            $_Load = getImages("images/sliders");
+            $n = count($_Load);
+            for($i = 0; $i < $n; $i++)
+            {
+                echo "<img src='images/sliders/$_Load[$i]'>";
+            }
+        ?>
     </div>
     <div class="dot-container">
         <!-- <div class="dot active"></div>
         <div class="dot"></div>
         <div class="dot"></div>
         <div class="dot"></div> -->
+        <?php
+        if($n > 0)
+        {
+            echo '<div class="dot active"></div>';
+        }
+        
+        for($i = 1; $i < $n; $i++)
+        {
+            echo '<div class="dot"></div>';
+        }
+        ?>
     </div>
 </section>
 <div class="app-container">
