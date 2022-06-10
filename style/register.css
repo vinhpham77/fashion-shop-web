@@ -86,6 +86,11 @@ input.invalid, textarea.invalid {
     margin-right: 60px;
 }
 
-body {
+section>div {
+    position: relative;
+    height: 80vh;
+}
+
+section {
     background: lightgrey;
 }
