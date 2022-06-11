@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/giohangmain.css">
-    <script async src="js/giohang-sukien.js"></script>
-    <title>Giỏ Hàng</title>
-</head>
-<body>
-
+<?php 
+    require_once('user/header.php');
+    echo '	<link rel="stylesheet" href="style/giohangmain.css">
+    <script defer src="js/giohang-sukien.js"></script>">';
+    require_once('user/menu.php');
+    if(!isset($_COOKIE['username'])){
+        header('Location: login.php');
+    }
+?>
     <section class="cart-content">
             <div class="cart-content-left">
                 <table>
@@ -21,7 +18,6 @@
                         <th>Tổng Tiền</th>
                     </tr>
                     <?php
-						
                         require_once "connect_db.php";
                         $kh=$_COOKIE['username'];
 						$sql="select cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,product.price from cart,product where cart.prod_id=product.prod_id AND cart.username='".$kh."'";
@@ -84,6 +80,8 @@
                     <input type="button" value="Đặt Hàng" onclick="lienketDatHang(this)">
                 </div>
             </div>
-    </div>
-</body>
-</html>
+        </div>
+    </section>
+<?php
+    include_once('user/footer.php');
+?>

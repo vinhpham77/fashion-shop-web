@@ -4,6 +4,9 @@
     <script defer src="js/delivery.js"></script>">';
     require_once('user/menu.php');
     require_once('user/function/price.php');
+    if(!isset($_COOKIE['username'])){
+        header('Location: login.php');
+    }
 ?>
 <?php 
     require_once "connect_db.php";

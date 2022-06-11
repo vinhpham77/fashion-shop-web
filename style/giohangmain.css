@@ -10,7 +10,7 @@
 }
 .cart-content-left{
     width: 70%;
-    height: 180vh;
+    height: 100vh;
     padding-right: 25px;
 }
 .cart-content-left table{
@@ -48,7 +48,7 @@
     height: 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 10px;
-    margin: 24px 0 12px 10px;
+    margin: 24px 0 0 10px;
     font-weight: 600;
 }
 .close-x{
@@ -63,7 +63,7 @@
 /*---------cart-content-right----------*/
 .cart-content-right{
     width: 30%;
-    height: 180vh;
+    height: 98vh;
 }
 .cart-content-right table{
     width: 100%;
