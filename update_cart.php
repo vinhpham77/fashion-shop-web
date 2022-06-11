@@ -1,6 +1,6 @@
 <?php
-require_once("config.php");
-$kh="johnweak";
+require_once("connect_db.php");
+$kh= $_COOKIE['username'];
 if($_POST['U']=='update'){
     update_number($kh, $conn);
     
