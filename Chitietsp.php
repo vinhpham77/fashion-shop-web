@@ -6,7 +6,7 @@
 	$query_chitiet = mysqli_query($conn,$sql_chitiet);
 	while($row_chitiet = mysqli_fetch_array($query_chitiet))
 	{
-		echo '<div class="wrapper_chitiet">
+		echo '<div class="wrapper_chitiet">>
 			<div class="hinhanh_sanpham">
 				<img width="30%" src="admin/modules/quanlysp/uploads/'.$row_chitiet['hinhanh'].'">
 			</div>

@@ -51,7 +51,7 @@ number.forEach((item, index)=>{
         id=item.parentElement.parentElement.getAttribute('product_id');
         size1=item.parentElement.previousElementSibling.previousElementSibling.getAttribute('product_size');
         if(sluongmax<soluong){
-            alert("Số lượng tối đa có thể mua là: "+sluongmax + " " +soluong);
+            alert("Số lượng tối đa có thể mua là: "+sluongmax);
             item.value=1;
             item.onchange();
         }   

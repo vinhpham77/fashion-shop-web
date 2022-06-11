@@ -104,7 +104,7 @@
                                     $price_sp = $rows[3];
                                     $donvi = $rows[4];
                                     $gia = $rows[5];
-                                    $GiaSauGiam = getPrice($price_sp, $gia, $donvi);
+                                    $GiaSauGiam = getPrice($price_sp, $gia, $donvi)*$sl_giohang;
                                     $numberformat = number_format($GiaSauGiam, 0, '', '.');
                                     echo "<tr>
                                         <td>$rows[0]</td>
