@@ -41,7 +41,6 @@
                 <ul class="sub-menu">
                     <li><a href="">Giới thiệu về 6AESN</a></li>
                    <li> <a href="">Chính sách hoàn trả</a></li>
-                  
                 </ul>
             </li>
         </div>
