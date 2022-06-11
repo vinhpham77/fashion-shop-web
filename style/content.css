@@ -29,6 +29,11 @@ header {
 .menu>li {
     padding: 0 12px;
     position: relative;
+    white-space: nowrap;
+}
+
+.menu>li>a {
+    text-transform: uppercase;
 }
 
 .menu li a {
@@ -36,21 +41,19 @@ header {
     font-weight: bold;
     display: block;
     line-height: 20px;
-
 }
 
 .menu>li:hover .sub-menu {
     visibility: visible;
-    top: 65px;
+    top: 45px;
 }
 
 .sub-menu {
     position: absolute;
-    width: 150px;
     border: 1px solid #ccc;
     visibility: hidden;
-    padding: 10px 0 10px 20px;
-    top: 70px;
+    padding: 15px;
+    top: 55px;
     transition: 0.1s;
     z-index: 1;
     background-color: #FFF;
@@ -63,6 +66,16 @@ header {
 .sub-menu ul a {
     font-weight: normal;
     font-size: 13px;
+}
+
+.sale>ul>li>a {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sale span+span {
+    color: red;
+    margin-left: 30px;
 }
 
 .orthers {

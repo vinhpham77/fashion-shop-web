@@ -6,129 +6,37 @@
         </div>
 
         <div class="menu">
-            <li><a href="1">NỮ</a>
-                <ul class="sub-menu">
-                    <li><a href="">Áo</a>
-                        <ul>
-                            <!--<li><a href="">Áo sơ mi</a></li>
-                            <li><a href="">Áo thun</a></li>
-                            <li><a href="">Áo croptop</a></li> -->
-                            <?php
-                            require 'connect_db.php';
-                            $sql = "select * from category where parent_cate_id = '4'";
-                            $query = mysqli_query($conn,$sql);
-                            while($row = mysqli_fetch_assoc($query)){
-                            ?>
-                                <a href="category.php?xem=category&id=<?php echo $row['parent_cate_id'];?>"> <li><div align="left"><strong><?php echo $row['cate_name']?></strong></div> </li></a>
-                            <?php }?>
-                        </ul>
-                    </li>   
+            <?php
+                require_once('./connect_db.php');
+                require_once('user/function/menu.php');
 
-                    <li><a href="">Chân váy</a>
-                        <ul>     
-                            <!-- <li><a href="">Chân váy xếp li </a></li>
-                            <li><a href="">Chân váy chữ A</a></li> -->
-                            <?php
-                            require 'connect_db.php';
-                            $sql = "select * from category where parent_cate_id = '8'";
-                            $query = mysqli_query($conn,$sql);
-                            while($row = mysqli_fetch_assoc($query)){
-                            ?>
-                                <a href="category.php?xem=category&id=<?php echo $row['parent_cate_id'];?>"> <li><div align="left"><strong><?php echo $row['cate_name']?></strong></div> </li></a>
-                            <?php }?>    
-                        </ul>
-                    </li> 
-                    <li><a href="">Đầm</a>
-                        <ul>
-                            <!-- <li><a href="">Đầm maxi/voan</a></li>
-                            <li><a href="">Đầm thun</a></li> -->
-                            <?php
-                            require 'connect_db.php';
-                            $sql = "select * from category where parent_cate_id = '11'";
-                            $query = mysqli_query($conn,$sql);
-                            while($row = mysqli_fetch_assoc($query)){
-                            ?>
-                                <a href="category.php?xem=category&id=<?php echo $row['parent_cate_id'];?>"> <li><div align="left"><strong><?php echo $row['cate_name']?></strong></div> </li></a>
-                            <?php }?>
-                        </ul>
-                    </li>     
-                </ul>  
-            </li>
-            <li><a href="">NAM</a>
-                <ul class="sub-menu">
-                    <li><a href="">Áo</a>
-                        <ul>
-                            <!-- <li><a href="">Áo sơ mi</a></li>
-                            <li><a href="">Áo thun</a></li>
-                            <li><a href="">Áo polo</a></li> -->
-                            <?php
-                            require 'connect_db.php';
-                            $sql = "select * from category where parent_cate_id = '17'";
-                            $query = mysqli_query($conn,$sql);
-                            while($row = mysqli_fetch_assoc($query)){
-                            ?>
-                                <a href="category.php?xem=category&id=<?php echo $row['parent_cate_id'];?>"> <li><div align="left"><strong><?php echo $row['cate_name']?></strong></div> </li></a>
-                            <?php }?>
-                        </ul>
-                    </li>   
+                $first = 0;
+                $sql = "SELECT cate_id, cate_name, parent_cate_id FROM category ORDER BY position";
+                $result = $conn->query($sql);
+                $cates = $result->fetch_all(MYSQLI_ASSOC);
+                $cateTree = getSubCates($cates, $first);
+                showCategory($cateTree, $first);
 
-                    <li><a href="">Quần</a>
-                        <ul>
-                            <!-- <li><a href="">Quần short</a></li>
-                            <li><a href="">Quần kaki</a></li>   
-                            <li><a href="">Quần jean</a></li>  -->   
-                            <?php
-                            require 'connect_db.php';
-                            $sql = "select * from category where parent_cate_id = '21'";
-                            $query = mysqli_query($conn,$sql);
-                            while($row = mysqli_fetch_assoc($query)){
-                            ?>
-                                <a href="category.php?xem=category&id=<?php echo $row['parent_cate_id'];?>"> <li><div align="left"><strong><?php echo $row['cate_name']?></strong></div> </li></a>
-                            <?php }?>
-                        </ul>
-                    </li> 
-                    
-                </ul>  
-            </li>
-            <li><a href="">TRẺ EM</a>
-                <ul class="sub-menu">
-                    <li><a href=""> Bé gái</a>
-                        <ul>
-                            <!-- <li><a href="">Áo bé gái</a></li>
-                            <li><a href="">Quần bé gái</a></li>
-                            <li><a href="">Váy bé gái</a></li> -->
-                            <?php
-                            require 'connect_db.php';
-                            $sql = "select * from category where parent_cate_id = '26'";
-                            $query = mysqli_query($conn,$sql);
-                            while($row = mysqli_fetch_assoc($query)){
-                            ?>
-                                <a href="category.php?xem=category&id=<?php echo $row['parent_cate_id'];?>"> <li><div align="left"><strong><?php echo $row['cate_name']?></strong></div> </li></a>
-                            <?php }?>
-                        </ul>
-                    </li>
-                    <li><a href=""> Bé trai</a>
-                        <ul>
-                            <!-- <li><a href="">Áo bé trai</a></li>
-                            <li><a href="">Quần bé trai</a></li> -->
-                            <?php
-                            require 'connect_db.php';
-                            $sql = "select * from category where parent_cate_id = '30'";
-                            $query = mysqli_query($conn,$sql);
-                            while($row = mysqli_fetch_assoc($query)){
-                            ?>
-                                <a href="category.php?xem=category&id=<?php echo $row['parent_cate_id'];?>"> <li><div align="left"><strong><?php echo $row['cate_name']?></strong></div> </li></a>
-                            <?php }?>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="">SALE</a>
-                <ul class="sub-menu">
-                    <li><a href="">Sale 10%</a></li>
-                    <li><a href="">Sale 20% </a></li>
-                </ul>
-            </li>
+                include_once('user/function/price.php');
+                $sql = "SELECT * FROM promotion ORDER BY promo_name";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    echo '<li class="sale"><a href="category?promo_code=all">SALE</a>
+                        <ul class="sub-menu">';
+                    while ($row = $result->fetch_assoc()) {
+                        $code = $row['promo_code'];
+                        $name = $row['promo_name'];
+                        $price = formatPrice($row['promo_price']);
+                        $calc_unit = getCalcUnit($row['calc_unit']);
+                        echo "<li><a href='?category?promo_code=$code'>
+                                <span>$name</span>
+                                <span> -$price$calc_unit</span>
+                            </a></li>";
+                    }
+                    echo '</ul>
+                    </li>';
+                }
+            ?>
             <li><a href="">THÔNG TIN<a>
                 <ul class="sub-menu">
                     <li><a href="">Giới thiệu về 6AESN</a></li>
@@ -151,3 +59,6 @@
         </div>
     </header>
     <section class="menu-gap"></section>
+<?php
+
+?>
