@@ -41,15 +41,15 @@
     require_once('user/menu.php');
 ?>
 <section>
-    <div>
-        <form method="POST" class="dangnhap">
-            <h2>Đăng Nhập</h2>
-            <div class="user">Tài khoản: <input type="text" name="username" required></div>
-            <div class="pass">Mật khẩu: <input type="password" name="password" required/></div>
-            <div class="btdangnhap"><input type="submit" name="dangky" class="login" value="Đăng Nhập"/></div>
-            <div class="btdangky"><input type="button" name="dangky" class="register" value="Đăng Ký" onclick="window.location.href='register.php';"></div>
-        </form>
-    </div>
+    <form method="POST" class="dangnhap">
+        <h2>Đăng Nhập</h2>
+        <div class="user">Tài khoản: <input type="text" name="username" required></div>
+        <div class="pass">Mật khẩu: <input type="password" name="password" required/></div>
+        <div class="btdangnhap"><input type="submit" name="dangky" class="login" value="ĐĂNG NHẬP"/></div>
+        <div class="btdangky">
+            <input type="button" name="dangky" class="register" value="ĐĂNG KÝ" onclick="window.location.href='register.php';">
+        </div>
+    </form>
 </section>
 <?php
     include_once('user/footer.php');

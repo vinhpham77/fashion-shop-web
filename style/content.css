@@ -109,7 +109,11 @@ header {
     display: flex;
 }
 
-body>section {
-    margin-top: 70px;
+.menu-gap {
+    height: 70px;
     overflow: hidden;
+}
+
+body>section {
+    width: 100vw;
 }
