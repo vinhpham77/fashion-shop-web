@@ -7,8 +7,8 @@
 
         <div class="menu">
             <?php
-                require_once('./connect_db.php');
-                require_once('user/function/menu.php');
+                require('connect_db.php');
+                require_once('modules/function/menu.php');
 
                 $first = 0;
                 $sql = "SELECT cate_id, cate_name, parent_cate_id FROM category ORDER BY position";
@@ -17,18 +17,18 @@
                 $cateTree = getSubCates($cates, $first);
                 showCategory($cateTree, $first);
 
-                include_once('user/function/price.php');
+                include_once('modules/function/price.php');
                 $sql = "SELECT * FROM promotion ORDER BY promo_name";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
-                    echo '<li class="sale"><a href="category?promo_code=all">SALE</a>
+                    echo '<li class="sale"><a href="products.php?promo_code=all">SALE</a>
                         <ul class="sub-menu">';
                     while ($row = $result->fetch_assoc()) {
                         $code = $row['promo_code'];
                         $name = $row['promo_name'];
                         $price = formatPrice($row['promo_price']);
                         $calc_unit = getCalcUnit($row['calc_unit']);
-                        echo "<li><a href='?category?promo_code=$code'>
+                        echo "<li><a href='products.php?promo_code=$code'>
                                 <span>$name</span>
                                 <span> -$price$calc_unit</span>
                             </a></li>";
@@ -58,6 +58,3 @@
         </div>
     </header>
     <section class="menu-gap"></section>
-<?php
-
-?>

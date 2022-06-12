@@ -1,9 +1,10 @@
-<?php 
-    require_once('user/header.php');
+<?php
+    require_once('site.php');
+    loadHeader();
     echo '<link rel="stylesheet" href="style/base.css">
         <link rel="stylesheet" href="style/register.css"/>
         <script defer src="js/register.js"></script>">';
-    require_once('user/menu.php');
+    loadMenu();
 
     if(isset($_POST['btn-register']))
     {
@@ -89,5 +90,5 @@
     </form>
 </section>
 <?php
-    include_once('user/footer.php');
+    loadFooter();
 ?>

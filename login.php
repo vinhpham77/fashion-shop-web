@@ -1,27 +1,16 @@
 <?php
     session_start();
+    require_once('modules/function/account.php');
+    logOut();
     if (!empty($_POST)) {
-        if(isset($_COOKIE['username'])) {
-            setcookie('username', null, -1);
-        }
-        if(isset($_SESSION['username'])) {
-            unset($_SESSION['username']);
-        }
-
         $username = $_POST['username'];
         $password = md5($_POST['password']);
         require_once('connect_db.php');
-        $sql = "SELECT password, account_type FROM account WHERE username='$username'";
+        $sql = "SELECT password, account_type FROM account WHERE username='$username' AND password='$password'";
         $result = $conn->query($sql);
-        if ($row = $result->fetch_assoc())
+        if ($row = $result->fetch_array())
         {
-            if ($row['password'] !== $password) {
-                echo "<script>
-                    history.back();
-                    alert('Sai mật khẩu!');
-                </script>";
-                unset($_POST);
-            } else if ($row['account_type'] == 0) {
+             if ($row['account_type'] == 0) {
                 setcookie('username', $username, time() + (60 * 60 * 24 * 365));
                 header('location: index.php');
             } else {
@@ -36,12 +25,13 @@
             unset($_POST);
         }
     }
-    require_once('user/header.php');
+    require_once('site.php');
+    loadHeader();
     echo '<link rel="stylesheet" href="style/login.css">';
-    require_once('user/menu.php');
+    loadMenu();
 ?>
 <section>
-    <form method="POST" class="dangnhap">
+    <form method="POST" class="dangnhap" accept-charset="ASCII">
         <h2>Đăng Nhập</h2>
         <div class="user">Tài khoản: <input type="text" name="username" required></div>
         <div class="pass">Mật khẩu: <input type="password" name="password" required/></div>
@@ -52,5 +42,5 @@
     </form>
 </section>
 <?php
-    include_once('user/footer.php');
+    loadFooter();
 ?>

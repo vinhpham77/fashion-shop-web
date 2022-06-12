@@ -1,11 +1,11 @@
 <?php 
-    require_once('user/header.php');
+    require_once('site.php');
+    require_once('modules/function/account.php');
+    directToLogin();
+    loadHeader();
     echo '	<link rel="stylesheet" href="style/giohangmain.css">
     <script defer src="js/giohang-sukien.js"></script>">';
-    require_once('user/menu.php');
-    if(!isset($_COOKIE['username'])){
-        header('Location: login.php');
-    }
+    loadMenu();
 ?>
     <section class="cart-content">
             <div class="cart-content-left">
@@ -18,7 +18,7 @@
                         <th>Tổng Tiền</th>
                     </tr>
                     <?php
-                        require_once "connect_db.php";
+                        require('connect_db.php');
                         $kh=$_COOKIE['username'];
 						$sql="select cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,product.price from cart,product where cart.prod_id=product.prod_id AND cart.username='".$kh."'";
 						$kq=mysqli_query($conn, $sql);
@@ -83,5 +83,5 @@
         </div>
     </section>
 <?php
-    include_once('user/footer.php');
+    loadFooter();
 ?>

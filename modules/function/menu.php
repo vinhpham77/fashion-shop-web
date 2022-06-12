@@ -18,7 +18,7 @@
         foreach ($cateTree as $cate) {
             $cate_id = $cate['cate_id'];
             $cate_name = $cate['cate_name'];
-            echo "<li><a href='category.php?cate_id=$cate_id'>$cate_name</a>";
+            echo "<li><a href='products.php?cate_id=$cate_id'>$cate_name</a>";
             if (!empty($cate['children'])) {
                 if ($cate['parent_cate_id'] == 0) {
                     echo "<ul class='sub-menu'>";

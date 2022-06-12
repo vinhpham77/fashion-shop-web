@@ -4,7 +4,7 @@ let keyword_input = document.getElementById("input1");
 function search() {
     keyword = keyword_input.value.trim();
     if (keyword) {
-        window.location.href = "category.php?prod_name=" + keyword;
+        window.location.href = "products.php?prod_name=" + keyword;
     }
 }
 

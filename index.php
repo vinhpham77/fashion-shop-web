@@ -1,13 +1,14 @@
 <?php
-    require_once('user/header.php');
+    require_once('site.php');
+    loadHeader();
     echo '<link rel="stylesheet" href="style/index.css">
-        <script defer src="js/index.js"></script>';
-    require_once('user/menu.php');
+    <script defer src="js/index.js"></script>';
+    loadMenu();
 ?>
 <section id="Slider">
     <div class="aspect-ratio-169">
         <?php
-            require 'user/function/image.php';
+            require 'modules/function/image.php';
             $_Load = getImages("images/sliders");
             $n = count($_Load);
             for($i = 0; $i < $n; $i++) {
@@ -36,5 +37,5 @@
     <input type="text" placeholder="Nhập email của bạn...">
 </div>
 <?php
-    include_once('user/footer.php');
+    loadFooter();
 ?>

@@ -1,11 +1,11 @@
 .register {
     margin-bottom: 20px;
-    font-size: 120%;
-    width: 50%;
+    font-size: 110%;
+    width: 40%;
     background-color: white;
     display: flex;
     box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.4);
-    padding: 20px;
+    padding: 30px;
     border-radius: var(--border);
 }
 
@@ -88,7 +88,7 @@ input.invalid, textarea.invalid {
 
 section {
     background-color: #d3d3d3;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;

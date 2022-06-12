@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion_Shop</title>
     <link rel="stylesheet" href="style/base.css">
-    <link rel="stylesheet" href="./style/content.css">
+    <link rel="stylesheet" href="./style/menu.css">
     <link rel="stylesheet" href="./style/footer.css">
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-    <script defer src="./js/content.js"></script>
+    <script defer src="./js/menu.js"></script>

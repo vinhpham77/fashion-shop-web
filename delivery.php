@@ -1,15 +1,18 @@
 <?php 
-    require_once('user/header.php');
+    require_once('site.php');
+    require_once('modules/function/account.php');
+    if(!isset($_COOKIE['username'])) {
+        directToLogin();
+    }
+    loadHeader();
     echo '	<link rel="stylesheet" href="style/styledelivery.css">
     <script defer src="js/delivery.js"></script>">';
-    require_once('user/menu.php');
-    require_once('user/function/price.php');
-    if(!isset($_COOKIE['username'])){
-        header('Location: login.php');
-    }
+    loadMenu();
+    require_once('connect_db.php');
+    require_once('modules/function/price.php');
 ?>
 <?php 
-    require_once "connect_db.php";
+    require('connect_db.php');
     $username = $_COOKIE['username'];
     $sql = "SELECT `fullname`,`phone_number`,`shipping_address` FROM `account` where username = '".$username."' ";
     $result = $conn->query($sql);
@@ -137,5 +140,5 @@
     </form>
 </section>
 <?php
-    include_once('user/footer.php');
+    loadFooter();
 ?>
