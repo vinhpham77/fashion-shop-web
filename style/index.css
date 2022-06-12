@@ -1,5 +1,6 @@
 #Slider {
     position: relative;
+    overflow: hidden;
 }
 
 .aspect-ratio-169 {
