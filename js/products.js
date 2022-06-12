@@ -6,9 +6,9 @@ products.forEach(function(item) {
     };
 });
 
-let pages = document.querySelectorAll('.category-bottom>span:not(.current-page)');
-let current_page = document.querySelector('.category-top-right>input[name="page"]');
-let form = document.querySelector('.category-top-right');
+let pages = document.querySelectorAll('.products-bottom>span:not(.current-page)');
+let current_page = document.querySelector('.products-top-right>input[name="page"]');
+let form = document.querySelector('.products-top-right');
 pages.forEach(function(item) {
     item.onclick = function() {
         console.log('cc');
@@ -20,11 +20,11 @@ pages.forEach(function(item) {
 
 let order = document.querySelector('select#order');
 let field = document.querySelector('input[name="field"]');
-let by = document.querySelector('input[name="by"]');
+let sort = document.querySelector('input[name="sort"]');
 order.onchange = function() {
     let orderby = order.value.split(' ');
     field.value = orderby[0] ? orderby[0] : '';
-    by.value = orderby[1] ? orderby[1] : '';
+    sort.value = orderby[1] ? orderby[1] : '';
 }
 
 let size = document.querySelector('select#size');

@@ -21,16 +21,15 @@
                 $sql = "SELECT * FROM promotion ORDER BY promo_name";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
-                    echo '<li class="sale"><a href="products.php?promo_code=all">SALE</a>
+                    echo '<li class="sale"><a href="products.php?filter=promo_code&value=all">SALE</a>
                         <ul class="sub-menu">';
                     while ($row = $result->fetch_assoc()) {
                         $code = $row['promo_code'];
                         $name = $row['promo_name'];
                         $price = formatPrice($row['promo_price']);
                         $calc_unit = getCalcUnit($row['calc_unit']);
-                        echo "<li><a href='products.php?promo_code=$code'>
-                                <span>$name</span>
-                                <span> -$price$calc_unit</span>
+                        echo "<li><a href='products.php?filter=promo_code&value=$code'>
+                                <span>$name</span><span> -$price$calc_unit</span>
                             </a></li>";
                     }
                     echo '</ul>
