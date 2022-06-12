@@ -21,6 +21,12 @@
 
             <?php
                 require_once ('../connect_db.php');
+                require_once('process_search.php');  
+                if(isset($_GET['key']))  { 
+                    $key=$_GET['key']; 
+                    tim_khachhang($key); 
+                }  
+                else{    
                 $sql="SELECT *FROM account";
                 $query=mysqli_query($conn,$sql);
                 while($row=mysqli_fetch_array($query)){
@@ -33,6 +39,7 @@
                 <td class="text-info">'.$row['shipping_address'].'</td>
             </tr>';
                 }
+            }
             ?>
         </div>
     </table>

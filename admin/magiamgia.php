@@ -23,17 +23,25 @@
         <?php
             function hienthi(){
                 require_once ('../connect_db.php');
-                $sql="SELECT *FROM promotion";
-                $query=mysqli_query($conn,$sql);
-                while($row=mysqli_fetch_array($query)){
-                  echo '
-                  <tr class="text" promo_id='.$row['promo_code'].'>
-                  <td class="text-info">'.$row['promo_code'].'</td>
-                  <td class="text-info">'.$row['promo_name'].'</td>
-                  <td class="text-info">'.$row['promo_price'].'</td>
-                  <td class="text-info">'.$row['calc_unit'].'</td>
-                  <td class="text-info"><input type="button" value="x" class="close-x btn-mgg-delete" onclick="xoamgg(this)"></td>
-              </tr>';
+                require_once('process_search.php');
+                if(isset($_GET['key'])){ 
+                    $key=$_GET['key']; 
+                    tim_magiamgia($key); 
+                    }   
+                else
+                {   
+                    $sql="SELECT *FROM promotion";
+                    $query=mysqli_query($conn,$sql);
+                    while($row=mysqli_fetch_array($query)){
+                    echo '
+                    <tr class="text" promo_id='.$row['promo_code'].'>
+                    <td class="text-info">'.$row['promo_code'].'</td>
+                    <td class="text-info">'.$row['promo_name'].'</td>
+                    <td class="text-info">'.$row['promo_price'].'</td>
+                    <td class="text-info">'.$row['calc_unit'].'</td>
+                    <td class="text-info"><input type="button" value="x" class="close-x btn-mgg-delete" onclick="xoamgg(this)"></td>
+                    </tr>';
+                    }
                 }
             }
 

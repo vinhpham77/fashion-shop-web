@@ -20,11 +20,11 @@
                     </tr>
                     <?php
                         require_once ('../connect_db.php');
-                       require_once('process_search.php');  
-                       if(isset($_GET['key']))  { 
-                       $key=$_GET['key']; 
-                       tim_hoadon($key); 
-                       }      
+                        require_once('process_search.php');  
+                        if(isset($_GET['key'])){ 
+                            $key=$_GET['key']; 
+                            tim_hoadon($key); 
+                            }      
                          else
                         {
                         $sql="SELECT `order`.`order_id`,`order`.`username`,`order`.`phone_number`,`order`.`shipping_address`,`quantity` *`price` AS 'tien',SUM('tien') ,SUM(`quantity`) AS 'soluong' FROM `order-detail` ,`order` where `order-detail`.`order_id`=`order`.`order_id` GROUP BY `order-detail`.`order_id`";
