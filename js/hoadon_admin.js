@@ -16,7 +16,7 @@ function lay_id(id){
       header.innerHTML=text;
      }
   };
-  xhttp.open("POST", "../bang_hoadon.php", true);
+  xhttp.open("POST", "./bang_hoadon.php", true);
   xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhttp.send('prod_id='+id);
 }

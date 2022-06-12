@@ -1,6 +1,8 @@
 <?php
     require_once('site.php');
     loadHeader();
+  echo'
+  <script defer src="../js/search_admin.js"></script>">';
 ?>
 <div class="container">
     <div class="div-text"><p class="text-khachhang">Thông tin khách hàng</p></div>

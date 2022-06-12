@@ -1,6 +1,6 @@
 
                         <?php
-                        require_once('connect_db.php');
+                        require_once('../connect_db.php');
                         echo '<table class="table-3">
                         <tr class="header-text-cthd">
                         <td class="text-info text-infor1">ID Hóa đơn</td>

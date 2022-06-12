@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../style/styles.css">
     <link rel="stylesheet" href="../style/index.css">
     <link rel="stylesheet" href="../style/index_admin.css">
+    <script defer src="../js/search_admin.js"></script>
     <title>Admin</title>
 </head>
 <div id="main">

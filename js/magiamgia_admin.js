@@ -18,7 +18,6 @@ var btn_message_cancel=document.querySelector(".btn-mesage-cancel");
 
 
 
-
 var nut_them_bang_insert_mgg=document.querySelector(".div-button-them");
 
 var input_macode = document.getElementById("input_ma_code");
