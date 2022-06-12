@@ -27,8 +27,8 @@
                 <li class="canhan">
                     <a>Cá nhân</a>
                     <ul class="subnav">
-                        <li><a href="#">Đăng xuất</a></li>
-                        <li><a href="#">Đổi mật khẩu</a></li>
+                        <li><a href="./dangxuat.php">Đăng xuất</a></li>
+                        <li><a href="./doimk.php">Đổi mật khẩu</a></li>
                     </ul>
                 </li>
             </ul>
