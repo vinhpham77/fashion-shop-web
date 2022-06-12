@@ -87,7 +87,7 @@ input.invalid, textarea.invalid {
 }
 
 section {
-    background-color: lightgrey;
+    background-color: #d3d3d3;
     padding: 20px;
     display: flex;
     justify-content: center;
