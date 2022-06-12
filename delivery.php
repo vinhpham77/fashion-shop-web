@@ -1,9 +1,7 @@
 <?php 
     require_once('site.php');
     require_once('modules/function/account.php');
-    if(!isset($_COOKIE['username'])) {
-        directToLogin();
-    }
+    directToLogin();
     loadHeader();
     echo '	<link rel="stylesheet" href="style/styledelivery.css">
     <script defer src="js/delivery.js"></script>">';
