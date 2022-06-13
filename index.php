@@ -30,11 +30,11 @@
 <div class="app-container">
     <p>Tải ứng dụng 6AESN</p>
     <div class="app-google">
-        <img src="./images/appstore.png" alt="">
-        <img src="./images/googleplay.png" alt="">
+        <a href="https://www.apple.com/vn/app-store/"><img src="./images/appstore.png" alt=""></a>
+        <a href="https://play.google.com/store/apps"><img src="./images/googleplay.png" alt=""></a>
     </div>
     <p>Nhận bản tin 6AESN</p>
-    <input type="text" placeholder="Nhập email của bạn...">
+    <input type="text" placeholder="Nhập email của bạn..." id="email-receive">
 </div>
 <?php
     loadFooter();

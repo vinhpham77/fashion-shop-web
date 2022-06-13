@@ -1,6 +1,7 @@
 :root {
     --border: 10px;
     --small-border: 5px;
+    --shadow: 4px 4px 4px 2px;
 }
 
 * {

@@ -1,24 +1,45 @@
 <footer>
-    <div class="footer-top">
-        <li><a href=""><img src="./images/thongbao.png" alt="">  </a></li>
-        <li><a href="">Liên hệ</a></li>
-        <li><a href="">Tuyển dụng</a></li>
-        <li><a href="">Giới thiệu</a></li>
-        <li>
-            <a href=""><img src="./images/icon_fb.png" alt=""></a>
-            <a href=""><img src="./images/icon_instagram.jpg" alt=""></a>
-            <a href=""><img src="./images/icon_yt.png" alt=""></a>
-        </li>
+    <div>
+        <h3>Dịch vụ khách hàng</h3>
+        <ul>
+            <li><a href="">Hỏi đáp-FAQs</a></li>
+            <li><a href="">Chính sách đổi trả</a></li>
+            <li><a href="">Chính sách giao hàng</a></li>
+        </ul>
     </div>
-    <div class="footer-center">
-        <p>
-            Công ty Cổ phần 6AESN với số đăng ký kinh doanh: 0105777650<br>
-            Địa chỉ đăng ký: Trường Đại Học Quy Nhơn ,T.P Quy Nhơn,Tỉnh Bình Định <br>
-            Số điện thoại: <span>9999 8888 77</span> <br>
-            </p>
+    <div>
+        <h3>Địa chỉ liên hệ</h3>
+        <ul>
+            <li><a href="tel:039-999-9999">Điện thoại: <span>039-999-999</span></a></li>
+            <li><a href = "mailto: 6aesnn@duck.com">Email: <span>6aesn@duck.com</span></a></li>
+            <li>Số đăng ký kinh doanh: <span>0123456789</span></li>
+            <li>Địa chỉ: Trường Đại Học Quy Nhơn, TP Quy Nhơn, Tỉnh Bình Định</li>
+        </ul>
     </div>
-    <div class="footer-bottom">
-        @All right reserved
+    <div>
+        <h3>Tuyển dụng</h3>
+        <ul>
+            <li><a href="">Thông tin tuyển dụng</a></li>
+            <li><a href="">Chính sách đãi ngộ</a></li>
+        </ul>
+    </div>
+    <div>
+        <h3>Về chúng tôi</h3>
+        <ul>
+            <li><a href="">Giới thiệu</a></li>
+            <li><a href="">Blogs</a></li>
+            <li><a href="">Kế hoạch tương lai</a></li>
+        </ul>
+    </div>
+    <div>
+        <h3>Mạng xã hội</h3>
+        <ul>
+            <li>
+                <a href="https://www.facebook.com/"><img src="./images/facebook.png" alt="facebook"></a>
+                <a href="https://www.instagram.com/"><img src="./images/instagram.png" alt="instagram"></a>
+                <a href="https://www.youtube.com/"><img src="./images/youtube.png" alt="youtube"></a>
+            </li>
+        </ul>
     </div>
 </footer>
 </body>

@@ -1,7 +1,7 @@
 <?php 
     require_once('site.php');
     require_once('modules/function/account.php');
-    directToLogin();
+    directToLoginIfNot();
     loadHeader();
     echo '	<link rel="stylesheet" href="style/styledelivery.css">
     <script defer src="js/delivery.js"></script>">';

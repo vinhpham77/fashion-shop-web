@@ -13,6 +13,10 @@ header {
     border-bottom: 1px solid lightgray;
 }
 
+header:hover {
+    background-color: khaki;
+}
+
 .logo {
     flex: 1;
 }
@@ -43,9 +47,11 @@ header {
     line-height: 20px;
 }
 
-.menu>li:hover .sub-menu {
+.menu>li:hover .sub-menu{
     visibility: visible;
-    top: 45px;
+    top: 35px;
+    border-radius: var(--small-border);
+    box-shadow: var(--shadow) rgba(247, 245, 207, 0.2);
 }
 
 .sub-menu {
@@ -53,16 +59,20 @@ header {
     border: 1px solid #ccc;
     visibility: hidden;
     padding: 15px;
-    top: 55px;
+    top: 50px;
     transition: 0.1s;
     z-index: 1;
-    background-color: #FFF;
+    background-color: rgb(247, 245, 207);
 }
 
 .sub-menu ul {
     padding-left: 20px;
 }
 
+.sub-menu>li>a {
+    font-weight: 700;
+    font-size: 13px;
+}
 .sub-menu ul a {
     font-weight: normal;
     font-size: 13px;
@@ -120,6 +130,10 @@ header {
 
 .btn-search {
     display: flex;
+}
+
+.sp_timkiem {
+    cursor: pointer;
 }
 
 .menu-gap {

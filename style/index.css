@@ -45,12 +45,11 @@
 /*-------------------app----------*/
 .app-container {
     text-align: center;
-    align-items: center;
     padding: 80px 0 50px 0;
 }
 
-.app-google {
-    margin: 50px;
+.app-container>*+* {
+    margin-top: 40px;
 }
 
 .app-google img {
@@ -58,7 +57,7 @@
 }
 
 .app-container p {
-    line-height: 20px;
+    line-height: 10px;
     letter-spacing: 1px;
     font-size: 17px;
     color: #000;
@@ -66,10 +65,9 @@
 }
 
 .app-container input {
-    margin-top: 50px;
     border: none;
     border-bottom: 1px solid #000;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     width: 400px;
     text-align: center;
     outline: none;
