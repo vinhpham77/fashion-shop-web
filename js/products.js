@@ -28,7 +28,7 @@ order.onchange = function() {
 }
 
 let size = document.querySelector('select#size');
-const stuff = [field, by, size];
+const stuff = [field, sort, size];
 function removeUselessStuff() {
     stuff.forEach(function(item) {
         if (!item.value) {
