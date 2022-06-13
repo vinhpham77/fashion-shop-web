@@ -6,6 +6,9 @@ let exit = document.querySelector('.controller__exit');
 let next = document.querySelector('.controller__next');
 let prev = document.querySelector('.controller__prev');
 let currentIndex = 0;
+let id=document.querySelector('.product-detail__name').getAttribute('prod_id');
+//let slmaxx=document.querySelector('.product-detail__name').getAttribute('slmaxx');
+
 
 images.forEach((item, index) => {
     item.onclick = function() {
@@ -58,36 +61,43 @@ prev.onclick = function() {
     }
 }
 
-let sizes = document.querySelectorAll('.product-detail__size > span');
+let sizes = document.querySelectorAll('.product-detail__size > span.option');
 let sizeName = document.querySelector('.product-detail__size > p > span');
+
+let quantityInput = document.querySelector('#quantity');
 
 sizes.forEach(function(item) {
     item.onclick = function() {
         let checkedSize = document.querySelector('.size--checked');
-        if (checkedSize !== null) {
+        if (checkedSize != null) {
             checkedSize.classList.remove('size--checked');
             checkedSize.classList.remove('checked');
         }
         item.classList.add('size--checked');
         item.classList.add('checked');
+        quantityInput.value=1;
         sizeName.innerHTML = item.innerHTML;
+        laysp(id,sizeName.innerHTML);
     }
 })
 
 let plus = document.querySelector('.fa-plus');
 let minus = document.querySelector('.fa-minus');
-let quantityInput = document.querySelector('#quantity');
-let quantityOnHand = 999;
+
 
 plus.onclick = function() {
-    if (quantityInput.value < quantityOnHand) {
+     soluonginput=parseInt(quantityInput.value);
+    soluonginputmax=parseInt(quantityInput.max);
+    if (soluonginput < soluonginputmax) {
         quantityInput.value++;
     }
 }
 
 minus.onclick = function() {
-    if (quantityInput.value > 1) {
-        quantityInput.value--;
+    soluonginput=parseInt(quantityInput.value);
+    soluonginputmax=parseInt(quantityInput.max);
+    if (soluonginput > 1) {
+        quantityInput.value--;      
     }
 }
 
@@ -113,7 +123,8 @@ btnBuyNow.onclick = function() {
     if (checkedSize === null) {
         alert("Bạn chưa chọn size!");
     } else {
-        window.location.assign('delivery.php');
+        update_number(id,quantityInput.value,sizeName.innerHTML);
+        window.location.href = "giohang.php?prod_id="+id+"&size="+sizeName.innerHTML ;
     }
 }
 
@@ -122,6 +133,44 @@ btnAddToCart.onclick = function() {
     if (checkedSize === null) {
         alert("Bạn chưa chọn size!");
     } else {
+        update_number(id,quantityInput.value,sizeName.innerHTML);
         alert("Thêm vào giỏ hàng thành công!");
     }
 }
+function update_number(id,values,size){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        text=this.responseText;
+   
+       }
+    };
+    xhttp.open("POST", "update_product-detail.php", true);
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhttp.send('U=update&pro_id='+id+'&quantity='+values+'&size='+size);
+}
+function insert_pro(id,values,size){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        text=this.responseText;
+       }
+    };
+    xhttp.open("POST", "update_product-detail.php", true);
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhttp.send('U=insert&pro_id='+id+'&quantity='+values+'&size='+size);
+}
+function laysp(id,size){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        text=this.responseText;
+        quantityInput.max=text;
+       }
+    };
+    xhttp.open("POST", "modules/function/process_size.php", true);
+    console.log(quantityInput.max);
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhttp.send('U=2&prod_id='+id+'&size='+size);
+}
+

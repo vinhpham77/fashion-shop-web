@@ -212,12 +212,18 @@
     height: 40px;
     padding: 2px;
     line-height: 38px;
-    cursor: pointer;
     text-align: center;
     text-transform: uppercase;
     border: 2px solid lightgrey;
     user-select: none;
     border-radius: var(--border);
+}
+.product-detail__size>span.option{
+    cursor: pointer;
+    
+}
+.product-detail__size>span:not(.option){
+    cursor:not-allowed;
 }
 
 .product-detail__size>p>span {

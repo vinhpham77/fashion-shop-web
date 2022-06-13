@@ -3,6 +3,11 @@ function quaylaigiohang(){
 }
 
 var tongtien = document.querySelector(".thanhtoan span");
+var btn_quaylui=document.querySelector(".cart-content-left-button");
+
+btn_quaylui.addEventListener("click",function(){
+    history.back();
+})
 var Gia = document.querySelectorAll(".thanhtien p");
 function tongtienhang(e){
     var sum = 0;

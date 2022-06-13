@@ -1,26 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Product Detail</title>
-	<link rel="stylesheet" href="style/base.css">
-	<link rel="stylesheet" href="style/product-detail.css">
-	<link rel="stylesheet" href="fontawesome/css/all.min.css">
-	<script defer type="text/javascript" src="js/product-detail.js"></script>
-</head>
-<body>
+
+	
 
 <?php
-require('user/header.php');
-require('user/menu.php');
+require_once('modules/header.php');
+echo '<link rel="stylesheet" href="style/product-detail.css">
+<script defer type="text/javascript" src="js/product-detail.js"></script>';
+require_once('modules/menu.php');
 require_once("connect_db.php");
+require_once('modules/function/price.php');
 	$sql_chitiet = "SELECT * FROM ((product INNER JOIN description ON product.prod_id = description.prod_id)
-									INNER JOIN size ON product.prod_id = size.prod_id 
-					AND product.prod_id =".$_GET['id'].")";
+									INNER JOIN size ON product.prod_id = size.prod_id  LEFT JOIN promotion on product.promo_code=promotion.promo_code
+					AND product.prod_id =".$_GET['product-id'].")";
 	$query_chitiet = mysqli_query($conn,$sql_chitiet);
+
 	while($row = mysqli_fetch_array($query_chitiet))
 	{
+		if(($row['calc_unit']!=''))
+		{
+			if($row['calc_unit']==0){
+				$tiensaugiam=$row['price']-$row['promo_price'];
+				$tiensaugiam=number_format($tiensaugiam, 0, '', '.');
+			}
+			else{
+				$tiensaugiam=$row['price']-($row['price']*$row['promo_price']/100);
+				$tiensaugiam=number_format($tiensaugiam, 0, '', '.');
+				if($row['calc_unit']==1)
+					$loaigg="%";
+				else
+					$loaigg="VND";
+			}
+		}
+		else
+		{
+			$tiensaugiam=$row['price'];
+			$tiensaugiam=number_format($tiensaugiam, 0, '', '.');
+
+			$loaigg="";
+
+		}
+		$tien=$row['price'];
+		$tiengoc=number_format($tien, 0, '', '.');
+
 		$directory = "images/products/".$row['prod_id'];
 		$hinh=array_diff(scandir($directory), array ('..','.'));
 	echo'
@@ -37,24 +57,43 @@ require_once("connect_db.php");
 			</div>
 		</div>
 		<div class="product-detail__info">
-			<h1 class="product-detail__name">'.$row['prod_name'].'</h1>
+			<h1 prod_id='.$row['prod_id'].' class="product-detail__name">'.$row['prod_name'].'</h1>
 			<div class="product-detail__price">
-				<span class="price--original">'.($row['price']- $row['price']*$row['discount']/100).'VNĐ</span>
-				<span class="price--normal">'.$row['price'].'VNĐ </span>
-				<span class="price--discount">'.$row['discount'].'%</span>
+				<span class="price--original">'.$tiensaugiam.'VNĐ</span>
+				<span class="price--normal">'.$tiengoc.'VNĐ </span>
+				<span class="price--discount">'.$row['promo_price'].$loaigg.'</span>
 			</div>
+
 			<div class="product-detail__size">
-				<p>Size: <span></span></p>
-				<span class="option">s</span>
-				<span class="option">m</span>
-				<span class="option">l</span>
-				<span class="option">xl</span>
-			</div>
+				<p>Size: <span></span></p>';
+				
+				$sqlmax="SELECT * from size where prod_id='".$row['prod_id']."'";
+				$slmax=mysqli_query($conn,$sqlmax);
+				$rowslmax=mysqli_fetch_assoc($slmax);
+				$max=0;
+				array_shift($rowslmax);
+				forEach($rowslmax as $key=> $value)
+				{
+					if($value==0){
+						echo'<span title="Hết hàng">'.$key.'</span>';
+					}
+					else{
+						echo'<span class="option">'.$key.'</span>';
+						if($value>$max)
+							$max=$value;
+					}
+					
+				}
+				// <span class="option">s</span>
+				// <span class="option">m</span>
+				// <span class="option">l</span>
+				// <span class="option">xl</span>
+			echo'</div>
 			<div class="product-detail__quantity">
 				<div>Số lượng: </div>
 				<div>
 					<i class="fa-solid fa-minus"></i>
-					<input type="number" name="quantity" id="quantity" min="1" value="1" readonly>
+					<input type="number" name="quantity" id="quantity" min="1" max='.$max.' value="1" readonly>
 					<i class="fa-solid fa-plus"></i>
 				</div>
 			</div>
@@ -99,9 +138,6 @@ require_once("connect_db.php");
 		</div>
 	';
 	}
-require('user/footer.php');
-
+require('modules/footer.php');
 ?>
 
-</body>
-</html>

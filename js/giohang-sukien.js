@@ -2,6 +2,36 @@ var number = document.querySelectorAll(".soluong");
 var price_money = document.querySelectorAll(".thanhtien span");
 var SumNumber = document.querySelector(".sizing-right-number span");
 var tongtien = document.querySelector(".sizing-right-money span");
+var btn_dathang=document.querySelector(".cart-content-right-button");
+var btn_quaylui=document.querySelector(".cart-content-left-button");
+
+btn_quaylui.addEventListener("click",function(){
+    history.back();
+});
+
+
+function truyenquathanhtoan(check)
+{
+    if(check==1)
+    {
+        var id=document.querySelector('.tr_id');
+        var size=document.querySelector('.kichcoSP');
+        if(id==null)
+            alert("Chưa có sp nào!!!");
+        else
+            {
+                var get_id=id.getAttribute('product_id');
+                var get_size=size.getAttribute('product_size');
+                window.location.href = "delivery.php?id=" + get_id+"&size="+get_size;
+            }
+    }
+    else
+    {
+        window.location.href = "delivery.php";
+    }
+}
+
+
 
 function xoasp(x){
     var tr = x.parentElement.parentElement;      
@@ -81,12 +111,6 @@ function tongsl(x){
     }return sum;
 }
 
-function lienketMuaSam(){
-    location.href="product-detail.php";
-}
-function lienketDatHang(){
-    location.href="delivery.php";
-}
 function update_number(id,values,size1){
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
