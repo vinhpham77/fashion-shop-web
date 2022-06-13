@@ -2,7 +2,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.php"><img  src="./images/logo.png" alt="ảnh lỗi rùi" ></a>
+            <a href="index.php"><img  src="./images/logo.png" alt="logo" title="Về trang chủ"></a>
         </div>
 
         <div class="menu">
@@ -46,14 +46,14 @@
         <div class="orthers">
             <li class="btn-search">
                 <input id="input1" placeholder="Tìm kiếm" type="text" name="tim">
-                <label for="input1">
+                <label for="input1" title="Nhấn để tìm kiếm sản phẩm">
                     <span input="mot" class="sp_timkiem">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </span>
                 </label>
             </li>
             <li><a class="fa--user" href="login.php"><i class="fa-solid fa-user"></i></a></li>
-            <li><a class="fa--shopping-bag" href="giohang.php"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a class="fa--shopping-bag" href="giohang.php" title="Xem giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </div>
     </header>
     <section class="menu-gap"></section>

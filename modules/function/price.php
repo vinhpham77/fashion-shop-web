@@ -18,10 +18,10 @@
 
     function getCalcUnit($string) {
         switch ($string) {
-            case 1:
+            case '1':
                 $calc_unit = '%';
                 break;
-            case 0:
+            case '0':
                 $calc_unit = 'đ';
                 break;
             default:
