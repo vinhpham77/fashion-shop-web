@@ -6,16 +6,18 @@
         $username = $_POST['username'];
         $password = md5($_POST['password']);
         require_once('connect_db.php');
-        $sql = "SELECT password, account_type FROM account WHERE username='$username' AND password='$password'";
+        $sql = "SELECT password, account_type FROM account WHERE username='$username' AND password='$password' LIMIT 1";
         $result = $conn->query($sql);
         if ($row = $result->fetch_array())
         {
              if ($row['account_type'] == 0) {
                 setcookie('username', $username, time() + (60 * 60 * 24 * 365));
                 header('location: index.php');
+                exit();
             } else {
                 $_SESSION['username'] = $username;
                 header('location: admin/index_admin.php');
+                exit();
             }
         } else {
             echo "<script>
@@ -33,11 +35,17 @@
 <section>
     <form method="POST" class="dangnhap" accept-charset="ASCII">
         <h2>Đăng Nhập</h2>
-        <div class="user">Tài khoản: <input type="text" name="username" required></div>
-        <div class="pass">Mật khẩu: <input type="password" name="password" required/></div>
-        <div class="btdangnhap"><input type="submit" name="dangky" class="login" value="ĐĂNG NHẬP"/></div>
+        <div class="form-group">
+            <label for="username">Tài khoản:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Mật khẩu:</label>
+            <input type="password" id="password" name="password" required/>
+        </div>
+        <div class="btdangnhap"><button type="submit" name="dangky" class="login btn--black">ĐĂNG NHẬP</button></div>
         <div class="btdangky">
-            <input type="button" name="dangky" class="register" value="ĐĂNG KÝ" onclick="window.location.href='register.php';">
+            <button type="button" name="dangky" class="register btn--black" onclick="window.location.href='register.php';">ĐĂNG KÝ</button>
         </div>
     </form>
 </section>

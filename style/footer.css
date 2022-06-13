@@ -1,5 +1,5 @@
 footer {
-    background-color: black;
+    background-color: var(--color-black);
     display: flex;
     padding: 40px 20px;
     font-size: 90%;
@@ -15,10 +15,6 @@ footer>div>h3 {
     margin-bottom: 10px;
 }
 
-footer>div {
-
-}
-
 footer>div ul li span {
     font-weight: 500;
 }
@@ -31,23 +27,3 @@ footer ul img {
 .footer--center a+a {
     margin-left: 10px;
 }
-
-.footer-left li :last-child a {
-    margin-right: 12px;
-    color: #333;
-}
-
-footer p span {
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-}
-
-/*.footer-center {
-    text-align: center;
-}*/
-
-/*.footer-bottom {
-    margin: 20px;
-    text-align: center;
-}*/

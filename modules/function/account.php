@@ -1,8 +1,9 @@
 <?php
     function directToLoginIfNot() {
         if (!isset($_COOKIE['username'])) {
-            header('Location: login.php');
-            exit;
+            echo "<script>alert('Vui lòng đăng nhập trước!');
+            window.location.href = 'login.php';</script>";
+            exit();
         }
     }
 

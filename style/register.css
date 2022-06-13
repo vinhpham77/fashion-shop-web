@@ -1,11 +1,11 @@
 .register {
-    margin-bottom: 20px;
-    font-size: 110%;
+    margin-bottom: 40px;
+    font-size: 105%;
     width: 40%;
     background-color: white;
     display: flex;
     box-shadow: var(--shadow) rgba(0, 0, 0, 0.4);
-    padding: 30px;
+    padding: 40px;
     border-radius: var(--border);
 }
 
@@ -23,7 +23,7 @@
 }
 
 .form-group>label {
-    font-size: 80%;
+    font-size: 85%;
 }
 
 .register .form-group {
@@ -33,7 +33,7 @@
 .register input, .register textarea, #btn-register {
     border-radius: var(--small-border);
     padding: 8px 8px 10px 8px;
-    font-size: 14px;
+    font-size: 90%;
 }
 
 .register input, .register textarea {
@@ -60,25 +60,16 @@ input.invalid, textarea.invalid {
 }
 
 #btn-register {
-    background-color: black;
-    color: whitesmoke;
-    border-color: transparent;
-    cursor: pointer;
     text-transform: uppercase;
-    text-align: center;
-}
-
-#btn-register:hover {
-    background-color: #a9a9a9;
-    color: white;
-    border-color: black;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .register>div>h2 {
     color: #b300b3;
     text-transform: uppercase;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     white-space: nowrap;
 }
 
@@ -87,8 +78,7 @@ input.invalid, textarea.invalid {
 }
 
 section {
-    background-color: #d3d3d3;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;

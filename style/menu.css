@@ -8,13 +8,19 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid var(--hov-color);
     z-index: 1;
-    background: white;
-    border-bottom: 1px solid lightgray;
+    transition: 0.2s;
 }
 
 header:hover {
-    background-color: khaki;
+    background-color: var(--color-black);
+    color: white;
+}
+
+header li a, header *:not(li a) {
+    color: inherit;
 }
 
 .logo {
@@ -51,18 +57,20 @@ header:hover {
     visibility: visible;
     top: 35px;
     border-radius: var(--small-border);
-    box-shadow: var(--shadow) rgba(247, 245, 207, 0.2);
+    box-shadow: var(--shadow) rgba(var(--light-khaki), 0.2);
+    opacity: 0.95;
 }
 
 .sub-menu {
     position: absolute;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     visibility: hidden;
     padding: 15px;
     top: 50px;
     transition: 0.1s;
     z-index: 1;
-    background-color: rgb(247, 245, 207);
+    color: black;
+    background-color: var(--light-khaki);
 }
 
 .sub-menu ul {
@@ -123,7 +131,7 @@ header:hover {
     width: 100%;
     border: none;
     margin-left: 120px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid currentColor;
     background: transparent;
     outline: none;
 }
@@ -139,4 +147,8 @@ header:hover {
 .menu-gap {
     height: 70px;
     overflow: hidden;
+}
+
+section {
+    background-color: var(--bg-dark);
 }

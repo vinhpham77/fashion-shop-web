@@ -16,8 +16,8 @@
     $sort = !empty($_GET['sort']) ? $_GET['sort'] : '';
     $current_page = !empty($_GET['page']) && $_GET['page'] > 0 ? $_GET['page'] : 1;
 ?>
-<section class="products row">
-    <div class="products-top row">
+<section class="products">
+    <div class="products-top">
         <div class="products-top-left">
             <span class="filter-phrase"></span>
             <span class="keywords"></span>
@@ -41,7 +41,7 @@
                 <option value="price asc" <?php if ($field === 'price' && $sort === 'asc') echo 'selected'; ?>>Giá thấp đến cao</option>
                 <option value="price desc" <?php if ($field === 'price' && $sort === 'desc') echo 'selected'; ?>>Giá cao đến thấp</option>
             </select>
-            <button type="submit" id="btn-filter">Lọc</button>
+            <button type="submit" id="btn-filter" class="btn btn--black">Lọc</button>
             <input type="hidden" name="page" value=<?php echo $current_page; ?>>
         </form>
     </div>
@@ -151,7 +151,7 @@
             }
         ?>
     </div>
-    <div class="products-bottom row">
+    <div class="products-bottom">
         <?php
             $range = 2;
             $min = $current_page - $range;
