@@ -59,11 +59,11 @@
                     $keywords = $result->fetch_array()[0];
                     $sql = "SELECT cate_id, parent_cate_id FROM category";
                     $result = $conn->query($sql);
-                    $cateList = $result->fetch_all(MYSQLI_ASSOC);
+                    $cate_list = $result->fetch_all(MYSQLI_ASSOC);
                     require_once('modules/function/products.php');
-                    $cateIDArr = getItAndAllSubCateIDs($cateList, $value);
-                    $cateIDs = implode(', ', $cateIDArr);
-                    $where = "WHERE A.$filter IN ($cateIDs)";
+                    $cate_ID_arr = getItAndAllSubCateIDs($cate_list, $value);
+                    $cate_IDs = implode(', ', $cate_ID_arr);
+                    $where = "WHERE A.$filter IN ($cate_IDs)";
                     break;
                 case 'promo_code':
                     if ($value === 'all') {
@@ -127,13 +127,13 @@
                     $normal_price = formatPrice($row['price']);
                     if ($row['promo_price'] !== null) {
                         $promo_price = $row['promo_price'];
-                        $original_price = getPrice($row['price'], $promo_price, $row['calc_unit']);
-                        $original_price = formatPrice($original_price);
+                        $discounted_price = getPrice($row['price'], $promo_price, $row['calc_unit']);
+                        $discounted_price = formatPrice($discounted_price);
                         $promo_price = formatPrice($promo_price);
                         $calc_unit = getCalcUnit($row['calc_unit']);
                         echo <<<PROD_PRICE
                             <div class="product__price">
-                                <span class="price--original">$original_price<span>đ</span></span>
+                                <span>$discounted_price<span>đ</span></span>
                                 <span class="price--normal">$normal_price<span>đ</span></span>
                                 <span class="price--discount"> -$promo_price$calc_unit</span>
                             </div>
@@ -142,7 +142,7 @@
                     } else {
                         echo <<<PROD_PRICE
                             <div class="product__price">
-                                <span class="price--original">$normal_price<span>đ</span></span>
+                                <span>$normal_price<span>đ</span></span>
                             </div>
                         </div>
                         PROD_PRICE;
