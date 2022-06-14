@@ -1,7 +1,6 @@
 <?php
     session_start();
-    require_once('modules/function/account.php');
-    logOut();
+    include_once('modules/function/logout.php');
     if (!empty($_POST)) {
         $username = $_POST['username'];
         $password = md5($_POST['password']);
