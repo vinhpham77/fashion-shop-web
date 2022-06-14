@@ -1,8 +1,7 @@
 <?php 
     require_once('site.php');
-    require_once('modules/function/account.php');
+    require_once('modules/function/directToLoginIfNot.php');
     require_once('modules/function/price.php');
-    directToLoginIfNot();
     loadHeader();
     echo '	<link rel="stylesheet" href="style/giohangmain.css">
     <script defer src="js/giohang-sukien.js"></script>">';
