@@ -60,7 +60,29 @@ header li a, header *:not(li a) {
     box-shadow: var(--shadow) rgba(var(--light-khaki), 0.2);
     opacity: 0.95;
 }
-
+.sub-menu-hienthi-dangnhap{
+    position: absolute;
+    border: 0px solid #ccc;
+    visibility: hidden;
+    padding: 15px;
+    top: 50px;
+    transition: 0.1s;
+    z-index: 1;
+    color: black;
+    background-color: var(--light-khaki);
+    right:1px;
+    width:135px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height:24px;
+}
+.li_dangnhap:hover .sub-menu-hienthi-dangnhap{
+    visibility: visible;
+    top: 35px;
+    border-radius: var(--small-border);
+    box-shadow: var(--shadow) rgba(var(--light-khaki), 0.2);
+    opacity: 0.95;
+}
 .sub-menu {
     position: absolute;
     border: 0px solid #ccc;

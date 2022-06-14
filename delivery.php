@@ -100,8 +100,33 @@
                         </tr>
                         <?php 
                             require_once "connect_db.php";
+                            if(isset($_GET['id']))
+                            {
+                                $sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price,  promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '".$_COOKIE['username']."' AND cart.prod_id='".$_GET['id']."' AND cart.size='".$_GET['size']."'";
+                                $result = $conn->query($sql);
+                                if($result->num_rows > 0){
+                                    $tongtien=0;
+                                    while ($rows = $result->fetch_array()) {
+                                        $sl_giohang = $rows[1];
+                                        $price_sp = $rows[3];
+                                        $donvi = $rows[4];
+                                        $gia = $rows[5];
+                                        $GiaSauGiam = getPrice($price_sp, $gia, $donvi)*$sl_giohang;
+                                        $numberformat = number_format($GiaSauGiam, 0, '', '.');
+                                        $tongtien=$tongtien+$GiaSauGiam;
+                                        echo "<tr>
+                                            <td>$rows[0]</td>
+                                            <td>$rows[1]</td>
+                                            <td class='size'>$rows[2]</td>
+                                            <td class='thanhtien'><p>$numberformat<sup>đ</sup></p></td>
+                                        </tr>";
+                                    }
+                                }
+                            }
+                            else{
                             $sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price,  promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '".$_COOKIE['username']."' ";
                             $result = $conn->query($sql);
+                            $tongtien=0;
                             if($result->num_rows > 0){
                                 while ($rows = $result->fetch_array()) {
                                     $sl_giohang = $rows[1];
@@ -110,6 +135,7 @@
                                     $gia = $rows[5];
                                     $GiaSauGiam = getPrice($price_sp, $gia, $donvi)*$sl_giohang;
                                     $numberformat = number_format($GiaSauGiam, 0, '', '.');
+                                    $tongtien=$tongtien+$GiaSauGiam;
                                     echo "<tr>
                                         <td>$rows[0]</td>
                                         <td>$rows[1]</td>
@@ -118,11 +144,15 @@
                                     </tr>";
                                 }
                             }
+                        }
+                        $tongtien=number_format($tongtien, 0, '', '.');
                         ?>
-                        <tr>
+                        <?php
+                        echo '<tr>
                             <td style="font-weight: bold;" colspan="3">Tổng tiền hàng</td>
-                            <td class="thanhtoan" style="font-weight: bold;" ><span>1.210.000</span><sup>đ</sup></td>
-                        </tr>
+                            <td class="thanhtoan" style="font-weight: bold;" ><span>'.$tongtien.'</span><sup>đ</sup></td>
+                        </tr>'
+                        ?>
                     </div>
                 </table>
                 <div class="delivery-content-left-button">

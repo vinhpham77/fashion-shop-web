@@ -22,7 +22,7 @@ function truyenquathanhtoan(check)
             {
                 var get_id=id.getAttribute('product_id');
                 var get_size=size.getAttribute('product_size');
-                window.location.href = "delivery.php?id=" + get_id+"&size="+get_size;
+                window.location.href = "delivery.php?id=" +get_id+"&size="+get_size;
             }
     }
     else

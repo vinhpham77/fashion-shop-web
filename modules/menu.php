@@ -52,7 +52,20 @@
                     </span>
                 </label>
             </li>
-            <li><a class="fa--user" href="login.php"><i class="fa-solid fa-user"></i></a></li>
+            <li class="li_dangnhap"><a class="fa--user" href="login.php"><i class="fa-solid fa-user"></i></a>
+            <?php
+            session_start();
+                    if(isset($_SESSION['username'])){
+                        echo'
+                        <ul class="sub-menu-hienthi-dangnhap">
+                            <li><a href="admin/dangxuat.php">Đăng xuất</a></li>
+                            <li><a href="admin/doimk.php">Đổi mật khẩu</a></li>
+                        </ul>';
+                    }
+                    else
+                        echo'2';
+            ?>        
+            </li>
             <li><a class="fa--shopping-bag" href="giohang.php" title="Xem giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </div>
     </header>
