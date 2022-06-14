@@ -54,11 +54,11 @@
             </li>
             <li class="li_dangnhap"><a class="fa--user" href="login.php"><i class="fa-solid fa-user"></i></a>
             <?php
-            session_start();
-                    if(isset($_SESSION['username'])){
+          
+                    if(isset($_COOKIE['username'])){
                         echo'
                         <ul class="sub-menu-hienthi-dangnhap">
-                            <li><a href="admin/dangxuat.php">Đăng xuất</a></li>
+                            <li><a href="admin/dangxuat.php" onclick="dangxuat();">Đăng xuất</a></li>
                             <li><a href="admin/doimk.php">Đổi mật khẩu</a></li>
                         </ul>';
                     }

@@ -1,16 +1,28 @@
 let sp_timkiem = document.querySelector(".sp_timkiem");
 let keyword_input = document.getElementById("input1");
-
 function search() {
     keyword = keyword_input.value.trim();
     if (keyword) {
         window.location.href = "products.php?filter=prod_name&value=" + keyword;
     }
 }
-
 sp_timkiem.onclick = search;
 keyword_input.onkeydown = function(event) {
     if (event.keyCode === 13) {
         search();
     }
+}
+
+function dangxuat(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            text=this.responseText;
+            console.log(text);
+       }
+       console.log(2);
+    };
+    xhttp.open("POST", "modules/function/logout.php", true);
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhttp.send('id='+5);
 }
