@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once('modules/function/logout.php');
+    // include_once('modules/function/logout.php');
     if (!empty($_POST)) {
         $username = $_POST['username'];
         $password = md5($_POST['password']);
@@ -9,14 +9,11 @@
         $result = $conn->query($sql);
         if ($row = $result->fetch_array())
         {
+            $_SESSION['username'] = $username;
              if ($row['account_type'] == 0) {
-                setcookie('username', $username, time() + (60 * 60 * 24 * 365));
                 header('location: index.php');
-                exit();
             } else {
-                $_SESSION['username'] = $username;
                 header('location: admin/index_admin.php');
-                exit();
             }
         } else {
             echo "<script>

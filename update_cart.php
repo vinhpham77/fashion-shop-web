@@ -1,6 +1,6 @@
 <?php
 require_once("connect_db.php");
-$kh= $_COOKIE['username'];
+$kh= $_SESSION['username'];
 if($_POST['U']=='update'){
     update_number($kh, $conn);
     

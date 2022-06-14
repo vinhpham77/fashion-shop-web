@@ -19,7 +19,7 @@
                     </tr>
                     <?php
                         require('connect_db.php');
-                        $kh=$_COOKIE['username'];
+                        $kh=$_SESSION['username'];
                         $check=isset($_GET['prod_id']);
                         if (isset($_GET['prod_id']) && isset($_GET['size'])) {
                             $sql="select cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,product.price from cart,product where cart.prod_id=product.prod_id AND cart.username='".$kh."' AND cart.prod_id='".$_GET['prod_id']."' AND cart.size='".$_GET['size']."' LIMIT 1";

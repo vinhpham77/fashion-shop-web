@@ -1,9 +1,5 @@
 <?php
-    if(isset($_COOKIE['username'])) {
-        setcookie('username', null, time() -1);
+    session_start();
         //header('location:index.php ');
-        exit();
-    }
-    var_dump('5');
-    echo'3';
+        session_destroy();
 ?>

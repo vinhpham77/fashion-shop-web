@@ -1,6 +1,6 @@
 <?php
 require_once("connect_db.php");
-$kh= $_COOKIE['username'];
+$kh= $_SESSION['username'];
 $pro_id=$_POST['pro_id'];
 $pro_size=$_POST['size'];
 if(check($pro_id,$pro_size,$conn)==1)

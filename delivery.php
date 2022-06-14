@@ -10,7 +10,7 @@
 ?>
 <?php 
     require('connect_db.php');
-    $username = $_COOKIE['username'];
+    $username = $_SESSION['username'];
     $sql = "SELECT `fullname`,`phone_number`,`shipping_address` FROM `account` where username = '".$username."' ";
     $result = $conn->query($sql);
     if($rows = $result->fetch_array()){          

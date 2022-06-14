@@ -18,9 +18,8 @@ function dangxuat(){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             text=this.responseText;
-            console.log(text);
+            location.reload();
        }
-       console.log(2);
     };
     xhttp.open("POST", "modules/function/logout.php", true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

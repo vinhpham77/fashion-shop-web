@@ -41,29 +41,29 @@ function search() {
     }
 }
 
- //icon_search.addEventListener("click",function(){
-//     var x= window.location.pathname;
-//     var pathname_khachhang="/fashion-shop-web/admin/khachhang.php";
-//     var pathname_hoadon="/fashion-shop-web/admin/hoadon.php";
-//     var pathname_sanpham="/fashion-shop-web/admin/khachhang.php";
-//     var pathname_magiamgia="/fashion-shop-web/admin/khachhang.php";
-//     if(x==pathname_khachhang){
-//         tim_khachhang(key);
-//     }
-//     else
-//         if(x==pathname_sanpham)
-//             tim_sanpham(key);
-//         else
-//             if(x==pathname_hoadon){
-//                 tim_hoadon(key);
-//             }
+ icon_search.addEventListener("click",function(){
+    var x= window.location.pathname;
+    var pathname_khachhang="/fashion-shop-web/admin/khachhang.php";
+    var pathname_hoadon="/fashion-shop-web/admin/hoadon.php";
+    var pathname_sanpham="/fashion-shop-web/admin/khachhang.php";
+    var pathname_magiamgia="/fashion-shop-web/admin/khachhang.php";
+    if(x==pathname_khachhang){
+        tim_khachhang(key);
+    }
+    else
+        if(x==pathname_sanpham)
+            tim_sanpham(key);
+        else
+            if(x==pathname_hoadon){
+                tim_hoadon(key);
+            }
 
-//             else    
-//                 if(x==pathname_magiamgia)
-//                     tim_magiamgia(key);
+            else    
+                if(x==pathname_magiamgia)
+                    tim_magiamgia(key);
       
 
-// })
+})
 
 function tim_khachhang(key){
 
