@@ -12,7 +12,7 @@
 
 form>h2 {
     text-transform: uppercase;
-    color: #b300b3;
+    color: var(--purple-title);
     margin-bottom: 30px;
     font-weight: 500;
 }

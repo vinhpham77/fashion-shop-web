@@ -66,7 +66,7 @@ input.invalid, textarea.invalid {
 }
 
 .register>div>h2 {
-    color: #b300b3;
+    color: var(--purple-title);
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 30px;

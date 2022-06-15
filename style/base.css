@@ -6,6 +6,7 @@
     --bg-dark: #F6F5F5;
     --hov-color: #d9d9d9;
     --color-black: #282A35;
+    --purple-title: #b300b3;
 }
 
 * {
@@ -42,7 +43,7 @@ body {
     text-align: center;
 }
 
-.btn--white, .btn--black:hover {
+.btn--white:hover, .btn--black:hover {
     background-color: #999999;
     color: white;
     border-color: black;
