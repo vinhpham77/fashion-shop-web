@@ -142,6 +142,7 @@ function update_number(id,values,size){
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
         text=this.responseText;
+        console.log(text);
    
        }
     };

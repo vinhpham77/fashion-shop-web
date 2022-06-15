@@ -61,13 +61,16 @@
                         <ul class="sub-menu-hienthi-dangnhap">
                             <li><a onclick="dangxuat();">Đăng xuất</a></li>
                             <li><a href="admin/doimk.php">Đổi mật khẩu</a></li>
-                        </ul>';
+                        </ul>
+                        </li>
+                        <li><a class="fa--shopping-bag" href="giohang.php" title="Xem giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a></li>';
                     }
                     else
-                        echo'<a class="fa--user" href="login.php"><i class="fa-solid fa-user"></i></a>';
+                        echo'<a class="fa--user" href="login.php"><i class="fa-solid fa-user"></i></a>
+                        </li>
+                        <li><i class="fa-solid fa-cart-shopping"></i></li>';
             ?>        
-            </li>
-            <li><a class="fa--shopping-bag" href="giohang.php" title="Xem giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a></li>
+           
         </div>
     </header>
     <section class="menu-gap"></section>

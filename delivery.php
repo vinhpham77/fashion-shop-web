@@ -1,7 +1,8 @@
 <?php 
     require_once('site.php');
-    require_once('modules/function/directToLoginIfNot.php');
     loadHeader();
+    require_once('modules/function/directToLoginIfNot.php');
+   
     echo '	<link rel="stylesheet" href="style/styledelivery.css">
     <script defer src="js/delivery.js"></script>">';
     loadMenu();
@@ -11,7 +12,7 @@
 <?php 
     require('connect_db.php');
     $username = $_SESSION['username'];
-    $sql = "SELECT `fullname`,`phone_number`,`shipping_address` FROM `account` where username = '".$username."' ";
+    $sql = "SELECT `fullname`,`phone_number`,`shipping_address` FROM `account` where username = '$username' ";
     $result = $conn->query($sql);
     if($rows = $result->fetch_array()){          
         $fullname = $rows[0];
@@ -23,9 +24,7 @@
             $diachi = $_POST['Address'];
             $sql = "UPDATE `account` SET `fullname`='$hoten', `phone_number`='$sodt',`shipping_address`='$diachi' WHERE username = '".$username."'";
             $conn->query($sql);
-
-            
-            $sql = "SELECT product.prod_id, cart.size, cart.quantity, product.price, promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '".$_COOKIE['username']."' ";
+            $sql = "SELECT product.prod_id, cart.size, cart.quantity, product.price, promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '".$_SESSION['username']."' ";
             $result = $conn->query($sql);
             if($result->num_rows > 0){
                 $sql = "INSERT INTO `order`(`username`, `fullname`, `phone_number`, `shipping_address`, `pay_date`) VALUES ('$username', '$hoten', '$sodt', '$diachi', CURRENT_TIMESTAMP)";
@@ -101,7 +100,7 @@
                             require_once "connect_db.php";
                             if(isset($_GET['id']))
                             {
-                                $sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price,  promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '".$_COOKIE['username']."' AND cart.prod_id='".$_GET['id']."' AND cart.size='".$_GET['size']."'";
+                                $sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price,  promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '".$_SESSION['username']."' AND cart.prod_id='".$_GET['id']."' AND cart.size='".$_GET['size']."'";
                                 $result = $conn->query($sql);
                                 if($result->num_rows > 0){
                                     $tongtien=0;
@@ -123,7 +122,7 @@
                                 }
                             }
                             else{
-                            $sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price,  promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '".$_COOKIE['username']."' ";
+                            $sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price,  promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '".$_SESSION['username']."' ";
                             $result = $conn->query($sql);
                             $tongtien=0;
                             if($result->num_rows > 0){

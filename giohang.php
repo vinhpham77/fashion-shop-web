@@ -1,8 +1,10 @@
 <?php 
+
     require_once('site.php');
+    loadHeader();
     require_once('modules/function/directToLoginIfNot.php');
     require_once('modules/function/price.php');
-    loadHeader();
+    
     echo '	<link rel="stylesheet" href="style/giohangmain.css">
     <script defer src="js/giohang-sukien.js"></script>">';
     loadMenu();
@@ -24,7 +26,7 @@
                         if (isset($_GET['prod_id']) && isset($_GET['size'])) {
                             $sql="select cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,product.price from cart,product where cart.prod_id=product.prod_id AND cart.username='".$kh."' AND cart.prod_id='".$_GET['prod_id']."' AND cart.size='".$_GET['size']."' LIMIT 1";
                         } else {
-                            $sql="select cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,product.price from cart,product where cart.prod_id=product.prod_id AND cart.username='".$kh."' LIMIT 1";
+                            $sql="select cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,product.price from cart,product where cart.prod_id=product.prod_id AND cart.username='".$kh."'";
                         }
 
                         $kq=mysqli_query($conn, $sql);
@@ -60,8 +62,12 @@
                     <tr>
                         <td>Tổng sản phẩm</td>
                         <?php 
-                            $kh=$_COOKIE['username'];
-                            $sql1 = "SELECT SUM(`quantity`) FROM `cart` WHERE `username` = '$kh'";
+                            $kh=$_SESSION['username'];
+                           
+                             if(isset($_GET['prod_id']) && isset($_GET['size']))
+                                 $sql1 ="SELECT `quantity` FROM `cart` WHERE `username`='$kh' AND cart.prod_id='".$_GET['prod_id']."' AND cart.size='".$_GET['size']."' LIMIT 1";  
+                            else
+                                $sql1 = "SELECT SUM(`quantity`) FROM `cart` WHERE `username` = '$kh'";
                             $results = $conn->query($sql1);
                             $rows = $results->fetch_array();
                             $soluong = $rows[0];
@@ -70,8 +76,11 @@
                     <tr>
                         <td>Tổng tiền hàng</td>
                         <?php 
-                            $kh = $_COOKIE['username'];
-                            $sql1 = "SELECT cart.username, cart.quantity, cart.prod_id, SUM(cart.quantity * product.price) FROM `cart` LEFT JOIN `product` ON cart.prod_id = product.prod_id WHERE cart.username = '$kh'";
+                            $kh = $_SESSION['username'];
+                            if (isset($_GET['prod_id']) && isset($_GET['size']))       
+                               $sql1 = "SELECT cart.username, cart.quantity, cart.prod_id, SUM(cart.quantity * product.price) FROM `cart` LEFT JOIN `product` ON cart.prod_id = product.prod_id WHERE cart.username = '$kh' AND cart.prod_id='".$_GET['prod_id']."' AND cart.size='".$_GET['size']."' LIMIT 1";
+                            else
+                                $sql1 = "SELECT cart.username, cart.quantity, cart.prod_id, SUM(cart.quantity * product.price) FROM `cart` LEFT JOIN `product` ON cart.prod_id = product.prod_id WHERE cart.username = '$kh'";
                             $results = $conn->query($sql1);
                             $rows = $results->fetch_array();
                             $tongtien = $rows[3];

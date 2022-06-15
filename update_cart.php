@@ -1,6 +1,9 @@
 <?php
+session_start();
 require_once("connect_db.php");
 $kh= $_SESSION['username'];
+var_dump($kh);
+echo $kh;
 if($_POST['U']=='update'){
     update_number($kh, $conn);
     

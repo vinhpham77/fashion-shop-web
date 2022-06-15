@@ -85,7 +85,7 @@ number.forEach((item, index)=>{
             item.value=1;
             item.onchange();
         }   
-        update_number(id, soluong,size1);
+        update_number(id,soluong,size1);
 
         
         if(soluong==''){
@@ -116,6 +116,7 @@ function update_number(id,values,size1){
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
             text=this.responseText;
+            console.log(text);
            }
         };
         xhttp.open("POST", "update_cart.php", true);
