@@ -1,5 +1,4 @@
 <?php
-    session_start();
     // include_once('modules/function/logout.php');
     if (!empty($_POST)) {
         $username = $_POST['username'];
