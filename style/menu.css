@@ -82,6 +82,7 @@ header li a, header *:not(li a) {
     border-radius: var(--small-border);
     box-shadow: var(--shadow) rgba(var(--light-khaki), 0.2);
     opacity: 0.95;
+    cursor: pointer;
 }
 .sub-menu {
     position: absolute;
