@@ -1,6 +1,6 @@
 /*------------------------delivery-content-left--------------------------*/
 .delivery-content {
-    padding: 20px 25%;
+    padding: 18px 25%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,7 +65,7 @@
 .delivery-conten-below table {
     width: 100%;
     text-align: center;
-    margin: 20px auto;
+    margin: 10px auto;
     min-height: 150px;
 }
 
@@ -75,7 +75,7 @@
 
 .delivery-conten-below table tbody {
     display: block;
-    max-height: 35vh;
+    max-height: 32vh;
     overflow: auto;
 }
 
@@ -87,14 +87,14 @@
 }
 
 .delivery-conten-below table thead {
-    padding: 10px 0;
+    padding: 6px 0;
     margin-bottom: 5px;
     border-bottom: 1px solid var(--hov-color);
 }
 
 
 .delivery-conten-below table tfoot {
-    padding: 10px 0;
+    padding: 6px 0;
     margin-top: 5px;
     font-weight: bold;
     border-top: 1px solid var(--hov-color);
