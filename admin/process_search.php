@@ -51,7 +51,7 @@ function tim_magiamgia($key){
 }
 function tim_sanpham($key){
     $sql="SELECT `promotion`.`promo_code`,`promotion`.`calc_unit`,`promotion`.`promo_price`, `prod_id`,`product`.`cate_id`,`prod_name`, `price`,`quantity`,`date_added`,`category`.`cate_name`FROM `product` JOIN `category` on `product`.`cate_id`=`category`.`cate_id` LEFT JOIN `promotion`  on `product`.`promo_code`=`promotion`.`promo_code`
-    where `promotion`.`promo_code` like '%$key%' OR `promotion`.`promo_price` like '%$key%' OR `prod_name` like '%$key%' OR `price` like '%$key%' OR `quantity` like '%$key%' OR `date_added` like '%$key%' OR `category`.`cate_name` like '%$key%'";
+    where `promotion`.`promo_code` like '%$key%' OR `promotion`.`promo_price` like '%$key%' OR `prod_name` like N'%$key%' OR `price` like '%$key%' OR `quantity` like '%$key%' OR `date_added` like '%$key%' OR `category`.`cate_name` like '%$key%'";
     $query= mysqli_query($GLOBALS['conn'],$sql);
     
     while($row=mysqli_fetch_array($query)){
