@@ -12,8 +12,10 @@
             $_SESSION['username'] = $username;
              if ($row['account_type'] == 0) {
                 header('location: index.php');
+                exit();
             } else {
                 header('location: admin/index_admin.php');
+                exit();
             }
         } else {
             echo "<script>
@@ -21,6 +23,7 @@
                     alert('Sai tên đăng nhập hoặc mật khẩu!');
                 </script>";
             unset($_POST);
+            exit();
         }
     }
     

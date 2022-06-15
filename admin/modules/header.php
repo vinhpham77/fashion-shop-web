@@ -2,6 +2,7 @@
     session_start();
     if (!isset($_SESSION['username'])) {
         header('location: ../login.php');
+        exit();
     }
 ?>
 <!DOCTYPE html>
@@ -12,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/base.css">
     <link rel="stylesheet" href="../style/index.css">
     <link rel="stylesheet" href="../style/index_admin.css">
     <script defer src="../js/search_admin.js"></script>
