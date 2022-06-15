@@ -235,7 +235,7 @@
 
 .product-detail__quantity>div+div {
     position: relative;
-    border-radius: var(--small-border);
+    border-radius: var(--border);
     box-sizing: content-box;
     width: 140px;
     padding: 2px;
