@@ -69,8 +69,8 @@
     min-height: 150px;
 }
 
-.delivery-conten-below thead, .delivery-conten-below tfoot td:first-child {
-    text-transform: uppercase;
+.delivery-conten-below thead, .delivery-conten-below tfoot td {
+    text-transform: capitalize;
 }
 
 .delivery-conten-below table tbody {
@@ -126,6 +126,11 @@
 }
 
 .delivery-content-below-button button {
-    padding: 10px 20px;
-    min-width: 160px;
+    padding: 9px 20px;
+    font-weight: 500;
+    min-width: 150px;
+}
+
+.delivery-content-below-button .btn--white i {
+    margin: auto 5px;
 }
