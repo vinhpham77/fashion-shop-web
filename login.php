@@ -1,4 +1,6 @@
 <?php
+  require_once('site.php');
+  loadHeader();
     // include_once('modules/function/logout.php');
     if (!empty($_POST)) {
         $username = $_POST['username'];
@@ -22,8 +24,7 @@
             unset($_POST);
         }
     }
-    require_once('site.php');
-    loadHeader();
+    
     echo '<link rel="stylesheet" href="style/login.css">';
     loadMenu();
 ?>
