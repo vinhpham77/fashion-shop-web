@@ -47,7 +47,6 @@
 
 .cart-content-left table thead {
     border-bottom: 1px solid var(--hov-color);
-    width: calc(100% - 1em);
 }
 
 .cart-content-left td,
@@ -98,7 +97,6 @@ p {
     font-size: 22px;
     text-align: left;
     font-weight: normal;
-    font-size: x-large;
 }
 
 .cart-content-right td {

@@ -5,9 +5,21 @@ var tongtien = document.querySelector(".sizing-right-money span");
 var btn_dathang=document.querySelector(".cart-content-right-button");
 var btn_quaylui=document.querySelector(".cart-content-left-button");
 
-btn_quaylui.addEventListener("click",function(){
-    history.back();
-});
+var prodTableBody = document.querySelector(".cart-content-left table tbody");
+var prodTableHead = document.querySelector(".cart-content-left table thead");
+
+function setWidthProdTableHead() {
+    if (prodTableBody.scrollHeight > prodTableBody.clientHeight) {
+        prodTableHead.style.setProperty('width', 'calc(100% - 1em)');
+    } else {
+        prodTableHead.style.setProperty('width', '100%');
+    }
+
+    btn_quaylui.addEventListener("click",function(){
+        history.back();
+    });
+}
+setWidthProdTableHead();
 
 
 function truyenquathanhtoan(check)
@@ -51,9 +63,8 @@ function xoasp(x){
         tr.remove();
         id=x.parentElement.parentElement.getAttribute('product_id');
         size1=x.parentElement.parentElement.children[1].getAttribute('product_size');
-        console.log(size1);
         delete_item(id,size1);
-        alert("Bạn đã xóa thành công!");
+        setWidthProdTableHead();
     }
     number = document.querySelectorAll(".soluong");
     price_money = document.querySelectorAll(".thanhtien span");
