@@ -2,9 +2,9 @@
     <div>
         <h3>Dịch vụ khách hàng</h3>
         <ul>
-            <li><a href="">Hỏi đáp-FAQs</a></li>
-            <li><a href="">Chính sách đổi trả</a></li>
-            <li><a href="">Chính sách giao hàng</a></li>
+            <li><a href="https://www.google.com/">Hỏi đáp-FAQs</a></li>
+            <li><a href="https://www.google.com/">Chính sách đổi trả</a></li>
+            <li><a href="https://www.google.com/">Chính sách giao hàng</a></li>
         </ul>
     </div>
     <div>
@@ -19,16 +19,16 @@
     <div>
         <h3>Tuyển dụng</h3>
         <ul>
-            <li><a href="">Thông tin tuyển dụng</a></li>
-            <li><a href="">Chính sách đãi ngộ</a></li>
+            <li><a href="https://www.google.com/">Thông tin tuyển dụng</a></li>
+            <li><a href="https://www.google.com/">Chính sách đãi ngộ</a></li>
         </ul>
     </div>
     <div>
         <h3>Về chúng tôi</h3>
         <ul>
-            <li><a href="">Giới thiệu</a></li>
-            <li><a href="">Blogs</a></li>
-            <li><a href="">Kế hoạch tương lai</a></li>
+            <li><a href="https://www.google.com/">Giới thiệu</a></li>
+            <li><a href="https://www.google.com/">Blogs</a></li>
+            <li><a href="https://www.google.com/">Kế hoạch tương lai</a></li>
         </ul>
     </div>
     <div>

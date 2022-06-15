@@ -38,8 +38,8 @@
             ?>
             <li><a href="">THÔNG TIN<a>
                 <ul class="sub-menu">
-                    <li><a href="">Giới thiệu về 6AESN</a></li>
-                   <li> <a href="">Chính sách hoàn trả</a></li>
+                    <li><a href="https://www.google.com/">Giới thiệu về 6AESN</a></li>
+                   <li> <a href="https://www.google.com/">Chính sách hoàn trả</a></li>
                 </ul>
             </li>
         </div>
@@ -54,21 +54,20 @@
             </li>
             <li class="li_dangnhap">
             <?php
-                
-                    if(isset($_SESSION['username'])){
-                        echo'
-                        <i class="fa-solid fa-user"></i>
-                        <ul class="sub-menu-hienthi-dangnhap">
-                            <li><a onclick="dangxuat();">Đăng xuất</a></li>
-                            <li><a href="admin/doimk.php">Đổi mật khẩu</a></li>
-                        </ul>
-                        </li>
-                        <li><a class="fa--shopping-bag" href="giohang.php" title="Xem giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a></li>';
-                    }
-                    else
-                        echo'<a class="fa--user" href="login.php"><i class="fa-solid fa-user" title="Nhấn để đăng nhập"></i></a>
-                        </li>
-                        <li><a class="fa--shopping-bag" href="giohang.php" title="Xem giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a></li>';
+                if(isset($_SESSION['username'])){
+                    echo'
+                    <i class="fa-solid fa-user"></i>
+                    <ul class="sub-menu-hienthi-dangnhap">
+                        <li><a onclick="dangxuat();">Đăng xuất</a></li>
+                        <li><a href="admin/doimk.php">Đổi mật khẩu</a></li>
+                    </ul>
+                    </li>
+                    <li><a class="fa--shopping-bag" href="giohang.php" title="Xem giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a></li>';
+                }
+                else
+                    echo'<a class="fa--user" href="login.php"><i class="fa-solid fa-user" title="Nhấn để đăng nhập"></i></a>
+                    </li>
+                    <li><a class="fa--shopping-bag" href="giohang.php" title="Xem giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a></li>';
             ?>
         </div>
     </header>
