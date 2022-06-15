@@ -59,7 +59,7 @@
                     <i class="fa-solid fa-user"></i>
                     <ul class="sub-menu-hienthi-dangnhap">
                         <li><a onclick="dangxuat();">Đăng xuất</a></li>
-                        <li><a href="admin/doimk.php">Đổi mật khẩu</a></li>
+                        <li><a href="doimk.php">Đổi mật khẩu</a></li>
                     </ul>
                     </li>
                     <li><a class="fa--shopping-bag" href="giohang.php" title="Xem giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a></li>';

@@ -1,0 +1,40 @@
+.doimk {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    width: 350px;
+    box-shadow: var(--shadow) rgb(0 0 0 / 40%);
+    padding: 30px;
+    border-radius: var(--border);
+}
+
+.ten {
+    text-transform: uppercase;
+    color: var(--purple-title);
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.doimk label {
+    font-size: 95%;
+}
+
+.doimk input {
+    padding: 10px 5px;
+    width: 100%;
+    border-radius: var(--border);
+    margin-bottom: 10px;
+}
+
+.doimk button {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+}
+
+section {
+    position: relative;
+    height: 92vh;
+}
