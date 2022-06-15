@@ -1,10 +1,8 @@
 <?php 
-
     require_once('site.php');
     loadHeader();
     require_once('modules/function/directToLoginIfNot.php');
     require_once('modules/function/price.php');
-    
     echo '	<link rel="stylesheet" href="style/giohangmain.css">
     <script defer src="js/giohang-sukien.js"></script>">';
     loadMenu();
@@ -12,13 +10,17 @@
     <section class="cart-content">
             <div class="cart-content-left">
                 <table>
-                    <tr>
-						<th>Tên Sản Phẩm</th>
-                        <th></th>
-                        <th>Đơn giá</th>
-                        <th>Số lượng</th>
-                        <th>Tổng Tiền</th>
-                    </tr>
+                    <thead>
+                        <tr>
+    						<th>Ảnh</th>
+                            <th>Sản phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Tổng tiền</th>
+                            <th>Xoá</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     <?php
                         require('connect_db.php');
                         $kh=$_SESSION['username'];
@@ -42,19 +44,20 @@
                             $thanhtoan = $row['quantity']*$row['price'];
                             $thanhtoanformat = number_format($thanhtoan, 0, '', '.');
                             echo'
-                                <tr class="tr_id" product_id='.$row['prod_id'].'>
-                                    <td><img src="'.$directory.'/'.$hinh[0].'" alt=""></td>
-                                    <td class="kichcoSP" product_size='.$row['size'].'><p>'.$row['prod_name'].'<br/>size: '.$row['size'].'</p></td>
-                                    <td class="price-dollar"><p>'.$dongiaformat.'</p></td>
-                                    <td><input class="soluong" type="number" value="'.$row['quantity'].'" max="'.$rowslmax[$row['size']].'" min="1" ></td>
-                                    <td class="thanhtien"><span>'.$thanhtoanformat.' '."đ".'</span></td>
-                                    <td><input class="close-x" type="button" value="x" onclick="xoasp(this)"></td>
-                                </tr>';
+                                    <tr class="tr_id" product_id='.$row['prod_id'].'>
+                                        <td><img src="'.$directory.'/'.$hinh[0].'" alt=""></td>
+                                        <td class="kichcoSP" product_size='.$row['size'].'><p>'.$row['prod_name'].'<br/>size: '.$row['size'].'</p></td>
+                                        <td class="price-dollar"><p>'.$dongiaformat.'</p></td>
+                                        <td><input class="soluong" type="number" value="'.$row['quantity'].'" max="'.$rowslmax[$row['size']].'" min="1"></td>
+                                        <td class="thanhtien"><span>'.$thanhtoanformat.' '."đ".'</span></td>
+                                        <td><button class="close-x" onclick="xoasp(this)"><i class="fa-solid fa-xmark"></i></button></td>
+                                    </tr>';
                         }
                     ?>
+                    </tbody>
                 </table>
                 <div class="cart-content-left-button">
-                    <input type="submit" value="<---  Tiếp tục mua hàng" onclick="lienketMuaSam(this)">
+                    <button class="btn--black" type="submit" onclick="lienketDatHang();"><i class="fa-solid fa-left-long"></i> Quay lại mua hàng</button>
                 </div>
             </div>
             <div class="cart-content-right">
@@ -90,7 +93,8 @@
                     </tr>
                 </table>
                 <div class="cart-content-right-button">
-                    <input type="button" value="Đặt Hàng" onclick="<?php echo'truyenquathanhtoan('.$check.')';?>">
+
+                    <input type="button" value="Đặt Hàng" class="btn--black" onclick="<?php echo'truyenquathanhtoan('.$check.')';?>">
                 </div>
             </div>
         </div>

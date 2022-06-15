@@ -24,7 +24,7 @@ form>div>* {
 form>div button, form>div input{
     padding: 10px 4px;
     width: 100%;
-    border-radius: var(--small-border);
+    border-radius: var(--border);
 }
 
 .dangnhap>div.form-group {

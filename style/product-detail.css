@@ -218,7 +218,7 @@
     text-transform: uppercase;
     border: 2px solid lightgrey;
     user-select: none;
-    border-radius: var(--small-border);
+    border-radius: var(--border);
 }
 .product-detail__size>span.option{
     cursor: pointer;

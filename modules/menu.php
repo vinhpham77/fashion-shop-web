@@ -66,11 +66,10 @@
                         <li><a class="fa--shopping-bag" href="giohang.php" title="Xem giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a></li>';
                     }
                     else
-                        echo'<a class="fa--user" href="login.php"><i class="fa-solid fa-user"></i></a>
+                        echo'<a class="fa--user" href="login.php"><i class="fa-solid fa-user" title="Nhấn để đăng nhập"></i></a>
                         </li>
-                        <li><i class="fa-solid fa-cart-shopping"></i></li>';
-            ?>        
-           
+                        <li><a class="fa--shopping-bag" href="giohang.php" title="Xem giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a></li>';
+            ?>
         </div>
     </header>
     <section class="menu-gap"></section>

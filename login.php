@@ -1,7 +1,6 @@
 <?php
   require_once('site.php');
   loadHeader();
-    // include_once('modules/function/logout.php');
     if (!empty($_POST)) {
         $username = $_POST['username'];
         $password = md5($_POST['password']);
