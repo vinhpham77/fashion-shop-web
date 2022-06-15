@@ -60,7 +60,7 @@
 ?>
 <section>
     <form class="delivery-content" method="POST">
-        <h1>Địa Chỉ Giao Hàng</h1>
+        <h1>Thông Tin Giao Hàng</h1>
         <div class="delivery-conten-above">
             <div class="delivery-conten-above-input-1">
                 <div class="delivery-conten-above-input-item">
