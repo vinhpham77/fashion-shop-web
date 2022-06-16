@@ -18,9 +18,8 @@
                 <td class="text-info text-infor1">Shipping address</td>
             </tr>
             </div>
-
             <?php
-                require_once ('../connect_db.php');
+                require('../connect_db.php');
                 require_once('process_search.php');  
                 if(isset($_GET['key']))  { 
                     $key=$_GET['key']; 

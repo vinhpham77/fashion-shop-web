@@ -1,5 +1,5 @@
 <?php
-require_once ('../connect_db.php');
+require('../connect_db.php');
 $GLOBALS['conn']=$conn;
 function tim_khachhang($key){
     $sql="SELECT * FROM `account` WHERE `username` like '%$key%'OR `fullname` like '%$key%' OR `current_address` like N'%$key%' OR `email` like '%$key%' OR `phone_number` like '%$key%'";
