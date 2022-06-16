@@ -88,7 +88,7 @@
                             $rows = $results->fetch_array();
                             $tongtien = $rows[3];
                             $sumsanpham = number_format($tongtien, 0, '', '.');
-                            echo '<td class="sizing-right-money"><span>'.$sumsanpham.'</span><sup>đ</sup></td>';
+                            echo '<td class="sizing-right-money"><span>'.$sumsanpham.'</span>đ</td>';
                         ?>
                     </tr>
                 </table>
