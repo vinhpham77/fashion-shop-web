@@ -16,7 +16,7 @@ echo '<script defer src="../js/search_admin.js"></script>';
         </tr>
             <?php
 require '../connect_db.php';
-require_once 'process_search.php';
+require_once 'function/process_search.php';
 if (isset($_GET['key'])) {
 	$key = $_GET['key'];
 	tim_khachhang($key);

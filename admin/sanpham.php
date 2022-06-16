@@ -1,7 +1,7 @@
 <?php
-    require_once('site.php');
-    require_once('function/load-object.php');
-    loadHeader();
+require_once 'site.php';
+require_once 'function/load-object.php';
+loadHeader();
 ?>
 <div class="container">
     <div class="div-text">
@@ -20,23 +20,22 @@
                 <td class="text-info text-infor1">Ngày nhập</td>
             </tr>
             <?php
-                require_once('../connect_db.php');
-                require_once('process_search.php');
-            if (isset($_GET['key'])) {
-                $key=$_GET['key'];
-                tim_sanpham($key);
-            } else {
-                $sql="SELECT `promotion`.`promo_code`,`promotion`.`calc_unit`,`promotion`.`promo_price`, `calc_unit`, `prod_id`,`product`.`cate_id`,`prod_name`, `price`,`quantity`,`date_added`,`category`.`cate_name`FROM `product` JOIN `category` on `product`.`cate_id`=`category`.`cate_id` LEFT JOIN `promotion`  on `product`.`promo_code`=`promotion`.`promo_code`";
-                $query=mysqli_query($conn, $sql);
-                while ($row=mysqli_fetch_array($query)) {
-                    load_product($row);
-                }
-            }
-            ?>
+require_once '../connect_db.php';
+require_once 'function/process_search.php';
+if (isset($_GET['key'])) {
+	$key = $_GET['key'];
+	tim_sanpham($key);
+} else {
+	$sql = "SELECT `promotion`.`promo_code`,`promotion`.`calc_unit`,`promotion`.`promo_price`, `calc_unit`, `prod_id`,`product`.`cate_id`,`prod_name`, `price`,`quantity`,`date_added`,`category`.`cate_name`FROM `product` JOIN `category` on `product`.`cate_id`=`category`.`cate_id` LEFT JOIN `promotion`  on `product`.`promo_code`=`promotion`.`promo_code`";
+	$query = mysqli_query($conn, $sql);
+	while ($row = mysqli_fetch_array($query)) {
+		load_product($row);
+	}
+}
+?>
         </div>
     </table>
 </div>
-<script src="../js/sanpham_admin.js"></script>
 <?php
-    loadFooter();
+loadFooter();
 ?>

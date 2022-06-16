@@ -20,7 +20,7 @@ loadHeader();
         <?php
 function hienthi() {
 	require_once '../connect_db.php';
-	require_once 'process_search.php';
+	require_once 'function/process_search.php';
 	if (isset($_GET['key'])) {
 		$key = $_GET['key'];
 		tim_magiamgia($key);
@@ -32,7 +32,6 @@ function hienthi() {
 		}
 	}
 }
-
 hienthi();
 ?>
     </table>
@@ -101,7 +100,7 @@ hienthi();
         </div>
     </div>
 </div>
-<script src="../js/magiamgia_admin.js"></script>
+<script src="js/magiamgia_admin.js"></script>
 <?php
 loadFooter();
 ?>

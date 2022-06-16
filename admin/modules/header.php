@@ -31,7 +31,7 @@ if (!$valid) {
     <link rel="stylesheet" href="../fontawesome/css/all.min.css">
     <link rel="stylesheet" href="style/admin.css">
     <link rel="stylesheet" href="../style/base.css">
-    <script defer src="../js/search_admin.js"></script>
+    <script defer src="./js/search_admin.js"></script>
     <title>Admin</title>
 </head>
 <div id="main">
