@@ -66,8 +66,7 @@
                         <td>Tổng sản phẩm</td>
                         <?php 
                             $kh=$_SESSION['username'];
-                           
-                             if(isset($_GET['prod_id']) && isset($_GET['size']))
+                            if(isset($_GET['prod_id']) && isset($_GET['size']))
                                  $sql1 ="SELECT `quantity` FROM `cart` WHERE `username`='$kh' AND cart.prod_id='".$_GET['prod_id']."' AND cart.size='".$_GET['size']."' LIMIT 1";  
                             else
                                 $sql1 = "SELECT SUM(`quantity`) FROM `cart` WHERE `username` = '$kh'";
@@ -93,7 +92,6 @@
                     </tr>
                 </table>
                 <div class="cart-content-right-button">
-
                     <input type="button" value="Đặt Hàng" class="btn--black" onclick="<?php echo'truyenquathanhtoan('.$check.')';?>">
                 </div>
             </div>

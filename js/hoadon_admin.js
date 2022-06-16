@@ -1,10 +1,15 @@
- dong=document.querySelectorAll(".text2");
- header=document.querySelector('.heder-cthd');
- table = document.querySelector('.table-3');
+var dong=document.querySelectorAll(".text2");
+var header=document.querySelector('.heder-cthd');
+var table = document.querySelector('.table-3');
 dong.forEach((item,index)=>{
   item.addEventListener("click",function(){
     id=item.getAttribute('id_order');
     lay_id(id);
+    var selectedRow = document.querySelector(".selected");
+    if (selectedRow != null) {
+        selectedRow.classList.remove("selected");
+    }
+    item.classList.add("selected");
   })
 })
 function lay_id(id){
@@ -12,7 +17,6 @@ function lay_id(id){
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
       text=this.responseText;
-      console.log(text);
       header.innerHTML=text;
      }
   };

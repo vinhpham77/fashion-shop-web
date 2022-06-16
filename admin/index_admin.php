@@ -1,10 +1,10 @@
 <?php
-    require_once('site.php');
-    loadHeader();
+require_once 'site.php';
+loadHeader();
 ?>
 <div class="container">
-    <img src="../images/background-admin.jpg" alt="">;
+    <img src="../images/background-admin.jpg" alt="" width="100%" height="100%">;
 </div>
 <?php
-    loadFooter();
+loadFooter();
 ?>

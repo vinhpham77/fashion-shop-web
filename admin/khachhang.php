@@ -1,48 +1,35 @@
 <?php
-    require_once('site.php');
-    loadHeader();
-  echo'
-  <script defer src="../js/search_admin.js"></script>">';
+require_once 'site.php';
+require_once 'function/load-object.php';
+loadHeader();
+echo '<script defer src="../js/search_admin.js"></script>';
 ?>
 <div class="container">
-    <div class="div-text"><p class="text-khachhang">Thông tin khách hàng</p></div>
-
+    <div class="div-text"><p class="text-title">Thông tin khách hàng</p></div>
     <table class="table">
-        <div>
-            <div class="div-text1">
-            <tr class="text">
-                <td class="text-info text-infor1">Full Name</td>
-                <td class="text-info text-infor1">Address</td>
-                <td class="text-info text-infor1">Email</td>
-                <td class="text-info text-infor1">Phone Number</td>
-                <td class="text-info text-infor1">Shipping address</td>
-            </tr>
-            </div>
+        <tr class="text">
+            <td class="text-info text-infor1">Họ tên</td>
+            <td class="text-info text-infor1">Địa chỉ</td>
+            <td class="text-info text-infor1">Email</td>
+            <td class="text-info text-infor1">Số điện thoại</td>
+            <td class="text-info text-infor1">Địa chỉ nhận hàng</td>
+        </tr>
             <?php
-                require('../connect_db.php');
-                require_once('process_search.php');  
-                if(isset($_GET['key']))  { 
-                    $key=$_GET['key']; 
-                    tim_khachhang($key); 
-                }  
-                else{    
-                $sql="SELECT * FROM account where account_type = '0'";
-                $query=mysqli_query($conn,$sql);
-                while($row=mysqli_fetch_array($query)){
-                echo '
-            <tr class="text">
-                <td class="text-info">'.$row['fullname'].'</td>
-                <td class="text-info">'.$row['current_address'].'</td>
-                <td class="text-info">'.$row['email'].'</td>
-                <td class="text-info">'.$row['phone_number'].'</td>
-                <td class="text-info">'.$row['shipping_address'].'</td>
-            </tr>';
-                }
-            }
-            ?>
-        </div>
+require '../connect_db.php';
+require_once 'process_search.php';
+if (isset($_GET['key'])) {
+	$key = $_GET['key'];
+	tim_khachhang($key);
+} else {
+	$sql = "SELECT * FROM account where account_type = '0'";
+	$query = mysqli_query($conn, $sql);
+	while ($row = mysqli_fetch_array($query)) {
+		load_customer($row);
+	}
+}
+?>
     </table>
 </div>
 <?php
-    loadFooter();
+loadFooter();
 ?>
