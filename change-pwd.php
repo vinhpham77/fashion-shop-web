@@ -1,19 +1,20 @@
+
 <?php
-    require_once('site.php');
-    require('connect_db.php');
-    $conn = new mysqli('localhost', 'root', '', '6aesn') or die('Không thể kết nối cơ sở dữ liệu');
-    $conn->set_charset('utf8');
-    if (!empty($_POST['username']) && !empty($_POST['password_cu']) && !empty($_POST['password_moi'])) {
-        $username = $_POST['username'];
-        $password_cu = md5($_POST['password_cu']);
-        $password_moi = md5($_POST['password_moi']);
-        $sql = "SELECT account_type FROM account WHERE username ='".$username."' AND password ='".$password_cu."'";
-        $row = mysqli_query($conn,$sql);
-        $count = mysqli_num_rows($row);
-        if ($count > 0) {
-            $sql_update = mysqli_query($conn,"UPDATE account SET password ='".$password_moi."' WHERE username = '$username'");
-            $type = $row->fetch_assoc()['account_type'];
-            echo "<script>
+require_once 'site.php';
+require 'connect_db.php';
+$conn = new mysqli('localhost', 'root', '', '6aesn') or die('Không thể kết nối cơ sở dữ liệu');
+$conn->set_charset('utf8');
+if (!empty($_POST['username']) && !empty($_POST['password_cu']) && !empty($_POST['password_moi'])) {
+	$username = $_POST['username'];
+	$password_cu = md5($_POST['password_cu']);
+	$password_moi = md5($_POST['password_moi']);
+	$sql = "SELECT account_type FROM account WHERE username ='" . $username . "' AND password ='" . $password_cu . "'";
+	$row = mysqli_query($conn, $sql);
+	$count = mysqli_num_rows($row);
+	if ($count > 0) {
+		$sql_update = mysqli_query($conn, "UPDATE account SET password ='" . $password_moi . "' WHERE username = '$username'");
+		$type = $row->fetch_assoc()['account_type'];
+		echo "<script>
                     alert('Đổi mật khẩu thành công!');
                     if ($type == 0) {
                         window.location.href = 'index.php';
@@ -21,17 +22,17 @@
                         window.location.href = 'admin/index_admin.php';
                     }
                 </script>";
-        } else {
-            echo "<script>
+	} else {
+		echo "<script>
                     alert('Sai tài khoản hoặc mật khẩu cũ! Vui lòng nhập lại');
                     history.back();
                 </script>";
-                unset($_POST);
-        }
-    }
-    loadHeader();
-    echo '<link rel="stylesheet" href="style/doimk.css"/>';
-    loadMenu();
+		unset($_POST);
+	}
+}
+loadHeader();
+echo '<link rel="stylesheet" href="style/doimk.css"/>';
+loadMenu();
 ?>
 
 <section>
@@ -47,5 +48,5 @@
     </form>
 </section>
 <?php
-    loadFooter();
+loadFooter();
 ?>

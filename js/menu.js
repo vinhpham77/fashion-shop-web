@@ -17,11 +17,10 @@ function dangxuat(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            text=this.responseText;
-            location.reload();
+            window.location.href = "login.php";
        }
     };
     xhttp.open("POST", "modules/function/logout.php", true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhttp.send('id='+5);
+    xhttp.send('');
 }
