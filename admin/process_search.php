@@ -2,7 +2,7 @@
 require('../connect_db.php');
 $GLOBALS['conn']=$conn;
 function tim_khachhang($key){
-    $sql="SELECT * FROM `account` WHERE `username` like '%$key%'OR `fullname` like '%$key%' OR `current_address` like N'%$key%' OR `email` like '%$key%' OR `phone_number` like '%$key%'";
+    $sql="SELECT * FROM `account` WHERE account_type = '0' AND `username` like '%$key%'OR `fullname` like '%$key%' OR `current_address` like N'%$key%' OR `email` like '%$key%' OR `phone_number` like '%$key%' ";
     $query= mysqli_query($GLOBALS['conn'],$sql);
     while($row=mysqli_fetch_array($query)){
         echo '

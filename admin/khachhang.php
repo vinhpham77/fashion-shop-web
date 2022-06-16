@@ -26,7 +26,7 @@
                     tim_khachhang($key); 
                 }  
                 else{    
-                $sql="SELECT *FROM account";
+                $sql="SELECT * FROM account where account_type = '0'";
                 $query=mysqli_query($conn,$sql);
                 while($row=mysqli_fetch_array($query)){
                 echo '

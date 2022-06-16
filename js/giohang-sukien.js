@@ -74,14 +74,14 @@ number.forEach((item, index)=>{
     item.onchange=function(){
         var soluong = parseInt(item.value);
         var sluongmax= parseInt(item.max);
-        var gia = item.parentElement.previousElementSibling.children[0].innerHTML.replaceAll('.', '');
+        var gia = item.parentElement.previousElementSibling.children[0].innerHTML;
+        gia = gia.replaceAll('.', '').replace('đ', '');
         var giathanh;
          
         giathanh = gia * soluong;
-        item.parentElement.nextElementSibling.children[0].innerHTML= giathanh.toLocaleString('de-DE')+' đ';
+        item.parentElement.nextElementSibling.children[0].innerHTML= giathanh.toLocaleString('de-DE')+'đ';
         var tongSLSP = tongsl(number);
         SumNumber.innerHTML = tongSLSP;
-
         var tongtienmathang = tongtienhang(price_money);
         if(soluong<0){
             alert("Vui lòng nhập số lượng > 0");

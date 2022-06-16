@@ -74,10 +74,6 @@ p {
     padding: 2px 6px;
 }
 
-.kichcoSP p {
-    text-transform: uppercase;
-}
-
 /*---------cart-content-right----------*/
 .cart-content-right {
     width: 30%;
@@ -117,4 +113,14 @@ p {
     font-size: 20px;
     text-transform: uppercase;
     margin-top: 25px;
+}
+
+
+.prod_name {
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+
+.prod_size {
+    text-transform: uppercase;
 }
