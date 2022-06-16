@@ -2,13 +2,13 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.php"><img  src="./images/logo.png" alt="logo" title="Về trang chủ"></a>
+            <a href="./"><img  src="./images/logo.png" alt="logo" title="Về trang chủ"></a>
         </div>
 
         <div class="menu">
             <?php
                 require('connect_db.php');
-                require_once('modules/function/menu.php');
+                require_once('function/menu.php');
 
                 $first = 0;
                 $sql = "SELECT cate_id, cate_name, parent_cate_id FROM category ORDER BY position";
@@ -17,7 +17,7 @@
                 $cateTree = getSubCates($cates, $first);
                 showCategory($cateTree, $first);
 
-                include_once('modules/function/price.php');
+                include_once('function/price.php');
                 $sql = "SELECT * FROM promotion ORDER BY promo_name";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
@@ -59,7 +59,7 @@
                     <i class="fa-solid fa-user"></i>
                     <ul class="sub-menu-hienthi-dangnhap">
                         <li><a onclick="dangxuat();">Đăng xuất</a></li>
-                        <li><a href="doimk.php">Đổi mật khẩu</a></li>
+                        <li><a href="change-pwd.php">Đổi mật khẩu</a></li>
                     </ul>
                     </li>
                     <li><a class="fa--shopping-bag" href="giohang.php" title="Xem giỏ hàng"><i class="fa-solid fa-cart-shopping"></i></a></li>';

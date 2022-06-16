@@ -1,9 +1,6 @@
-
 <?php
 require_once 'site.php';
 require 'connect_db.php';
-$conn = new mysqli('localhost', 'root', '', '6aesn') or die('Không thể kết nối cơ sở dữ liệu');
-$conn->set_charset('utf8');
 if (!empty($_POST['username']) && !empty($_POST['password_cu']) && !empty($_POST['password_moi'])) {
 	$username = $_POST['username'];
 	$password_cu = md5($_POST['password_cu']);
@@ -31,7 +28,7 @@ if (!empty($_POST['username']) && !empty($_POST['password_cu']) && !empty($_POST
 	}
 }
 loadHeader();
-echo '<link rel="stylesheet" href="style/doimk.css"/>';
+echo '<link rel="stylesheet" href="style/change-pwd.css"/>';
 loadMenu();
 ?>
 

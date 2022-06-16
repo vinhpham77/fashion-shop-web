@@ -65,11 +65,6 @@ icon_search.addEventListener("click", function() {
 function tim_khachhang(key) {
 
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            text = this.responseText;
-        }
-    };
     xhttp.open("POST", "function/process_search.php", true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=khachhang&key=' + key.value);
@@ -78,11 +73,6 @@ function tim_khachhang(key) {
 function tim_hoadon(key) {
 
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            text = this.responseText;
-        }
-    };
     xhttp.open("POST", "function/process_search.php", true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=hoadon&key=' + key.value);
@@ -91,11 +81,6 @@ function tim_hoadon(key) {
 function tim_magiamgia(key) {
 
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            text = this.responseText;
-        }
-    };
     xhttp.open("POST", "function/process_search.php", true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=magiamgia&key=' + key.value);
@@ -104,11 +89,6 @@ function tim_magiamgia(key) {
 function tim_sanpham(key) {
 
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            text = this.responseText;
-        }
-    };
     xhttp.open("POST", "function/process_search.php", true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=sanpham&key=' + key.value);

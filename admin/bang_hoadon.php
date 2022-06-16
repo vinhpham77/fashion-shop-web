@@ -1,7 +1,7 @@
 
 <?php
     require_once('../connect_db.php');
-    require_once('../modules/function/price.php');
+    require_once('../function/price.php');
     echo '<table class="table">
     <tr class="header-text-cthd text">
         <td class="text-info text-infor1">Mã sản phẩm</td>

@@ -14,7 +14,7 @@
                 header('location: index.php');
                 exit();
             } else {
-                header('location: admin/index_admin.php');
+                header('location: admin/index.php');
                 exit();
             }
         } else {

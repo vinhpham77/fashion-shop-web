@@ -6,7 +6,7 @@ let exit = document.querySelector('.controller__exit');
 let next = document.querySelector('.controller__next');
 let prev = document.querySelector('.controller__prev');
 let currentIndex = 0;
-let id=document.querySelector('.product-detail__name').getAttribute('prod_id');
+let id = document.querySelector('.product-detail__name').getAttribute('prod_id');
 //let slmaxx=document.querySelector('.product-detail__name').getAttribute('slmaxx');
 
 
@@ -63,7 +63,6 @@ prev.onclick = function() {
 
 let sizes = document.querySelectorAll('.product-detail__size > span.option');
 let sizeName = document.querySelector('.product-detail__size > p > span');
-
 let quantityInput = document.querySelector('#quantity');
 
 sizes.forEach(function(item) {
@@ -75,29 +74,28 @@ sizes.forEach(function(item) {
         }
         item.classList.add('size--checked');
         item.classList.add('checked');
-        quantityInput.value=1;
+        quantityInput.value = 1;
         sizeName.innerHTML = item.innerHTML;
-        laysp(id,sizeName.innerHTML);
+        laysp(id, sizeName.innerHTML);
     }
 })
 
 let plus = document.querySelector('.fa-plus');
 let minus = document.querySelector('.fa-minus');
 
-
 plus.onclick = function() {
-     soluonginput=parseInt(quantityInput.value);
-    soluonginputmax=parseInt(quantityInput.max);
+    soluonginput = parseInt(quantityInput.value);
+    soluonginputmax = parseInt(quantityInput.max);
     if (soluonginput < soluonginputmax) {
         quantityInput.value++;
     }
 }
 
 minus.onclick = function() {
-    soluonginput=parseInt(quantityInput.value);
-    soluonginputmax=parseInt(quantityInput.max);
+    soluonginput = parseInt(quantityInput.value);
+    soluonginputmax = parseInt(quantityInput.max);
     if (soluonginput > 1) {
-        quantityInput.value--;      
+        quantityInput.value--;
     }
 }
 
@@ -123,8 +121,8 @@ btnBuyNow.onclick = function() {
     if (checkedSize === null) {
         alert("Bạn chưa chọn size!");
     } else {
-        update_number(id,quantityInput.value,sizeName.innerHTML);
-        window.location.href = "giohang.php?prod_id="+id+"&size="+sizeName.innerHTML ;
+        update_number(id, quantityInput.value, sizeName.innerHTML);
+        window.location.href = "giohang.php?prod_id=" + id + "&size=" + sizeName.innerHTML;
     }
 }
 
@@ -133,45 +131,34 @@ btnAddToCart.onclick = function() {
     if (checkedSize === null) {
         alert("Bạn chưa chọn size!");
     } else {
-        update_number(id,quantityInput.value,sizeName.innerHTML);
+        update_number(id, quantityInput.value, sizeName.innerHTML);
         alert("Thêm vào giỏ hàng thành công!");
     }
 }
-function update_number(id,values,size){
+
+function update_number(id, values, size) {
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        text=this.responseText;
-        console.log(text);
-   
-       }
-    };
-    xhttp.open("POST", "update_product-detail.php", true);
+    xhttp.open("POST", "function/update_product-detail.php", true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhttp.send('U=update&pro_id='+id+'&quantity='+values+'&size='+size);
-}
-function insert_pro(id,values,size){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        text=this.responseText;
-       }
-    };
-    xhttp.open("POST", "update_product-detail.php", true);
-    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhttp.send('U=insert&pro_id='+id+'&quantity='+values+'&size='+size);
-}
-function laysp(id,size){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        text=this.responseText;
-        quantityInput.max=text;
-       }
-    };
-    xhttp.open("POST", "modules/function/process_size.php", true);
-    console.log(quantityInput.max);
-    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhttp.send('U=2&prod_id='+id+'&size='+size);
+    xhttp.send('U=update&pro_id=' + id + '&quantity=' + values + '&size=' + size);
 }
 
+function insert_pro(id, values, size) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "function/update_product-detail.php", true);
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhttp.send('U=insert&pro_id=' + id + '&quantity=' + values + '&size=' + size);
+}
+
+function laysp(id, size) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            text = this.responseText;
+            quantityInput.max = text;
+        }
+    };
+    xhttp.open("POST", "function/process_size.php", true);
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhttp.send('U=2&prod_id=' + id + '&size=' + size);
+}

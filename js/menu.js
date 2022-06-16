@@ -20,7 +20,7 @@ function dangxuat(){
             window.location.href = "login.php";
        }
     };
-    xhttp.open("POST", "modules/function/logout.php", true);
+    xhttp.open("POST", "function/logout.php", true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('');
 }

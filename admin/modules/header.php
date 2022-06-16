@@ -37,7 +37,7 @@ if (!$valid) {
 <div id="main">
        <div id="header">
             <ul class="nav nav-left">
-                <li><a href="index_admin.php">Admin</a></li>
+                <li><a href="./">Admin</a></li>
                 <li><a href="khachhang.php">Khách hàng</a></li>
                 <li><a href="sanpham.php">Sản phẩm</a></li>
                 <li><a href="hoadon.php">Hóa đơn</a></li>

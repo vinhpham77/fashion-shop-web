@@ -2,51 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.row {
-    margin-left: -8px;
-    margin-right: -8px;
-}
-
-.col {
-    float: left;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-
-.row::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.col-third {
-    width: 33.3333%;
-}
-
-.col-half {
-    width: 50%;
-}
-
-.col-full {
-    width: 100%;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.mt-8 {
-    margin-top: 8px !important;
-}
-
-.mt-16 {
-    margin-top: 16px !important;
-}
-
-.mainsp {
-    background-color: #000;
-}
-
 #header {
     height: 46px;
     background-color: #000;
@@ -109,11 +64,12 @@ html {
     margin: 0;
     font-size: inherit;
     width: 80%;
+    padding: 8px;
 }
 
 .search-icon {
     color: white;
-    padding: 11px;
+    padding: 11px 11px 8px 11px;
     cursor: pointer;
     border: 2px solid lightgrey;
     font-size: inherit;
@@ -168,20 +124,6 @@ html {
     font-size: 13px;
 }
 
-#footer {
-    height: 50px;
-    background-color: #000;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-}
-
-#footer-hoadon {
-    position: relative;
-}
-
 .div-text {
     padding: 20px 0;
     background-color: #FFF;
@@ -207,13 +149,6 @@ html {
     color: rgb(0, 0, 0);
     background-color: rgb(204, 204, 204);
     cursor: pointer;
-}
-
-.container-cthd {
-    background-color: rgba(204, 204, 204, 0.6);
-    width: 30%;
-    margin-right: 10px;
-    z-index: 0;
 }
 
 .hinhanh_sp {

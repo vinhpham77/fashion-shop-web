@@ -8,7 +8,7 @@
 <section id="Slider">
     <div class="aspect-ratio-169">
         <?php
-            require 'modules/function/image.php';
+            require 'function/image.php';
             $_Load = getImages("images/sliders");
             $n = count($_Load);
             for($i = 0; $i < $n; $i++) {

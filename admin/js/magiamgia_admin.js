@@ -89,19 +89,12 @@ btn_message_cancel.addEventListener("click", function() {
 
 function insert_discount(input_macode, input_tencode, input_tiengiam, input_donvitinh) {
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            text = this.responseText;
-            console.log(text);
-        }
-    };
     xhttp.open("POST", "function/process_insert_mgg.php", true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=insert&macode=' + input_macode.value + '&tencode=' + input_tencode.value + '&tiengiam=' + input_tiengiam.value + '&donvitinh=' + input_donvitinh.value);
 }
 
 function xoamgg(x) {
-
     btn_message_agree.addEventListener("click", function() {
         var macode = x.parentElement.parentElement.getAttribute('promo_id');
         delete_mgg(macode);
@@ -113,12 +106,6 @@ function xoamgg(x) {
 
 function delete_mgg(id) {
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            text = this.responseText;
-            console.log(text);
-        }
-    };
     xhttp.open("POST", "function/process_insert_mgg.php", true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=delete&macode=' + id);
