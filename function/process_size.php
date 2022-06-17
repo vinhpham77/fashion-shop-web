@@ -1,5 +1,5 @@
 <?php
-require_once("../../connect_db.php");
+require_once("../connect_db.php");
 laysizemax($conn);
 function laysizemax($conn){
     $sql1="SELECT ".$_POST['size']." from size where prod_id='".$_POST['prod_id']."'"  ;
