@@ -52,7 +52,6 @@
 .cart-content-left td,
 p {
     font-size: 15px;
-    color: #4d4d4d;
     text-align: center;
 }
 
@@ -97,7 +96,6 @@ p {
 
 .cart-content-right td {
     font-size: 19px;
-    color: #4d4d4d;
 }
 
 .cart-content-right-text p {
@@ -123,4 +121,8 @@ p {
 
 .prod_size {
     text-transform: uppercase;
+}
+
+.prod_col {
+    width: 30%;
 }

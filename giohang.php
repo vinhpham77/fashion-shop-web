@@ -13,7 +13,7 @@ loadMenu();
                 <thead>
                     <tr>
 						<th>Ảnh</th>
-                        <th>Sản phẩm</th>
+                        <th class="prod_col">Sản phẩm</th>
                         <th>Đơn giá</th>
                         <th>Số lượng</th>
                         <th>Tổng tiền</th>
@@ -46,7 +46,7 @@ while ($row = mysqli_fetch_array($kq)) {
 	echo '
         <tr class="tr_id" product_id=' . $row['prod_id'] . '>
             <td><img src="' . $directory . '/' . $hinh[0] . '" alt=""></td>
-            <td class="kichcoSP" product_size=' . $row['size'] . '><p class="prod_name">' . $row['prod_name'] . '</p>Size: <span class="prod_size">' . $row['size'] . '</span></td>
+            <td class="kichcoSP prod_col" product_size=' . $row['size'] . '><p class="prod_name">' . $row['prod_name'] . '</p>Size: <span class="prod_size">' . $row['size'] . '</span></td>
             <td class="price-dollar"><p>' . $dongiaformat . 'đ</p></td>
             <td><input class="soluong" type="number" value="' . $row['quantity'] . '" max="' . $rowslmax[$row['size']] . '" min="1"></td>
             <td class="thanhtien"><span>' . $thanhtoanformat . "đ" . '</span></td>
