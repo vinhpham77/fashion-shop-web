@@ -27,6 +27,10 @@
     cursor: pointer;
 }
 
+.products-top-right select {
+    outline: none;
+}
+
 #btn-filter {
     margin-left: 8px;
 }
