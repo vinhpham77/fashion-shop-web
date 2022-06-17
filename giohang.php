@@ -4,7 +4,7 @@ loadHeader();
 require_once 'function/directToLoginIfNot.php';
 require_once 'function/price.php';
 echo '<link rel="stylesheet" href="style/giohangmain.css">
-    <script defer src="js/giohang-sukien.js"></script>">';
+    <script defer src="js/giohang-sukien.js"></script>';
 loadMenu();
 ?>
     <section class="cart-content">

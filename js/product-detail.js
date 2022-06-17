@@ -117,22 +117,26 @@ let btnBuyNow = document.querySelector('.btn--buy-now');
 let btnAddToCart = document.querySelector('.btn--add-to-cart');
 
 btnBuyNow.onclick = function() {
-    let checkedSize = document.querySelector('.size--checked');
-    if (checkedSize === null) {
-        alert("Bạn chưa chọn size!");
-    } else {
-        update_number(id, quantityInput.value, sizeName.innerHTML);
-        window.location.href = "giohang.php?prod_id=" + id + "&size=" + sizeName.innerHTML;
+    if(loggedIn()) {
+        let checkedSize = document.querySelector('.size--checked');
+        if (checkedSize === null) {
+            alert("Bạn chưa chọn size!");
+        } else {
+            update_number(id, quantityInput.value, sizeName.innerHTML);
+            window.location.href = "giohang.php?prod_id=" + id + "&size=" + sizeName.innerHTML;
+        }
     }
 }
 
 btnAddToCart.onclick = function() {
-    let checkedSize = document.querySelector('.size--checked');
-    if (checkedSize === null) {
-        alert("Bạn chưa chọn size!");
-    } else {
-        update_number(id, quantityInput.value, sizeName.innerHTML);
-        alert("Thêm vào giỏ hàng thành công!");
+    if (loggedIn()) {
+        let checkedSize = document.querySelector('.size--checked');
+        if (checkedSize === null) {
+            alert("Bạn chưa chọn size!");
+        } else {
+            update_number(id, quantityInput.value, sizeName.innerHTML);
+            alert("Thêm vào giỏ hàng thành công!");
+        }
     }
 }
 
@@ -161,4 +165,14 @@ function laysp(id, size) {
     xhttp.open("POST", "function/process_size.php", true);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=2&prod_id=' + id + '&size=' + size);
+}
+
+function loggedIn(){
+    let submenuLogin = document.querySelector('.sub-menu-hienthi-dangnhap');
+    if (submenuLogin == null) {
+        alert('Vui lòng đăng nhập trước!');
+        window.location.href = 'login.php';
+        return false;
+    }
+    return true;
 }
