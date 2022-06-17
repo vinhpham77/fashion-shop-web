@@ -48,12 +48,18 @@ while ($row = mysqli_fetch_array($kq)) {
             <td><img src="' . $directory . '/' . $hinh[0] . '" alt=""></td>
             <td class="kichcoSP prod_col" product_size=' . $row['size'] . '><p class="prod_name">' . $row['prod_name'] . '</p>Size: <span class="prod_size">' . $row['size'] . '</span></td>
             <td class="price-dollar"><p>' . $dongiaformat . 'đ</p></td>
-            <td><input class="soluong" type="number" value="' . $row['quantity'] . '" max="' . $rowslmax[$row['size']] . '" min="1"></td>
+            <td>
+                <div class="quantity_col">
+                    <i class="fa-solid fa-minus"></i>
+                    <input type="number" name="quantity" class="soluong" id="quantity" min="1" max="25" value="1" readonly=""><i class="fa-solid fa-plus"></i>
+                </div>
+            </td>
             <td class="thanhtien"><span>' . $thanhtoanformat . "đ" . '</span></td>
             <td><button class="close-x" onclick="xoasp(this)"><i class="fa-solid fa-xmark"></i></button></td>
         </tr>';
 }
 ?>
+                <!-- <input class="soluong" type="number" value="' . $row['quantity'] . '" max="' . $rowslmax[$row['size']] . '" min="1"> -->
                 </tbody>
             </table>
             <div class="cart-content-left-button">

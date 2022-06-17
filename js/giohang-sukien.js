@@ -38,8 +38,6 @@ function truyenquathanhtoan(check) {
     }
 }
 
-
-
 function xoasp(x) {
     var tr = x.parentElement.parentElement;
     var thongbao = confirm("Bạn có chắc chắn muốn xóa không?");
@@ -78,26 +76,16 @@ number.forEach((item, index) => {
         var tongSLSP = tongsl(number);
         SumNumber.innerHTML = tongSLSP;
         var tongtienmathang = tongtienhang(price_money);
-        if (soluong < 0) {
-            alert("Vui lòng nhập số lượng > 0");
-            item.value = 1;
-            item.onchange();
-        }
-        tongtien.innerHTML = tongtienmathang.toLocaleString('de-DE');
-        id = item.parentElement.parentElement.getAttribute('product_id');
-        size1 = item.parentElement.previousElementSibling.previousElementSibling.getAttribute('product_size');
-        if (sluongmax < soluong) {
-            alert("Số lượng tối đa có thể mua là: " + sluongmax);
-            item.value = 1;
-            item.onchange();
-        }
-        update_number(id, soluong, size1);
-        if (soluong == '') {
-            alert("Vui lòng không để trống!");
+        if (soluong < 0 || soluong > sluongmax) {
             item.value = 1;
             item.onchange();
         }
 
+        tongtien.innerHTML = tongtienmathang.toLocaleString('de-DE');
+        id = item.parentElement.parentElement.getAttribute('product_id');
+        size1 = item.parentElement.previousElementSibling.previousElementSibling.getAttribute('product_size');
+
+        update_number(id, soluong, size1);
     }
 })
 
@@ -130,3 +118,39 @@ function delete_item(id, size1) {
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=delete&pro_id=' + id + '&size=' + size1);
 }
+
+let plus = document.querySelectorAll('.fa-plus');
+let minus = document.querySelectorAll('.fa-minus');
+plus.forEach(item => {
+    item.onclick = function() {
+        let quantityInput = item.previousElementSibling;
+        soluonginput = parseInt(quantityInput.value);
+        soluonginputmax = parseInt(quantityInput.max);
+        if (soluonginput < soluonginputmax) {
+            quantityInput.value++;
+        }
+    }
+})
+
+minus.forEach(item => {
+    item.onclick = function() {
+        let quantityInput = item.nextElementSibling;
+        soluonginput = parseInt(quantityInput.value);
+        soluonginputmax = parseInt(quantityInput.max);
+        if (soluonginput > 1) {
+            quantityInput.value--;
+        }
+    }
+})
+
+// plus.onclick = function() {
+//     soluonginput = parseInt(quantityInput.value);
+//     soluonginputmax = parseInt(quantityInput.max);
+//     if (soluonginput < soluonginputmax) {
+//         quantityInput.value++;
+//     }
+// }
+
+// minus.onclick = function() {
+
+// }
