@@ -196,6 +196,14 @@
     text-transform: uppercase;
 }
 
+.product-detail__price {
+    margin-top: 10px;
+}
+
+.product-detail__price * {
+    font-size: 120%;
+}
+
 .price--normal {
     text-decoration: line-through;
     color: lightgrey;

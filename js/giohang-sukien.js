@@ -27,7 +27,7 @@ function truyenquathanhtoan(check) {
         var id = document.querySelector('.tr_id');
         var size = document.querySelector('.kichcoSP');
         if (id == null)
-            alert("Chưa có sp nào!!!");
+            alert("Chưa có sản phẩm nào!");
         else {
             var get_id = id.getAttribute('product_id');
             var get_size = size.getAttribute('product_size');
@@ -63,7 +63,7 @@ function xoasp(x) {
     price_money = document.querySelectorAll(".thanhtien span");
 }
 
-number.forEach((item, index) => {
+number.forEach(item => {
     item.onchange = function() {
         var soluong = parseInt(item.value);
         var sluongmax = parseInt(item.max);
@@ -84,7 +84,6 @@ number.forEach((item, index) => {
         tongtien.innerHTML = tongtienmathang.toLocaleString('de-DE');
         id = item.parentElement.parentElement.getAttribute('product_id');
         size1 = item.parentElement.previousElementSibling.previousElementSibling.getAttribute('product_size');
-
         update_number(id, soluong, size1);
     }
 })
