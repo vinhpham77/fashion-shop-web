@@ -42,8 +42,9 @@ function xoasp(x) {
     var tr = x.parentElement.parentElement;
     var thongbao = confirm("Bạn có chắc chắn muốn xóa không?");
     if (thongbao == true) {
-        var numberone = x.parentElement.parentElement.children[3].children[0].value;
-        var tongtienmacdinh = x.parentElement.parentElement.children[4].children[0].innerHTML.replaceAll('.', '');
+        var tr = x.parentElement.parentElement;
+        var numberone = tr.children[3].children[0].children[1].value;
+        var tongtienmacdinh = tr.children[4].children[0].innerHTML.replaceAll('.', '');
         var tinhtong = tongtienmacdinh.replaceAll('đ', '');
 
         var soluongcu = SumNumber.innerHTML;
@@ -54,8 +55,8 @@ function xoasp(x) {
         var thanhtoanhientai = thanhtoancu - tinhtong;
         tongtien.innerHTML = thanhtoanhientai.toLocaleString('de-DE');
         tr.remove();
-        id = x.parentElement.parentElement.getAttribute('product_id');
-        size1 = x.parentElement.parentElement.children[1].getAttribute('product_size');
+        id = tr.getAttribute('product_id');
+        size1 = tr.children[1].getAttribute('product_size');
         delete_item(id, size1);
         setWidthProdTableHead();
     }
@@ -67,12 +68,12 @@ number.forEach(item => {
     item.onchange = function() {
         var soluong = parseInt(item.value);
         var sluongmax = parseInt(item.max);
-        var gia = item.parentElement.previousElementSibling.children[0].innerHTML;
+        var quantity_col = item.parentElement.parentElement;
+        var gia = quantity_col.previousElementSibling.firstElementChild.innerHTML;
         gia = gia.replaceAll('.', '').replace('đ', '');
         var giathanh;
-
         giathanh = gia * soluong;
-        item.parentElement.nextElementSibling.children[0].innerHTML = giathanh.toLocaleString('de-DE') + 'đ';
+        quantity_col.nextElementSibling.children[0].innerHTML = giathanh.toLocaleString('de-DE') + 'đ';
         var tongSLSP = tongsl(number);
         SumNumber.innerHTML = tongSLSP;
         var tongtienmathang = tongtienhang(price_money);
@@ -82,8 +83,8 @@ number.forEach(item => {
         }
 
         tongtien.innerHTML = tongtienmathang.toLocaleString('de-DE');
-        id = item.parentElement.parentElement.getAttribute('product_id');
-        size1 = item.parentElement.previousElementSibling.previousElementSibling.getAttribute('product_size');
+        id = quantity_col.parentElement.getAttribute('product_id');
+        size1 = quantity_col.previousElementSibling.previousElementSibling.getAttribute('product_size');
         update_number(id, soluong, size1);
     }
 })
@@ -127,6 +128,7 @@ plus.forEach(item => {
         soluonginputmax = parseInt(quantityInput.max);
         if (soluonginput < soluonginputmax) {
             quantityInput.value++;
+            quantityInput.onchange();
         }
     }
 })
@@ -138,6 +140,7 @@ minus.forEach(item => {
         soluonginputmax = parseInt(quantityInput.max);
         if (soluonginput > 1) {
             quantityInput.value--;
+            quantityInput.onchange();
         }
     }
 })
