@@ -110,7 +110,7 @@
 .gallery--small {
     flex: 20%;
     max-width: 20%;
-    padding: 2px;
+    padding: 1px;
 }
 
 .product-detail__gallery>div>img {
