@@ -24,7 +24,7 @@ loadMenu();
                 <?php
                 require 'connect_db.php';
                 $kh = $_SESSION['username'];
-                $check = isset($_GET['prod_id']);
+                $check = isset($_GET['prod_id']) ? "true" : "false";
                 $sql = "SELECT cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,product.price, promotion.promo_code, promo_price,    calc_unit
                             FROM cart JOIN product ON cart.prod_id=product.prod_id
                             LEFT JOIN promotion ON product.promo_code = promotion.promo_code ";
@@ -82,7 +82,10 @@ loadMenu();
 
                         $results = $conn->query($sql1);
                         $rows = $results->fetch_array();
-                        $soluong = $rows[0] ? $rows[0] : 0;
+                        $soluong = 0;
+                        if ($results->num_rows > 0 && $rows[0] != null) {
+                            $soluong = $rows[0];
+                        }
                         echo '<td class="sizing-right-number"><span>' . $soluong . '</span></td>';?>
                     </tr>
                     <tr>
@@ -109,7 +112,7 @@ loadMenu();
                     </tr>
                 </table>
                 <div class="cart-content-right-button">
-                    <input type="button" value="Đặt Hàng" class="btn--black" onclick="<?php echo 'truyenquathanhtoan(' . $check . ')'; ?>">
+                    <input type="button" value="Đặt Hàng" class="btn--black" onclick="truyenquathanhtoan(<?php echo $check; ?>);">
                 </div>
             </div>
         </div>

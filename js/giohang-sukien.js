@@ -21,20 +21,19 @@ function setWidthProdTableHead() {
 }
 setWidthProdTableHead();
 
-
 function truyenquathanhtoan(check) {
-    if (check == 1) {
-        var id = document.querySelector('.tr_id');
-        var size = document.querySelector('.kichcoSP');
-        if (id == null)
-            alert("Chưa có sản phẩm nào!");
+    if (SumNumber.innerHTML > 0) {
+        if (check == false)
+            window.location.href = "delivery.php";
         else {
+            var id = document.querySelector('.tr_id');
+            var size = document.querySelector('.kichcoSP');
             var get_id = id.getAttribute('product_id');
             var get_size = size.getAttribute('product_size');
             window.location.href = "delivery.php?id=" + get_id + "&size=" + get_size;
         }
     } else {
-        window.location.href = "delivery.php";
+        alert("Chưa có sản phẩm nào để đặt hàng!");
     }
 }
 
@@ -144,15 +143,3 @@ minus.forEach(item => {
         }
     }
 })
-
-// plus.onclick = function() {
-//     soluonginput = parseInt(quantityInput.value);
-//     soluonginputmax = parseInt(quantityInput.max);
-//     if (soluonginput < soluonginputmax) {
-//         quantityInput.value++;
-//     }
-// }
-
-// minus.onclick = function() {
-
-// }
