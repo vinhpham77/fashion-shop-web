@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th6 17, 2022 lúc 07:52 AM
--- Phiên bản máy phục vụ: 8.0.27
--- Phiên bản PHP: 7.4.26
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jun 17, 2022 at 08:21 AM
+-- Server version: 8.0.27
+-- PHP Version: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `6aesn`
+-- Database: `6aesn`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `account`
+-- Table structure for table `account`
 --
 
 DROP TABLE IF EXISTS `account`;
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `account` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin COMMENT='tài khoản';
 
 --
--- Đang đổ dữ liệu cho bảng `account`
+-- Dumping data for table `account`
 --
 
 INSERT INTO `account` (`username`, `password`, `account_type`, `fullname`, `current_address`, `email`, `phone_number`, `shipping_address`) VALUES
@@ -57,7 +57,7 @@ INSERT INTO `account` (`username`, `password`, `account_type`, `fullname`, `curr
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cart`
+-- Table structure for table `cart`
 --
 
 DROP TABLE IF EXISTS `cart`;
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=ascii COLLATE=ascii_bin COMMENT='giỏ hàng';
 
 --
--- Đang đổ dữ liệu cho bảng `cart`
+-- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`username`, `prod_id`, `size`, `quantity`) VALUES
@@ -91,7 +91,7 @@ INSERT INTO `cart` (`username`, `prod_id`, `size`, `quantity`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category`
+-- Table structure for table `category`
 --
 
 DROP TABLE IF EXISTS `category`;
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin COMMENT='danh mục';
 
 --
--- Đang đổ dữ liệu cho bảng `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`cate_id`, `cate_name`, `parent_cate_id`, `position`) VALUES
@@ -140,7 +140,7 @@ INSERT INTO `category` (`cate_id`, `cate_name`, `parent_cate_id`, `position`) VA
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `description`
+-- Table structure for table `description`
 --
 
 DROP TABLE IF EXISTS `description`;
@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `description` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin COMMENT='mô tả';
 
 --
--- Đang đổ dữ liệu cho bảng `description`
+-- Dumping data for table `description`
 --
 
 INSERT INTO `description` (`prod_id`, `introduction`, `detail`, `maintenance`) VALUES
@@ -187,10 +187,10 @@ INSERT INTO `description` (`prod_id`, `introduction`, `detail`, `maintenance`) V
 (28, 'Quần dài khaki cạp có đỉa<br>2 túi trước, 2 viền túi có khuy cài phía sau<br>Cài bằng khóa kéo và khuy.<br>Được may từ chất liệu Khaki thiết kế đơn giản nhưng đem đến cho người mặc cảm giác thoải mái dễ chịu<br>Bạn có thể kết hợp sản phẩm với trang phục, phụ kiện phù hợp để có một diện mạo hợp thời, mang đậm \"Gu\" của riêng mình.<br>Màu sắc: Gold - Đen - Xanh Tím Than', 'Dòng sản phẩm: Men<br>Nhóm sản phẩm: Quần<br>Kiểu dáng: Slim<br>Độ dài: Qua mắt cá chân<br>Họa tiết: Trơn<br>Chất liệu: Khaki', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (29, 'Quần dài khaki kiểu dáng Slim, đai quần có đỉa<br>2 túi chéo trước, 2 túi sau có khuy cài<br>Thiết kế tối giản, các chi tiết may tỉ mỉ, tinh tế, mang đến diện mạo chỉn chu, lịch lãm cho người mặc<br>Cài bằng khóa kéo và khuy cài.<br>Chất liệu Khaki thoáng mát, thấm hút mồ hôi tốt và khả năng giữ bền form dáng sau nhiều lần giặt.<br>Màu sắc: Đen - Be', 'Dòng sản phẩm: Men<br>Nhóm sản phẩm: Quần<br>Kiểu dáng: Slim<br>Độ dài: Qua mắt cá chân<br>Họa tiết: Trơn<br>Chất liệu: Khaki', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (30, 'Quần khaki, có 2 túi có nắp phía giữa ống quần cài khuy<br>Cài phía trước bằng khóa kéo và khuy, có dây kéo rút.<br>Chất vải khaki ít nhàu, không bai, không xù<br>Đường may chỉn chu, tinh tế khiến quần rất bền<br>Không chỉ phổ biến nơi công sở, bạn hoàn toàn có thể biến tấu cho riêng mình bằng cách mix-match cùng sơ mi, áo thun hoặc len mỏng để trở thành chàng trai lịch thiệp trong mọi trường hợp.<br>Màu sắc: Rêu Khói - Xanh Tím Than', 'Dòng sản phẩm: Men<br>Nhóm sản phẩm: Quần<br>Kiểu dáng: Khác<br>Độ dài: Qua mắt cá chân<br>Họa tiết: Trơn<br>Chất liệu: Khaki', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
-(31, 'Quần sooc bò màu đen dáng regular fit<br>Có 5 túi<br>Cạp sử dụng khóa và khuy kim loại, mặt trước rách cá tính<br>Màu đen hiện đại, phù hợp với thời trang dạo phố.<br>Denim là một loại vải được dệt từ sợi bông trong đó các sợi bông được nhuộm dệt từ 1 sợi màu và 1 sợi trắng<br>Vải denim có độ bền cực kỳ cao<br><br>Màu sắc: Đen', 'Dòng sản phẩm:	Men<br>Nhóm sản phẩm:	Quần<br>Kiểu dáng:	Regular fit<br>Độ dài:	        Ngang gối<br>Họa tiết	Trơn<br>Chất liệu:	Denim', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
+(31, 'Quần sooc bò màu đen dáng regular fit<br>Có 5 túi<br>Cạp sử dụng khóa và khuy kim loại, mặt trước rách cá tính<br>Màu đen hiện đại, phù hợp với thời trang dạo phố.<br>Denim là một loại vải được dệt từ sợi bông trong đó các sợi bông được nhuộm dệt từ 1 sợi màu và 1 sợi trắng<br>Vải denim có độ bền cực kỳ cao<br>Màu sắc: Đen', 'Dòng sản phẩm:	Men<br>Nhóm sản phẩm:	Quần<br>Kiểu dáng:	Regular fit<br>Độ dài:	        Ngang gối<br>Họa tiết	Trơn<br>Chất liệu:	Denim', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (32, 'Quần jean dài chạm mắt cá chân<br>Dáng quần ôm nhẹ, ống đứng<br>Chất liệu vải denim trơn, dày dặn<br>Đằng trước có khuy cài và khóa kéo<br>Phía sau có túi ngang, phía trước có 2 túi chéo.<br>Màu sắc: Đen', 'Dòng sản phẩm:	Men<br>Nhóm sản phẩm:	Quần<br>Kiểu dáng:	Slim fit<br>Độ dài:	        Qua mắt cá chân<br>Họa tiết	Trơn<br>Chất liệu:	Denim', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
-(33, 'Quần jeans ống đứng<br>Gấu lật<br>Có 5 túi<br>Mặt trước mài sáng<br>Cài phía trước bằng khóa kéo và khuy<br>Dáng quần Slim fit là sản phẩm must-have trong tủ đồ của bạn vì tính ứng dụng rất cao<br>Phù hợp với mọi tỉ lệ cơ thể cũng như biến hóa với gần như tất cả outfit của bạn<br><br>Màu sắc: Xanh Lơ', 'Dòng sản phẩm:	Men<br>Nhóm sản phẩm:	Quần<br>Kiểu dáng:	Slim fit<br>Độ dài:	        Qua mắt cá chân<br>Họa tiết	Trơn<br>Chất liệu:	Denim', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
-(34, 'Quần jeans ống đứng<br>Gấu lật<br>Có 5 túi<br>Mặt trước mài sáng<br>Cài phía trước bằng khóa kéo và khuy<br>Dáng quần Slim fit là sản phẩm must-have trong tủ đồ của bạn vì tính ứng dụng rất cao<br>Phù hợp với mọi tỉ lệ cơ thể cũng như biến hóa với gần như tất cả outfit của bạn<br><br>Màu sắc: Xanh Lơ', 'Dòng sản phẩm:	Men<br>Nhóm sản phẩm:	Quần<br>Kiểu dáng:	Slim fit<br>Độ dài:	        Qua mắt cá chân<br>Họa tiết	Trơn<br>Chất liệu:	Denim', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
+(33, 'Quần jeans ống đứng<br>Gấu lật<br>Có 5 túi<br>Mặt trước mài sáng<br>Cài phía trước bằng khóa kéo và khuy<br>Dáng quần Slim fit là sản phẩm must-have trong tủ đồ của bạn vì tính ứng dụng rất cao<br>Phù hợp với mọi tỉ lệ cơ thể cũng như biến hóa với gần như tất cả outfit của bạn<br>Màu sắc: Xanh Lơ', 'Dòng sản phẩm:	Men<br>Nhóm sản phẩm:	Quần<br>Kiểu dáng:	Slim fit<br>Độ dài:	        Qua mắt cá chân<br>Họa tiết	Trơn<br>Chất liệu:	Denim', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
+(34, 'Quần jeans ống đứng<br>Gấu lật<br>Có 5 túi<br>Mặt trước mài sáng<br>Cài phía trước bằng khóa kéo và khuy<br>Dáng quần Slim fit là sản phẩm must-have trong tủ đồ của bạn vì tính ứng dụng rất cao<br>Phù hợp với mọi tỉ lệ cơ thể cũng như biến hóa với gần như tất cả outfit của bạn<br>Màu sắc: Xanh Lơ', 'Dòng sản phẩm:	Men<br>Nhóm sản phẩm:	Quần<br>Kiểu dáng:	Slim fit<br>Độ dài:	        Qua mắt cá chân<br>Họa tiết	Trơn<br>Chất liệu:	Denim', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (35, 'Quần jeans ống suông, dài qua mắt cá chân<br>Kiểu bạc màu<br>Gấu lật<br>Có 5 túi<br>Cài phía trước bằng khóa kéo và khuy.<br>Màu sắc: Xanh Lơ - Đen', 'Dòng sản phẩm:	Men<br>Nhóm sản phẩm:	Quần<br>Kiểu dáng:	Slim fit<br>Độ dài:	        Qua mắt cá chân<br>Họa tiết	Trơn<br>Chất liệu:	Denim', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (36, 'Set áo thun được in hình logo mặt cười IVY Kids<br>Bộ bao gồm áo suông, tay phồng và quần giả váy vạt lệch<br>Thiết kế nữ tính nhưng vẫn rộng rãi và thoải mái, phù hợp để bé mặc đi học hoặc đi chơi<br>Hình in sắc nét, tươi sáng làm tăng thêm độ đáng yêu.<br>Màu sắc: Nude - Hồng', 'Dòng sản phẩm:	Girl<br>Nhóm sản phẩm:	Áo<br>Cổ áo:	        Cổ tròn<br>Tay áo:	        Tay ngắn<br>Kiểu dáng:	Xuông<br>Độ dài:	        Dài thường<br>Họa tiết	Trơn<br>Chất liệu:	Thun', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (37, 'Set áo thun được in hình logo mặt cười IVY Kids<br>Bộ bao gồm áo suông, tay phồng và quần giả váy vạt lệch<br>Thiết kế nữ tính nhưng vẫn rộng rãi và thoải mái, phù hợp để bé mặc đi học hoặc đi chơi<br>Hình in sắc nét, tươi sáng làm tăng thêm độ đáng yêu.<br>Màu sắc: Nude - Hồng', '<br>Dòng sản phẩm:	Girl<br>Nhóm sản phẩm:	Áo<br>Cổ áo:	        Cổ tròn<br>Tay áo:	        Tay ngắn<br>Kiểu dáng:	Xuông<br>Độ dài:	        Dài thường<br>Họa tiết	Trơn<br>Chất liệu:	Thun', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
@@ -202,8 +202,8 @@ INSERT INTO `description` (`prod_id`, `introduction`, `detail`, `maintenance`) V
 (43, 'Quần sooc cạp chun co giãn có đính nơ trang trí<br>2 túi chéo 2 bên<br>Ống quần ngang đùi, thêu hoa nổi cùng màu.<br>Màu sắc: Cam Đào - Vàng hoa cúc', 'Dòng sản phẩm:	Girl<br>Nhóm sản phẩm:	Quần<br>Kiểu dáng:	Ống đứng<br>Độ dài:	        Ngang đùi<br>Họa tiết	Trơn<br>Chất liệu:	Thô', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (44, 'Quần sooc cạp chun co giãn có đính nơ trang trí<br>2 túi chéo 2 bên<br>Ống quần ngang đùi, thêu hoa nổi cùng màu.<br>Màu sắc: Cam Đào - Vàng hoa cúc', '<br>Dòng sản phẩm:	Girl<br>Nhóm sản phẩm:	Quần<br>Kiểu dáng:	Ống đứng<br>Độ dài:	        Ngang đùi<br>Họa tiết	Trơn<br>Chất liệu:	Thô', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (45, 'Jumpsuit bé gái cổ tròn, tay sát nách<br>Eo chiết có chần chun co giãn<br>Quần ngắn ngang đùi, 2 túi vuông 2 bên<br>Cài bằng hàng khuy phía trước<br>Mặt sau lưng có đường chần chun co giãn tạo kiểu.<br>Màu sắc: Họa tiết Be - Họa tiết chì - Hồng Phấn', 'Dòng sản phẩm:	Girl<br>Nhóm sản phẩm:	Jumpsuit<br>Cổ áo:	        Cổ tròn<br>Tay áo:	        Tay ngắn<br>Kiểu dáng:	Xuông<br>Họa tiết	Chấm bi,Hoa,Trơn<br>Chất liệu:	Thun', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
-(46, 'Đầm thun dáng suông, độ dài ngang gối, tay áo lửng<br>Trên đầm được in hình chú cún đáng yêu<br><br>Chiếc đầm này phù hợp để bé gái diện đi chơi trong mùa hè.<br>Màu sắc: Cam - Đỏ', '<br>Dòng sản phẩm:	Girl<br>Nhóm sản phẩm:	Đầm<br>Cổ áo:	        Cổ tròn<br>Tay áo:	        Tay ngắn<br>Kiểu dáng:	Suông<br>Độ dài:	        Ngang gối<br>Họa tiết	Trơn<br>Chất liệu:	Thun', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
-(47, 'Đầm thun dáng suông, độ dài ngang gối, tay áo lửng<br>Trên đầm được in hình chú cún đáng yêu<br><br>Chiếc đầm này phù hợp để bé gái diện đi chơi trong mùa hè.<br>Màu sắc: Cam - Đỏ', '<br>Dòng sản phẩm:	Girl<br>Nhóm sản phẩm:	Đầm<br>Cổ áo:	        Cổ tròn<br>Tay áo:	        Tay ngắn<br>Kiểu dáng:	Suông<br>Độ dài:	        Ngang gối<br>Họa tiết	Trơn<br>Chất liệu:	Thun', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
+(46, 'Đầm thun dáng suông, độ dài ngang gối, tay áo lửng<br>Trên đầm được in hình chú cún đáng yêu<br>Chiếc đầm này phù hợp để bé gái diện đi chơi trong mùa hè.<br>Màu sắc: Cam - Đỏ', '<br>Dòng sản phẩm:	Girl<br>Nhóm sản phẩm:	Đầm<br>Cổ áo:	        Cổ tròn<br>Tay áo:	        Tay ngắn<br>Kiểu dáng:	Suông<br>Độ dài:	        Ngang gối<br>Họa tiết	Trơn<br>Chất liệu:	Thun', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
+(47, 'Đầm thun dáng suông, độ dài ngang gối, tay áo lửng<br>Trên đầm được in hình chú cún đáng yêu<br>Chiếc đầm này phù hợp để bé gái diện đi chơi trong mùa hè.<br>Màu sắc: Cam - Đỏ', '<br>Dòng sản phẩm:	Girl<br>Nhóm sản phẩm:	Đầm<br>Cổ áo:	        Cổ tròn<br>Tay áo:	        Tay ngắn<br>Kiểu dáng:	Suông<br>Độ dài:	        Ngang gối<br>Họa tiết	Trơn<br>Chất liệu:	Thun', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (48, 'Đầm dáng babydoll bao gồm 2 lớp: lớp thun trong dài trên gối, lớp voan bay bên ngoài dài qua gối<br>Phía đằng trước áo đầm có hình in hoa rực rỡ<br>Đầm cổ tròn và tay ngắn dáng cơ bản.<br>Chiếc đầm đáng yêu này sẽ là lựa chọn tuyệt vời cho sự kiện đặc biệt của các bé gái<br>Dáng đầm công chúa dễ thương biến mọi cô nàng nhỏ trở thành tâm điểm của bữa tiệc.<br>Màu sắc: Hồng san hô', 'Dòng sản phẩm:	Girl<br>Nhóm sản phẩm:	Đầm<br>Cổ áo:	        Cổ tròn<br>Tay áo:	        Tay ngắn<br>Kiểu dáng:	Đầm xòe<br>Độ dài:	        Ngang gối<br>Họa tiết	Trơn<br>Chất liệu:	Thun', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (49, 'Thiết kế đầm lụa mềm mại, dễ thương dành cho bé gái<br>Trên cầu vai, phía trước đầm và từng tầng của tà váy đều được nhấn chun và béo đáng yêu<br>Dáng đầm xòe tự nhiên, rộng rãi, phù hợp với mọi bạn nhỏ.<br>Màu sắc: Họa tiết Đỏ mận', '<br>Dòng sản phẩm:	Girl<br>Nhóm sản phẩm:	Đầm<br>Cổ áo:	        Cổ vuông<br>Tay áo:	        Tay ngắn<br>Kiểu dáng:	Đầm xòe<br>Độ dài:	        Trên gối<br>Họa tiết	Họa tiết khác<br>Chất liệu:	Lụa<br>', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
 (50, 'Đầm dáng babydoll được nhấn 3 tầng, dáng xòe, độ dài qua gối<br>Tay lửng phồng bản lớn<br>Họa tiết hoa nhí nhiều màu sắc được sử dụng trong toàn bộ thiết kế.<br>Chiếc đầm nữ tính này sẽ là item mẹ không thể bỏ qua cho bé nhà mình<br>Dáng đầm đậm chất công chúa sẵn sàng khiến mọi cô bé trở nên lộng lẫy không tưởng.<br>Màu sắc: Họa tiết Xanh táo - Họa tiết Đỏ thẫm', '<br>Dòng sản phẩm:	Girl<br>Nhóm sản phẩm:	Đầm<br>Cổ áo:	        Cổ tròn<br>Tay áo:	        Tay ngắn<br>Kiểu dáng:	Đầm xòe<br>Độ dài:	        Trên gối<br>Họa tiết	Hoa<br>Chất liệu:	Thô<br>', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.'),
@@ -242,8 +242,8 @@ INSERT INTO `description` (`prod_id`, `introduction`, `detail`, `maintenance`) V
 (85, 'Áo thun dáng suông, độ dài vừa phải, không có ống tay, vai nối dài, cổ tròn<br>Phía trước áo được in câu quote với phối màu ombre.<br>Một mẫu áo thun cơ bản dành cho nàng diện trong những ngày hè nắng nóng<br>Dáng áo không tay kết hợp cùng phần vai nối dài đem đến cảm giác mát mẻ mà vẫn giữ nguyên tính chỉn chu, lịch sự<br>Sáng áo suông với độ dài vừa phải mang đến nhiều cách mix-match khác nhau cho nàng thoải mái lựa chọn.<br>Màu sắc: Trắng - Nude<br>Mẫu mặc size S:<br>Chiều cao: 1m69<br>Cân nặng: 48kg<br>Số đo: 8<br>-6<br>-9<br>cm', 'Dòng sản phẩm:	You<br>Nhóm sản phẩm:	Áo<br>Cổ áo:	Cổ tròn<br>Tay áo:	Sát nách<br>Kiểu dáng:	Xuông<br>Độ dài:	Dài thường<br>Họa tiết	Trơn<br>Chất liệu:	Thun', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.<br>* Vải voan , lụa , chiffon nên giặt bằng tay.<br>* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.<br>* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.<br>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. <br>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.');
 INSERT INTO `description` (`prod_id`, `introduction`, `detail`, `maintenance`) VALUES
 (86, 'Áo dáng croptop cạp ngắn, ống tay dài, cổ tròn<br>Thân áo được thiết kế dựa trên các đường xếp ly nhỏ cố định<br>Tay áo phồng và được bo chun ở đầu ống<br>Phần eo có dây dài cùng màu để buộc, thắt theo ý thích<br>Cổ áo phía sau có khuy cài kim loại<br>Thân áo được may 2 lớp, tay áo được may 1 lớp có độ xuyên thấu nhẹ.<br>Màu sắc: Đỏ mận<br>Mẫu mặc size S:<br>Chiều cao: 1m68<br>Cân nặng: 52kg<br>Số đo 3 vòng: 83-62-95cm', 'Dòng sản phẩm:	You<br>Nhóm sản phẩm:	Áo<br>Cổ áo:	Cổ tròn<br>Tay áo:	Tay lỡ<br>Kiểu dáng:	Ôm<br>Độ dài:	Croptop<br>Họa tiết	Trơn<br>Chất liệu:	Lụa', ' Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.<br>* Vải voan , lụa , chiffon nên giặt bằng tay.<br>* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.<br>* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.<br>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. <br>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.'),
-(87, 'Áo croptop cổ kiểu, vạt chéo <br>Tay ngắn<br>Dáng croptop ngang eo - chần chun co giãn<br>Cài bằng khuy giọt lệ phía sau.<br>Đơn giản, nhỏ gọn lại được may bằng chất liệu lụa mỏng, không nhăn, mang theo bên mình trong những chuyến đi chơi là lựa chọn thông minh cho cô nàng hiện đại<br>Mix cùng quần jean, zuýp các loại hoặc quần short cũng đủ nàng biến hóa nhiều phong cách mong muốn<br><br>Màu sắc: Hồng san hô - Nude<br>Mẫu mặc size S:<br>Chiều cao: 1m65<br>Cân nặng: 47kg<br>Số đo 3 vòng: 82-61-89 cm', 'Dòng sản phẩm:	Ladies<br>Nhóm sản phẩm:	Áo<br>Cổ áo:	Cổ khác<br>Tay áo:	Tay ngắn<br>Kiểu dáng:	Bo gấu<br>Độ dài:	Croptop<br>Họa tiết	Trơn<br>Chất liệu:	Lụa', ' Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.<br>* Vải voan , lụa , chiffon nên giặt bằng tay.<br>* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.<br>* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.<br>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. <br>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.<br>* Các sản phẩm có thể giặt bằng máy thì chỉ nên để chế độ giặt nhẹ , vắt mức trung bình và nên phân các loại sản phẩm cùng màu và cùng loại vải khi giặt.'),
-(88, 'Áo croptop cổ đức có thêu chữ 1 bên<br>Có 3 khuy tạo kiểu phía trước phần cổ V cách điệu<br>Dáng áo croptop<br><br>Sử dụng chất vải Tuysi với những ưu điểm vượt trội như: Thoáng mát, thấm nước tốt, độ bền cao giúp thiết kế trở nên nổi bật<br>Đừng quên mix cùng quần sooc, jeans,..<br>và phụ kiện nhé<br>Màu sắc: Đen - Cam<br>Mẫu mặc size S:<br>Chiều cao: 1m68<br>Cân nặng: 52kg<br>Số đo 3 vòng: 83-62-95cm', 'Dòng sản phẩm:	Ladies<br>Nhóm sản phẩm:	Áo<br>Cổ áo:	Cổ đức<br>Tay áo:	Tay ngắn<br>Kiểu dáng:	Ôm<br>Độ dài:	Croptop<br>Họa tiết	Trơn<br>Chất liệu:	Tuysi', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.<br>* Vải voan , lụa , chiffon nên giặt bằng tay.<br>* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.<br>* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.<br>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. <br>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.'),
+(87, 'Áo croptop cổ kiểu, vạt chéo <br>Tay ngắn<br>Dáng croptop ngang eo - chần chun co giãn<br>Cài bằng khuy giọt lệ phía sau.<br>Đơn giản, nhỏ gọn lại được may bằng chất liệu lụa mỏng, không nhăn, mang theo bên mình trong những chuyến đi chơi là lựa chọn thông minh cho cô nàng hiện đại<br>Mix cùng quần jean, zuýp các loại hoặc quần short cũng đủ nàng biến hóa nhiều phong cách mong muốn<br>Màu sắc: Hồng san hô - Nude<br>Mẫu mặc size S:<br>Chiều cao: 1m65<br>Cân nặng: 47kg<br>Số đo 3 vòng: 82-61-89 cm', 'Dòng sản phẩm:	Ladies<br>Nhóm sản phẩm:	Áo<br>Cổ áo:	Cổ khác<br>Tay áo:	Tay ngắn<br>Kiểu dáng:	Bo gấu<br>Độ dài:	Croptop<br>Họa tiết	Trơn<br>Chất liệu:	Lụa', ' Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.<br>* Vải voan , lụa , chiffon nên giặt bằng tay.<br>* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.<br>* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.<br>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. <br>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.<br>* Các sản phẩm có thể giặt bằng máy thì chỉ nên để chế độ giặt nhẹ , vắt mức trung bình và nên phân các loại sản phẩm cùng màu và cùng loại vải khi giặt.'),
+(88, 'Áo croptop cổ đức có thêu chữ 1 bên<br>Có 3 khuy tạo kiểu phía trước phần cổ V cách điệu<br>Dáng áo croptop<br>Sử dụng chất vải Tuysi với những ưu điểm vượt trội như: Thoáng mát, thấm nước tốt, độ bền cao giúp thiết kế trở nên nổi bật<br>Đừng quên mix cùng quần sooc, jeans,..<br>và phụ kiện nhé<br>Màu sắc: Đen - Cam<br>Mẫu mặc size S:<br>Chiều cao: 1m68<br>Cân nặng: 52kg<br>Số đo 3 vòng: 83-62-95cm', 'Dòng sản phẩm:	Ladies<br>Nhóm sản phẩm:	Áo<br>Cổ áo:	Cổ đức<br>Tay áo:	Tay ngắn<br>Kiểu dáng:	Ôm<br>Độ dài:	Croptop<br>Họa tiết	Trơn<br>Chất liệu:	Tuysi', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.<br>* Vải voan , lụa , chiffon nên giặt bằng tay.<br>* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.<br>* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.<br>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. <br>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.'),
 (89, 'Áo croptop cổ chữ V xếp nếp<br>Tay áo liền<br>Dáng áo croptop bo gấu<br>Phía sau có dây thắt nơ tạo điểm nhấn<br>Cài bằng khóa kéo sau lưng.<br>Sử dụng vải thô lụa thoáng khí, nhẹ nhàng tạo cảm giác dễ chịu cho người mặc<br>Nàng có thể mix cùng quần âu công sở, quần jeans hay zuýp các loại.<br>Màu sắc: Họa tiết Nude - Đen - Nude<br>Mẫu mặc size S:<br>Chiều cao: 1m68<br>Cân nặng: 52kg<br>Số đo 3 vòng: 83-62-95cm', 'Dòng sản phẩm:	Ladies<br>Nhóm sản phẩm:	Áo<br>Cổ áo:	Cổ chữ V<br>Tay áo:	Tay liền<br>Kiểu dáng:	Bo gấu<br>Độ dài:	Croptop<br>Họa tiết	Hoa,Trơn<br>Chất liệu:	Lụa,Thô', '* Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.<br>* Vải voan , lụa , chiffon nên giặt bằng tay.<br>* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.<br>* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.<br>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. <br>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.'),
 (90, 'Áo croptop cổ tròn bằng chun co giãn, tay cánh dơi gấu lật<br>Gấu chần chun đều co giãn, bo phía dưới<br>Mặt trước in hàng chữ khác màu tạo điểm hút.<br>Kiểu dáng độc lạ cho 1 chiếc áo thun<br>Chất liệu thun cao cấp nhẹ, mềm, thấm hút mồ hôi, siêu co dãn...Mix cùng quần Jean, chân váy, zuýp dài...bạn sẽ có những set đồ thời trang, cá tính, lịch sự.<br>Màu sắc: Cam Đậm - Trắng<br>Mẫu mặc size S:<br>Chiều cao: 1m7<br>Cân nặng: 47kg<br>Số đo 3 vòng: 78-6<br>-9<br>', '<br>Dòng sản phẩm:	You<br>Nhóm sản phẩm:	Áo<br>Cổ áo:	Cổ tròn<br>Tay áo:	Cánh dơi<br>Kiểu dáng:	Bo gấu<br>Độ dài:	Croptop<br>Họa tiết	Trơn<br>Chất liệu:	Thun', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.<br>* Vải voan , lụa , chiffon nên giặt bằng tay.<br>* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.<br>* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.<br>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. <br>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.'),
 (91, 'Chân váy dáng xòe, xếp ly to nhỏ so le nhau<br>Đai bản lớn rộng khoảng 3-4cm, vải lụa trơn<br>Chất liệu chính của váy là Tuysi<br>Độ dài váy trên gối.<br>Thiết chân váy cơ bản phù hợp để nàng diện trong nhiều dịp khác nhau<br>Dáng váy thanh lịch nhưng vẫn trẻ trung, dễ mix-match theo nhiều phong cách<br>Màu sắc: Đen - Nude<br>Mẫu mặc size S:<br>Chiều cao: 1m68<br>Cân nặng: 52kg<br>Số đo 3 vòng: 83-62-95cm', '<br>Dòng sản phẩm:	You<br>Nhóm sản phẩm:	Zuýp<br>Kiểu dáng:	Xếp ly<br>Độ dài:	Trên gối<br>Họa tiết	Trơn<br>Chất liệu:	Tuysi', 'Vải dệt kim : sau khi giặt sản phẩm phải được phơi ngang tránh bai dãn.<br>* Vải voan , lụa , chiffon nên giặt bằng tay.<br>* Vải thô , tuytsy , kaki không có phối hay trang trí đá cườm thì có thể giặt máy.<br>* Vải thô , tuytsy, kaki có phối màu tường phản hay trang trí voan , lụa , đá cườm thì cần giặt tay.<br>* Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans.Nếu giặt thì nên lộn trái sản phẩm khi giặt , đóng khuy , kéo khóa, không nên giặt chung cùng đồ sáng màu , tránh dính màu vào các sản phẩm khác. <br>* Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu , phân biệt màu và loại vải để tránh trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh , nên giặt cùng xà phòng pha loãng.'),
@@ -265,7 +265,7 @@ INSERT INTO `description` (`prod_id`, `introduction`, `detail`, `maintenance`) V
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `order`
+-- Table structure for table `order`
 --
 
 DROP TABLE IF EXISTS `order`;
@@ -281,7 +281,7 @@ CREATE TABLE IF NOT EXISTS `order` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=ascii COLLATE=ascii_bin COMMENT='hoá đơn';
 
 --
--- Đang đổ dữ liệu cho bảng `order`
+-- Dumping data for table `order`
 --
 
 INSERT INTO `order` (`order_id`, `username`, `fullname`, `phone_number`, `shipping_address`, `pay_date`) VALUES
@@ -293,7 +293,7 @@ INSERT INTO `order` (`order_id`, `username`, `fullname`, `phone_number`, `shippi
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `order-detail`
+-- Table structure for table `order-detail`
 --
 
 DROP TABLE IF EXISTS `order-detail`;
@@ -308,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `order-detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=ascii COLLATE=ascii_bin COMMENT='chi tiết hoá đơn';
 
 --
--- Đang đổ dữ liệu cho bảng `order-detail`
+-- Dumping data for table `order-detail`
 --
 
 INSERT INTO `order-detail` (`order_id`, `prod_id`, `size`, `price`, `quantity`) VALUES
@@ -325,7 +325,7 @@ INSERT INTO `order-detail` (`order_id`, `prod_id`, `size`, `price`, `quantity`) 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product`
+-- Table structure for table `product`
 --
 
 DROP TABLE IF EXISTS `product`;
@@ -343,7 +343,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 ) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin COMMENT='sản phẩm';
 
 --
--- Đang đổ dữ liệu cho bảng `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`prod_id`, `cate_id`, `prod_name`, `price`, `promo_code`, `quantity`, `date_added`) VALUES
@@ -454,7 +454,7 @@ INSERT INTO `product` (`prod_id`, `cate_id`, `prod_name`, `price`, `promo_code`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `promotion`
+-- Table structure for table `promotion`
 --
 
 DROP TABLE IF EXISTS `promotion`;
@@ -467,7 +467,7 @@ CREATE TABLE IF NOT EXISTS `promotion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin COMMENT='khuyến mãi';
 
 --
--- Đang đổ dữ liệu cho bảng `promotion`
+-- Dumping data for table `promotion`
 --
 
 INSERT INTO `promotion` (`promo_code`, `promo_name`, `promo_price`, `calc_unit`) VALUES
@@ -478,7 +478,7 @@ INSERT INTO `promotion` (`promo_code`, `promo_name`, `promo_price`, `calc_unit`)
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `size`
+-- Table structure for table `size`
 --
 
 DROP TABLE IF EXISTS `size`;
@@ -493,7 +493,7 @@ CREATE TABLE IF NOT EXISTS `size` (
 ) ENGINE=InnoDB DEFAULT CHARSET=ascii COLLATE=ascii_bin COMMENT='size';
 
 --
--- Đang đổ dữ liệu cho bảng `size`
+-- Dumping data for table `size`
 --
 
 INSERT INTO `size` (`prod_id`, `s`, `m`, `x`, `l`, `xl`) VALUES
@@ -602,44 +602,44 @@ INSERT INTO `size` (`prod_id`, `s`, `m`, `x`, `l`, `xl`) VALUES
 (105, 18, 32, 10, 10, 30);
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `cart`
+-- Constraints for table `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `FK_cart-prodID` FOREIGN KEY (`prod_id`) REFERENCES `product` (`prod_id`),
   ADD CONSTRAINT `FK_cart-username` FOREIGN KEY (`username`) REFERENCES `account` (`username`);
 
 --
--- Các ràng buộc cho bảng `description`
+-- Constraints for table `description`
 --
 ALTER TABLE `description`
   ADD CONSTRAINT `FK_des-prodID` FOREIGN KEY (`prod_id`) REFERENCES `product` (`prod_id`);
 
 --
--- Các ràng buộc cho bảng `order`
+-- Constraints for table `order`
 --
 ALTER TABLE `order`
   ADD CONSTRAINT `FK_order-username` FOREIGN KEY (`username`) REFERENCES `account` (`username`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Các ràng buộc cho bảng `order-detail`
+-- Constraints for table `order-detail`
 --
 ALTER TABLE `order-detail`
   ADD CONSTRAINT `FK_order-id` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `FK_orderDetail-prodID` FOREIGN KEY (`prod_id`) REFERENCES `product` (`prod_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Các ràng buộc cho bảng `product`
+-- Constraints for table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `FK_cate_id` FOREIGN KEY (`cate_id`) REFERENCES `category` (`cate_id`),
   ADD CONSTRAINT `FK_promo_code` FOREIGN KEY (`promo_code`) REFERENCES `promotion` (`promo_code`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Các ràng buộc cho bảng `size`
+-- Constraints for table `size`
 --
 ALTER TABLE `size`
   ADD CONSTRAINT `FK_size-prodID` FOREIGN KEY (`prod_id`) REFERENCES `product` (`prod_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
