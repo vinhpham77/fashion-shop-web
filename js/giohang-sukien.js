@@ -16,7 +16,7 @@ function setWidthProdTableHead() {
     }
 
     btn_quaylui.addEventListener("click", function() {
-        history.back();
+        location.href = "index.php";
     });
 }
 setWidthProdTableHead();
