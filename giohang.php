@@ -1,10 +1,6 @@
 <?php
 require_once 'site.php';
 loadHeader();
-if(isset($_POST['prod_id'])){
-    var_dump("2");
-exit();
-}
 require_once 'function/directToLoginIfNot.php';
 require_once 'function/price.php';
 echo '<link rel="stylesheet" href="style/giohangmain.css">
@@ -28,16 +24,15 @@ loadMenu();
                 <?php
                 require 'connect_db.php';
                 $kh = $_SESSION['username'];
-                $check = isset($_GET['prod_id']) ? "true" : "false";
-                $sql = "SELECT cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,product.price, promotion.promo_code, promo_price,    calc_unit
+                $check = isset($_GET['prod_id'])? "true" : "false";
+                $sql = "SELECT cart.username,cart.prod_id,cart.size,cart.quantity,product.prod_name,product.price, promotion.promo_code, promo_price, calc_unit
                             FROM cart JOIN product ON cart.prod_id=product.prod_id
                             LEFT JOIN promotion ON product.promo_code = promotion.promo_code ";
-                if (isset($_GET['prod_id']) && isset($_GET['size'])&& isset($_GET['soluong'])) {
+                if (isset($_GET['prod_id']) && isset($_GET['size'])) {
                     $sql .= "WHERE cart.username='" . $kh . "' AND cart.prod_id='" . $_GET['prod_id'] . "' AND cart.size='" . $_GET['size'] . "' LIMIT 1";
                 } else {
                 	$sql .= "WHERE cart.username='" . $kh . "'";
                 }
-
                 $kq = mysqli_query($conn, $sql);
                 require 'function/image.php';
                 while ($row = mysqli_fetch_array($kq)) {
@@ -78,7 +73,7 @@ loadMenu();
                         <td>Tổng sản phẩm</td>
                         <?php
                         $kh = $_SESSION['username'];
-                        if (isset($_GET['prod_id']) && isset($_GET['size'])&& isset($_GET['soluong'])) {
+                        if (isset($_GET['prod_id']) && isset($_GET['size'])) {
                         	$sql1 = "SELECT `quantity` FROM `cart` WHERE `username`='$kh' AND cart.prod_id='" . $_GET['prod_id'] . "' AND cart.size='" . $_GET['size'] . "' LIMIT 1";
                         } else {
                         	$sql1 = "SELECT SUM(`quantity`) FROM `cart` WHERE `username` = '$kh'";
@@ -99,7 +94,7 @@ loadMenu();
                         $sql1 = "SELECT cart.quantity, price, promotion.promo_code, promo_price, calc_unit
                                 FROM `cart` JOIN `product` ON cart.prod_id = product.prod_id
                                 LEFT JOIN promotion ON product.promo_code = promotion.promo_code ";
-                        if (isset($_GET['prod_id']) && isset($_GET['size'])&& isset($_GET['soluong'])) {
+                        if (isset($_GET['prod_id']) && isset($_GET['size'])) {
                         	$sql1 .= "WHERE cart.username = '$kh' AND cart.prod_id='" . $_GET['prod_id'] . "' AND cart.size='" . $_GET['size'] . "' LIMIT 1";
                         } else {
                         	$sql1 .= "WHERE cart.username = '$kh'";

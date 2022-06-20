@@ -8,15 +8,16 @@ var btn_quaylui = document.querySelector(".cart-content-left-button");
 var prodTableBody = document.querySelector(".cart-content-left table tbody");
 var prodTableHead = document.querySelector(".cart-content-left table thead");
 
+btn_quaylui.addEventListener("click", function() {
+    location.href = "./";
+});
+
 function setWidthProdTableHead() {
     if (prodTableBody.scrollHeight > prodTableBody.clientHeight) {
         prodTableHead.style.setProperty('width', 'calc(100% - 1em)');
     } else {
         prodTableHead.style.setProperty('width', '100%');
     }
-    btn_quaylui.addEventListener("click", function() {
-        location.href = "index.php";
-    });
 }
 setWidthProdTableHead();
 
@@ -29,8 +30,7 @@ function truyenquathanhtoan(check) {
             var size = document.querySelector('.kichcoSP');
             var get_id = id.getAttribute('product_id');
             var get_size = size.getAttribute('product_size');
-            var get_soluong=document.querySelector('.soluong');
-            window.location.href = "delivery.php?prod_id=" + get_id + "&size=" + get_size+"&soluong="+get_soluong.value;
+            window.location.href = "delivery.php?prod_id=" + get_id + "&size=" + get_size;
         }
     } else {
         alert("Chưa có sản phẩm nào để đặt hàng!");
@@ -63,30 +63,29 @@ function xoasp(x) {
     price_money = document.querySelectorAll(".thanhtien span");
 }
 
-number.forEach(item => {
-    item.onchange = function() {
-        var soluong = parseInt(item.value);
-        var sluongmax = parseInt(item.max);
-        var quantity_col = item.parentElement.parentElement;
-        var gia = quantity_col.previousElementSibling.firstElementChild.innerHTML;
-        gia = gia.replaceAll('.', '').replace('đ', '');
-        var giathanh;
-        giathanh = gia * soluong;
-        quantity_col.nextElementSibling.children[0].innerHTML = giathanh.toLocaleString('de-DE') + 'đ';
-        var tongSLSP = tongsl(number);
-        SumNumber.innerHTML = tongSLSP;
-        var tongtienmathang = tongtienhang(price_money);
-        if (soluong < 0 || soluong > sluongmax) {
-            item.value = 1;
-            item.onchange();
-        }
-
-        tongtien.innerHTML = tongtienmathang.toLocaleString('de-DE');
-        id = quantity_col.parentElement.getAttribute('product_id');
-        size1 = quantity_col.previousElementSibling.previousElementSibling.getAttribute('product_size');
-        update_number(id, soluong, size1);
+function onChangeValue(item) {
+    console.log(item.value);
+    var soluong = parseInt(item.value);
+    var sluongmax = parseInt(item.max);
+    var quantity_col = item.parentElement.parentElement;
+    var gia = quantity_col.previousElementSibling.firstElementChild.innerHTML;
+    gia = gia.replaceAll('.', '').replace('đ', '');
+    var giathanh;
+    giathanh = gia * soluong;
+    quantity_col.nextElementSibling.children[0].innerHTML = giathanh.toLocaleString('de-DE') + 'đ';
+    var tongSLSP = tongsl(number);
+    SumNumber.innerHTML = tongSLSP;
+    var tongtienmathang = tongtienhang(price_money);
+    if (soluong < 0 || soluong > sluongmax) {
+        item.value = 1;
+        onChangeValue(item);
     }
-})
+
+    tongtien.innerHTML = tongtienmathang.toLocaleString('de-DE');
+    id = quantity_col.parentElement.getAttribute('product_id');
+    size1 = quantity_col.previousElementSibling.previousElementSibling.getAttribute('product_size');
+    update_number(id, soluong, size1);
+}
 
 function tongtienhang(e) {
     var sum = 0;
@@ -127,7 +126,7 @@ plus.forEach(item => {
         soluonginputmax = parseInt(quantityInput.max);
         if (soluonginput < soluonginputmax) {
             quantityInput.value++;
-            quantityInput.onchange();
+            onChangeValue(quantityInput);
         }
     }
 })
@@ -139,7 +138,7 @@ minus.forEach(item => {
         soluonginputmax = parseInt(quantityInput.max);
         if (soluonginput > 1) {
             quantityInput.value--;
-            quantityInput.onchange();
+            onChangeValue(quantityInput);
         }
     }
 })

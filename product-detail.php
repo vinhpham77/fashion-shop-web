@@ -24,44 +24,49 @@
 		<div class="product-detail__gallery">
 			<div class="gallery--big" id="gallery--big"><?php echo '
 				<img src="' . $directory . '/' . $hinh[0] . '"alt="">
-			</div>
+			</div>';?>
 			<div class="gallery--small">
-				<img src="' . $directory . '/' . $hinh[0] . '"" alt="Ảnh sản phẩm" class="option product--checked checked" >
-				<img src="' . $directory . '/' . $hinh[1] . '"" alt="Ảnh sản phẩm" class="option" >
-				<img src="' . $directory . '/' . $hinh[2] . '"" alt="Ảnh sản phẩm" class="option" >
-				<img src="' . $directory . '/' . $hinh[3] . '"" alt="Ảnh sản phẩm" class="option" >
+                <?php
+                    $n = count($hinh);
+                    if ($n > 0) {
+                        echo '<img src="' . $directory . '/' . $hinh[0] . '"" alt="Ảnh sản phẩm" class="option product--checked checked" >';
+                        for ($i = 1; $i < $n && $i < 4; $i++) {
+                            echo '<img src="' . $directory . '/' . $hinh[$i] . '"" alt="Ảnh sản phẩm" class="option" >';
+                        }
+                    }
+                ?>
 			</div>
 	    </div>
-        <div class="product-detail__info">
+        <div class="product-detail__info"><?php echo'
 			<h1 prod_id=' . $row['prod_id'] . ' class="product-detail__name">' . $row['prod_name'] . '</h1>
 			<div class="product-detail__price">';
-	if ($tiensaugiam == $tiengoc) {
-		echo '<span>' . $tiengoc . 'đ</span>';
-	} else {
-		echo '<span>' . $tiensaugiam . 'đ</span>
-		      <span class="price--normal">' . $tiengoc . 'đ </span>
-		      <span class="price--discount">' . $row['promo_price'] . $loaigg . '</span>';
-	}
-	echo '
-		</div>
-		<div class="product-detail__size">
-			<p>Size: <span></span></p>';
-	$sqlmax = "SELECT * from size where prod_id='" . $row['prod_id'] . "'";
-	$slmax = mysqli_query($conn, $sqlmax);
-	$rowslmax = mysqli_fetch_assoc($slmax);
-	$max = 0;
-	array_shift($rowslmax);
-	forEach ($rowslmax as $key => $value) {
-		if ($value == 0) {
-			echo '<span title="Hết hàng">' . $key . '</span>';
-		} else {
-			echo '<span class="option">' . $key . '</span>';
-			if ($value > $max) {
-				$max = $value;
-			}
-		}
-	}
-	?>
+        	if ($tiensaugiam == $tiengoc) {
+        		echo '<span>' . $tiengoc . 'đ</span>';
+        	} else {
+        		echo '<span>' . $tiensaugiam . 'đ</span>
+        		      <span class="price--normal">' . $tiengoc . 'đ </span>
+        		      <span class="price--discount">' . $row['promo_price'] . $loaigg . '</span>';
+        	}
+        	echo '
+        		</div>
+        		<div class="product-detail__size">
+        			<p>Size: <span></span></p>';
+        	$sqlmax = "SELECT * from size where prod_id='" . $row['prod_id'] . "'";
+        	$slmax = mysqli_query($conn, $sqlmax);
+        	$rowslmax = mysqli_fetch_assoc($slmax);
+        	$max = 0;
+        	array_shift($rowslmax);
+        	forEach ($rowslmax as $key => $value) {
+        		if ($value == 0) {
+        			echo '<span title="Hết hàng">' . $key . '</span>';
+        		} else {
+        			echo '<span class="option">' . $key . '</span>';
+        			if ($value > $max) {
+        				$max = $value;
+        			}
+        		}
+        	}
+        	?>
             </div>
     		<div class="product-detail__quantity">
     			<div>Số lượng: </div>

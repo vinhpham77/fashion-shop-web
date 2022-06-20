@@ -7,8 +7,6 @@ let next = document.querySelector('.controller__next');
 let prev = document.querySelector('.controller__prev');
 let currentIndex = 0;
 let id = document.querySelector('.product-detail__name').getAttribute('prod_id');
-//let slmaxx=document.querySelector('.product-detail__name').getAttribute('slmaxx');
-
 
 images.forEach((item, index) => {
     item.onclick = function() {
@@ -124,7 +122,7 @@ btnBuyNow.onclick = function() {
         } else {
             update_number(id, quantityInput.value, sizeName.innerHTML);
             soluonginput = parseInt(quantityInput.value);
-            window.location.href = "giohang.php?prod_id=" + id +"&soluong="+soluonginput+ "&size=" + sizeName.innerHTML;
+            window.location.href = "giohang.php?prod_id=" + id + "&size=" + sizeName.innerHTML;
         }
     }
 }
@@ -143,16 +141,9 @@ btnAddToCart.onclick = function() {
 
 function update_number(id, values, size) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "function/update_product-detail.php", true);
+    xhttp.open("POST", "function/update_product-detail.php");
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=update&pro_id=' + id + '&quantity=' + values + '&size=' + size);
-}
-
-function insert_pro(id, values, size) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "function/update_product-detail.php", true);
-    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhttp.send('U=insert&pro_id=' + id + '&quantity=' + values + '&size=' + size);
 }
 
 function laysp(id, size) {
@@ -163,7 +154,7 @@ function laysp(id, size) {
             quantityInput.max = text;
         }
     };
-    xhttp.open("POST", "function/process_size.php", true);
+    xhttp.open("POST", "function/process_size.php", false);
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=2&prod_id=' + id + '&size=' + size);
 }
@@ -173,7 +164,6 @@ function loggedIn(){
     if (submenuLogin == null) {
         alert('Vui lòng đăng nhập trước!');
         window.location.href = 'login.php';
-        return false;
     }
     return true;
 }

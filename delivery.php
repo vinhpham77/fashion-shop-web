@@ -9,6 +9,7 @@ loadMenu();
 require_once 'function/price.php';
 require 'connect_db.php';
 $username = $_SESSION['username'];
+$isBuyNow = isset($_GET['prod_id']) && isset($_GET['size']);
 $sql = "SELECT `fullname`,`phone_number`,`shipping_address` FROM `account` where username = '$username' ";
 $result = $conn->query($sql);
 if ($rows = $result->fetch_array()) {
@@ -21,26 +22,39 @@ if ($rows = $result->fetch_array()) {
 		$diachi = $_POST['Address'];
 		$sql = "UPDATE `account` SET `fullname`='$hoten', `phone_number`='$sodt',`shipping_address`='$diachi' WHERE username = '" . $username . "'";
 		$conn->query($sql);
-		$sql = "SELECT product.prod_id, cart.size, cart.quantity, product.price, promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '" . $_SESSION['username'] . "' ";
+
+        $sql = "SELECT product.prod_id, cart.size, cart.quantity, product.price, promotion.calc_unit, promo_price
+                FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code
+                where username = '" . $_SESSION['username'] . "' ";
+        if ($isBuyNow) {
+            $sql .= "AND product.prod_id = '".$_GET['prod_id']."' AND cart.size = '".$_GET['size']."'";
+        }
+
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			$sql = "INSERT INTO `order`(`username`, `fullname`, `phone_number`, `shipping_address`, `pay_date`) VALUES ('$username', '$hoten', '$sodt', '$diachi', CURRENT_TIMESTAMP)";
 			$conn->query($sql);
 			$sql = "SELECT `order_id` FROM `order` ORDER by `order_id` DESC LIMIT 1";
 			$ketqua = $conn->query($sql)->fetch_array();
-			while ($rows = $result->fetch_array()) {
-				$sl_giohang = $rows[2];
-				$price_sp = $rows[3];
-				$donvi = $rows[4];
-				$magiamgia = $rows[5];
+            $lastOrderID = $ketqua[0];
+			while ($row = $result->fetch_array()) {
+				$sl_giohang = $row[2];
+				$price_sp = $row[3];
+				$donvi = $row[4];
+				$magiamgia = $row[5];
 				$GiaSauGiam = getPrice($price_sp, $magiamgia, $donvi);
-				$sql = "INSERT INTO `order-detail`(`order_id`, `prod_id`, `size`, `price`, `quantity`) VALUES ('$ketqua[0]','$rows[0]','$rows[1]','$GiaSauGiam','$sl_giohang')";
+
+				$sql = "INSERT INTO `order-detail`(`order_id`, `prod_id`, `size`, `price`, `quantity`) VALUES ('$lastOrderID','$row[0]','$row[1]','$GiaSauGiam','$sl_giohang')";
 				$conn->query($sql);
+
 				$sql = "UPDATE `product` INNER JOIN `cart` ON `product`.`prod_id` = `cart`.`prod_id`
-                                SET `product`.`quantity`= `product`.`quantity`-`cart`.`quantity`  WHERE `product`.`prod_id`= '$rows[0]' AND `username` = '$username'";
+                        SET `product`.`quantity`= `product`.`quantity`-`cart`.`quantity`
+                        WHERE `product`.`prod_id`= '$row[0]' AND `username` = '$username'";
 				$conn->query($sql);
-				$sql = "UPDATE `size` INNER JOIN `cart` ON `size`.`prod_id` = `cart`.`prod_id` SET `size`.`$rows[1]` = `size`.`$rows[1]`-`cart`.`quantity`
-                                WHERE `cart`.`prod_id` = '$rows[0]' AND `cart`.username = '$username'";
+
+				$sql = "UPDATE `size` INNER JOIN `cart` ON `size`.`prod_id` = `cart`.`prod_id`
+                        SET `size`.`$row[1]` = `size`.`$row[1]`-`cart`.`quantity`
+                        WHERE `cart`.`prod_id` = '$row[0]' AND `cart`.username = '$username'";
 				$conn->query($sql);
 			}
             if(!isset($_GET['prod_id']) && !isset($_GET['size'])&& !isset($_GET['soluong']))
@@ -51,12 +65,12 @@ if ($rows = $result->fetch_array()) {
 			$conn->query($sql);
 			echo '<script>
                     alert("Đã thanh toán thành công!");
-                    location.href = "index.php";
+                    location.href = "./";
                     </script>';
 		} else {
 			echo '<script>
                     alert("Thanh toán thất bại, không có sản phẩm trong giỏ hàng!");
-                    location.href = "index.php";
+                    location.href = "./";
                     </script>';
 		}
 	}
@@ -96,7 +110,7 @@ if ($rows = $result->fetch_array()) {
                 <tbody>
                 <?php
 require "connect_db.php";
-if (isset($_GET['prod_id'])&&isset($_GET['size'])&&isset($_GET['soluong'])) {
+if ($isBuyNow) {
 	$sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price,  promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '" . $_SESSION['username'] . "' AND cart.prod_id='" . $_GET['prod_id'] . "' AND cart.size='" . $_GET['size'] . "'";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
