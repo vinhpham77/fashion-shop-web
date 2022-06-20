@@ -1,7 +1,7 @@
 <?php
-  require_once('site.php');
-  loadHeader();
-    if (!empty($_POST)) {
+    require_once('site.php');
+    loadHeader();
+    if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = $_POST['username'];
         $password = md5($_POST['password']);
         require_once('connect_db.php');
@@ -18,10 +18,10 @@
                 exit();
             }
         } else {
-            echo "<script>
-                    history.back();
-                    alert('Sai tên đăng nhập hoặc mật khẩu!');
-                </script>";
+            // echo "<script>
+            //         history.back();
+            //         alert('Sai tên đăng nhập hoặc mật khẩu!');
+            //     </script>";
             unset($_POST);
             exit();
         }

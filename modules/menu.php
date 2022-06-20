@@ -9,7 +9,6 @@
             <?php
                 require('connect_db.php');
                 require_once('function/menu.php');
-
                 $first = 0;
                 $sql = "SELECT cate_id, cate_name, parent_cate_id FROM category ORDER BY position";
                 $result = $conn->query($sql);

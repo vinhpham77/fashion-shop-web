@@ -41,7 +41,7 @@
                 <option value="price asc" <?php if ($field === 'price' && $sort === 'asc') echo 'selected'; ?>>Giá thấp đến cao</option>
                 <option value="price desc" <?php if ($field === 'price' && $sort === 'desc') echo 'selected'; ?>>Giá cao đến thấp</option>
             </select>
-            <button type="submit" id="btn-filter" class="btn btn--black">Lọc</button>
+            <button type="submit" id="btn-filter" class="btn--black">Lọc</button>
             <input type="hidden" name="page" value=<?php echo $current_page; ?>>
         </form>
     </div>
