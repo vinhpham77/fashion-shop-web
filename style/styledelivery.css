@@ -8,7 +8,7 @@
 
 .delivery-content h1 {
     color: var(--purple-title);
-    padding-bottom: 18px;
+    padding-bottom: 20px;
     font-size: x-large;
 }
 
@@ -65,7 +65,7 @@
 .delivery-conten-below table {
     width: 100%;
     text-align: center;
-    margin: 10px auto;
+    margin: 12px auto;
     min-height: 150px;
 }
 

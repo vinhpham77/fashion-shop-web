@@ -154,7 +154,7 @@ function laysp(id, size) {
             quantityInput.max = text;
         }
     };
-    xhttp.open("POST", "function/process_size.php", false);
+    xhttp.open("POST", "function/process_size.php");
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=2&prod_id=' + id + '&size=' + size);
 }
