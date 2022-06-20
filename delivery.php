@@ -43,7 +43,11 @@ if ($rows = $result->fetch_array()) {
                                 WHERE `cart`.`prod_id` = '$rows[0]' AND `cart`.username = '$username'";
 				$conn->query($sql);
 			}
-			$sql = "Delete from cart where username = '$username'";
+            if(!isset($_GET['prod_id']) && !isset($_GET['size'])&& !isset($_GET['soluong']))
+			    $sql = "Delete from cart where username = '$username'";
+            else{
+                $sql="Delete from cart where username = '$username' and prod_id='".$_GET['prod_id']."' and size='".$_GET['size']."'";
+            }
 			$conn->query($sql);
 			echo '<script>
                     alert("Đã thanh toán thành công!");
@@ -92,8 +96,8 @@ if ($rows = $result->fetch_array()) {
                 <tbody>
                 <?php
 require "connect_db.php";
-if (isset($_GET['id'])) {
-	$sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price,  promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '" . $_SESSION['username'] . "' AND cart.prod_id='" . $_GET['id'] . "' AND cart.size='" . $_GET['size'] . "'";
+if (isset($_GET['prod_id'])&&isset($_GET['size'])&&isset($_GET['soluong'])) {
+	$sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price,  promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '" . $_SESSION['username'] . "' AND cart.prod_id='" . $_GET['prod_id'] . "' AND cart.size='" . $_GET['size'] . "'";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		$tongtien = 0;

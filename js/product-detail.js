@@ -123,7 +123,8 @@ btnBuyNow.onclick = function() {
             alert("Bạn chưa chọn size!");
         } else {
             update_number(id, quantityInput.value, sizeName.innerHTML);
-            window.location.href = "giohang.php?prod_id=" + id + "&size=" + sizeName.innerHTML;
+            soluonginput = parseInt(quantityInput.value);
+            window.location.href = "giohang.php?prod_id=" + id +"&soluong="+soluonginput+ "&size=" + sizeName.innerHTML;
         }
     }
 }

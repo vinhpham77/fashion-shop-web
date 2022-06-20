@@ -14,9 +14,8 @@ function setWidthProdTableHead() {
     } else {
         prodTableHead.style.setProperty('width', '100%');
     }
-
     btn_quaylui.addEventListener("click", function() {
-        location.href = "./";
+        location.href = "index.php";
     });
 }
 setWidthProdTableHead();
@@ -30,7 +29,8 @@ function truyenquathanhtoan(check) {
             var size = document.querySelector('.kichcoSP');
             var get_id = id.getAttribute('product_id');
             var get_size = size.getAttribute('product_size');
-            window.location.href = "delivery.php?id=" + get_id + "&size=" + get_size;
+            var get_soluong=document.querySelector('.soluong');
+            window.location.href = "delivery.php?prod_id=" + get_id + "&size=" + get_size+"&soluong="+get_soluong.value;
         }
     } else {
         alert("Chưa có sản phẩm nào để đặt hàng!");
