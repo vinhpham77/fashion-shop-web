@@ -18,10 +18,10 @@
                 exit();
             }
         } else {
-            // echo "<script>
-            //         history.back();
-            //         alert('Sai tên đăng nhập hoặc mật khẩu!');
-            //     </script>";
+            echo "<script>
+                    history.back();
+                    alert('Sai tên đăng nhập hoặc mật khẩu!');
+                </script>";
             unset($_POST);
             exit();
         }

@@ -59,7 +59,6 @@
 			if ($value > $max) {
 				$max = $value;
 			}
-
 		}
 	}
 	?>
