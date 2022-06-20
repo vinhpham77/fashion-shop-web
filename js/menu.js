@@ -21,5 +21,6 @@ function dangxuat(){
        }
     };
     xhttp.open("POST", "function/logout.php", true);
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('');
 }

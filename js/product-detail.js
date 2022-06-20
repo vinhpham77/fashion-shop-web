@@ -143,12 +143,14 @@ btnAddToCart.onclick = function() {
 function update_number(id, values, size) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "function/update_product-detail.php", true);
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=update&pro_id=' + id + '&quantity=' + values + '&size=' + size);
 }
 
 function insert_pro(id, values, size) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "function/update_product-detail.php", true);
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=insert&pro_id=' + id + '&quantity=' + values + '&size=' + size);
 }
 
@@ -161,6 +163,7 @@ function laysp(id, size) {
         }
     };
     xhttp.open("POST", "function/process_size.php", true);
+    xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send('U=2&prod_id=' + id + '&size=' + size);
 }
 
