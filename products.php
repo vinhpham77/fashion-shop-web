@@ -86,7 +86,7 @@
     }
     $result = $conn->query($sql);
     $num_rows = $result->num_rows;
-    $prods_per_page = 10;
+    $prods_per_page = 20;
     $num_pages = ceil($num_rows / $prods_per_page);
     $beginning_prod = ($current_page - 1) * $prods_per_page;
 
