@@ -82,7 +82,7 @@
                 <span class="form-message"></span>
             </div>
             <div class="form-group">
-                <button type="submit" name="btn-register" id="btn-register" class="btn btn--black" />Đăng Ký</button>
+                <button type="submit" name="btn-register" id="btn-register" class="btn btn--black">Đăng Ký</button>
             </div>
         </div>
     </form>

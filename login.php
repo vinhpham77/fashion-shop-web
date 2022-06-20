@@ -11,7 +11,7 @@
         {
             $_SESSION['username'] = $username;
              if ($row['account_type'] == 0) {
-                header('location: index.php');
+                header('location: ./');
                 exit();
             } else {
                 header('location: admin/index.php');
