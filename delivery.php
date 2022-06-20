@@ -109,60 +109,64 @@ if ($rows = $result->fetch_array()) {
                 </thead>
                 <tbody>
                 <?php
-require "connect_db.php";
-if ($isBuyNow) {
-	$sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price,  promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '" . $_SESSION['username'] . "' AND cart.prod_id='" . $_GET['prod_id'] . "' AND cart.size='" . $_GET['size'] . "'";
-	$result = $conn->query($sql);
-	if ($result->num_rows > 0) {
-		$tongtien = 0;
-		while ($rows = $result->fetch_array()) {
-			$sl_giohang = $rows[1];
-			$price_sp = $rows[3];
-			$donvi = $rows[4];
-			$gia = $rows[5];
-			$GiaSauGiam = getPrice($price_sp, $gia, $donvi) * $sl_giohang;
-			$numberformat = number_format($GiaSauGiam, 0, '', '.');
-			$tongtien = $tongtien + $GiaSauGiam;
-    		echo "<tr>
-                    <td>$rows[0]</td>
-                    <td>$rows[1]</td>
-                    <td class='size'>$rows[2]</td>
-                    <td class='thanhtien'><p>$numberformat<sup>đ</sup></p></td>
-                </tr>";
-		}
-	}
-} else {
-	$sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price,  promotion.calc_unit, promo_price FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code where username = '" . $_SESSION['username'] . "' ";
-	$result = $conn->query($sql);
-	$tongtien = 0;
-	if ($result->num_rows > 0) {
-		while ($rows = $result->fetch_array()) {
-			$sl_giohang = $rows[1];
-			$price_sp = $rows[3];
-			$donvi = $rows[4];
-			$gia = $rows[5];
-			$GiaSauGiam = getPrice($price_sp, $gia, $donvi) * $sl_giohang;
-			$numberformat = formatPrice($GiaSauGiam);
-			$tongtien = $tongtien + $GiaSauGiam;
-			echo "<tr>
-                <td>$rows[0]</td>
-                <td>$rows[1]</td>
-                <td class='size'>$rows[2]</td>
-                <td class='thanhtien'><p>$numberformat<sup>đ</sup></p></td>
-            </tr>";
-		}
-	}
-}
-    $tongtien = formatPrice($tongtien);
-    echo '
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="3">Tổng tiền hàng</td>
-                <td class="thanhtoan"><span>' . $tongtien . '</span><sup>đ</sup></td>
-            </tr>
-        </tfoot>';
-?>
+                require "connect_db.php";
+                if ($isBuyNow) {
+                	$sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price, promotion.calc_unit, promo_price
+                            FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code
+                            where username = '" . $_SESSION['username'] . "' AND cart.prod_id='" . $_GET['prod_id'] . "' AND cart.size='" . $_GET['size'] . "'";
+                	$result = $conn->query($sql);
+                	if ($result->num_rows > 0) {
+                		$tongtien = 0;
+                		while ($rows = $result->fetch_array()) {
+                			$sl_giohang = $rows[1];
+                			$price_sp = $rows[3];
+                			$donvi = $rows[4];
+                			$gia = $rows[5];
+                			$GiaSauGiam = getPrice($price_sp, $gia, $donvi) * $sl_giohang;
+                			$numberformat = number_format($GiaSauGiam, 0, '', '.');
+                			$tongtien = $tongtien + $GiaSauGiam;
+                    		echo "<tr>
+                                    <td>$rows[0]</td>
+                                    <td>$rows[1]</td>
+                                    <td class='size'>$rows[2]</td>
+                                    <td class='thanhtien'><p>$numberformat<sup>đ</sup></p></td>
+                                </tr>";
+                		}
+                	}
+                } else {
+                	$sql = "SELECT product.prod_name, cart.quantity, cart.size, product.price,  promotion.calc_unit, promo_price
+                            FROM cart JOIN product ON cart.prod_id = product.prod_id LEFT JOIN promotion ON product.promo_code = promotion.promo_code
+                            where username = '" . $_SESSION['username'] . "' ";
+                	$result = $conn->query($sql);
+                	$tongtien = 0;
+                	if ($result->num_rows > 0) {
+                		while ($rows = $result->fetch_array()) {
+                			$sl_giohang = $rows[1];
+                			$price_sp = $rows[3];
+                			$donvi = $rows[4];
+                			$gia = $rows[5];
+                			$GiaSauGiam = getPrice($price_sp, $gia, $donvi) * $sl_giohang;
+                			$numberformat = formatPrice($GiaSauGiam);
+                			$tongtien = $tongtien + $GiaSauGiam;
+                			echo "<tr>
+                                <td>$rows[0]</td>
+                                <td>$rows[1]</td>
+                                <td class='size'>$rows[2]</td>
+                                <td class='thanhtien'><p>$numberformat<sup>đ</sup></p></td>
+                            </tr>";
+                		}
+                	}
+                }
+                $tongtien = formatPrice($tongtien);
+                echo '
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Tổng tiền hàng</td>
+                            <td class="thanhtoan"><span>' . $tongtien . '</span><sup>đ</sup></td>
+                        </tr>
+                    </tfoot>';
+            ?>
             </table>
             <div class="delivery-content-below-button">
                 <div class="delivery-content-left-button">

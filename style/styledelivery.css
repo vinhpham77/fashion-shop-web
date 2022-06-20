@@ -94,8 +94,8 @@
 
 
 .delivery-conten-below table tfoot {
-    padding: 6px 0;
-    margin-top: 5px;
+    padding: 2px 0;
+    margin-top: 10px;
     font-weight: bold;
     border-top: 1px solid var(--hov-color);
 }
