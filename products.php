@@ -7,7 +7,7 @@
     require_once 'function/price.php';
     require_once 'function/image.php';
     if (empty($_GET['filter']) || empty($_GET['value'])) {
-    	echo '<script>window.location.href = "index.php"</script>';
+    	echo '<script>window.location.href = "./"</script>';
     }
     $filter = $_GET['filter'];
     $value = $_GET['value'];
@@ -50,43 +50,43 @@
         require 'connect_db.php';
         switch ($filter) {
             case 'prod_name':
-            $where = "WHERE UPPER(A.prod_name) LIKE UPPER('%$value%')";
-            $keywords = $value;
-            break;
+                $where = "WHERE UPPER(A.prod_name) LIKE UPPER('%$value%')";
+                $keywords = $value;
+                break;
             case 'cate_id':
-            $sql = "SELECT cate_name FROM category WHERE $filter = '$value' LIMIT 1";
-            $result = $conn->query($sql);
-            $keywords = $result->fetch_array()[0];
-            $sql = "SELECT cate_id, parent_cate_id FROM category";
-            $result = $conn->query($sql);
-            $cate_list = $result->fetch_all(MYSQLI_ASSOC);
-            require_once 'function/products.php';
-            $cate_ID_arr = getItAndAllSubCateIDs($cate_list, $value);
-            $cate_IDs = implode(', ', $cate_ID_arr);
-            $where = "WHERE A.$filter IN ($cate_IDs)";
-            break;
+                $sql = "SELECT cate_name FROM category WHERE $filter = '$value' LIMIT 1";
+                $result = $conn->query($sql);
+                $keywords = $result->fetch_array()[0];
+                $sql = "SELECT cate_id, parent_cate_id FROM category";
+                $result = $conn->query($sql);
+                $cate_list = $result->fetch_all(MYSQLI_ASSOC);
+                require_once 'function/products.php';
+                $cate_ID_arr = getItAndAllSubCateIDs($cate_list, $value);
+                $cate_IDs = implode(', ', $cate_ID_arr);
+                $where = "WHERE A.$filter IN ($cate_IDs)";
+                break;
             case 'promo_code':
-            if ($value === 'all') {
-              $where = "WHERE B.$filter IS NOT NULL";
-              $keywords = "Khuyến mãi";
-          } else {
-              $sql = "SELECT promo_name FROM promotion WHERE promo_code = '$value' LIMIT 1";
-              $result = $conn->query($sql);
-              $keywords = $result->fetch_array()[0];
-              $where = "WHERE A.$filter = '$value'";
-          }
-          break;
-          default:
-          $where = "WHERE 1";
-          break;
-      }
-      $sql = "SELECT A.prod_id, cate_id, prod_name, price, quantity, date_added, promo_price, calc_unit FROM size AS C JOIN product AS A ON C.prod_id = A.prod_id LEFT JOIN promotion AS B ON A.promo_code = B.promo_code " . $where;
-      if (!empty($size)) {
-       $sql .= " AND C.$size > 0";
+                if ($value === 'all') {
+                  $where = "WHERE B.$filter IS NOT NULL";
+                  $keywords = "Khuyến mãi";
+                } else {
+                    $sql = "SELECT promo_name FROM promotion WHERE promo_code = '$value' LIMIT 1";
+                    $result = $conn->query($sql);
+                    $keywords = $result->fetch_array()[0];
+                    $where = "WHERE A.$filter = '$value'";
+                }
+                break;
+            default:
+            $where = "WHERE 1";
+            break;
+        }
+        $sql = "SELECT A.prod_id, cate_id, prod_name, price, quantity, date_added, promo_price, calc_unit FROM size AS C JOIN product AS A ON C.prod_id = A.prod_id LEFT JOIN promotion AS B ON A.promo_code = B.promo_code " . $where;
+        if (!empty($size)) {
+        $sql .= " AND C.$size > 0";
     }
     $result = $conn->query($sql);
     $num_rows = $result->num_rows;
-    $prods_per_page = 20;
+    $prods_per_page = 10;
     $num_pages = ceil($num_rows / $prods_per_page);
     $beginning_prod = ($current_page - 1) * $prods_per_page;
 
