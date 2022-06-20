@@ -24,9 +24,9 @@
         if (mysqli_num_rows($result) > 0) {
             echo '<script>alert("Tên đăng ký, email hoặc số điện thoại đã được sử dụng!"); history.back();</script>';
         } else {
-            $sql =  "INSERT INTO account VALUES ('$username','$password','$repassword','$fullname','$currentaddress','$email','$phonenumber','$shippingaddress')";
+            $sql =  "INSERT INTO account VALUES ('$username','$password', FALSE,'$fullname','$currentaddress','$email','$phonenumber','$shippingaddress')";
             mysqli_query($conn, $sql);
-            echo '<script>alert("Đăng ký thành công!"); window.location="register.php";</script>';
+            echo '<script>alert("Đăng ký thành công!"); window.location.href="login.php";</script>';
             exit();
         }
     }
