@@ -164,6 +164,7 @@ function loggedIn(){
     if (submenuLogin == null) {
         alert('Vui lòng đăng nhập trước!');
         window.location.href = 'login.php';
+        return false;
     }
     return true;
 }
