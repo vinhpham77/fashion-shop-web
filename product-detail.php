@@ -19,6 +19,7 @@
     	$tiengoc = formatPrice($tien);
     	$directory = "images/products/" . $row['prod_id'];
     	$hinh = getImages($directory);
+    }
 ?>
 	<div class="product__detail">
 		<div class="product-detail__gallery">
